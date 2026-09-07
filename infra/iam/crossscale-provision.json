@@ -1,0 +1,339 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadRegionalInfrastructure",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:Describe*",
+        "eks:List*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "CreateTaggedNetwork",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpc",
+        "ec2:CreateSubnet",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateInternetGateway",
+        "ec2:CreateNatGateway",
+        "ec2:AllocateAddress",
+        "ec2:CreateRouteTable",
+        "ec2:CreateLaunchTemplate"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1",
+          "aws:RequestTag/Project": "crossscale"
+        }
+      }
+    },
+    {
+      "Sid": "ConfigureNetwork",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateTags",
+        "ec2:DeleteTags",
+        "ec2:ModifyVpcAttribute",
+        "ec2:ModifySubnetAttribute",
+        "ec2:AttachInternetGateway",
+        "ec2:DetachInternetGateway",
+        "ec2:CreateRoute",
+        "ec2:ReplaceRoute",
+        "ec2:DeleteRoute",
+        "ec2:AssociateRouteTable",
+        "ec2:DisassociateRouteTable",
+        "ec2:ReplaceRouteTableAssociation",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:CreateNetworkAclEntry",
+        "ec2:ReplaceNetworkAclEntry",
+        "ec2:DeleteNetworkAclEntry",
+        "ec2:ModifyLaunchTemplate",
+        "ec2:CreateLaunchTemplateVersion",
+        "ec2:DeleteLaunchTemplateVersions"
+      ],
+      "Resource": "arn:aws:ec2:us-east-1:646821141010:*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "ManageCrossscaleEks",
+      "Effect": "Allow",
+      "Action": [
+        "eks:CreateCluster",
+        "eks:DescribeCluster",
+        "eks:UpdateClusterConfig",
+        "eks:UpdateClusterVersion",
+        "eks:DescribeUpdate",
+        "eks:TagResource",
+        "eks:UntagResource",
+        "eks:CreateNodegroup",
+        "eks:DescribeNodegroup",
+        "eks:UpdateNodegroupConfig",
+        "eks:UpdateNodegroupVersion",
+        "eks:CreateAddon",
+        "eks:DescribeAddon",
+        "eks:UpdateAddon",
+        "eks:CreateAccessEntry",
+        "eks:DescribeAccessEntry",
+        "eks:UpdateAccessEntry",
+        "eks:AssociateAccessPolicy",
+        "eks:CreatePodIdentityAssociation",
+        "eks:DescribePodIdentityAssociation",
+        "eks:UpdatePodIdentityAssociation"
+      ],
+      "Resource": [
+        "arn:aws:eks:us-east-1:646821141010:cluster/crossscale",
+        "arn:aws:eks:us-east-1:646821141010:nodegroup/crossscale/*",
+        "arn:aws:eks:us-east-1:646821141010:addon/crossscale/*",
+        "arn:aws:eks:us-east-1:646821141010:access-entry/crossscale/*",
+        "arn:aws:eks:us-east-1:646821141010:podidentityassociation/crossscale/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "ManageProjectRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:GetRole",
+        "iam:UpdateAssumeRolePolicy",
+        "iam:TagRole",
+        "iam:UntagRole",
+        "iam:ListRolePolicies",
+        "iam:ListAttachedRolePolicies",
+        "iam:GetRolePolicy"
+      ],
+      "Resource": [
+        "arn:aws:iam::646821141010:role/crossscale-cluster-*",
+        "arn:aws:iam::646821141010:role/crossscale-system-*",
+        "arn:aws:iam::646821141010:role/crossscale-karpenter-controller-*",
+        "arn:aws:iam::646821141010:role/crossscale-gpu"
+      ]
+    },
+    {
+      "Sid": "AttachRequiredManagedPolicies",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy"
+      ],
+      "Resource": [
+        "arn:aws:iam::646821141010:role/crossscale-cluster-*",
+        "arn:aws:iam::646821141010:role/crossscale-system-*",
+        "arn:aws:iam::646821141010:role/crossscale-gpu"
+      ],
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyARN": [
+            "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
+            "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController",
+            "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+            "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+            "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPullOnly",
+            "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AttachKarpenterControllerPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::646821141010:role/crossscale-karpenter-controller-*",
+      "Condition": {
+        "ArnLike": {
+          "iam:PolicyARN": "arn:aws:iam::646821141010:policy/crossscale-karpenter-controller-*"
+        }
+      }
+    },
+    {
+      "Sid": "ManageControllerPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreatePolicy",
+        "iam:CreatePolicyVersion",
+        "iam:DeletePolicyVersion",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:ListPolicyVersions",
+        "iam:TagPolicy",
+        "iam:UntagPolicy"
+      ],
+      "Resource": "arn:aws:iam::646821141010:policy/crossscale-karpenter-controller-*"
+    },
+    {
+      "Sid": "PassProjectRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::646821141010:role/crossscale-cluster-*",
+        "arn:aws:iam::646821141010:role/crossscale-system-*",
+        "arn:aws:iam::646821141010:role/crossscale-karpenter-controller-*",
+        "arn:aws:iam::646821141010:role/crossscale-gpu"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "eks.amazonaws.com",
+            "ec2.amazonaws.com",
+            "pods.eks.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "CreateRequiredServiceLinkedRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": [
+            "eks.amazonaws.com",
+            "eks-nodegroup.amazonaws.com",
+            "autoscaling.amazonaws.com"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ReadServiceLinkedRoles",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole"
+      ],
+      "Resource": "arn:aws:iam::646821141010:role/aws-service-role/*"
+    },
+    {
+      "Sid": "ManageClusterLogGroup",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams",
+        "logs:PutRetentionPolicy",
+        "logs:ListTagsForResource",
+        "logs:TagResource",
+        "logs:UntagResource",
+        "logs:ListTagsLogGroup",
+        "logs:TagLogGroup",
+        "logs:UntagLogGroup"
+      ],
+      "Resource": [
+        "arn:aws:logs:us-east-1:646821141010:log-group:/aws/eks/crossscale/cluster",
+        "arn:aws:logs:us-east-1:646821141010:log-group:/aws/eks/crossscale/cluster:*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "DiscoverLogGroups",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "ManageInterruptionQueue",
+      "Effect": "Allow",
+      "Action": [
+        "sqs:CreateQueue",
+        "sqs:GetQueueAttributes",
+        "sqs:GetQueueUrl",
+        "sqs:SetQueueAttributes",
+        "sqs:ListQueueTags",
+        "sqs:TagQueue",
+        "sqs:UntagQueue"
+      ],
+      "Resource": "arn:aws:sqs:us-east-1:646821141010:crossscale-karpenter-interruption",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "ManageInterruptionEvents",
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule",
+        "events:DescribeRule",
+        "events:PutTargets",
+        "events:ListTargetsByRule",
+        "events:ListTagsForResource",
+        "events:TagResource",
+        "events:UntagResource",
+        "events:RemoveTargets"
+      ],
+      "Resource": "arn:aws:events:us-east-1:646821141010:rule/crossscale-*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "ReadStateBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::crossscale-tfstate-646821141010-us-east-1"
+    },
+    {
+      "Sid": "PersistClusterState",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::crossscale-tfstate-646821141010-us-east-1/crossscale/cluster.tfstate"
+    },
+    {
+      "Sid": "LockClusterState",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": "arn:aws:s3:::crossscale-tfstate-646821141010-us-east-1/crossscale/cluster.tfstate.tflock"
+    }
+  ]
+}

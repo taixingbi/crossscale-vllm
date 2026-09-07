@@ -1,4 +1,4 @@
-name: Terraform review plan
+name: Terraform cluster apply
 
 on:
   workflow_dispatch:
@@ -13,9 +13,9 @@ concurrency:
 
 jobs:
   plan:
-    name: Cluster review plan
+    name: Apply approved cluster scope
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 90
     env:
       TF_IN_AUTOMATION: "true"
       TF_INPUT: "false"
@@ -32,13 +32,15 @@ jobs:
         uses: aws-actions/configure-aws-credentials@463133d79af6d001e45482f356e244208e65f0c5 # v6
         with:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          role-session-name: crossscale-plan-${{ github.run_id }}
+          role-session-name: crossscale-apply-${{ github.run_id }}
           aws-region: us-east-1
           allowed-account-ids: "646821141010"
+          role-duration-seconds: 7200
       - name: Generate plan against persistent state
         shell: bash
         run: |
           set -euo pipefail
+          test -n "$EKS_ADMIN_CIDR" || { echo "Administrator CIDR secret is required"; exit 1; }
           python scripts/plan-input.py prepare
           terraform -chdir=infra/cluster init -backend-config=backend.hcl -lockfile=readonly
           terraform -chdir=infra/cluster validate -no-color
@@ -47,6 +49,7 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/review"
           terraform -chdir=infra/cluster show -no-color "${RUNNER_TEMP}/cluster.tfplan" > "${RUNNER_TEMP}/review/cluster-plan.txt"
           terraform -chdir=infra/cluster show -json "${RUNNER_TEMP}/cluster.tfplan" > "${RUNNER_TEMP}/review/cluster-plan.json"
+          python scripts/check-cluster-plan.py "${RUNNER_TEMP}/review/cluster-plan.json"
           python scripts/plan-input.py redact
           printf '%s\n' "REVIEW ONLY: persistent state; administrator CIDR redacted. Not an apply artifact." \
             "Source commit: ${GITHUB_SHA}" \
@@ -60,3 +63,10 @@ jobs:
           path: ${{ runner.temp }}/review/
           retention-days: 3
           if-no-files-found: error
+      - name: Apply the verified plan
+        run: terraform -chdir=infra/cluster apply -input=false -no-color "${RUNNER_TEMP}/cluster.tfplan"
+      - name: Verify cluster and node group
+        run: |
+          aws eks describe-cluster --name crossscale --region us-east-1 --query 'cluster.{name:name,status:status,version:version}'
+          aws eks list-nodegroups --cluster-name crossscale --region us-east-1
+          terraform -chdir=infra/cluster output -json addons
