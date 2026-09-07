@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Sid": "DiscoverExperimentEnvironment",
+    "Effect": "Allow",
+    "Action": [
+      "ec2:DescribeRegions",
+      "ec2:DescribeAvailabilityZones",
+      "ec2:DescribeImages",
+      "ec2:DescribeInstanceTypes",
+      "ec2:DescribeInstanceTypeOfferings",
+      "eks:DescribeClusterVersions",
+      "eks:DescribeAddonVersions",
+      "eks:ListClusters",
+      "servicequotas:GetServiceQuota",
+      "servicequotas:ListServiceQuotas"
+    ],
+    "Resource": "*"
+  }]
+}

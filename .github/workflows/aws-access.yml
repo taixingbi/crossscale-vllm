@@ -1,0 +1,27 @@
+name: AWS access
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  verify:
+    name: Verify CrossScale OIDC role
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Assume CrossScale role
+        uses: aws-actions/configure-aws-credentials@463133d79af6d001e45482f356e244208e65f0c5 # v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          role-session-name: crossscale-access-${{ github.run_id }}
+          aws-region: us-east-1
+          allowed-account-ids: "646821141010"
+          role-duration-seconds: 900
+      - name: Verify account and role identity
+        run: aws sts get-caller-identity
+      - name: Verify discovery permissions
+        run: aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output json
