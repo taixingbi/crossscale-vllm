@@ -2,7 +2,7 @@
 
 Account: `646821141010`. Role: `crossscale-deploy`.
 
-`crossscale-trust.json` allows GitHub OIDC only for `taixingbi/crossscale-vllm` on `refs/heads/main`, with audience `sts.amazonaws.com`. It uses the existing account OIDC provider. It does not grant local IAM users permission to assume this role; use the manual **AWS access** workflow to verify it.
+`crossscale-trust.json` allows GitHub OIDC only for `taixingbi/crossscale-vllm` on `refs/heads/main`, with audience `sts.amazonaws.com`. The exact subject prefix, including repository IDs, was obtained from GitHub’s `repos/taixingbi/crossscale-vllm/actions/oidc/customization/sub` endpoint. It uses the existing account OIDC provider. It does not grant local IAM users permission to assume this role; use the manual **AWS access** workflow to verify it.
 
 The initial `crossscale-discovery.json` policy is read-only environment discovery. **This role cannot yet provision infrastructure or perform a full Terraform plan.** Add scoped provisioning/read permissions once the target region, cluster configuration, and remote state backend are selected. Do not attach the Bedrock role's unrelated account-creation and application permissions.
 
