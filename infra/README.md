@@ -7,6 +7,25 @@ Two Terraform roots keep cluster creation separate from Kubernetes authenticatio
 
 Prerequisites: Terraform >= 1.5.7, AWS CLI credentials with infrastructure provisioning permissions, kubectl, a selected EKS Kubernetes version, and an EKS AL2023 NVIDIA x86_64 AMI for that version in your region. The AWS identity applying `cluster/` receives cluster administrator access; use the same identity for `addons/`, or explicitly grant another identity access first. EKS and chart versions must be checked together before changing the pinned versions.
 
+## AWS AssumeRole
+
+Use the same temporary-credential pattern as [bedrock-tenants](https://github.com/taixingbi/bedrock-tenants/blob/main/scripts/deploy-member.sh). The wrapper assumes a role, then runs one command with credentials shared by Terraform and the Helm provider's `aws eks get-token` subprocess. It does not modify your AWS config or parent shell. Source credentials must already be available through the AWS CLI; set `AWS_PROFILE` if needed.
+
+```sh
+# Replace the example account with the intended deployment account.
+export TARGET_ACCOUNT_ID=123456789012
+scripts/with-aws-role.sh "$TARGET_ACCOUNT_ID" aws sts get-caller-identity
+scripts/with-aws-role.sh "$TARGET_ACCOUNT_ID" terraform -chdir=infra/cluster plan -out=cluster.tfplan
+# After reviewing the plan:
+scripts/with-aws-role.sh "$TARGET_ACCOUNT_ID" terraform -chdir=infra/cluster apply cluster.tfplan
+```
+
+An account ID selects `OrganizationAccountAccessRole` by default; override `ORG_ACCESS_ROLE` or pass a full IAM role ARN as the first argument. Use the same wrapper and role for add-on plans/applies, kubectl commands, and teardown. Run the generated `aws eks update-kubeconfig` command through the wrapper as well. Do not add `--profile` to child commands: that could select the source identity instead of the assumed role. The existing role must permit the requested EKS/network/IAM operations and its trust policy must allow your source identity.
+
+Sessions last one hour and are not refreshed by the wrapper. Run a fresh invocation for each operation; operations exceeding one hour need a refreshable AWS role profile instead. Do not add a second Terraform provider `assume_role` block when using the wrapper: the provider and CLI should use the same already-assumed identity.
+
+The reference repository also supports GitHub OIDC. Our CI remains credential-free validation; this change does not copy its automatic deployments or create accounts/roles. A future deployment workflow needs a role whose OIDC trust explicitly permits this repository.
+
 ## Configure and review
 
 Run from the repository root. Copy the examples and replace every placeholder:
