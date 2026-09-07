@@ -50,7 +50,7 @@ module "eks" {
   enable_irsa = false
   # EKS >= 1.28 uses AWS-owned envelope encryption by default.
   create_kms_key                           = false
-  encryption_config                        = null
+  encryption_config                        = {}
   enable_cluster_creator_admin_permissions = true
   vpc_id                                   = module.vpc.vpc_id
   subnet_ids                               = module.vpc.private_subnets
@@ -62,6 +62,8 @@ module "eks" {
   }
   eks_managed_node_groups = {
     system = {
+      name           = "${var.cluster_name}-system"
+      iam_role_name  = "${var.cluster_name}-system"
       ami_type       = "AL2023_x86_64_STANDARD"
       instance_types = ["m5.large"]
       min_size       = 2
