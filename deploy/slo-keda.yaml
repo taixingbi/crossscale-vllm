@@ -1,0 +1,28 @@
+# Same actuator and bounds as Queue-KEDA. Gateway must be scraped every 5s.
+# This is a documented SLO-ratio baseline, not an implementation of llm-d.
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: vllm
+  namespace: crossscale
+spec:
+  scaleTargetRef:
+    name: vllm
+  pollingInterval: 5
+  minReplicaCount: 2
+  maxReplicaCount: 4
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleUp:
+          stabilizationWindowSeconds: 0
+        scaleDown:
+          selectPolicy: Disabled
+  triggers:
+    - type: prometheus
+      metricType: Value
+      metadata:
+        serverAddress: http://prometheus-operated.monitoring.svc:9090
+        query: max(crossscale_slo_saturation{job="crossscale-gateway"})
+        threshold: '1'
+        ignoreNullValues: 'false'

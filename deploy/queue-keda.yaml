@@ -1,0 +1,27 @@
+# Install only one ScaledObject for vllm. Replace Prometheus address as needed.
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: vllm
+  namespace: crossscale
+spec:
+  scaleTargetRef:
+    name: vllm
+  pollingInterval: 5
+  minReplicaCount: 2
+  maxReplicaCount: 4
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleUp:
+          stabilizationWindowSeconds: 0
+        scaleDown:
+          selectPolicy: Disabled
+  triggers:
+    - type: prometheus
+      metricType: AverageValue
+      metadata:
+        serverAddress: http://prometheus-operated.monitoring.svc:9090
+        query: sum(vllm:num_requests_waiting{namespace="crossscale"})
+        threshold: '5'
+        ignoreNullValues: 'false'

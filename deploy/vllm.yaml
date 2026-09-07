@@ -1,0 +1,55 @@
+# Template: substitute a verified immutable image tag/digest and model first.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vllm
+  namespace: crossscale
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app: vllm}
+  template:
+    metadata:
+      labels: {app: vllm}
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8000'
+        prometheus.io/path: /metrics
+    spec:
+      nodeSelector:
+        node.kubernetes.io/instance-type: g5.2xlarge
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+      containers:
+        - name: vllm
+          image: vllm/vllm-openai:REPLACE_WITH_PINNED_VERSION
+          args: [--model, REPLACE_WITH_MODEL, --max-model-len, '32768', --gpu-memory-utilization, '0.90']
+          ports:
+            - {containerPort: 8000, name: http}
+          resources:
+            requests: {cpu: '4', memory: 16Gi, nvidia.com/gpu: '1'}
+            limits: {nvidia.com/gpu: '1'}
+          startupProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 5
+            failureThreshold: 180
+          readinessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 1
+          volumeMounts:
+            - {name: shm, mountPath: /dev/shm}
+      volumes:
+        - name: shm
+          emptyDir: {medium: Memory, sizeLimit: 4Gi}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vllm
+  namespace: crossscale
+spec:
+  selector: {app: vllm}
+  ports:
+    - {name: http, port: 8000, targetPort: http}

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crossscale-experiments"
+version = "0.1.0"
+description = "Reproducible provisioning-gap experiments for multi-tenant vLLM"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+live = ["aiohttp>=3.10,<4"]
+
+[project.scripts]
+crossscale = "crossscale.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["crossscale*"]
