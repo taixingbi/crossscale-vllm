@@ -334,6 +334,36 @@
         "s3:DeleteObject"
       ],
       "Resource": "arn:aws:s3:::crossscale-tfstate-646821141010-us-east-1/crossscale/cluster.tfstate.tflock"
+    },
+    {
+      "Sid": "CreateChildrenInCrossscaleVpc",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateSubnet",
+        "ec2:CreateRouteTable"
+      ],
+      "Resource": "arn:aws:ec2:us-east-1:646821141010:vpc/vpc-01469cc72f51e24c3",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "UseProjectSubnetForNat",
+      "Effect": "Allow",
+      "Action": "ec2:CreateNatGateway",
+      "Resource": [
+        "arn:aws:ec2:us-east-1:646821141010:subnet/*",
+        "arn:aws:ec2:us-east-1:646821141010:elastic-ip/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1",
+          "ec2:ResourceTag/Project": "crossscale"
+        }
+      }
     }
   ]
 }
