@@ -1,4 +1,10 @@
-variable "region" { type = string }
+variable "region" {
+  type = string
+  validation {
+    condition     = var.region == "us-east-1"
+    error_message = "Phase one is restricted to us-east-1."
+  }
+}
 variable "cluster_name" { type = string }
 variable "node_role_name" { type = string }
 variable "interruption_queue" { type = string }
@@ -14,8 +20,8 @@ variable "gpu_limit" {
   type    = number
   default = 4
   validation {
-    condition     = var.gpu_limit >= 1 && floor(var.gpu_limit) == var.gpu_limit
-    error_message = "GPU limit must be a positive integer."
+    condition     = var.gpu_limit >= 1 && var.gpu_limit <= 4 && floor(var.gpu_limit) == var.gpu_limit
+    error_message = "Phase-one GPU limit must be an integer between 1 and 4."
   }
 }
 variable "gateway_metrics_targets" {

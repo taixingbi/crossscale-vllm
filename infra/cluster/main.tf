@@ -6,7 +6,8 @@ terraform {
 }
 
 provider "aws" {
-  region = var.region
+  region              = var.region
+  allowed_account_ids = ["646821141010"]
   default_tags { tags = { Project = var.cluster_name, ManagedBy = "terraform" } }
 }
 
@@ -40,11 +41,16 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "21.0.0"
 
-  name                                     = var.cluster_name
-  kubernetes_version                       = var.kubernetes_version
-  endpoint_public_access                   = true
-  endpoint_private_access                  = true
-  endpoint_public_access_cidrs             = var.admin_cidrs
+  name                         = var.cluster_name
+  kubernetes_version           = var.kubernetes_version
+  endpoint_public_access       = true
+  endpoint_private_access      = true
+  endpoint_public_access_cidrs = var.admin_cidrs
+  # Pod Identity supplies controller credentials; no IRSA provider is needed.
+  enable_irsa = false
+  # EKS >= 1.28 uses AWS-owned envelope encryption by default.
+  create_kms_key                           = false
+  encryption_config                        = null
   enable_cluster_creator_admin_permissions = true
   vpc_id                                   = module.vpc.vpc_id
   subnet_ids                               = module.vpc.private_subnets
@@ -70,6 +76,10 @@ module "eks" {
 module "karpenter" {
   source                          = "terraform-aws-modules/eks/aws//modules/karpenter"
   version                         = "21.0.0"
+  iam_role_name                   = "${var.cluster_name}-karpenter-controller"
+  iam_policy_name                 = "${var.cluster_name}-karpenter-controller"
+  queue_name                      = "${var.cluster_name}-karpenter-interruption"
+  rule_name_prefix                = "${var.cluster_name}-"
   cluster_name                    = module.eks.cluster_name
   node_iam_role_name              = "${var.cluster_name}-gpu"
   node_iam_role_use_name_prefix   = false

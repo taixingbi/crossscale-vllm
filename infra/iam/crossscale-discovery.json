@@ -1,20 +1,39 @@
 {
   "Version": "2012-10-17",
-  "Statement": [{
-    "Sid": "DiscoverExperimentEnvironment",
-    "Effect": "Allow",
-    "Action": [
-      "ec2:DescribeRegions",
-      "ec2:DescribeAvailabilityZones",
-      "ec2:DescribeImages",
-      "ec2:DescribeInstanceTypes",
-      "ec2:DescribeInstanceTypeOfferings",
-      "eks:DescribeClusterVersions",
-      "eks:DescribeAddonVersions",
-      "eks:ListClusters",
-      "servicequotas:GetServiceQuota",
-      "servicequotas:ListServiceQuotas"
-    ],
-    "Resource": "*"
-  }]
+  "Statement": [
+    {
+      "Sid": "DiscoverExperimentEnvironment",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeRegions",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeImages",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeInstanceTypeOfferings",
+        "eks:DescribeClusterVersions",
+        "eks:DescribeAddonVersions",
+        "eks:ListClusters",
+        "servicequotas:GetServiceQuota",
+        "servicequotas:ListServiceQuotas"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "ReadOwnRoleForTerraformSession",
+      "Effect": "Allow",
+      "Action": "iam:GetRole",
+      "Resource": "arn:aws:iam::646821141010:role/crossscale-deploy"
+    },
+    {
+      "Sid": "ReadPublicEksAmiMetadata",
+      "Effect": "Allow",
+      "Action": "ssm:GetParameter",
+      "Resource": "arn:aws:ssm:us-east-1::parameter/aws/service/eks/optimized-ami/1.34/*"
+    }
+  ]
 }

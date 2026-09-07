@@ -17,7 +17,7 @@ spec:
         prometheus.io/path: /metrics
     spec:
       nodeSelector:
-        node.kubernetes.io/instance-type: g5.2xlarge
+        node.kubernetes.io/instance-type: g5.xlarge
       tolerations:
         - key: nvidia.com/gpu
           operator: Exists
@@ -29,8 +29,8 @@ spec:
           ports:
             - {containerPort: 8000, name: http}
           resources:
-            requests: {cpu: '4', memory: 16Gi, nvidia.com/gpu: '1'}
-            limits: {nvidia.com/gpu: '1'}
+            requests: {cpu: '2', memory: 10Gi, nvidia.com/gpu: '1'}
+            limits: {memory: 12Gi, nvidia.com/gpu: '1'}
           startupProbe:
             httpGet: {path: /health, port: http}
             periodSeconds: 5

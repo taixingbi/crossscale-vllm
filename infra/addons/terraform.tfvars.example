@@ -1,4 +1,4 @@
 # Cluster connection variables come from cluster.auto.tfvars.json.
-gpu_ami_id = "ami-0123456789abcdef0" # Replace with a verified regional EKS NVIDIA AMI.
+gpu_ami_id = "ami-0c126bbe79be20f0a" # EKS 1.34 AL2023 NVIDIA x86_64 in us-east-1; verified 2026-09-07.
 gpu_limit = 4
 gateway_metrics_targets = ["10.42.0.100:8080"] # Replace with reachable load-generator address.

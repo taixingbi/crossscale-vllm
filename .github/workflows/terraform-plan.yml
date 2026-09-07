@@ -1,0 +1,60 @@
+name: Terraform review plan
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: crossscale-review-plan
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    name: Initial cluster review only
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      TF_IN_AUTOMATION: "true"
+      TF_INPUT: "false"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          terraform_version: 1.15.6
+          terraform_wrapper: false
+      - name: Assume read-only CrossScale role
+        uses: aws-actions/configure-aws-credentials@463133d79af6d001e45482f356e244208e65f0c5 # v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          role-session-name: crossscale-plan-${{ github.run_id }}
+          aws-region: us-east-1
+          allowed-account-ids: "646821141010"
+      - name: Generate review plan from empty state
+        shell: bash
+        run: |
+          set -euo pipefail
+          terraform -chdir=infra/cluster init -backend=false -lockfile=readonly
+          terraform -chdir=infra/cluster validate -no-color
+          terraform -chdir=infra/cluster plan -input=false -no-color \
+            -var-file=phase1.tfvars.example -out="${RUNNER_TEMP}/cluster.tfplan"
+          mkdir -p "${RUNNER_TEMP}/review"
+          terraform -chdir=infra/cluster show -no-color "${RUNNER_TEMP}/cluster.tfplan" > "${RUNNER_TEMP}/review/cluster-plan.txt"
+          terraform -chdir=infra/cluster show -json "${RUNNER_TEMP}/cluster.tfplan" > "${RUNNER_TEMP}/review/cluster-plan.json"
+          cp infra/cluster/phase1.tfvars.example "${RUNNER_TEMP}/review/"
+          printf '%s\n' "REVIEW ONLY: fresh state, placeholder API CIDR. Not an apply artifact." \
+            "Source commit: ${GITHUB_SHA}" \
+            "Cluster stage: 1 EKS cluster and 2 CPU system nodes. No GPU instances are created in this stage." \
+            "Later workload target: 2 to 4 g5.xlarge GPUs, one vLLM replica per GPU; Karpenter limit is eventually consistent." \
+            > "${RUNNER_TEMP}/review/README.txt"
+      - name: Upload review text and JSON (no executable plan)
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: crossscale-cluster-review-${{ github.sha }}
+          path: ${{ runner.temp }}/review/
+          retention-days: 3
+          if-no-files-found: error

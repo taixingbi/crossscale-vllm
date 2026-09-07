@@ -5,7 +5,10 @@ terraform {
     helm = { source = "hashicorp/helm", version = "~> 3.0" }
   }
 }
-provider "aws" { region = var.region }
+provider "aws" {
+  region              = var.region
+  allowed_account_ids = ["646821141010"]
+}
 data "aws_eks_cluster" "this" { name = var.cluster_name }
 provider "helm" {
   kubernetes = {
@@ -23,7 +26,7 @@ resource "helm_release" "karpenter" {
   namespace  = "kube-system"
   repository = "oci://public.ecr.aws/karpenter"
   chart      = "karpenter"
-  version    = "1.6.0"
+  version    = "1.6.8"
   atomic     = true
   timeout    = 600
   values = [yamlencode({
@@ -43,7 +46,7 @@ resource "helm_release" "device_plugin" {
   version    = "0.17.1"
   atomic     = true
   values = [yamlencode({
-    nodeSelector = { "node.kubernetes.io/instance-type" = "g5.2xlarge" }
+    nodeSelector = { "node.kubernetes.io/instance-type" = "g5.xlarge" }
     tolerations  = [{ key = "nvidia.com/gpu", operator = "Exists", effect = "NoSchedule" }]
   })]
 }

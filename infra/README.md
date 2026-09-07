@@ -3,7 +3,7 @@
 Two Terraform roots keep cluster creation separate from Kubernetes authentication:
 
 - `cluster/`: a dedicated VPC, two private subnets, one NAT gateway, EKS, two CPU system nodes, and Karpenter IAM/Pod Identity/interruption resources.
-- `addons/`: Karpenter, NVIDIA device plugin, KEDA, Prometheus, and an on-demand `g5.2xlarge` NodePool. GPUs are provisioned only when workloads require them. The vLLM Deployment and baseline-specific ScaledObject stay in `deploy/`; Terraform never owns their replica counts.
+- `addons/`: Karpenter, NVIDIA device plugin, KEDA, Prometheus, and an on-demand `g5.xlarge` NodePool. GPUs are provisioned only when workloads require them. The vLLM Deployment and baseline-specific ScaledObject stay in `deploy/`; Terraform never owns their replica counts.
 
 Prerequisites: Terraform >= 1.5.7, AWS CLI credentials with infrastructure provisioning permissions, kubectl, a selected EKS Kubernetes version, and an EKS AL2023 NVIDIA x86_64 AMI for that version in your region. The AWS identity applying `cluster/` receives cluster administrator access; use the same identity for `addons/`, or explicitly grant another identity access first. EKS and chart versions must be checked together before changing the pinned versions.
 
@@ -25,6 +25,20 @@ An account ID selects `OrganizationAccountAccessRole` by default; override `ORG_
 Sessions last one hour and are not refreshed by the wrapper. Run a fresh invocation for each operation; operations exceeding one hour need a refreshable AWS role profile instead. Do not add a second Terraform provider `assume_role` block when using the wrapper: the provider and CLI should use the same already-assumed identity.
 
 The reference repository also supports GitHub OIDC. Our CI remains credential-free validation; this change does not copy its automatic deployments or create accounts/roles. A future deployment workflow needs a role whose OIDC trust explicitly permits this repository.
+
+## Phase-one review plan (no apply)
+
+The selected scope is account `646821141010`, `us-east-1`, EKS `1.34`, and on-demand `g5.xlarge` (one A10G per node). The existing vLLM/KEDA manifests request two initial replicas and allow four maximum, one GPU per replica. The GPU pool limit is capped at four by input validation, but Karpenter limits remain eventually consistent, not a hard billing cap. The smaller host has 4 vCPU/16 GiB RAM, so vLLM requests 2 CPU/10 GiB and has a 12 GiB memory limit to leave room for Kubernetes/system daemons. Validate model startup memory and recalibrate throughput on this hardware.
+
+Cluster Terraform creates two `m5.large` CPU system nodes for controllers/monitoring in addition to the later 2–4 GPUs. GPU instances only appear when the add-ons and vLLM workload are subsequently deployed; the first cluster plan creates zero GPUs. No ECR repository is needed for the current public images. No customer-managed KMS key is created: EKS >=1.28 provides AWS-owned envelope encryption by default. Pod Identity is used instead of a separate cluster IRSA provider. See [AWS encryption documentation](https://docs.aws.amazon.com/eks/latest/userguide/envelope-encryption.html).
+
+The manual **Terraform review plan** workflow assumes the read-only OIDC role and plans `cluster/` from empty local state. It uses `phase1.tfvars.example`, including the **non-routable documentation CIDR `203.0.113.10/32`**. This is an initial-create review, not a drift assessment of existing infrastructure. It uploads plan text/JSON for three days and does not upload the executable plan or run apply. Provisioning IAM permissions remain absent. The full add-ons plan requires an actual EKS endpoint, so it cannot be produced before the cluster exists; Helm chart rendering and Terraform validation cover that stage for now.
+
+```sh
+gh workflow run terraform-plan.yml --repo taixingbi/crossscale-vllm --ref main
+```
+
+Before any later apply: replace the CIDR, select a reachable gateway host and pinned vLLM image/model, establish durable remote state, scope provisioning permissions, and generate a fresh plan. The reviewed public NVIDIA AMI is `ami-0c126bbe79be20f0a` (EKS 1.34 AL2023 x86_64 NVIDIA, us-east-1, queried 2026-09-07). Karpenter is pinned to `1.6.8`, in the 1.34-compatible release line; live readiness is not yet tested. The EKS version and CPU-node AMI/add-on selections are visible in the actual plan.
 
 ## Configure and review
 

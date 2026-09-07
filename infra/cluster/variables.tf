@@ -1,6 +1,10 @@
 variable "region" {
   type    = string
   default = "us-east-1"
+  validation {
+    condition     = var.region == "us-east-1"
+    error_message = "Phase one is restricted to us-east-1."
+  }
 }
 variable "cluster_name" {
   type    = string
