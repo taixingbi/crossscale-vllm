@@ -79,6 +79,13 @@ terraform -chdir=infra/addons validate
 helm lint infra/addons/charts/gpu --set clusterName=crossscale,nodeRole=crossscale-gpu,amiId=ami-0123456789abcdef0,gpuLimit=4
 ```
 
+When updating providers, refresh checksums for both developer Macs and Linux CI, and commit the updated lock files:
+
+```sh
+terraform -chdir=infra/cluster providers lock -platform=darwin_arm64 -platform=linux_amd64
+terraform -chdir=infra/addons providers lock -platform=darwin_arm64 -platform=linux_amd64
+```
+
 Validation does not prove AWS permissions, quotas, regional capacity, AMI compatibility, or live readiness. No cloud resources are created by these checks.
 
 References: [EKS module Karpenter example](https://github.com/terraform-aws-modules/terraform-aws-eks/tree/v21.0.0/examples/karpenter), [Karpenter NodePools](https://karpenter.sh/docs/concepts/nodepools/), [NVIDIA device plugin](https://github.com/NVIDIA/k8s-device-plugin).
