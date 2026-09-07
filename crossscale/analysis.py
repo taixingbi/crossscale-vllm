@@ -11,7 +11,7 @@ def compare(paths, left, right):
     for path in paths:
         for file in Path(path).rglob('manifest.json'):
             m = json.loads(file.read_text())
-            if m['baseline'] not in (left, right):
+            if m.get('baseline') not in (left, right):
                 continue
             s = json.loads(file.with_name('summary.json').read_text())
             modes.add(m['mode'])

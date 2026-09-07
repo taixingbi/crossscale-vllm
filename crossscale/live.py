@@ -32,6 +32,8 @@ async def events(response):
 
 
 async def run(c, baseline, out, url, model, tokens_path):
+    if Path(out).exists():
+        raise FileExistsError(out)
     http = aio()
     rows = workload(c)
     token_ids = json.loads(Path(tokens_path).read_text())

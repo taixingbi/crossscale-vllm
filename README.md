@@ -76,3 +76,12 @@ python3 -m crossscale.cli compare results/simulation/E2/default --left B6 --righ
 ## Continuous integration
 
 [GitHub Actions](https://github.com/taixingbi/crossscale-vllm/actions/workflows/ci.yml) runs on pushes, pull requests, and manual dispatch. It tests Python 3.11–3.14 (including the HTTP integration tests), smoke-tests the installed CLI, checks formatting and validates both Terraform roots using the committed provider locks, and lints/renders the GPU Helm chart. CI does not require AWS credentials or deploy infrastructure.
+
+Export supporting serving/GPU/capacity series after a run:
+
+```sh
+.venv/bin/python -m crossscale.cli telemetry --url http://PROMETHEUS:9090 \
+  --start START_UNIX_SECONDS --end END_UNIX_SECONDS --step 5 --out results/metrics-run17
+```
+
+Defaults scope queries to namespace `crossscale`; use `--queries queries.json` to provide your installed version's actual metric names and labels. Empty series are explicitly listed, never converted to zeros. DCGM GPU metrics require a separate exporter. E0 summary includes per-Pod stage timestamps linked through Node/providerID plus completed/censored gap statistics.

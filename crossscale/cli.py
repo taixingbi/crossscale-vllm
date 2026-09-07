@@ -36,6 +36,13 @@ def main():
             s.add_argument("--seeds", type=int, nargs="+", default=[17, 18, 19])
         if command == "calibrate":
             s.add_argument("--replica-rps", type=float, required=True)
+    s = sub.add_parser("telemetry")
+    s.add_argument("--url", required=True)
+    s.add_argument("--start", type=float, required=True)
+    s.add_argument("--end", type=float, required=True)
+    s.add_argument("--step", type=float, default=5)
+    s.add_argument("--out", required=True)
+    s.add_argument("--queries", help="optional JSON mapping of names to scoped PromQL")
     s = sub.add_parser("compare")
     s.add_argument("paths", nargs="+")
     s.add_argument("--left", default="B6")
@@ -49,6 +56,11 @@ def main():
     s = sub.add_parser("e0-summary")
     s.add_argument("path")
     a = p.parse_args()
+    if a.command == "telemetry":
+        from .telemetry import collect
+        queries = json.loads(Path(a.queries).read_text()) if a.queries else None
+        print(json.dumps(collect(a.url, a.start, a.end, a.step, a.out, queries)))
+        return
     if a.command == "compare":
         from .analysis import compare
         print(json.dumps(compare(a.paths, a.left, a.right), indent=2))
@@ -70,8 +82,12 @@ def main():
     elif a.command == "calibrate":
         if a.replica_rps <= 0:
             p.error("replica-rps must be positive")
+        if len(c["phases"]) != 3:
+            p.error("calibrate requires a three-phase normal/burst/recovery configuration")
         mix = c["phases"][0]["rates"]
         total = sum(mix.values())
+        if total <= 0:
+            p.error("calibration mix must contain traffic")
         for phase, factor in zip(c["phases"], [.65, 1.65, .65]):
             phase["rates"] = {t: v/total*a.replica_rps*c["initial_replicas"]*factor for t, v in mix.items()}
         c["calibration"] = {"single_replica_sustainable_rps": a.replica_rps, "source": "user supplied measured saturation; fixed tenant mix"}
