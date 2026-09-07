@@ -72,3 +72,7 @@ python3 -m crossscale.cli compare results/simulation/E2/default --left B6 --righ
 
 `profile.json` selects the highest consecutively passing tested RPS at which every tenant meets the goodput target in every seed. Rates are examples; extend the sweep as needed. `compare` bootstraps paired **run-level** WG differences, rejects mixed live/simulation data and duplicate pairs. Compare only one lag/error/hardware condition at a time.
 # crossscale-vllm
+
+## Continuous integration
+
+[GitHub Actions](https://github.com/taixingbi/crossscale-vllm/actions/workflows/ci.yml) runs on pushes, pull requests, and manual dispatch. It tests Python 3.11–3.14 (including the HTTP integration tests), smoke-tests the installed CLI, checks formatting and validates both Terraform roots using the committed provider locks, and lints/renders the GPU Helm chart. CI does not require AWS credentials or deploy infrastructure.
