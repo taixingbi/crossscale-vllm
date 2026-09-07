@@ -39,7 +39,7 @@ module "vpc" {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "21.0.0"
+  version = "21.1.0"
 
   name                         = var.cluster_name
   kubernetes_version           = var.kubernetes_version
@@ -50,7 +50,7 @@ module "eks" {
   enable_irsa = false
   # EKS >= 1.28 uses AWS-owned envelope encryption by default.
   create_kms_key                           = false
-  encryption_config                        = {}
+  encryption_config                        = null
   enable_cluster_creator_admin_permissions = true
   vpc_id                                   = module.vpc.vpc_id
   subnet_ids                               = module.vpc.private_subnets
@@ -77,7 +77,7 @@ module "eks" {
 
 module "karpenter" {
   source                          = "terraform-aws-modules/eks/aws//modules/karpenter"
-  version                         = "21.0.0"
+  version                         = "21.1.0"
   iam_role_name                   = "${var.cluster_name}-karpenter-controller"
   iam_policy_name                 = "${var.cluster_name}-karpenter-controller"
   queue_name                      = "${var.cluster_name}-karpenter-interruption"
