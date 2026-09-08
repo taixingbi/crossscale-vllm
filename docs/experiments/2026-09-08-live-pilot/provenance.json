@@ -1,0 +1,34 @@
+{
+  "tokenizer": "serving model /tokenize endpoint",
+  "corpus_sha256": "70747f42712838807abb641c3e1a36392029bf3e4ba7555753bfe6798babcd9c",
+  "tokens_sha256": "d7bb44c8269e021f8f2d4a6cb7f438f5ac20f6bc6d1b3f967aa09e3784683268",
+  "offered_requests": 57,
+  "scope": "pilot; shortened prompts, no admission or scaling",
+  "git_commit": "eb58570a46669df393f2ad0fb6e084c53ec28951",
+  "warmup": {
+    "requests": 3,
+    "input_output_tokens": [
+      [
+        128,
+        64
+      ],
+      [
+        512,
+        128
+      ],
+      [
+        1024,
+        256
+      ]
+    ],
+    "success": true
+  },
+  "formal_experiment": false,
+  "baseline_label_note": "Harness B0 denotes pass-through; this pilot uses one GPU, not formal two-GPU B0.",
+  "cache_condition": "Existing running pod; warmup and repeated tokenized corpus; prefix caching may benefit requests.",
+  "metrics_note": "First metrics snapshot captured shortly after load began; not exact run-start counter baseline.",
+  "transport_by_run": {
+    "run": "local kubectl port-forward",
+    "run-incluster": "separate CPU pod via Kubernetes Service"
+  }
+}
