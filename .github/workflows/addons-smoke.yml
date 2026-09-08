@@ -52,7 +52,11 @@ jobs:
         run: |
           set -euo pipefail
           kubectl apply -k deploy-overlays/smoke
-          kubectl -n crossscale rollout status deployment/vllm --timeout=35m
+          # A prior scheduling failure can leave ProgressDeadlineExceeded set
+          # while the same pod is now downloading successfully. Wait for the pod
+          # before checking the reconciled deployment status.
+          kubectl -n crossscale wait --for=condition=Ready pod -l app=vllm --timeout=35m
+          kubectl -n crossscale rollout status deployment/vllm --timeout=2m
       - name: Verify inference and metrics
         run: |
           set -euo pipefail
