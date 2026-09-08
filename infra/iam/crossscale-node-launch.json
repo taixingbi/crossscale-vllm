@@ -1,0 +1,42 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LaunchOnlyReviewedCpuType",
+      "Effect": "Allow",
+      "Action": "ec2:RunInstances",
+      "Resource": "arn:aws:ec2:us-east-1:646821141010:instance/*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1",
+          "ec2:InstanceType": "m5.large"
+        },
+        "ArnEquals": {
+          "ec2:LaunchTemplate": "arn:aws:ec2:us-east-1:646821141010:launch-template/lt-0afe60b4ec48877c1"
+        }
+      }
+    },
+    {
+      "Sid": "UseReviewedLaunchResources",
+      "Effect": "Allow",
+      "Action": "ec2:RunInstances",
+      "Resource": [
+        "arn:aws:ec2:us-east-1:646821141010:launch-template/lt-0afe60b4ec48877c1",
+        "arn:aws:ec2:us-east-1:646821141010:subnet/subnet-05240aa82192d9fca",
+        "arn:aws:ec2:us-east-1:646821141010:subnet/subnet-0c254fd85664acf24",
+        "arn:aws:ec2:us-east-1:646821141010:security-group/sg-08327db151cc81ecf",
+        "arn:aws:ec2:us-east-1:646821141010:network-interface/*",
+        "arn:aws:ec2:us-east-1:646821141010:volume/*",
+        "arn:aws:ec2:us-east-1::image/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-1"
+        },
+        "ArnEquals": {
+          "ec2:LaunchTemplate": "arn:aws:ec2:us-east-1:646821141010:launch-template/lt-0afe60b4ec48877c1"
+        }
+      }
+    }
+  ]
+}

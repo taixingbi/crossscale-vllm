@@ -14,4 +14,10 @@ The applied scope is the first cluster stage: 1 EKS 1.34 cluster, 2 m5.large CPU
 
 The first apply created the VPC (`vpc-01469cc72f51e24c3`), initial project roles/log group and VPC defaults; state was saved to S3. It failed before EKS or compute creation. Parent-VPC authorization is missing for EC2 CreateSubnet/CreateSecurityGroup/CreateRouteTable; the policy file now contains a proposed exact-VPC grant and project-tagged NAT parent-resource grant. These additions were explicitly authorized and applied to AWS.
 
-The EIP quota API reports 5 while DescribeAddresses returns 7 existing allocations. One new NAT EIP requires requesting a limit of 8. No existing address will be released/reassigned. The user explicitly authorized the quota request, which was submitted with ID `f69534167ad64fa187c098ddd6d2e4c1WZFiQlu0` and is pending AWS approval. No existing addresses were modified.
+The EIP quota API reports 5 while DescribeAddresses returns 7 existing allocations. One new NAT EIP requires requesting a limit of 8. No existing address will be released/reassigned. The user explicitly authorized the quota request, which was submitted with ID `f69534167ad64fa187c098ddd6d2e4c1WZFiQlu0` and was approved at 8. No existing addresses were modified.
+
+## CPU launch authorization
+
+Recovery run `34171752590` created the EKS control plane (ACTIVE), networking/NAT and Karpenter IAM/SQS resources, but CreateNodegroup failed. AWS authorization decoding identifies missing `ec2:RunInstances` for the deployment role. No node groups exist yet.
+
+`crossscale-node-launch.json` was explicitly authorized and attached as the `crossscale-node-launch` inline policy: instance authorization is restricted to `m5.large` in us-east-1 using launch template `lt-0afe60b4ec48877c1`; supporting-resource permissions use that same launch template and the two CrossScale private subnets/node security group. This does not authorize GPU instance types. The Terraform scope check enforces the two-node count; IAM does not itself impose a two-instance count limit. The authorized recovery run is `34173386283`.
