@@ -1,0 +1,7 @@
+region                  = "us-east-1"
+cluster_name            = "crossscale"
+node_role_name          = "crossscale-gpu"
+interruption_queue      = "crossscale-karpenter-interruption"
+gpu_ami_id              = "ami-0c126bbe79be20f0a"
+gpu_limit               = 1
+gateway_metrics_targets = [] # Inference-only smoke test; no load generator yet.

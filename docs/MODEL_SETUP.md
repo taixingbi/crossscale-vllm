@@ -53,7 +53,7 @@ policy, and create its Pod Identity association. Plan and apply the add-ons
 through the authorized deployment path. The cluster-only workflow does not apply
 this root. Supply the gateway metrics target and verify the GPU runtime is ready.
 
-Pin the remaining vLLM image placeholder to a tested image/digest. Then run:
+The vLLM image is pinned by digest. Use the [one-GPU smoke workflow](GPU_SMOKE_TEST.md) for initial validation; the following base deployment requests two GPUs:
 
 ```sh
 # The namespace is created by the add-ons GPU-pool release.

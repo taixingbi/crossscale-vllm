@@ -74,7 +74,7 @@ resource "helm_release" "prometheus" {
     alertmanager = { enabled = false }
     prometheus = { prometheusSpec = {
       retention = "2d"
-      additionalScrapeConfigs = [
+      additionalScrapeConfigs = concat([
         {
           job_name              = "crossscale-vllm"
           scrape_interval       = "5s"
@@ -85,13 +85,14 @@ resource "helm_release" "prometheus" {
             { source_labels = ["__meta_kubernetes_namespace"], target_label = "namespace" },
             { source_labels = ["__meta_kubernetes_pod_name"], target_label = "pod" }
           ]
-        },
+        }
+        ], length(var.gateway_metrics_targets) == 0 ? [] : [
         {
           job_name        = "crossscale-gateway"
           scrape_interval = "5s"
           static_configs  = [{ targets = var.gateway_metrics_targets }]
         }
-      ]
+      ])
     } }
   })]
 }
@@ -101,7 +102,7 @@ resource "helm_release" "gpu_pool" {
   create_namespace = true
   chart            = "${path.module}/charts/gpu"
   atomic           = true
-  values = [yamlencode({
+  values = [jsonencode({
     clusterName = var.cluster_name
     nodeRole    = var.node_role_name
     amiId       = var.gpu_ami_id

@@ -1,4 +1,4 @@
-# Pin the vLLM image, then deploy with kubectl apply -k deploy.
+# Deploy with kubectl apply -k deploy; smoke overlay uses one GPU.
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -46,7 +46,7 @@ spec:
           effect: NoSchedule
       containers:
         - name: vllm
-          image: vllm/vllm-openai:REPLACE_WITH_PINNED_VERSION
+          image: vllm/vllm-openai:v0.28.0-cu129-ubuntu2404@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5
           args: [--model, /models/llama, --served-model-name, meta-llama/Llama-3.1-8B-Instruct, --max-model-len, '32768', --gpu-memory-utilization, '0.90']
           env:
             - {name: HF_HUB_OFFLINE, value: "1"}

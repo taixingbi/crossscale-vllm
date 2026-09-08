@@ -25,10 +25,11 @@ variable "gpu_limit" {
   }
 }
 variable "gateway_metrics_targets" {
-  description = "host:port targets reachable from Prometheus pods; do not use localhost."
+  description = "Reachable host:port targets; empty disables gateway scraping for inference-only smoke tests."
   type        = list(string)
+  default     = []
   validation {
-    condition     = length(var.gateway_metrics_targets) > 0
-    error_message = "Supply at least one reachable gateway metrics target."
+    condition     = alltrue([for target in var.gateway_metrics_targets : can(regex("^[^ :/]+:[0-9]+$", target)) && !startswith(target, "localhost:") && !startswith(target, "127.0.0.1:")])
+    error_message = "Gateway metrics targets must be reachable host:port addresses, not localhost."
   }
 }
