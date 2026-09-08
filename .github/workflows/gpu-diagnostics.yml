@@ -1,0 +1,54 @@
+name: GPU runtime diagnostics
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: crossscale-cluster-state
+  cancel-in-progress: false
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      TF_IN_AUTOMATION: "true"
+      TF_INPUT: "false"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd
+        with:
+          terraform_version: 1.15.6
+          terraform_wrapper: false
+      - uses: azure/setup-helm@59b1c81c6280f5abebb1fb1bc585696daa7dfb42
+        with:
+          version: v3.18.4
+      - uses: aws-actions/configure-aws-credentials@463133d79af6d001e45482f356e244208e65f0c5
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          role-session-name: crossscale-smoke-${{ github.run_id }}
+          aws-region: us-east-1
+          allowed-account-ids: "646821141010"
+          role-duration-seconds: 7200
+      - name: Allow this runner through the EKS API allowlist
+        run: python scripts/eks-runner-access.py open
+      - name: Connect to EKS
+        run: |
+          aws eks update-kubeconfig --name crossscale --region us-east-1 --kubeconfig "${RUNNER_TEMP}/kubeconfig"
+          echo "KUBECONFIG=${RUNNER_TEMP}/kubeconfig" >> "$GITHUB_ENV"
+      - name: Inspect GPU node and device plugin
+        run: |
+          kubectl get nodes -o custom-columns=NAME:.metadata.name,TYPE:.metadata.labels.node\.kubernetes\.io/instance-type,GPU:.status.allocatable.nvidia\.com/gpu
+          kubectl -n kube-system get pods -l app.kubernetes.io/name=nvidia-device-plugin -o wide
+          kubectl -n kube-system logs -l app.kubernetes.io/name=nvidia-device-plugin --all-containers --tail=100 || true
+          kubectl -n kube-system describe daemonset nvidia-device-plugin || true
+          kubectl -n kube-system get events --sort-by=.lastTimestamp | tail -35
+          kubectl -n crossscale get pods -o wide
+          kubectl -n crossscale get events --sort-by=.lastTimestamp | tail -25
+          kubectl get runtimeclasses
+          kubectl describe node -l node.kubernetes.io/instance-type=g5.xlarge
+      - name: Restore original EKS API allowlist
+        if: always()
+        run: python scripts/eks-runner-access.py close
