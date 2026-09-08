@@ -22,6 +22,8 @@ spec:
         prometheus.io/port: '8000'
         prometheus.io/path: /metrics
     spec:
+      # Avoid Kubernetes injecting VLLM_PORT=tcp://... from the vllm Service.
+      enableServiceLinks: false
       serviceAccountName: vllm-model-reader
       initContainers:
         - name: download-model
@@ -47,7 +49,7 @@ spec:
       containers:
         - name: vllm
           image: vllm/vllm-openai:v0.28.0-cu129-ubuntu2404@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5
-          args: [--model, /models/llama, --served-model-name, meta-llama/Llama-3.1-8B-Instruct, --max-model-len, '32768', --gpu-memory-utilization, '0.90']
+          args: [/models/llama, --served-model-name, meta-llama/Llama-3.1-8B-Instruct, --max-model-len, '32768', --gpu-memory-utilization, '0.90']
           env:
             - {name: HF_HUB_OFFLINE, value: "1"}
             - {name: TRANSFORMERS_OFFLINE, value: "1"}

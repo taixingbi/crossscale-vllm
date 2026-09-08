@@ -75,7 +75,8 @@ jobs:
           kubectl get nodeclaims,ec2nodeclasses,nodepools || true
           kubectl -n crossscale get events --sort-by=.lastTimestamp | tail -40 || true
           kubectl -n crossscale logs -l app=vllm -c download-model --tail=40 || true
-          kubectl -n crossscale logs -l app=vllm -c vllm --tail=80 || true
+          kubectl -n crossscale logs -l app=vllm -c vllm --tail=120 || true
+          kubectl -n crossscale logs -l app=vllm -c vllm --previous --tail=120 || true
           kubectl -n kube-system logs -l app.kubernetes.io/name=karpenter --tail=40 || true
       - name: Restore original EKS API allowlist
         if: always()
