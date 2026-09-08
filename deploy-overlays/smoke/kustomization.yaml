@@ -11,6 +11,9 @@ patches:
       name: vllm
     patch: |-
       - op: add
+        path: /spec/progressDeadlineSeconds
+        value: 2400
+      - op: add
         path: /spec/strategy
         value:
           type: Recreate

@@ -40,7 +40,7 @@ jobs:
           echo "KUBECONFIG=${RUNNER_TEMP}/kubeconfig" >> "$GITHUB_ENV"
       - name: Inspect GPU node and device plugin
         run: |
-          kubectl get nodes -o custom-columns=NAME:.metadata.name,TYPE:.metadata.labels.node\.kubernetes\.io/instance-type,GPU:.status.allocatable.nvidia\.com/gpu
+          kubectl get nodes -o 'custom-columns=NAME:.metadata.name,TYPE:.metadata.labels.node\.kubernetes\.io/instance-type,GPU:.status.allocatable.nvidia\.com/gpu'
           kubectl -n kube-system get pods -l app.kubernetes.io/name=nvidia-device-plugin -o wide
           kubectl -n kube-system logs -l app.kubernetes.io/name=nvidia-device-plugin --all-containers --tail=100 || true
           kubectl -n kube-system describe daemonset nvidia-device-plugin || true

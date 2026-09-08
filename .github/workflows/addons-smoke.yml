@@ -65,6 +65,8 @@ jobs:
       - name: Collect diagnostics
         if: failure()
         run: |
+          kubectl -n kube-system get pods -l app.kubernetes.io/name=nvidia-device-plugin -o wide || true
+          kubectl -n kube-system logs -l app.kubernetes.io/name=nvidia-device-plugin --all-containers --tail=60 || true
           kubectl -n crossscale get pods -o wide || true
           kubectl get nodeclaims,ec2nodeclasses,nodepools || true
           kubectl -n crossscale get events --sort-by=.lastTimestamp | tail -40 || true

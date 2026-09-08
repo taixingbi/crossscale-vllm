@@ -47,7 +47,10 @@ resource "helm_release" "device_plugin" {
   atomic     = true
   values = [yamlencode({
     nodeSelector = { "node.kubernetes.io/instance-type" = "g5.xlarge" }
-    tolerations  = [{ key = "nvidia.com/gpu", operator = "Exists", effect = "NoSchedule" }]
+    # EKS/Karpenter labels instance types; NFD is not installed. Clear the chart's
+    # default NFD affinity or the DaemonSet never starts on these GPU nodes.
+    affinity    = null
+    tolerations = [{ key = "nvidia.com/gpu", operator = "Exists", effect = "NoSchedule" }]
   })]
 }
 resource "helm_release" "keda" {
