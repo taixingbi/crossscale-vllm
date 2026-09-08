@@ -1,0 +1,70 @@
+{
+  "seed": 17,
+  "duration_s": 120,
+  "drain_s": 90,
+  "initial_replicas": 1,
+  "max_replicas": 1,
+  "slow_interval_s": 5,
+  "fast_interval_s": 0.1,
+  "provisioning_lag_s": 60,
+  "eta_error": 0,
+  "eta_margin_s": 0.05,
+  "queue_target": 5,
+  "slots_per_replica": 8,
+  "prefill_tokens_s": 6000,
+  "decode_tokens_s": 40,
+  "request_timeout_s": 120,
+  "tenants": {
+    "A": {
+      "input_median": 128,
+      "output_median": 64,
+      "sigma": 0.25,
+      "ttft_s": 0.5,
+      "tpot_s": 0.05,
+      "weight": 3
+    },
+    "B": {
+      "input_median": 512,
+      "output_median": 128,
+      "sigma": 0.25,
+      "ttft_s": 1.5,
+      "tpot_s": 0.08,
+      "weight": 2
+    },
+    "C": {
+      "input_median": 1024,
+      "output_median": 256,
+      "sigma": 0.25,
+      "ttft_s": 5,
+      "tpot_s": 0.12,
+      "weight": 1
+    }
+  },
+  "phases": [
+    {
+      "start_s": 0,
+      "rates": {
+        "A": 0.19999999999999998,
+        "B": 0.09999999999999999,
+        "C": 0.049999999999999996
+      }
+    },
+    {
+      "start_s": 40,
+      "rates": {
+        "A": 0.4571428571428572,
+        "B": 0.2285714285714286,
+        "C": 0.1142857142857143
+      }
+    },
+    {
+      "start_s": 80,
+      "rates": {
+        "A": 0.19999999999999998,
+        "B": 0.09999999999999999,
+        "C": 0.049999999999999996
+      }
+    }
+  ],
+  "pilot_note": "One-GPU direct vLLM pilot via local kubectl port-forward, shortened prompts; not formal B0 or calibrated E1/E2 evidence."
+}

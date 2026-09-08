@@ -1,0 +1,84 @@
+{
+  "offered": 1220,
+  "completed": 1220,
+  "ttft_misses": 226,
+  "tpot_misses": 0,
+  "max_dispatch_lag_s": 0.03301259922409372,
+  "sustainable_rps": 0.2,
+  "rates": [
+    {
+      "rps": 0.1,
+      "passing_seeds": 3,
+      "mean_wg": 1.0,
+      "min_wg": 1.0,
+      "max_wg": 1.0,
+      "min_tenant_goodput": {
+        "A": 1.0,
+        "B": 1.0,
+        "C": 1.0
+      }
+    },
+    {
+      "rps": 0.2,
+      "passing_seeds": 3,
+      "mean_wg": 0.9916666666666667,
+      "min_wg": 0.975,
+      "max_wg": 1.0,
+      "min_tenant_goodput": {
+        "A": 0.95,
+        "B": 1.0,
+        "C": 1.0
+      }
+    },
+    {
+      "rps": 0.3,
+      "passing_seeds": 2,
+      "mean_wg": 0.9819444444444444,
+      "min_wg": 0.9458333333333333,
+      "max_wg": 1.0,
+      "min_tenant_goodput": {
+        "A": 0.9333333333333333,
+        "B": 0.9375,
+        "C": 1.0
+      }
+    },
+    {
+      "rps": 0.4,
+      "passing_seeds": 2,
+      "mean_wg": 0.9595959595959596,
+      "min_wg": 0.8787878787878788,
+      "max_wg": 1.0,
+      "min_tenant_goodput": {
+        "A": 0.7878787878787878,
+        "B": 0.9545454545454546,
+        "C": 1.0
+      }
+    },
+    {
+      "rps": 0.6,
+      "passing_seeds": 0,
+      "mean_wg": 0.794209007132422,
+      "min_wg": 0.7468507261060453,
+      "max_wg": 0.8400673400673401,
+      "min_tenant_goodput": {
+        "A": 0.6595744680851063,
+        "B": 0.775,
+        "C": 0.9523809523809523
+      }
+    },
+    {
+      "rps": 0.8,
+      "passing_seeds": 0,
+      "mean_wg": 0.6484591665451133,
+      "min_wg": 0.5662097953216374,
+      "max_wg": 0.7032623088961117,
+      "min_tenant_goodput": {
+        "A": 0.53125,
+        "B": 0.5333333333333333,
+        "C": 0.7368421052631579
+      }
+    }
+  ],
+  "start_unix_s": 1788902417.0303013,
+  "end_unix_s": 1788905760.3980677
+}
