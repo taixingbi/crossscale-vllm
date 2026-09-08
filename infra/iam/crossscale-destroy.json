@@ -12,19 +12,23 @@
         "eks:DeletePodIdentityAssociation"
       ],
       "Resource": [
+        "arn:aws:eks:us-east-1:646821141010:access-entry/crossscale/role/646821141010/crossscale-deploy/aed03f2c-2f78-cbb1-e0d9-be0d8abc1d37",
+        "arn:aws:eks:us-east-1:646821141010:access-entry/crossscale/role/646821141010/crossscale-gpu/e2d03f2c-9913-989c-e832-25e0e06b2acf",
         "arn:aws:eks:us-east-1:646821141010:addon/crossscale/coredns/f0d03f36-29dc-56bc-d8e8-53b3f10214d1",
         "arn:aws:eks:us-east-1:646821141010:addon/crossscale/eks-pod-identity-agent/c2d03f2c-302c-637e-6462-606123325cff",
         "arn:aws:eks:us-east-1:646821141010:addon/crossscale/kube-proxy/62d03f36-29dc-f3c5-9ebe-bbed4959e8c8",
         "arn:aws:eks:us-east-1:646821141010:addon/crossscale/vpc-cni/a2d03f2c-302c-9d03-bd4c-2833e105a199",
         "arn:aws:eks:us-east-1:646821141010:cluster/crossscale",
-        "arn:aws:eks:us-east-1:646821141010:nodegroup/crossscale/crossscale-system-8810cfbf67b94d48cb9c9ec5f5/a2d03f35-5813-32e0-ebf0-4c8a37fad96d"
+        "arn:aws:eks:us-east-1:646821141010:nodegroup/crossscale/crossscale-system-8810cfbf67b94d48cb9c9ec5f5/a2d03f35-5813-32e0-ebf0-4c8a37fad96d",
+        "arn:aws:eks:us-east-1:646821141010:podidentityassociation/crossscale/a-sn9eijkm6xrji2yj0"
       ]
     },
     {
       "Effect": "Allow",
       "Action": [
         "iam:DeleteRole",
-        "iam:DeleteRolePolicy"
+        "iam:DeleteRolePolicy",
+        "iam:ListInstanceProfilesForRole"
       ],
       "Resource": [
         "arn:aws:iam::646821141010:role/crossscale-cluster-38400cf805bf6749ffa463cd08",
