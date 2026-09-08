@@ -21,7 +21,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -e '.[live]'
 ```
 
-1. Create the environment using [Terraform setup](infra/README.md), or prepare an EKS cluster with GPU device plugin, Karpenter NodePool/EC2NodeClass, KEDA and Prometheus. Fill in image/model placeholders in `deploy/vllm.yaml`; use a dedicated namespace. The optional `infra/` configuration provisions cloud infrastructure; local simulations do not need it. Configure Prometheus discovery of vLLM and the gateway explicitly; annotations alone do not guarantee scraping.
+1. Create the environment using [Terraform setup](infra/README.md), or prepare an EKS cluster with GPU device plugin, Karpenter NodePool/EC2NodeClass, KEDA and Prometheus. The selected model is `meta-llama/Llama-3.1-8B-Instruct`. Pin the image in `deploy/vllm.yaml` and configure its S3 model reader as described in [model setup](docs/MODEL_SETUP.md); use a dedicated namespace. The optional `infra/` configuration provisions cloud infrastructure; local simulations do not need it. Configure Prometheus discovery of vLLM and the gateway explicitly; annotations alone do not guarantee scraping.
 2. Capture E0, then profile one fixed GPU before choosing rates. Use a model-tokenized corpus saved as a JSON integer array (`tokens.json`) with at least 16,384 valid tokens. The runner sends `/v1/completions` with token IDs and deterministic length control; the chosen vLLM version must support `ignore_eos` and streamed usage. Supply `VLLM_API_KEY` via environment if required.
 3. Run the observer using your explicit kube context. Its `state.json` is the gateway's input. E0 ETA is a held-out training P90, in seconds. Raw observations contain cluster object metadata: keep results private.
 

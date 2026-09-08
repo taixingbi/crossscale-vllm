@@ -12,7 +12,7 @@
           "ec2:InstanceType": "m5.large"
         },
         "ArnEquals": {
-          "ec2:LaunchTemplate": "arn:aws:ec2:us-east-1:646821141010:launch-template/lt-0afe60b4ec48877c1"
+          "ec2:LaunchTemplate": "arn:aws:ec2:us-east-1:646821141010:launch-template/lt-088bf7d7a865a9c40"
         }
       }
     },
@@ -21,10 +21,10 @@
       "Effect": "Allow",
       "Action": "ec2:RunInstances",
       "Resource": [
-        "arn:aws:ec2:us-east-1:646821141010:launch-template/lt-0afe60b4ec48877c1",
-        "arn:aws:ec2:us-east-1:646821141010:subnet/subnet-05240aa82192d9fca",
-        "arn:aws:ec2:us-east-1:646821141010:subnet/subnet-0c254fd85664acf24",
-        "arn:aws:ec2:us-east-1:646821141010:security-group/sg-08327db151cc81ecf",
+        "arn:aws:ec2:us-east-1:646821141010:launch-template/lt-088bf7d7a865a9c40",
+        "arn:aws:ec2:us-east-1:646821141010:subnet/subnet-0224d57cacfecbbb1",
+        "arn:aws:ec2:us-east-1:646821141010:subnet/subnet-0dfd48124c95efe1b",
+        "arn:aws:ec2:us-east-1:646821141010:security-group/sg-013f007544002ef8a",
         "arn:aws:ec2:us-east-1:646821141010:network-interface/*",
         "arn:aws:ec2:us-east-1:646821141010:volume/*",
         "arn:aws:ec2:us-east-1::image/*"
@@ -34,7 +34,7 @@
           "aws:RequestedRegion": "us-east-1"
         },
         "ArnEquals": {
-          "ec2:LaunchTemplate": "arn:aws:ec2:us-east-1:646821141010:launch-template/lt-0afe60b4ec48877c1"
+          "ec2:LaunchTemplate": "arn:aws:ec2:us-east-1:646821141010:launch-template/lt-088bf7d7a865a9c40"
         }
       }
     }

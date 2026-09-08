@@ -73,10 +73,10 @@ terraform -chdir=infra/addons apply addons.tfplan
 
 The add-ons machine needs access to the EKS API from an allowed CIDR. `gateway_metrics_targets` must be an address reachable from Prometheus pods (for example the private IP and port of a load-generator host). Provision that host separately. Prometheus scrapes vLLM pods individually and attaches the `namespace` label needed by the queue query. It scrapes gateway targets with job `crossscale-gateway` every five seconds. The service address remains `http://prometheus-operated.monitoring.svc:9090`, matching the existing scaler YAML. Prometheus uses ephemeral storage here; export any data needed beyond the run.
 
-Fill in the pinned vLLM image/model in `deploy/vllm.yaml`. Apply it with an explicit context, then install **one** appropriate scaler according to the root README. Verify the Prometheus targets and metrics before measuring a run. Do not reapply `deploy/vllm.yaml` during an autoscaled run: its initial `replicas` field can reset the HPA's value.
+Follow [S3 model setup](../docs/MODEL_SETUP.md) and pin the vLLM image in `deploy/vllm.yaml`. Apply it with an explicit context, then install **one** appropriate scaler according to the root README. Verify the Prometheus targets and metrics before measuring a run. Do not reapply `deploy/vllm.yaml` during an autoscaled run: its initial `replicas` field can reset the HPA's value.
 
 ```sh
-kubectl --context YOUR_CONTEXT apply -f deploy/vllm.yaml
+kubectl --context YOUR_CONTEXT apply -k deploy
 kubectl --context YOUR_CONTEXT get nodepool,ec2nodeclass
 kubectl --context YOUR_CONTEXT -n crossscale get pods -o wide
 # Example for B6; do not install both scaler files:
