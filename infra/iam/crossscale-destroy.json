@@ -1,0 +1,153 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "eks:DeleteCluster",
+        "eks:DeleteNodegroup",
+        "eks:DeleteAddon",
+        "eks:DeleteAccessEntry",
+        "eks:DisassociateAccessPolicy",
+        "eks:DeletePodIdentityAssociation"
+      ],
+      "Resource": [
+        "arn:aws:eks:us-east-1:646821141010:addon/crossscale/coredns/f0d03f36-29dc-56bc-d8e8-53b3f10214d1",
+        "arn:aws:eks:us-east-1:646821141010:addon/crossscale/eks-pod-identity-agent/c2d03f2c-302c-637e-6462-606123325cff",
+        "arn:aws:eks:us-east-1:646821141010:addon/crossscale/kube-proxy/62d03f36-29dc-f3c5-9ebe-bbed4959e8c8",
+        "arn:aws:eks:us-east-1:646821141010:addon/crossscale/vpc-cni/a2d03f2c-302c-9d03-bd4c-2833e105a199",
+        "arn:aws:eks:us-east-1:646821141010:cluster/crossscale",
+        "arn:aws:eks:us-east-1:646821141010:nodegroup/crossscale/crossscale-system-8810cfbf67b94d48cb9c9ec5f5/a2d03f35-5813-32e0-ebf0-4c8a37fad96d"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeleteRole",
+        "iam:DeleteRolePolicy"
+      ],
+      "Resource": [
+        "arn:aws:iam::646821141010:role/crossscale-cluster-38400cf805bf6749ffa463cd08",
+        "arn:aws:iam::646821141010:role/crossscale-gpu",
+        "arn:aws:iam::646821141010:role/crossscale-karpenter-controller-5979e3dd511cffdb79c8095e5d",
+        "arn:aws:iam::646821141010:role/crossscale-system-746c4bae28344cc12164125cdf"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:DeletePolicy"
+      ],
+      "Resource": [
+        "arn:aws:iam::646821141010:policy/crossscale-karpenter-controller-40c9a368666dede32289000a14"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:DeleteLogGroup"
+      ],
+      "Resource": [
+        "arn:aws:logs:us-east-1:646821141010:log-group:/aws/eks/crossscale/cluster:*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:DeleteRule"
+      ],
+      "Resource": [
+        "arn:aws:events:us-east-1:646821141010:rule/crossscale-HealthEvent-9392cc14e411ee37264d5bae60",
+        "arn:aws:events:us-east-1:646821141010:rule/crossscale-InstanceRebalance-e09235dd86b751a18c813f6044",
+        "arn:aws:events:us-east-1:646821141010:rule/crossscale-InstanceStateChange-19e8748c589087d1ca17629bed",
+        "arn:aws:events:us-east-1:646821141010:rule/crossscale-SpotInterrupt-9a18998878687094e5a7ce9d3a"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sqs:DeleteQueue"
+      ],
+      "Resource": [
+        "arn:aws:sqs:us-east-1:646821141010:crossscale-karpenter-interruption"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteVpc"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:646821141010:vpc/vpc-01469cc72f51e24c3"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteSubnet"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:646821141010:subnet/subnet-0387b351d8064a71c",
+        "arn:aws:ec2:us-east-1:646821141010:subnet/subnet-05240aa82192d9fca",
+        "arn:aws:ec2:us-east-1:646821141010:subnet/subnet-0b3e0bdd2b652e8d3",
+        "arn:aws:ec2:us-east-1:646821141010:subnet/subnet-0c254fd85664acf24"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteSecurityGroup"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:646821141010:security-group/sg-0363597c808922931",
+        "arn:aws:ec2:us-east-1:646821141010:security-group/sg-08327db151cc81ecf"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteInternetGateway"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:646821141010:internet-gateway/igw-04a2880f6ecf0997c"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteNatGateway"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:646821141010:natgateway/nat-000190576b4028620"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ReleaseAddress"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:646821141010:elastic-ip/eipalloc-0d1918006a322c821"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteRouteTable"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:646821141010:route-table/rtb-041d337d701fdb3ca",
+        "arn:aws:ec2:us-east-1:646821141010:route-table/rtb-083350a92f3983252"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DeleteLaunchTemplate"
+      ],
+      "Resource": [
+        "arn:aws:ec2:us-east-1:646821141010:launch-template/lt-0afe60b4ec48877c1"
+      ]
+    }
+  ]
+}

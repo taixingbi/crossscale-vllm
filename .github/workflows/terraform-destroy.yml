@@ -1,0 +1,68 @@
+name: Terraform cluster destroy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: crossscale-cluster-state
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    name: Destroy authorized CrossScale resources
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      TF_IN_AUTOMATION: "true"
+      TF_INPUT: "false"
+      EKS_ADMIN_CIDR: ${{ secrets.EKS_ADMIN_CIDR }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          terraform_version: 1.15.6
+          terraform_wrapper: false
+      - name: Assume CrossScale role
+        uses: aws-actions/configure-aws-credentials@463133d79af6d001e45482f356e244208e65f0c5 # v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          role-session-name: crossscale-destroy-${{ github.run_id }}
+          aws-region: us-east-1
+          allowed-account-ids: "646821141010"
+          role-duration-seconds: 7200
+      - name: Generate plan against persistent state
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$EKS_ADMIN_CIDR" || { echo "Administrator CIDR secret is required"; exit 1; }
+          python scripts/plan-input.py prepare
+          terraform -chdir=infra/cluster init -backend-config=backend.hcl -lockfile=readonly
+          terraform -chdir=infra/cluster validate -no-color
+          terraform -chdir=infra/cluster plan -destroy -input=false -no-color \
+            -var-file=phase1.tfvars.example -var-file="${RUNNER_TEMP}/admin.tfvars.json" -out="${RUNNER_TEMP}/cluster.tfplan"
+          mkdir -p "${RUNNER_TEMP}/review"
+          terraform -chdir=infra/cluster show -no-color "${RUNNER_TEMP}/cluster.tfplan" > "${RUNNER_TEMP}/review/cluster-plan.txt"
+          terraform -chdir=infra/cluster show -json "${RUNNER_TEMP}/cluster.tfplan" > "${RUNNER_TEMP}/review/cluster-plan.json"
+          python scripts/check-destroy-plan.py "${RUNNER_TEMP}/review/cluster-plan.json"
+          python scripts/plan-input.py redact
+      - name: Upload review text and JSON (no executable plan)
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: crossscale-cluster-review-${{ github.sha }}
+          path: ${{ runner.temp }}/review/
+          retention-days: 3
+          if-no-files-found: error
+      - name: Destroy using the verified plan
+        run: terraform -chdir=infra/cluster apply -input=false -no-color "${RUNNER_TEMP}/cluster.tfplan"
+      - name: Verify empty Terraform state
+        shell: bash
+        run: |
+          set -euo pipefail
+          remaining=$(terraform -chdir=infra/cluster state list)
+          test -z "$remaining" || { echo "$remaining"; exit 1; }
