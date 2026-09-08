@@ -1,0 +1,10 @@
+{
+  "git_commit": "07bb50ad9ba38f1cdf950b15b6198e76a70f8079",
+  "vllm_image": "vllm/vllm-openai:v0.28.0-cu129-ubuntu2404@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5",
+  "loadgen_image_id": "docker.io/library/python@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534",
+  "tokens_sha256": "d7bb44c8269e021f8f2d4a6cb7f438f5ac20f6bc6d1b3f967aa09e3784683268",
+  "scope": "short-context warm-cache single-GPU profile",
+  "transport": "separate CPU pod to Kubernetes Service",
+  "source": "results/profile-20260908",
+  "deployment_spec_unchanged": true
+}

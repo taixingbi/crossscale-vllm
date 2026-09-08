@@ -1,0 +1,201 @@
+{
+  "rates": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.6,
+    0.8
+  ],
+  "seeds": [
+    17,
+    18,
+    19
+  ],
+  "duration_s": 180,
+  "target_per_tenant": 0.95,
+  "max_dispatch_lag_s": 0.05,
+  "scope": "shortened-prompt, warm existing GPU, repeated corpus, default prefix caching",
+  "episodes": [
+    {
+      "rps": 0.1,
+      "seed": 17,
+      "offered": 12,
+      "tenant_samples": {
+        "A": 4,
+        "B": 7,
+        "C": 1
+      }
+    },
+    {
+      "rps": 0.1,
+      "seed": 18,
+      "offered": 15,
+      "tenant_samples": {
+        "A": 12,
+        "B": 1,
+        "C": 2
+      }
+    },
+    {
+      "rps": 0.1,
+      "seed": 19,
+      "offered": 15,
+      "tenant_samples": {
+        "A": 6,
+        "B": 6,
+        "C": 3
+      }
+    },
+    {
+      "rps": 0.2,
+      "seed": 17,
+      "offered": 28,
+      "tenant_samples": {
+        "A": 11,
+        "B": 14,
+        "C": 3
+      }
+    },
+    {
+      "rps": 0.2,
+      "seed": 18,
+      "offered": 34,
+      "tenant_samples": {
+        "A": 20,
+        "B": 8,
+        "C": 6
+      }
+    },
+    {
+      "rps": 0.2,
+      "seed": 19,
+      "offered": 34,
+      "tenant_samples": {
+        "A": 17,
+        "B": 11,
+        "C": 6
+      }
+    },
+    {
+      "rps": 0.3,
+      "seed": 17,
+      "offered": 53,
+      "tenant_samples": {
+        "A": 23,
+        "B": 23,
+        "C": 7
+      }
+    },
+    {
+      "rps": 0.3,
+      "seed": 18,
+      "offered": 40,
+      "tenant_samples": {
+        "A": 24,
+        "B": 12,
+        "C": 4
+      }
+    },
+    {
+      "rps": 0.3,
+      "seed": 19,
+      "offered": 58,
+      "tenant_samples": {
+        "A": 30,
+        "B": 16,
+        "C": 12
+      }
+    },
+    {
+      "rps": 0.4,
+      "seed": 17,
+      "offered": 68,
+      "tenant_samples": {
+        "A": 33,
+        "B": 22,
+        "C": 13
+      }
+    },
+    {
+      "rps": 0.4,
+      "seed": 18,
+      "offered": 61,
+      "tenant_samples": {
+        "A": 34,
+        "B": 14,
+        "C": 13
+      }
+    },
+    {
+      "rps": 0.4,
+      "seed": 19,
+      "offered": 70,
+      "tenant_samples": {
+        "A": 46,
+        "B": 17,
+        "C": 7
+      }
+    },
+    {
+      "rps": 0.6,
+      "seed": 17,
+      "offered": 108,
+      "tenant_samples": {
+        "A": 54,
+        "B": 33,
+        "C": 21
+      }
+    },
+    {
+      "rps": 0.6,
+      "seed": 18,
+      "offered": 108,
+      "tenant_samples": {
+        "A": 47,
+        "B": 40,
+        "C": 21
+      }
+    },
+    {
+      "rps": 0.6,
+      "seed": 19,
+      "offered": 113,
+      "tenant_samples": {
+        "A": 67,
+        "B": 32,
+        "C": 14
+      }
+    },
+    {
+      "rps": 0.8,
+      "seed": 17,
+      "offered": 130,
+      "tenant_samples": {
+        "A": 71,
+        "B": 39,
+        "C": 20
+      }
+    },
+    {
+      "rps": 0.8,
+      "seed": 18,
+      "offered": 128,
+      "tenant_samples": {
+        "A": 64,
+        "B": 45,
+        "C": 19
+      }
+    },
+    {
+      "rps": 0.8,
+      "seed": 19,
+      "offered": 145,
+      "tenant_samples": {
+        "A": 82,
+        "B": 44,
+        "C": 19
+      }
+    }
+  ]
+}
