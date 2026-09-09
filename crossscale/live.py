@@ -44,7 +44,7 @@ async def run(c, baseline, out, url, model, tokens_path):
     begin = time.monotonic()
     wall = time.time()
     headers = {"Authorization": "Bearer " + os.environ["VLLM_API_KEY"]} if os.environ.get("VLLM_API_KEY") else {}
-    async with http.ClientSession(timeout=http.ClientTimeout(total=c["request_timeout_s"]), connector=http.TCPConnector(limit=0), headers=headers) as session:
+    async with http.ClientSession(timeout=http.ClientTimeout(total=c["request_timeout_s"]), connector=http.TCPConnector(limit=0, force_close=c.get("client_force_close", False)), headers=headers) as session:
         async def send(r):
             scheduled = begin + r["offered_s"]
             await asyncio.sleep(max(0, scheduled-time.monotonic()))
@@ -96,7 +96,9 @@ async def gateway(c, baseline, state_path, upstream, host, port):
     from aiohttp import web
     active = {t: 0 for t in c["tenants"]}
     samples = {t: deque(maxlen=10000) for t in c["tenants"]}
-    session = http.ClientSession(timeout=http.ClientTimeout(total=c["request_timeout_s"]), connector=http.TCPConnector(limit=0))
+    # New upstream connections allow the Service to distribute requests to newly
+    # Ready replicas; the same setting applies to every live baseline.
+    session = http.ClientSession(timeout=http.ClientTimeout(total=c["request_timeout_s"]), connector=http.TCPConnector(limit=0, force_close=c.get("upstream_force_close", False)))
 
     def state():
         s = json.loads(Path(state_path).read_text())

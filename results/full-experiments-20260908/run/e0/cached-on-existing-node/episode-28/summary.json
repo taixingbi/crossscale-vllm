@@ -1,0 +1,78 @@
+{
+  "episodes": [
+    {
+      "scale_observed_unix_s": 1788915055.6366603,
+      "target": 4,
+      "from_replicas": 2,
+      "capacity_ready_unix_s": 1788915211.2182345,
+      "gap_s": 155.58157420158386
+    }
+  ],
+  "pod_stages": [
+    {
+      "pod": "vllm-5b64c7b7d9-gsxsj",
+      "uid": "0115e0b7-bf5b-47c0-84ca-d02987c32b9f",
+      "pod_created_unix_s": 1788908517.0,
+      "vllm_ready_unix_s": 1788908677.0,
+      "pod_scheduled_unix_s": 1788908517.0,
+      "container_started_unix_s": 1788908518.0,
+      "node": "ip-10-42-9-196.ec2.internal",
+      "node_ready_unix_s": 1788895749.0,
+      "nodeclaim_created_unix_s": 1788895712.0
+    },
+    {
+      "pod": "vllm-5b64c7b7d9-xqls2",
+      "uid": "c96a29bb-c78e-46a3-9779-90205f6227bb",
+      "pod_created_unix_s": 1788908517.0,
+      "vllm_ready_unix_s": 1788909487.0,
+      "pod_scheduled_unix_s": 1788908572.0,
+      "container_started_unix_s": 1788909278.0,
+      "node": "ip-10-42-19-22.ec2.internal",
+      "node_ready_unix_s": 1788908556.0,
+      "nodeclaim_created_unix_s": 1788908518.0
+    },
+    {
+      "pod": "vllm-5b64c7b7d9-4wfmt",
+      "uid": "38ba907a-faf1-4c95-bffc-d2d094df9da9",
+      "pod_created_unix_s": 1788915055.0,
+      "pod_scheduled_unix_s": 1788915055.0,
+      "node": "ip-10-42-8-239.ec2.internal",
+      "node_ready_unix_s": 1788909526.0,
+      "nodeclaim_created_unix_s": 1788909489.0,
+      "container_started_unix_s": 1788915057.0,
+      "vllm_ready_unix_s": 1788915206.0
+    },
+    {
+      "pod": "vllm-5b64c7b7d9-m5c27",
+      "uid": "21e6ebf5-adef-460a-bee3-9fcc160666b0",
+      "pod_created_unix_s": 1788915055.0,
+      "pod_scheduled_unix_s": 1788915055.0,
+      "node": "ip-10-42-3-156.ec2.internal",
+      "node_ready_unix_s": 1788909526.0,
+      "nodeclaim_created_unix_s": 1788909489.0,
+      "container_started_unix_s": 1788915057.0,
+      "vllm_ready_unix_s": 1788915210.0
+    }
+  ],
+  "gap_statistics": {
+    "completed": 1,
+    "censored": 0,
+    "p50_s": 155.58157420158386,
+    "p90_s": 155.58157420158386,
+    "p99_s": 155.58157420158386,
+    "min_s": 155.58157420158386,
+    "max_s": 155.58157420158386
+  },
+  "timing": "poll-observed transitions, not exact HPA decision timestamps; raw Kubernetes conditions retained",
+  "condition": "cached-on-existing-node",
+  "index": 28,
+  "nodeclass": "crossscale-gpu",
+  "error": null,
+  "split": "held-out",
+  "initial_claims": [
+    "crossscale-gpu-2kh95",
+    "crossscale-gpu-9d7bm",
+    "crossscale-gpu-l2p4r",
+    "crossscale-gpu-v67b4"
+  ]
+}

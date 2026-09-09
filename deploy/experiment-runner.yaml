@@ -1,0 +1,109 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: crossscale-experiment-runner
+  namespace: crossscale
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: crossscale-experiment-observer
+rules:
+  - apiGroups: ['']
+    resources: [nodes, pods]
+    verbs: [get, list]
+  - apiGroups: [karpenter.sh]
+    resources: [nodeclaims]
+    verbs: [get, list, patch, delete]
+  - apiGroups: [karpenter.sh]
+    resources: [nodepools]
+    resourceNames: [crossscale-gpu]
+    verbs: [get, patch]
+  - apiGroups: [karpenter.k8s.aws]
+    resources: [ec2nodeclasses]
+    resourceNames: [crossscale-gpu, crossscale-gpu-prebaked]
+    verbs: [get]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: crossscale-experiment-observer
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: crossscale-experiment-observer
+subjects:
+  - kind: ServiceAccount
+    name: crossscale-experiment-runner
+    namespace: crossscale
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: crossscale-experiment-control
+  namespace: crossscale
+rules:
+  - apiGroups: ['']
+    resources: [pods]
+    verbs: [get, list, patch, create]
+  - apiGroups: ['']
+    resources: [pods]
+    resourceNames: [crossscale-prebake-proof]
+    verbs: [delete]
+  - apiGroups: ['']
+    resources: [services, endpoints, events, configmaps]
+    verbs: [get, list]
+  - apiGroups: [apps]
+    resources: [deployments, deployments/scale]
+    resourceNames: [vllm]
+    verbs: [get, patch]
+  - apiGroups: [autoscaling]
+    resources: [horizontalpodautoscalers]
+    verbs: [get, list]
+  - apiGroups: [keda.sh]
+    resources: [scaledobjects]
+    verbs: [get, list, create, patch, delete]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: crossscale-experiment-control
+  namespace: crossscale
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: crossscale-experiment-control
+subjects:
+  - kind: ServiceAccount
+    name: crossscale-experiment-runner
+    namespace: crossscale
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: crossscale-gateway
+  namespace: crossscale
+spec:
+  selector: {app: crossscale-experiment-runner}
+  ports:
+    - {name: metrics, port: 8080, targetPort: 8080}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: crossscale-experiment-runner
+  namespace: crossscale
+  labels: {app: crossscale-experiment-runner}
+spec:
+  serviceAccountName: crossscale-experiment-runner
+  restartPolicy: Never
+  nodeSelector: {node.kubernetes.io/instance-type: m5.large}
+  containers:
+    - name: runner
+      image: python@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534
+      command: [sleep, '172800']
+      env:
+        - {name: AWS_DEFAULT_REGION, value: us-east-1}
+      resources:
+        requests: {cpu: '500m', memory: 512Mi, ephemeral-storage: 2Gi}
+        limits: {cpu: '2', memory: 2Gi, ephemeral-storage: 20Gi}

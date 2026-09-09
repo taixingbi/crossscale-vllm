@@ -49,7 +49,9 @@ def extract(path):
     """Report each scale-up episode; incomplete episodes remain censored."""
     episodes, previous, open_episode = [], None, None
     pod_stages = {}
-    with Path(path).open() as stream:
+    import gzip
+    opener = gzip.open if str(path).endswith('.gz') else open
+    with opener(path, 'rt') as stream:
         for line in stream:
             obs = json.loads(line)
             desired = obs["deployment"]["spec"]["replicas"]

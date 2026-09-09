@@ -1,0 +1,45 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../deploy
+replicas:
+  - name: vllm
+    count: 1
+patches:
+  - target:
+      kind: Deployment
+      name: vllm
+    patch: |-
+      - op: add
+        path: /spec/progressDeadlineSeconds
+        value: 2400
+      - op: add
+        path: /spec/strategy
+        value: {type: Recreate}
+      - op: replace
+        path: /spec/template/spec/containers/0/args
+        value:
+          - /models/llama
+          - --served-model-name
+          - meta-llama/Llama-3.1-8B-Instruct
+          - --max-model-len
+          - '32768'
+          - --max-num-seqs
+          - '4'
+          - --max-num-batched-tokens
+          - '1024'
+          - --enable-chunked-prefill
+          - --no-enable-prefix-caching
+          - --gpu-memory-utilization
+          - '0.90'
+          - --enforce-eager
+      - op: add
+        path: /spec/template/spec/initContainers/0/env/-
+        value: {name: MODEL_CACHE_ENABLED, value: '1'}
+      - op: replace
+        path: /spec/template/spec/volumes/0
+        value:
+          name: model
+          hostPath:
+            path: /var/lib/crossscale-model-cache
+            type: DirectoryOrCreate
