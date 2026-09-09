@@ -1,0 +1,476 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "count": 5,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:10:40Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "298519",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:11:19Z",
+            "message": "0/4 nodes are available: 2 Insufficient cpu, 2 Insufficient memory, 2 Insufficient nvidia.com/gpu, 2 node(s) didn't match Pod's node affinity/selector. no new claims to deallocate, preemption: 0/4 nodes are available: 2 No preemption victims found for incoming pod, 2 Preemption is not helpful for scheduling.",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:10:40Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3a92211c617dc",
+                "namespace": "crossscale",
+                "resourceVersion": "298723",
+                "uid": "5cbc32cd-3c8d-4ecc-b3ca-a3eeef22d9a3"
+            },
+            "reason": "FailedScheduling",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:10:41Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "298523",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:10:41Z",
+            "message": "Pod should schedule on: nodeclaim/crossscale-gpu-6z98d",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:10:41Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3a922532ba316",
+                "namespace": "crossscale",
+                "resourceVersion": "298534",
+                "uid": "5272ec7f-2411-4d9b-b70a-5d3ae367c9b6"
+            },
+            "reason": "Nominated",
+            "reportingComponent": "karpenter",
+            "reportingInstance": "",
+            "source": {
+                "component": "karpenter"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:13:51Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "298523",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:13:51Z",
+            "message": "Pod should schedule on: nodeclaim/crossscale-gpu-zbbrg",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:13:51Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3a94e93198dcf",
+                "namespace": "crossscale",
+                "resourceVersion": "299337",
+                "uid": "cdf437c0-8a9c-478e-bda4-f3450c190368"
+            },
+            "reason": "Nominated",
+            "reportingComponent": "karpenter",
+            "reportingInstance": "",
+            "source": {
+                "component": "karpenter"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 3,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:14:13Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "298523",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:14:18Z",
+            "message": "0/5 nodes are available: 1 node(s) had untolerated taint(s), 2 Insufficient cpu, 2 Insufficient memory, 2 Insufficient nvidia.com/gpu, 2 node(s) didn't match Pod's node affinity/selector. no new claims to deallocate, preemption: 0/5 nodes are available: 2 No preemption victims found for incoming pod, 3 Preemption is not helpful for scheduling.",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:14:13Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3a953b18bac70",
+                "namespace": "crossscale",
+                "resourceVersion": "299544",
+                "uid": "4a54e34c-3d30-4554-b3f1-e04ae6977382"
+            },
+            "reason": "FailedScheduling",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:14:28Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "299480",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:14:28Z",
+            "message": "0/5 nodes are available: 2 Insufficient cpu, 2 Insufficient memory, 2 node(s) didn't match Pod's node affinity/selector, 3 Insufficient nvidia.com/gpu. no new claims to deallocate, preemption: 0/5 nodes are available: 2 No preemption victims found for incoming pod, 3 Preemption is not helpful for scheduling.",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:14:28Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3a95708fb4b38",
+                "namespace": "crossscale",
+                "resourceVersion": "299635",
+                "uid": "e941dd6b-fc02-4f88-bb9c-e2a58b01ed1a"
+            },
+            "reason": "FailedScheduling",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 4,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:14:44Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "299624",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:30:00Z",
+            "message": "0/5 nodes are available: 2 node(s) didn't match Pod's node affinity/selector, 3 Insufficient cpu, 3 Insufficient memory, 3 Insufficient nvidia.com/gpu. no new claims to deallocate, preemption: 0/5 nodes are available: 2 Preemption is not helpful for scheduling, 3 No preemption victims found for incoming pod.",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:14:44Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3a95aca5a1176",
+                "namespace": "crossscale",
+                "resourceVersion": "303554",
+                "uid": "1ae2c432-2ce8-4a9e-b7ac-e99c22569cf5"
+            },
+            "reason": "FailedScheduling",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:17:02Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "299711",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:17:02Z",
+            "message": "Pod should schedule on: nodeclaim/crossscale-gpu-gpq4b",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:17:02Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3a97ad6f14890",
+                "namespace": "crossscale",
+                "resourceVersion": "300295",
+                "uid": "6b8630ee-ce0b-46c2-aebe-9542a58f7390"
+            },
+            "reason": "Nominated",
+            "reportingComponent": "karpenter",
+            "reportingInstance": "",
+            "source": {
+                "component": "karpenter"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:20:11Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "299711",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:20:11Z",
+            "message": "Pod should schedule on: nodeclaim/crossscale-gpu-m8zhg",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:20:11Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3a9a70c02c757",
+                "namespace": "crossscale",
+                "resourceVersion": "301078",
+                "uid": "808cc0e0-737a-4779-ad85-c3325673b6b0"
+            },
+            "reason": "Nominated",
+            "reportingComponent": "karpenter",
+            "reportingInstance": "",
+            "source": {
+                "component": "karpenter"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:23:21Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "299711",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:23:21Z",
+            "message": "Pod should schedule on: nodeclaim/crossscale-gpu-pmqnw",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:23:21Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3a9d349d9726d",
+                "namespace": "crossscale",
+                "resourceVersion": "301871",
+                "uid": "9f12a8e7-a979-413d-ba5d-681b8ca719d0"
+            },
+            "reason": "Nominated",
+            "reportingComponent": "karpenter",
+            "reportingInstance": "",
+            "source": {
+                "component": "karpenter"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:26:31Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "299711",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:26:31Z",
+            "message": "Pod should schedule on: nodeclaim/crossscale-gpu-dwwxg",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:26:31Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3a9ff87c044d7",
+                "namespace": "crossscale",
+                "resourceVersion": "302659",
+                "uid": "8a87de77-50be-4208-a305-77346a97fbed"
+            },
+            "reason": "Nominated",
+            "reportingComponent": "karpenter",
+            "reportingInstance": "",
+            "source": {
+                "component": "karpenter"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:29:41Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "299711",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:29:41Z",
+            "message": "Pod should schedule on: nodeclaim/crossscale-gpu-s7h9p",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:29:41Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3aa2bc54ee4f9",
+                "namespace": "crossscale",
+                "resourceVersion": "303470",
+                "uid": "3af4be19-4736-4a26-b831-540c4ef66832"
+            },
+            "reason": "Nominated",
+            "reportingComponent": "karpenter",
+            "reportingInstance": "",
+            "source": {
+                "component": "karpenter"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 3,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:30:05Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "299711",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:30:08Z",
+            "message": "0/6 nodes are available: 1 node(s) had untolerated taint(s), 2 node(s) didn't match Pod's node affinity/selector, 3 Insufficient cpu, 3 Insufficient memory, 3 Insufficient nvidia.com/gpu. no new claims to deallocate, preemption: 0/6 nodes are available: 3 No preemption victims found for incoming pod, 3 Preemption is not helpful for scheduling.",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:30:05Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3aa31556c1b9f",
+                "namespace": "crossscale",
+                "resourceVersion": "303652",
+                "uid": "6028cb81-5f2c-4b4f-8cb8-8685e7bef44f"
+            },
+            "reason": "FailedScheduling",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:30:19Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "303593",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:30:23Z",
+            "message": "0/6 nodes are available: 2 node(s) didn't match Pod's node affinity/selector, 3 Insufficient cpu, 3 Insufficient memory, 4 Insufficient nvidia.com/gpu. no new claims to deallocate, preemption: 0/6 nodes are available: 3 No preemption victims found for incoming pod, 3 Preemption is not helpful for scheduling.",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:30:19Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3aa348cb52464",
+                "namespace": "crossscale",
+                "resourceVersion": "303786",
+                "uid": "0c8c3cdb-710a-41c2-a3bb-8eb69f7a7cd6"
+            },
+            "reason": "FailedScheduling",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:30:36Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "303759",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:30:36Z",
+            "message": "Successfully assigned crossscale/vllm-5b64c7b7d9-h9pp7 to ip-10-42-24-252.ec2.internal",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:30:36Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3aa386fcfc024",
+                "namespace": "crossscale",
+                "resourceVersion": "303848",
+                "uid": "9373790c-2ce8-4673-a64c-e3106aeb0bab"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-09T13:30:36Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.initContainers{download-model}",
+                "kind": "Pod",
+                "name": "vllm-5b64c7b7d9-h9pp7",
+                "namespace": "crossscale",
+                "resourceVersion": "303845",
+                "uid": "ec32f36c-709a-40cc-a4e2-20bd60600a66"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-09T13:30:36Z",
+            "message": "Pulling image \"public.ecr.aws/aws-cli/aws-cli:2.36.17\"",
+            "metadata": {
+                "creationTimestamp": "2026-09-09T13:30:36Z",
+                "name": "vllm-5b64c7b7d9-h9pp7.18d3aa3891721a55",
+                "namespace": "crossscale",
+                "resourceVersion": "303855",
+                "uid": "be9d380c-ee6a-431b-9733-79a37f4d80f0"
+            },
+            "reason": "Pulling",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "ip-10-42-24-252.ec2.internal",
+            "source": {
+                "component": "kubelet",
+                "host": "ip-10-42-24-252.ec2.internal"
+            },
+            "type": "Normal"
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}
