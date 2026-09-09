@@ -19,3 +19,8 @@ readiness gap; supplementary Karpenter logs and Pod events are preserved.
 At this checkpoint, the controller is still performing final node cleanup;
 the condition-level summary will be checkpointed after that finishes.
 Find this commit with `git log --grep="Checkpoint 30 completed cold-node E0 measurements"`.
+
+Cold-node final cleanup completed; the condition summary confirms 20 training,
+10 held-out episodes and zero failures. Training P90 is 1110.118 seconds.
+The final summary and remaining EC2 lifecycle records are included in the
+`Finalize cold-node E0 phase checkpoint` commit. Prebaked validation is underway.
