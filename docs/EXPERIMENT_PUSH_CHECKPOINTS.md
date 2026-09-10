@@ -62,3 +62,10 @@ All 12 serial requests completed. Both lowest-rate tail requests missed TTFT
 in every repetition (B 5490: about 1.57s; C 16384: about 5.49s). Median B/C
 controls passed. This is diagnostic evidence, not a capacity estimate.
 Find commit with `git log --grep="Checkpoint isolated tail latency diagnosis"`.
+
+## Prefill budget 2048 diagnostic
+
+Twelve serial requests completed. B tail TTFT improved to 1.426–1.430s;
+C tail remained above 5s at 5.022–5.027s. Original 1024 budget restored,
+Ready and warmup verified. This is separate diagnostic evidence.
+Find commit with `git log --grep="Checkpoint 2048-token prefill diagnostic"`.
