@@ -47,3 +47,11 @@ The controller stopped for diagnosis; no capacity was substituted and E1/E2
 have not started. Raw results, telemetry, observer streams and a per-run
 validity audit are preserved. An idle observer/event-loop diagnostic is pending.
 Find this commit with `git log --grep="Preserve initial full profiling and feasibility diagnosis"`.
+
+## Corrected extended one-GPU profile
+
+All 18 runs completed across six rates and three seeds with 1800-second
+arrival horizons. All are dispatch-valid, but no rate qualifies under the
+predeclared tenant SLO rule. All JSON and closed gzip streams were parsed.
+The controller stopped for diagnosis; E1/E2 have not started.
+Find this commit with `git log --grep="Checkpoint corrected full one-GPU profile"`.
