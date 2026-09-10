@@ -141,3 +141,15 @@ median-length B/C controls, three repetitions each. It preserves original IDs
 and token offsets and does not select capacity. Inspect complete.json before
 further serving changes. This diagnostic does not update study.pid.
 Runner still expires near 22:56 UTC; safely migrate after diagnostics if needed.
+
+Isolated tail diagnostic completed 12 requests; both tail cases fail TTFT in
+all three repetitions while median controls pass. Evidence pushed at 930c0a0.
+At 20:27 UTC, prefill-2048-diagnostic.py started under suite.lock, logging
+prefill-2048-diagnostic.log. It temporarily changes only the batch token budget
+1024 to 2048, repeats the same 12 serial requests, then restores original
+container settings and validates warmup. This is a separate diagnostic serving
+condition, not a continuation of the frozen 1024-token experiment. Inspect
+run/diagnosis-prefill-2048/complete.json AND restored.json; complete.json alone
+does not prove restoration. Each rollout has a 1200-second deadline. The script
+does not update study.pid; inspect log/process/lock before starting anything.
+No E0 data may be silently combined with a changed serving condition.
