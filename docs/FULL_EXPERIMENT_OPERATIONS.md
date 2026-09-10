@@ -123,3 +123,10 @@ It holds suite.lock and must finish before any continuation. It is diagnostic
 evidence, not a replacement sample or measured capacity. Inspect complete.json.
 The original study.pid still points to the stopped controller; do not restart
 it blindly. Runner sleep expires around 22:56 UTC today.
+
+Bounded-wait diagnostic completed: 1.363 ms maximum lag, all tenant goodput 1.0.
+Continuation uses scripts/continue-bounded-profile.py copied to runner root,
+nohup with study-bounded.log. It acquires suite.lock and updates study.pid.
+The corrected six-rate one-GPU sweep takes approximately nine hours. Inspect
+runner lifetime before 22:56 UTC; comparisons may extend beyond that time.
+Original E0 and profile directories are not rerun or overwritten.

@@ -77,3 +77,21 @@ https://karpenter.sh/docs/concepts/disruption/ . Chunked prefill changes the
 prefill/decode scheduling tradeoff, so pin and report its token budget:
 https://docs.vllm.ai/en/stable/configuration/optimization/ . No unrelated
 resources are deleted. Raw data is checkpointed after every completed episode.
+
+## Client timing correction and extended profile, 2026-09-10
+
+The initial 27 profile runs are retained, including six dispatch-invalid runs.
+A diagnostic repeat of 0.025 RPS seed 18 with a separate client process still
+showed 96 ms lag. Bounding client waits to 100 ms reduced maximum lag to 1.4 ms
+on the same trace, with all tenant SLOs passing. No SLO or validity threshold
+is relaxed. This supports the timer-wait correction; it does not establish a
+particular kernel cause or a sustainable capacity.
+
+Before new outcomes, the corrected one-GPU profile is fixed at rates 0.01,
+0.015, 0.02, 0.025, 0.05 and 0.075 RPS, seeds 17/18/19, 1800 seconds per run.
+All tenant sample counts are checked before measurement. The lower range and
+longer horizon address low-rate overlap and sparse samples; small tenant
+samples remain a limitation. Every rate and lower tested rate in this corrected
+series must pass all seeds. Initial results remain separately reported.
+The corrected profile directories end in -bounded. Subsequent experiments use
+the same corrected client, unchanged serving settings and original gates.

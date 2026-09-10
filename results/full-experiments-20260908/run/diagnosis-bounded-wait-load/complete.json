@@ -1,0 +1,11 @@
+{
+  "completed_unix_s": 1789037822.4033318,
+  "source": "/tmp/experiments/profile-one-low/rps-0.025-seed-18/run/config.json",
+  "max_dispatch_lag_s": 0.001362737937597558,
+  "tenant_goodput": {
+    "A": 1.0,
+    "B": 1.0,
+    "C": 1.0
+  },
+  "purpose": "Diagnostic repeat only; does not replace original or select capacity"
+}
