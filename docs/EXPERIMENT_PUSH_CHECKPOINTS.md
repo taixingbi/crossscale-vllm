@@ -24,3 +24,12 @@ Cold-node final cleanup completed; the condition summary confirms 20 training,
 10 held-out episodes and zero failures. Training P90 is 1110.118 seconds.
 The final summary and remaining EC2 lifecycle records are included in the
 `Finalize cold-node E0 phase checkpoint` commit. Prebaked validation is underway.
+
+## E0 prebaked-image-new-node measurements
+
+All 30 episodes completed with zero measurement failures (20 training, 10 held
+out). All 30 closed gzip observation streams were fully parsed as JSON and
+validated before this checkpoint. The bake verification is included.
+Final node cleanup is still running; the condition summary and final lifecycle
+records will be checkpointed when available.
+Find this commit with `git log --grep="Checkpoint 30 completed prebaked E0 measurements"`.

@@ -1,0 +1,737 @@
+{
+  "pod": {
+    "kind": "Pod",
+    "apiVersion": "v1",
+    "metadata": {
+      "name": "crossscale-prebake-proof",
+      "namespace": "crossscale",
+      "uid": "e0328ac4-20c6-49f7-aa6b-26105ca65456",
+      "resourceVersion": "312935",
+      "generation": 1,
+      "creationTimestamp": "2026-09-09T13:54:43Z",
+      "managedFields": [
+        {
+          "manager": "Python-urllib",
+          "operation": "Update",
+          "apiVersion": "v1",
+          "time": "2026-09-09T13:54:43Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:spec": {
+              "f:containers": {
+                "k:{\"name\":\"proof\"}": {
+                  ".": {},
+                  "f:command": {},
+                  "f:image": {},
+                  "f:imagePullPolicy": {},
+                  "f:name": {},
+                  "f:resources": {
+                    ".": {},
+                    "f:limits": {
+                      ".": {},
+                      "f:memory": {},
+                      "f:nvidia.com/gpu": {}
+                    },
+                    "f:requests": {
+                      ".": {},
+                      "f:cpu": {},
+                      "f:memory": {},
+                      "f:nvidia.com/gpu": {}
+                    }
+                  },
+                  "f:terminationMessagePath": {},
+                  "f:terminationMessagePolicy": {},
+                  "f:volumeMounts": {
+                    ".": {},
+                    "k:{\"mountPath\":\"/proof/complete\"}": {
+                      ".": {},
+                      "f:mountPath": {},
+                      "f:name": {},
+                      "f:readOnly": {}
+                    },
+                    "k:{\"mountPath\":\"/proof/images.txt\"}": {
+                      ".": {},
+                      "f:mountPath": {},
+                      "f:name": {},
+                      "f:readOnly": {}
+                    }
+                  }
+                }
+              },
+              "f:dnsPolicy": {},
+              "f:enableServiceLinks": {},
+              "f:nodeSelector": {},
+              "f:restartPolicy": {},
+              "f:schedulerName": {},
+              "f:securityContext": {},
+              "f:terminationGracePeriodSeconds": {},
+              "f:tolerations": {},
+              "f:volumes": {
+                ".": {},
+                "k:{\"name\":\"complete\"}": {
+                  ".": {},
+                  "f:hostPath": {
+                    ".": {},
+                    "f:path": {},
+                    "f:type": {}
+                  },
+                  "f:name": {}
+                },
+                "k:{\"name\":\"images\"}": {
+                  ".": {},
+                  "f:hostPath": {
+                    ".": {},
+                    "f:path": {},
+                    "f:type": {}
+                  },
+                  "f:name": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "manager": "kube-scheduler",
+          "operation": "Update",
+          "apiVersion": "v1",
+          "time": "2026-09-09T14:03:46Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                ".": {},
+                "k:{\"type\":\"PodScheduled\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              }
+            }
+          },
+          "subresource": "status"
+        },
+        {
+          "manager": "kubelet",
+          "operation": "Update",
+          "apiVersion": "v1",
+          "time": "2026-09-09T14:05:08Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:observedGeneration": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:observedGeneration": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"PodReadyToStartContainers\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:observedGeneration": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"PodScheduled\"}": {
+                  "f:observedGeneration": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:observedGeneration": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:hostIPs": {},
+              "f:observedGeneration": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"10.42.6.200\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
+              "f:startTime": {}
+            }
+          },
+          "subresource": "status"
+        }
+      ]
+    },
+    "spec": {
+      "volumes": [
+        {
+          "name": "complete",
+          "hostPath": {
+            "path": "/var/lib/crossscale-image-bake.complete",
+            "type": "File"
+          }
+        },
+        {
+          "name": "images",
+          "hostPath": {
+            "path": "/var/log/crossscale-baked-images.txt",
+            "type": "File"
+          }
+        },
+        {
+          "name": "kube-api-access-pxtdm",
+          "projected": {
+            "sources": [
+              {
+                "serviceAccountToken": {
+                  "expirationSeconds": 3607,
+                  "path": "token"
+                }
+              },
+              {
+                "configMap": {
+                  "name": "kube-root-ca.crt",
+                  "items": [
+                    {
+                      "key": "ca.crt",
+                      "path": "ca.crt"
+                    }
+                  ]
+                }
+              },
+              {
+                "downwardAPI": {
+                  "items": [
+                    {
+                      "path": "namespace",
+                      "fieldRef": {
+                        "apiVersion": "v1",
+                        "fieldPath": "metadata.namespace"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "defaultMode": 420
+          }
+        }
+      ],
+      "containers": [
+        {
+          "name": "proof",
+          "image": "public.ecr.aws/aws-cli/aws-cli:2.36.17",
+          "command": [
+            "/bin/sh",
+            "-c",
+            "test -f /proof/complete && grep -F \"56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5\" /proof/images.txt && grep -F \"aws-cli\" /proof/images.txt"
+          ],
+          "resources": {
+            "limits": {
+              "memory": "128Mi",
+              "nvidia.com/gpu": "1"
+            },
+            "requests": {
+              "cpu": "100m",
+              "memory": "64Mi",
+              "nvidia.com/gpu": "1"
+            }
+          },
+          "volumeMounts": [
+            {
+              "name": "complete",
+              "readOnly": true,
+              "mountPath": "/proof/complete"
+            },
+            {
+              "name": "images",
+              "readOnly": true,
+              "mountPath": "/proof/images.txt"
+            },
+            {
+              "name": "kube-api-access-pxtdm",
+              "readOnly": true,
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+            }
+          ],
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "imagePullPolicy": "IfNotPresent"
+        }
+      ],
+      "restartPolicy": "Never",
+      "terminationGracePeriodSeconds": 30,
+      "dnsPolicy": "ClusterFirst",
+      "nodeSelector": {
+        "karpenter.sh/nodepool": "crossscale-gpu",
+        "node.kubernetes.io/instance-type": "g5.xlarge"
+      },
+      "serviceAccountName": "default",
+      "serviceAccount": "default",
+      "nodeName": "ip-10-42-4-13.ec2.internal",
+      "securityContext": {},
+      "schedulerName": "default-scheduler",
+      "tolerations": [
+        {
+          "key": "nvidia.com/gpu",
+          "operator": "Exists",
+          "effect": "NoSchedule"
+        },
+        {
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        },
+        {
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "effect": "NoExecute",
+          "tolerationSeconds": 300
+        }
+      ],
+      "priority": 0,
+      "enableServiceLinks": true,
+      "preemptionPolicy": "PreemptLowerPriority"
+    },
+    "status": {
+      "observedGeneration": 1,
+      "phase": "Succeeded",
+      "conditions": [
+        {
+          "type": "PodReadyToStartContainers",
+          "observedGeneration": 1,
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-09T14:05:08Z"
+        },
+        {
+          "type": "Initialized",
+          "observedGeneration": 1,
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-09T14:04:54Z",
+          "reason": "PodCompleted"
+        },
+        {
+          "type": "Ready",
+          "observedGeneration": 1,
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-09T14:05:07Z",
+          "reason": "PodCompleted"
+        },
+        {
+          "type": "ContainersReady",
+          "observedGeneration": 1,
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-09T14:05:07Z",
+          "reason": "PodCompleted"
+        },
+        {
+          "type": "PodScheduled",
+          "observedGeneration": 1,
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-09-09T14:04:54Z"
+        }
+      ],
+      "hostIP": "10.42.4.13",
+      "hostIPs": [
+        {
+          "ip": "10.42.4.13"
+        }
+      ],
+      "podIP": "10.42.6.200",
+      "podIPs": [
+        {
+          "ip": "10.42.6.200"
+        }
+      ],
+      "startTime": "2026-09-09T14:04:54Z",
+      "containerStatuses": [
+        {
+          "name": "proof",
+          "state": {
+            "terminated": {
+              "exitCode": 0,
+              "reason": "Completed",
+              "startedAt": "2026-09-09T14:05:06Z",
+              "finishedAt": "2026-09-09T14:05:07Z",
+              "containerID": "containerd://f4d34cc4e8bb334aa42a542f7bbcfcb2afba1625829fce99b87d57b51e5d16f9"
+            }
+          },
+          "lastState": {},
+          "ready": false,
+          "restartCount": 0,
+          "image": "public.ecr.aws/aws-cli/aws-cli:2.36.17",
+          "imageID": "sha256:1605a176d9d7ce73b03d19dcee9579ad7326783ae9374f0c03648cb2ec5f6aab",
+          "containerID": "containerd://f4d34cc4e8bb334aa42a542f7bbcfcb2afba1625829fce99b87d57b51e5d16f9",
+          "started": false,
+          "allocatedResources": {
+            "cpu": "100m",
+            "memory": "64Mi",
+            "nvidia.com/gpu": "1"
+          },
+          "resources": {
+            "limits": {
+              "memory": "128Mi",
+              "nvidia.com/gpu": "1"
+            },
+            "requests": {
+              "cpu": "100m",
+              "memory": "64Mi",
+              "nvidia.com/gpu": "1"
+            }
+          },
+          "volumeMounts": [
+            {
+              "name": "complete",
+              "mountPath": "/proof/complete",
+              "readOnly": true,
+              "recursiveReadOnly": "Disabled"
+            },
+            {
+              "name": "images",
+              "mountPath": "/proof/images.txt",
+              "readOnly": true,
+              "recursiveReadOnly": "Disabled"
+            },
+            {
+              "name": "kube-api-access-pxtdm",
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "readOnly": true,
+              "recursiveReadOnly": "Disabled"
+            }
+          ],
+          "user": {
+            "linux": {
+              "uid": 0,
+              "gid": 0,
+              "supplementalGroups": [
+                0
+              ]
+            }
+          }
+        }
+      ],
+      "qosClass": "Burstable"
+    }
+  },
+  "nodeclaim": {
+    "apiVersion": "karpenter.sh/v1",
+    "kind": "NodeClaim",
+    "metadata": {
+      "annotations": {
+        "compatibility.karpenter.k8s.aws/cluster-name-tagged": "true",
+        "karpenter.k8s.aws/ec2nodeclass-hash": "4927229435887424221",
+        "karpenter.k8s.aws/ec2nodeclass-hash-version": "v4",
+        "karpenter.k8s.aws/tagged": "true",
+        "karpenter.sh/nodeclaim-min-values-relaxed": "false",
+        "karpenter.sh/nodepool-hash": "9899405913777253747",
+        "karpenter.sh/nodepool-hash-version": "v3"
+      },
+      "creationTimestamp": "2026-09-09T14:01:04Z",
+      "finalizers": [
+        "karpenter.sh/termination"
+      ],
+      "generateName": "crossscale-gpu-",
+      "generation": 1,
+      "labels": {
+        "karpenter.k8s.aws/ec2nodeclass": "crossscale-gpu-prebaked",
+        "karpenter.k8s.aws/instance-category": "g",
+        "karpenter.k8s.aws/instance-cpu": "4",
+        "karpenter.k8s.aws/instance-cpu-manufacturer": "amd",
+        "karpenter.k8s.aws/instance-cpu-sustained-clock-speed-mhz": "3300",
+        "karpenter.k8s.aws/instance-ebs-bandwidth": "3500",
+        "karpenter.k8s.aws/instance-encryption-in-transit-supported": "true",
+        "karpenter.k8s.aws/instance-family": "g5",
+        "karpenter.k8s.aws/instance-generation": "5",
+        "karpenter.k8s.aws/instance-gpu-count": "1",
+        "karpenter.k8s.aws/instance-gpu-manufacturer": "nvidia",
+        "karpenter.k8s.aws/instance-gpu-memory": "22888",
+        "karpenter.k8s.aws/instance-gpu-name": "a10g",
+        "karpenter.k8s.aws/instance-hypervisor": "nitro",
+        "karpenter.k8s.aws/instance-local-nvme": "250",
+        "karpenter.k8s.aws/instance-memory": "16384",
+        "karpenter.k8s.aws/instance-network-bandwidth": "2500",
+        "karpenter.k8s.aws/instance-size": "xlarge",
+        "karpenter.sh/capacity-type": "on-demand",
+        "karpenter.sh/nodepool": "crossscale-gpu",
+        "kubernetes.io/arch": "amd64",
+        "kubernetes.io/os": "linux",
+        "node.kubernetes.io/instance-type": "g5.xlarge",
+        "topology.k8s.aws/zone-id": "use1-az1",
+        "topology.kubernetes.io/region": "us-east-1",
+        "topology.kubernetes.io/zone": "us-east-1a"
+      },
+      "managedFields": [
+        {
+          "apiVersion": "karpenter.sh/v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:compatibility.karpenter.k8s.aws/cluster-name-tagged": {},
+                "f:karpenter.k8s.aws/ec2nodeclass-hash": {},
+                "f:karpenter.k8s.aws/ec2nodeclass-hash-version": {},
+                "f:karpenter.k8s.aws/tagged": {},
+                "f:karpenter.sh/nodeclaim-min-values-relaxed": {},
+                "f:karpenter.sh/nodepool-hash": {},
+                "f:karpenter.sh/nodepool-hash-version": {}
+              },
+              "f:finalizers": {
+                ".": {},
+                "v:\"karpenter.sh/termination\"": {}
+              },
+              "f:generateName": {},
+              "f:labels": {
+                ".": {},
+                "f:karpenter.k8s.aws/ec2nodeclass": {},
+                "f:karpenter.k8s.aws/instance-category": {},
+                "f:karpenter.k8s.aws/instance-cpu": {},
+                "f:karpenter.k8s.aws/instance-cpu-manufacturer": {},
+                "f:karpenter.k8s.aws/instance-cpu-sustained-clock-speed-mhz": {},
+                "f:karpenter.k8s.aws/instance-ebs-bandwidth": {},
+                "f:karpenter.k8s.aws/instance-encryption-in-transit-supported": {},
+                "f:karpenter.k8s.aws/instance-family": {},
+                "f:karpenter.k8s.aws/instance-generation": {},
+                "f:karpenter.k8s.aws/instance-gpu-count": {},
+                "f:karpenter.k8s.aws/instance-gpu-manufacturer": {},
+                "f:karpenter.k8s.aws/instance-gpu-memory": {},
+                "f:karpenter.k8s.aws/instance-gpu-name": {},
+                "f:karpenter.k8s.aws/instance-hypervisor": {},
+                "f:karpenter.k8s.aws/instance-local-nvme": {},
+                "f:karpenter.k8s.aws/instance-memory": {},
+                "f:karpenter.k8s.aws/instance-network-bandwidth": {},
+                "f:karpenter.k8s.aws/instance-size": {},
+                "f:karpenter.sh/capacity-type": {},
+                "f:karpenter.sh/nodepool": {},
+                "f:kubernetes.io/arch": {},
+                "f:kubernetes.io/os": {},
+                "f:node.kubernetes.io/instance-type": {},
+                "f:topology.k8s.aws/zone-id": {},
+                "f:topology.kubernetes.io/region": {},
+                "f:topology.kubernetes.io/zone": {}
+              },
+              "f:ownerReferences": {
+                ".": {},
+                "k:{\"uid\":\"f6fa4b07-1382-4b11-8797-dc3ef25a0b6c\"}": {}
+              }
+            },
+            "f:spec": {
+              ".": {},
+              "f:expireAfter": {},
+              "f:nodeClassRef": {
+                ".": {},
+                "f:group": {},
+                "f:kind": {},
+                "f:name": {}
+              },
+              "f:requirements": {},
+              "f:resources": {
+                ".": {},
+                "f:requests": {
+                  ".": {},
+                  "f:cpu": {},
+                  "f:memory": {},
+                  "f:nvidia.com/gpu": {},
+                  "f:pods": {}
+                }
+              },
+              "f:taints": {}
+            }
+          },
+          "manager": "karpenter",
+          "operation": "Update",
+          "time": "2026-09-09T14:03:24Z"
+        },
+        {
+          "apiVersion": "karpenter.sh/v1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              ".": {},
+              "f:allocatable": {
+                ".": {},
+                "f:cpu": {},
+                "f:ephemeral-storage": {},
+                "f:memory": {},
+                "f:nvidia.com/gpu": {},
+                "f:pods": {},
+                "f:vpc.amazonaws.com/pod-eni": {}
+              },
+              "f:capacity": {
+                ".": {},
+                "f:cpu": {},
+                "f:ephemeral-storage": {},
+                "f:memory": {},
+                "f:nvidia.com/gpu": {},
+                "f:pods": {},
+                "f:vpc.amazonaws.com/pod-eni": {}
+              },
+              "f:conditions": {},
+              "f:imageID": {},
+              "f:lastPodEventTime": {},
+              "f:nodeName": {},
+              "f:providerID": {}
+            }
+          },
+          "manager": "karpenter",
+          "operation": "Update",
+          "subresource": "status",
+          "time": "2026-09-09T14:05:08Z"
+        }
+      ],
+      "name": "crossscale-gpu-fhwjf",
+      "ownerReferences": [
+        {
+          "apiVersion": "karpenter.sh/v1",
+          "blockOwnerDeletion": true,
+          "kind": "NodePool",
+          "name": "crossscale-gpu",
+          "uid": "f6fa4b07-1382-4b11-8797-dc3ef25a0b6c"
+        }
+      ],
+      "resourceVersion": "312936",
+      "uid": "0ace93e7-a37b-485b-8fc1-9ed074f7e1bd"
+    },
+    "spec": {
+      "expireAfter": "Never",
+      "nodeClassRef": {
+        "group": "karpenter.k8s.aws",
+        "kind": "EC2NodeClass",
+        "name": "crossscale-gpu-prebaked"
+      },
+      "requirements": [
+        {
+          "key": "karpenter.sh/capacity-type",
+          "operator": "In",
+          "values": [
+            "on-demand"
+          ]
+        },
+        {
+          "key": "karpenter.sh/nodepool",
+          "operator": "In",
+          "values": [
+            "crossscale-gpu"
+          ]
+        },
+        {
+          "key": "karpenter.k8s.aws/ec2nodeclass",
+          "operator": "In",
+          "values": [
+            "crossscale-gpu-prebaked"
+          ]
+        },
+        {
+          "key": "node.kubernetes.io/instance-type",
+          "operator": "In",
+          "values": [
+            "g5.xlarge"
+          ]
+        },
+        {
+          "key": "kubernetes.io/arch",
+          "operator": "In",
+          "values": [
+            "amd64"
+          ]
+        }
+      ],
+      "resources": {
+        "requests": {
+          "cpu": "250m",
+          "memory": "64Mi",
+          "nvidia.com/gpu": "1",
+          "pods": "6"
+        }
+      },
+      "taints": [
+        {
+          "effect": "NoSchedule",
+          "key": "nvidia.com/gpu"
+        }
+      ]
+    },
+    "status": {
+      "allocatable": {
+        "cpu": "3920m",
+        "ephemeral-storage": "89Gi",
+        "memory": "14162Mi",
+        "nvidia.com/gpu": "1",
+        "pods": "58",
+        "vpc.amazonaws.com/pod-eni": "4"
+      },
+      "capacity": {
+        "cpu": "4",
+        "ephemeral-storage": "100Gi",
+        "memory": "15155Mi",
+        "nvidia.com/gpu": "1",
+        "pods": "58",
+        "vpc.amazonaws.com/pod-eni": "4"
+      },
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-09-09T14:01:06Z",
+          "message": "",
+          "observedGeneration": 1,
+          "reason": "Launched",
+          "status": "True",
+          "type": "Launched"
+        },
+        {
+          "lastTransitionTime": "2026-09-09T14:03:22Z",
+          "message": "",
+          "observedGeneration": 1,
+          "reason": "Registered",
+          "status": "True",
+          "type": "Registered"
+        },
+        {
+          "lastTransitionTime": "2026-09-09T14:04:54Z",
+          "message": "",
+          "observedGeneration": 1,
+          "reason": "Initialized",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastTransitionTime": "2026-09-09T14:04:54Z",
+          "message": "",
+          "observedGeneration": 1,
+          "reason": "Ready",
+          "status": "True",
+          "type": "Ready"
+        }
+      ],
+      "imageID": "ami-006c1eb16c0aa3517",
+      "lastPodEventTime": "2026-09-09T14:05:08Z",
+      "nodeName": "ip-10-42-4-13.ec2.internal",
+      "providerID": "aws:///us-east-1a/i-0602c3ec1b1de0377"
+    }
+  }
+}
