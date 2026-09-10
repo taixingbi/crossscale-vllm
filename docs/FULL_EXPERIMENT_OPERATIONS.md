@@ -130,3 +130,14 @@ nohup with study-bounded.log. It acquires suite.lock and updates study.pid.
 The corrected six-rate one-GPU sweep takes approximately nine hours. Inspect
 runner lifetime before 22:56 UTC; comparisons may extend beyond that time.
 Original E0 and profile directories are not rerun or overwritten.
+
+Corrected profile completed all 18 runs at 19:57 UTC Sep 10. All dispatch-valid;
+no sustainable rate. Results checkpoint b9a04e8 verified on origin/main.
+Controller 22907 is now a zombie. Do not restart the completed sweep.
+At 20:09 UTC, isolated-tail-diagnostic.py was launched under suite.lock, logging
+isolated-tail-diagnostic.log and writing diagnosis-isolated-tail. It replays the
+two 0.01 RPS TTFT misses (B 5490 tokens and C 16384 tokens) serially, alongside
+median-length B/C controls, three repetitions each. It preserves original IDs
+and token offsets and does not select capacity. Inspect complete.json before
+further serving changes. This diagnostic does not update study.pid.
+Runner still expires near 22:56 UTC; safely migrate after diagnostics if needed.
