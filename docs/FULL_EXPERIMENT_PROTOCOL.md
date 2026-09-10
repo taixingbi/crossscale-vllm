@@ -95,3 +95,15 @@ samples remain a limitation. Every rate and lower tested rate in this corrected
 series must pass all seeds. Initial results remain separately reported.
 The corrected profile directories end in -bounded. Subsequent experiments use
 the same corrected client, unchanged serving settings and original gates.
+
+## Separate 4096-token serving profile, 2026-09-10
+
+After preserved 1024-condition feasibility failures and serial diagnostics,
+a separately named 4096-token batch-budget condition is profiled. Other serving
+settings, workload, SLOs and dispatch validity remain unchanged. Before outcomes:
+rates .01/.015/.02/.025/.05/.075 RPS, seeds 17/18/19, 1800-second horizons.
+The same every-seed/every-lower-rate qualification applies. Results go to
+profile-one-prefill4096; original serving budget is restored afterward.
+This is exploratory condition selection, not a replacement for original results.
+No E1/E2 automatically starts: capacity and condition-specific E0/ETA evidence
+must be established first. Original 1024-condition E0 is not relabeled or pooled.

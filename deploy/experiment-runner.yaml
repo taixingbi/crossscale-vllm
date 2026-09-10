@@ -101,7 +101,7 @@ spec:
   containers:
     - name: runner
       image: python@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534
-      command: [sleep, '172800']
+      command: [sleep, infinity]
       env:
         - {name: AWS_DEFAULT_REGION, value: us-east-1}
       resources:

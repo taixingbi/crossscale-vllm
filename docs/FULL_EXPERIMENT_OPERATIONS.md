@@ -163,3 +163,40 @@ check both complete.json and restored.json. Original GPU claim is preserved;
 current original-condition pod after restoration is vllm-5b64c7b7d9-bx4zp
 (pod name will change again during the next trial). Runner migration is due
 before its 22:56 UTC expiry, after this short trial completes.
+
+4096 diagnostic finished and restored 1024 with successful warmup. All 12
+requests completed; B tail TTFT about 1.414s, C tail 4.972–4.977s. This is not
+a sustainable capacity result. Evidence pushed and verified at c064224.
+At 21:00 UTC runner renewal preparation began while suite.lock was confirmed
+free. No pod deletion has occurred. Full backup transfer is running in local
+exec session 16488 to /tmp/crossscale-runner-renewal.tgz (1.2GiB source); wait
+for exit and validate the tar before renewal. Saved original pod is
+/tmp/crossscale-runner-old.json; replacement /tmp/crossscale-runner-renewed.json
+uses sleep infinity, same image/resources/service account and fresh projected
+credentials. Dependency pins saved in /tmp/crossscale-runner-requirements.txt.
+After backup validation, recreate only the idle runner, restore /tmp/experiments,
+install those pins, remove stale PID files, restart only the S3 archiver and
+verify archive status. Do not restart any completed controller or diagnostic.
+Runner old sleep expiry remains 22:56 UTC. Original GPU claim stays unchanged.
+
+Runner renewal completed about 21:30 UTC Sep 10. The full tar transfer failed
+with a connection reset; it is NOT a usable backup. A validated 281-file runtime
+bundle /tmp/crossscale-runner-runtime.tgz restored code, token corpus, configs,
+ownership, summaries and completion records into the renewed same-name pod.
+Raw observations/requests remain in private S3 and the local run mirror, not
+in the renewed runner. Do not treat missing raw files there as missing runs.
+Same image and dependency pins were restored. PID1 now sleeps indefinitely;
+no 22:56 expiry. Historical PID files moved to historical-pids. Only archiver
+PID 42 restarted, log archive-renewed.log. No measurement controller is running.
+Original vLLM pod vllm-5b64c7b7d9-gdn8h remains Ready on the original GPU.
+Next: assess a separately named 4096-token full-workload profile with unchanged
+SLOs; isolated success alone does not authorize treating it as calibrated capacity.
+Any changed-condition E0/ETA use must be separately measured and documented.
+
+At about 21:33 UTC the new scripts/profile-prefill4096.py was launched as
+profile-prefill4096.py in the renewed runner, log profile-prefill4096.log.
+It acquires suite.lock and updates study.pid, rolls to batch budget 4096, runs
+18 full-profile repetitions into profile-one-prefill4096, then restores 1024.
+Control evidence: profile-prefill4096-control. See protocol amendment. Expect
+about nine hours. It does not start comparisons or reuse original E0 as new
+condition evidence. Inspect study.pid, log and restoration before any next step.
