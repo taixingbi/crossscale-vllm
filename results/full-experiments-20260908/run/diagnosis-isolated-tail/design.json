@@ -1,0 +1,30 @@
+{
+  "cases": [
+    {
+      "tenant": "B",
+      "input_tokens": 5490,
+      "output_tokens": 228,
+      "id": 7
+    },
+    {
+      "tenant": "C",
+      "input_tokens": 16384,
+      "output_tokens": 839,
+      "id": 4
+    },
+    {
+      "tenant": "B",
+      "input_tokens": 3072,
+      "output_tokens": 256,
+      "id": 0
+    },
+    {
+      "tenant": "C",
+      "input_tokens": 8192,
+      "output_tokens": 1024,
+      "id": 0
+    }
+  ],
+  "repetitions": 3,
+  "purpose": "Serial isolated diagnostic; original failures retained; no capacity selection"
+}

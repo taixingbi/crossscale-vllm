@@ -55,3 +55,10 @@ arrival horizons. All are dispatch-valid, but no rate qualifies under the
 predeclared tenant SLO rule. All JSON and closed gzip streams were parsed.
 The controller stopped for diagnosis; E1/E2 have not started.
 Find this commit with `git log --grep="Checkpoint corrected full one-GPU profile"`.
+
+## Isolated tail latency diagnostic
+
+All 12 serial requests completed. Both lowest-rate tail requests missed TTFT
+in every repetition (B 5490: about 1.57s; C 16384: about 5.49s). Median B/C
+controls passed. This is diagnostic evidence, not a capacity estimate.
+Find commit with `git log --grep="Checkpoint isolated tail latency diagnosis"`.
