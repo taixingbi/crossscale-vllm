@@ -33,3 +33,8 @@ validated before this checkpoint. The bake verification is included.
 Final node cleanup is still running; the condition summary and final lifecycle
 records will be checkpointed when available.
 Find this commit with `git log --grep="Checkpoint 30 completed prebaked E0 measurements"`.
+
+Prebaked final cleanup completed. The condition summary confirms 20 training,
+10 held-out episodes and zero failures; training P90 is 1811.426 seconds.
+The final summary and remaining EC2 lifecycle evidence are included in
+`Finalize prebaked E0 phase checkpoint`. Full one-GPU profiling has started.
