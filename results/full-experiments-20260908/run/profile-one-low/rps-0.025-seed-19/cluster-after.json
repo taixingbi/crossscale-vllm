@@ -1,0 +1,2858 @@
+{
+  "observed_unix_s": 1789029887.0363555,
+  "deployment": {
+    "kind": "Deployment",
+    "apiVersion": "apps/v1",
+    "metadata": {
+      "name": "vllm",
+      "namespace": "crossscale",
+      "uid": "0eef65ed-3086-4246-b207-a131de6858ac",
+      "resourceVersion": "585337",
+      "generation": 189,
+      "creationTimestamp": "2026-09-08T19:25:20Z",
+      "annotations": {
+        "deployment.kubernetes.io/revision": "4",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"vllm\",\"namespace\":\"crossscale\"},\"spec\":{\"progressDeadlineSeconds\":2400,\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"vllm\"}},\"strategy\":{\"type\":\"Recreate\"},\"template\":{\"metadata\":{\"annotations\":{\"prometheus.io/path\":\"/metrics\",\"prometheus.io/port\":\"8000\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app\":\"vllm\"}},\"spec\":{\"containers\":[{\"args\":[\"/models/llama\",\"--served-model-name\",\"meta-llama/Llama-3.1-8B-Instruct\",\"--max-model-len\",\"32768\",\"--max-num-seqs\",\"4\",\"--max-num-batched-tokens\",\"1024\",\"--enable-chunked-prefill\",\"--no-enable-prefix-caching\",\"--gpu-memory-utilization\",\"0.90\",\"--enforce-eager\"],\"env\":[{\"name\":\"HF_HUB_OFFLINE\",\"value\":\"1\"},{\"name\":\"TRANSFORMERS_OFFLINE\",\"value\":\"1\"}],\"image\":\"vllm/vllm-openai:v0.28.0-cu129-ubuntu2404@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5\",\"name\":\"vllm\",\"ports\":[{\"containerPort\":8000,\"name\":\"http\"}],\"readinessProbe\":{\"httpGet\":{\"path\":\"/health\",\"port\":\"http\"},\"periodSeconds\":1},\"resources\":{\"limits\":{\"ephemeral-storage\":\"40Gi\",\"memory\":\"12Gi\",\"nvidia.com/gpu\":\"1\"},\"requests\":{\"cpu\":\"2\",\"ephemeral-storage\":\"20Gi\",\"memory\":\"10Gi\",\"nvidia.com/gpu\":\"1\"}},\"startupProbe\":{\"failureThreshold\":180,\"httpGet\":{\"path\":\"/health\",\"port\":\"http\"},\"periodSeconds\":5},\"volumeMounts\":[{\"mountPath\":\"/dev/shm\",\"name\":\"shm\"},{\"mountPath\":\"/models\",\"name\":\"model\",\"readOnly\":true}]}],\"enableServiceLinks\":false,\"initContainers\":[{\"command\":[\"/bin/sh\",\"/model-bootstrap/download-model.sh\"],\"env\":[{\"name\":\"MODEL_BUCKET\",\"value\":\"huggingface-model-registry-646821141010-us-east-1\"},{\"name\":\"MODEL_PREFIX\",\"value\":\"inference/meta-llama/Llama-3.1-8B-Instruct\"},{\"name\":\"AWS_DEFAULT_REGION\",\"value\":\"us-east-1\"},{\"name\":\"AWS_EC2_METADATA_DISABLED\",\"value\":\"true\"},{\"name\":\"MODEL_CACHE_ENABLED\",\"value\":\"1\"}],\"image\":\"public.ecr.aws/aws-cli/aws-cli:2.36.17\",\"name\":\"download-model\",\"resources\":{\"limits\":{\"ephemeral-storage\":\"40Gi\",\"memory\":\"1Gi\"},\"requests\":{\"cpu\":\"1\",\"ephemeral-storage\":\"20Gi\",\"memory\":\"512Mi\"}},\"volumeMounts\":[{\"mountPath\":\"/models\",\"name\":\"model\"},{\"mountPath\":\"/model-bootstrap\",\"name\":\"model-bootstrap\",\"readOnly\":true}]}],\"nodeSelector\":{\"node.kubernetes.io/instance-type\":\"g5.xlarge\"},\"serviceAccountName\":\"vllm-model-reader\",\"tolerations\":[{\"effect\":\"NoSchedule\",\"key\":\"nvidia.com/gpu\",\"operator\":\"Exists\"}],\"volumes\":[{\"hostPath\":{\"path\":\"/var/lib/crossscale-model-cache\",\"type\":\"DirectoryOrCreate\"},\"name\":\"model\"},{\"configMap\":{\"name\":\"vllm-model-bootstrap-k59ktkfthh\"},\"name\":\"model-bootstrap\"},{\"emptyDir\":{\"medium\":\"Memory\",\"sizeLimit\":\"4Gi\"},\"name\":\"shm\"}]}}}}\n"
+      },
+      "managedFields": [
+        {
+          "manager": "kubectl-client-side-apply",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2026-09-08T23:01:55Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                ".": {},
+                "f:kubectl.kubernetes.io/last-applied-configuration": {}
+              }
+            },
+            "f:spec": {
+              "f:progressDeadlineSeconds": {},
+              "f:revisionHistoryLimit": {},
+              "f:selector": {},
+              "f:strategy": {
+                "f:type": {}
+              },
+              "f:template": {
+                "f:metadata": {
+                  "f:annotations": {
+                    ".": {},
+                    "f:prometheus.io/path": {},
+                    "f:prometheus.io/port": {},
+                    "f:prometheus.io/scrape": {}
+                  },
+                  "f:labels": {
+                    ".": {},
+                    "f:app": {}
+                  }
+                },
+                "f:spec": {
+                  "f:containers": {
+                    "k:{\"name\":\"vllm\"}": {
+                      ".": {},
+                      "f:args": {},
+                      "f:env": {
+                        ".": {},
+                        "k:{\"name\":\"HF_HUB_OFFLINE\"}": {
+                          ".": {},
+                          "f:name": {},
+                          "f:value": {}
+                        },
+                        "k:{\"name\":\"TRANSFORMERS_OFFLINE\"}": {
+                          ".": {},
+                          "f:name": {},
+                          "f:value": {}
+                        }
+                      },
+                      "f:image": {},
+                      "f:imagePullPolicy": {},
+                      "f:name": {},
+                      "f:ports": {
+                        ".": {},
+                        "k:{\"containerPort\":8000,\"protocol\":\"TCP\"}": {
+                          ".": {},
+                          "f:containerPort": {},
+                          "f:name": {},
+                          "f:protocol": {}
+                        }
+                      },
+                      "f:readinessProbe": {
+                        ".": {},
+                        "f:failureThreshold": {},
+                        "f:httpGet": {
+                          ".": {},
+                          "f:path": {},
+                          "f:port": {},
+                          "f:scheme": {}
+                        },
+                        "f:periodSeconds": {},
+                        "f:successThreshold": {},
+                        "f:timeoutSeconds": {}
+                      },
+                      "f:resources": {
+                        ".": {},
+                        "f:limits": {
+                          ".": {},
+                          "f:ephemeral-storage": {},
+                          "f:memory": {},
+                          "f:nvidia.com/gpu": {}
+                        },
+                        "f:requests": {
+                          ".": {},
+                          "f:cpu": {},
+                          "f:ephemeral-storage": {},
+                          "f:memory": {},
+                          "f:nvidia.com/gpu": {}
+                        }
+                      },
+                      "f:startupProbe": {
+                        ".": {},
+                        "f:failureThreshold": {},
+                        "f:httpGet": {
+                          ".": {},
+                          "f:path": {},
+                          "f:port": {},
+                          "f:scheme": {}
+                        },
+                        "f:periodSeconds": {},
+                        "f:successThreshold": {},
+                        "f:timeoutSeconds": {}
+                      },
+                      "f:terminationMessagePath": {},
+                      "f:terminationMessagePolicy": {},
+                      "f:volumeMounts": {
+                        ".": {},
+                        "k:{\"mountPath\":\"/dev/shm\"}": {
+                          ".": {},
+                          "f:mountPath": {},
+                          "f:name": {}
+                        },
+                        "k:{\"mountPath\":\"/models\"}": {
+                          ".": {},
+                          "f:mountPath": {},
+                          "f:name": {},
+                          "f:readOnly": {}
+                        }
+                      }
+                    }
+                  },
+                  "f:dnsPolicy": {},
+                  "f:enableServiceLinks": {},
+                  "f:initContainers": {
+                    ".": {},
+                    "k:{\"name\":\"download-model\"}": {
+                      ".": {},
+                      "f:command": {},
+                      "f:env": {
+                        ".": {},
+                        "k:{\"name\":\"AWS_DEFAULT_REGION\"}": {
+                          ".": {},
+                          "f:name": {},
+                          "f:value": {}
+                        },
+                        "k:{\"name\":\"AWS_EC2_METADATA_DISABLED\"}": {
+                          ".": {},
+                          "f:name": {},
+                          "f:value": {}
+                        },
+                        "k:{\"name\":\"MODEL_BUCKET\"}": {
+                          ".": {},
+                          "f:name": {},
+                          "f:value": {}
+                        },
+                        "k:{\"name\":\"MODEL_CACHE_ENABLED\"}": {
+                          ".": {},
+                          "f:name": {},
+                          "f:value": {}
+                        },
+                        "k:{\"name\":\"MODEL_PREFIX\"}": {
+                          ".": {},
+                          "f:name": {},
+                          "f:value": {}
+                        }
+                      },
+                      "f:image": {},
+                      "f:imagePullPolicy": {},
+                      "f:name": {},
+                      "f:resources": {
+                        ".": {},
+                        "f:limits": {
+                          ".": {},
+                          "f:ephemeral-storage": {},
+                          "f:memory": {}
+                        },
+                        "f:requests": {
+                          ".": {},
+                          "f:cpu": {},
+                          "f:ephemeral-storage": {},
+                          "f:memory": {}
+                        }
+                      },
+                      "f:terminationMessagePath": {},
+                      "f:terminationMessagePolicy": {},
+                      "f:volumeMounts": {
+                        ".": {},
+                        "k:{\"mountPath\":\"/model-bootstrap\"}": {
+                          ".": {},
+                          "f:mountPath": {},
+                          "f:name": {},
+                          "f:readOnly": {}
+                        },
+                        "k:{\"mountPath\":\"/models\"}": {
+                          ".": {},
+                          "f:mountPath": {},
+                          "f:name": {}
+                        }
+                      }
+                    }
+                  },
+                  "f:nodeSelector": {},
+                  "f:restartPolicy": {},
+                  "f:schedulerName": {},
+                  "f:securityContext": {},
+                  "f:serviceAccount": {},
+                  "f:serviceAccountName": {},
+                  "f:terminationGracePeriodSeconds": {},
+                  "f:tolerations": {},
+                  "f:volumes": {
+                    ".": {},
+                    "k:{\"name\":\"model\"}": {
+                      ".": {},
+                      "f:hostPath": {
+                        ".": {},
+                        "f:path": {},
+                        "f:type": {}
+                      },
+                      "f:name": {}
+                    },
+                    "k:{\"name\":\"model-bootstrap\"}": {
+                      ".": {},
+                      "f:configMap": {
+                        ".": {},
+                        "f:defaultMode": {},
+                        "f:name": {}
+                      },
+                      "f:name": {}
+                    },
+                    "k:{\"name\":\"shm\"}": {
+                      ".": {},
+                      "f:emptyDir": {
+                        ".": {},
+                        "f:medium": {},
+                        "f:sizeLimit": {}
+                      },
+                      "f:name": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "manager": "Python-urllib",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2026-09-10T06:48:58Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:spec": {
+              "f:replicas": {}
+            }
+          }
+        },
+        {
+          "manager": "kube-controller-manager",
+          "operation": "Update",
+          "apiVersion": "apps/v1",
+          "time": "2026-09-10T06:48:58Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:annotations": {
+                "f:deployment.kubernetes.io/revision": {}
+              }
+            },
+            "f:status": {
+              "f:availableReplicas": {},
+              "f:conditions": {
+                ".": {},
+                "k:{\"type\":\"Available\"}": {
+                  ".": {},
+                  "f:lastTransitionTime": {},
+                  "f:lastUpdateTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Progressing\"}": {
+                  ".": {},
+                  "f:lastTransitionTime": {},
+                  "f:lastUpdateTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:observedGeneration": {},
+              "f:readyReplicas": {},
+              "f:replicas": {},
+              "f:updatedReplicas": {}
+            }
+          },
+          "subresource": "status"
+        }
+      ]
+    },
+    "spec": {
+      "replicas": 1,
+      "selector": {
+        "matchLabels": {
+          "app": "vllm"
+        }
+      },
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "vllm"
+          },
+          "annotations": {
+            "prometheus.io/path": "/metrics",
+            "prometheus.io/port": "8000",
+            "prometheus.io/scrape": "true"
+          }
+        },
+        "spec": {
+          "volumes": [
+            {
+              "name": "model",
+              "hostPath": {
+                "path": "/var/lib/crossscale-model-cache",
+                "type": "DirectoryOrCreate"
+              }
+            },
+            {
+              "name": "model-bootstrap",
+              "configMap": {
+                "name": "vllm-model-bootstrap-k59ktkfthh",
+                "defaultMode": 420
+              }
+            },
+            {
+              "name": "shm",
+              "emptyDir": {
+                "medium": "Memory",
+                "sizeLimit": "4Gi"
+              }
+            }
+          ],
+          "initContainers": [
+            {
+              "name": "download-model",
+              "image": "public.ecr.aws/aws-cli/aws-cli:2.36.17",
+              "command": [
+                "/bin/sh",
+                "/model-bootstrap/download-model.sh"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_BUCKET",
+                  "value": "huggingface-model-registry-646821141010-us-east-1"
+                },
+                {
+                  "name": "MODEL_PREFIX",
+                  "value": "inference/meta-llama/Llama-3.1-8B-Instruct"
+                },
+                {
+                  "name": "AWS_DEFAULT_REGION",
+                  "value": "us-east-1"
+                },
+                {
+                  "name": "AWS_EC2_METADATA_DISABLED",
+                  "value": "true"
+                },
+                {
+                  "name": "MODEL_CACHE_ENABLED",
+                  "value": "1"
+                }
+              ],
+              "resources": {
+                "limits": {
+                  "ephemeral-storage": "40Gi",
+                  "memory": "1Gi"
+                },
+                "requests": {
+                  "cpu": "1",
+                  "ephemeral-storage": "20Gi",
+                  "memory": "512Mi"
+                }
+              },
+              "volumeMounts": [
+                {
+                  "name": "model",
+                  "mountPath": "/models"
+                },
+                {
+                  "name": "model-bootstrap",
+                  "readOnly": true,
+                  "mountPath": "/model-bootstrap"
+                }
+              ],
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }
+          ],
+          "containers": [
+            {
+              "name": "vllm",
+              "image": "vllm/vllm-openai:v0.28.0-cu129-ubuntu2404@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5",
+              "args": [
+                "/models/llama",
+                "--served-model-name",
+                "meta-llama/Llama-3.1-8B-Instruct",
+                "--max-model-len",
+                "32768",
+                "--max-num-seqs",
+                "4",
+                "--max-num-batched-tokens",
+                "1024",
+                "--enable-chunked-prefill",
+                "--no-enable-prefix-caching",
+                "--gpu-memory-utilization",
+                "0.90",
+                "--enforce-eager"
+              ],
+              "ports": [
+                {
+                  "name": "http",
+                  "containerPort": 8000,
+                  "protocol": "TCP"
+                }
+              ],
+              "env": [
+                {
+                  "name": "HF_HUB_OFFLINE",
+                  "value": "1"
+                },
+                {
+                  "name": "TRANSFORMERS_OFFLINE",
+                  "value": "1"
+                }
+              ],
+              "resources": {
+                "limits": {
+                  "ephemeral-storage": "40Gi",
+                  "memory": "12Gi",
+                  "nvidia.com/gpu": "1"
+                },
+                "requests": {
+                  "cpu": "2",
+                  "ephemeral-storage": "20Gi",
+                  "memory": "10Gi",
+                  "nvidia.com/gpu": "1"
+                }
+              },
+              "volumeMounts": [
+                {
+                  "name": "shm",
+                  "mountPath": "/dev/shm"
+                },
+                {
+                  "name": "model",
+                  "readOnly": true,
+                  "mountPath": "/models"
+                }
+              ],
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/health",
+                  "port": "http",
+                  "scheme": "HTTP"
+                },
+                "timeoutSeconds": 1,
+                "periodSeconds": 1,
+                "successThreshold": 1,
+                "failureThreshold": 3
+              },
+              "startupProbe": {
+                "httpGet": {
+                  "path": "/health",
+                  "port": "http",
+                  "scheme": "HTTP"
+                },
+                "timeoutSeconds": 1,
+                "periodSeconds": 5,
+                "successThreshold": 1,
+                "failureThreshold": 180
+              },
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "imagePullPolicy": "IfNotPresent"
+            }
+          ],
+          "restartPolicy": "Always",
+          "terminationGracePeriodSeconds": 30,
+          "dnsPolicy": "ClusterFirst",
+          "nodeSelector": {
+            "node.kubernetes.io/instance-type": "g5.xlarge"
+          },
+          "serviceAccountName": "vllm-model-reader",
+          "serviceAccount": "vllm-model-reader",
+          "securityContext": {},
+          "schedulerName": "default-scheduler",
+          "tolerations": [
+            {
+              "key": "nvidia.com/gpu",
+              "operator": "Exists",
+              "effect": "NoSchedule"
+            }
+          ],
+          "enableServiceLinks": false
+        }
+      },
+      "strategy": {
+        "type": "Recreate"
+      },
+      "revisionHistoryLimit": 10,
+      "progressDeadlineSeconds": 2400
+    },
+    "status": {
+      "observedGeneration": 189,
+      "replicas": 1,
+      "updatedReplicas": 1,
+      "readyReplicas": 1,
+      "availableReplicas": 1,
+      "conditions": [
+        {
+          "type": "Progressing",
+          "status": "True",
+          "lastUpdateTime": "2026-09-08T23:18:07Z",
+          "lastTransitionTime": "2026-09-08T20:12:30Z",
+          "reason": "NewReplicaSetAvailable",
+          "message": "ReplicaSet \"vllm-5b64c7b7d9\" has successfully progressed."
+        },
+        {
+          "type": "Available",
+          "status": "True",
+          "lastUpdateTime": "2026-09-10T06:39:57Z",
+          "lastTransitionTime": "2026-09-10T06:39:57Z",
+          "reason": "MinimumReplicasAvailable",
+          "message": "Deployment has minimum availability."
+        }
+      ]
+    }
+  },
+  "pods": [
+    {
+      "metadata": {
+        "name": "vllm-5b64c7b7d9-gsxsj",
+        "generateName": "vllm-5b64c7b7d9-",
+        "namespace": "crossscale",
+        "uid": "0115e0b7-bf5b-47c0-84ca-d02987c32b9f",
+        "resourceVersion": "585324",
+        "generation": 1,
+        "creationTimestamp": "2026-09-08T23:01:57Z",
+        "labels": {
+          "app": "vllm",
+          "eks.amazonaws.com/pod-identity": "enabled",
+          "pod-template-hash": "5b64c7b7d9"
+        },
+        "annotations": {
+          "controller.kubernetes.io/pod-deletion-cost": "1000",
+          "prometheus.io/path": "/metrics",
+          "prometheus.io/port": "8000",
+          "prometheus.io/scrape": "true"
+        },
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "kind": "ReplicaSet",
+            "name": "vllm-5b64c7b7d9",
+            "uid": "2ecf7e3a-2f71-40b5-a012-64bf29d8cfd4",
+            "controller": true,
+            "blockOwnerDeletion": true
+          }
+        ],
+        "managedFields": [
+          {
+            "manager": "kube-controller-manager",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T23:01:57Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:annotations": {
+                  ".": {},
+                  "f:prometheus.io/path": {},
+                  "f:prometheus.io/port": {},
+                  "f:prometheus.io/scrape": {}
+                },
+                "f:generateName": {},
+                "f:labels": {
+                  ".": {},
+                  "f:app": {},
+                  "f:pod-template-hash": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"2ecf7e3a-2f71-40b5-a012-64bf29d8cfd4\"}": {}
+                }
+              },
+              "f:spec": {
+                "f:containers": {
+                  "k:{\"name\":\"vllm\"}": {
+                    ".": {},
+                    "f:args": {},
+                    "f:env": {
+                      ".": {},
+                      "k:{\"name\":\"HF_HUB_OFFLINE\"}": {
+                        ".": {},
+                        "f:name": {},
+                        "f:value": {}
+                      },
+                      "k:{\"name\":\"TRANSFORMERS_OFFLINE\"}": {
+                        ".": {},
+                        "f:name": {},
+                        "f:value": {}
+                      }
+                    },
+                    "f:image": {},
+                    "f:imagePullPolicy": {},
+                    "f:name": {},
+                    "f:ports": {
+                      ".": {},
+                      "k:{\"containerPort\":8000,\"protocol\":\"TCP\"}": {
+                        ".": {},
+                        "f:containerPort": {},
+                        "f:name": {},
+                        "f:protocol": {}
+                      }
+                    },
+                    "f:readinessProbe": {
+                      ".": {},
+                      "f:failureThreshold": {},
+                      "f:httpGet": {
+                        ".": {},
+                        "f:path": {},
+                        "f:port": {},
+                        "f:scheme": {}
+                      },
+                      "f:periodSeconds": {},
+                      "f:successThreshold": {},
+                      "f:timeoutSeconds": {}
+                    },
+                    "f:resources": {
+                      ".": {},
+                      "f:limits": {
+                        ".": {},
+                        "f:ephemeral-storage": {},
+                        "f:memory": {},
+                        "f:nvidia.com/gpu": {}
+                      },
+                      "f:requests": {
+                        ".": {},
+                        "f:cpu": {},
+                        "f:ephemeral-storage": {},
+                        "f:memory": {},
+                        "f:nvidia.com/gpu": {}
+                      }
+                    },
+                    "f:startupProbe": {
+                      ".": {},
+                      "f:failureThreshold": {},
+                      "f:httpGet": {
+                        ".": {},
+                        "f:path": {},
+                        "f:port": {},
+                        "f:scheme": {}
+                      },
+                      "f:periodSeconds": {},
+                      "f:successThreshold": {},
+                      "f:timeoutSeconds": {}
+                    },
+                    "f:terminationMessagePath": {},
+                    "f:terminationMessagePolicy": {},
+                    "f:volumeMounts": {
+                      ".": {},
+                      "k:{\"mountPath\":\"/dev/shm\"}": {
+                        ".": {},
+                        "f:mountPath": {},
+                        "f:name": {}
+                      },
+                      "k:{\"mountPath\":\"/models\"}": {
+                        ".": {},
+                        "f:mountPath": {},
+                        "f:name": {},
+                        "f:readOnly": {}
+                      }
+                    }
+                  }
+                },
+                "f:dnsPolicy": {},
+                "f:enableServiceLinks": {},
+                "f:initContainers": {
+                  ".": {},
+                  "k:{\"name\":\"download-model\"}": {
+                    ".": {},
+                    "f:command": {},
+                    "f:env": {
+                      ".": {},
+                      "k:{\"name\":\"AWS_DEFAULT_REGION\"}": {
+                        ".": {},
+                        "f:name": {},
+                        "f:value": {}
+                      },
+                      "k:{\"name\":\"AWS_EC2_METADATA_DISABLED\"}": {
+                        ".": {},
+                        "f:name": {},
+                        "f:value": {}
+                      },
+                      "k:{\"name\":\"MODEL_BUCKET\"}": {
+                        ".": {},
+                        "f:name": {},
+                        "f:value": {}
+                      },
+                      "k:{\"name\":\"MODEL_CACHE_ENABLED\"}": {
+                        ".": {},
+                        "f:name": {},
+                        "f:value": {}
+                      },
+                      "k:{\"name\":\"MODEL_PREFIX\"}": {
+                        ".": {},
+                        "f:name": {},
+                        "f:value": {}
+                      }
+                    },
+                    "f:image": {},
+                    "f:imagePullPolicy": {},
+                    "f:name": {},
+                    "f:resources": {
+                      ".": {},
+                      "f:limits": {
+                        ".": {},
+                        "f:ephemeral-storage": {},
+                        "f:memory": {}
+                      },
+                      "f:requests": {
+                        ".": {},
+                        "f:cpu": {},
+                        "f:ephemeral-storage": {},
+                        "f:memory": {}
+                      }
+                    },
+                    "f:terminationMessagePath": {},
+                    "f:terminationMessagePolicy": {},
+                    "f:volumeMounts": {
+                      ".": {},
+                      "k:{\"mountPath\":\"/model-bootstrap\"}": {
+                        ".": {},
+                        "f:mountPath": {},
+                        "f:name": {},
+                        "f:readOnly": {}
+                      },
+                      "k:{\"mountPath\":\"/models\"}": {
+                        ".": {},
+                        "f:mountPath": {},
+                        "f:name": {}
+                      }
+                    }
+                  }
+                },
+                "f:nodeSelector": {},
+                "f:restartPolicy": {},
+                "f:schedulerName": {},
+                "f:securityContext": {},
+                "f:serviceAccount": {},
+                "f:serviceAccountName": {},
+                "f:terminationGracePeriodSeconds": {},
+                "f:tolerations": {},
+                "f:volumes": {
+                  ".": {},
+                  "k:{\"name\":\"model\"}": {
+                    ".": {},
+                    "f:hostPath": {
+                      ".": {},
+                      "f:path": {},
+                      "f:type": {}
+                    },
+                    "f:name": {}
+                  },
+                  "k:{\"name\":\"model-bootstrap\"}": {
+                    ".": {},
+                    "f:configMap": {
+                      ".": {},
+                      "f:defaultMode": {},
+                      "f:name": {}
+                    },
+                    "f:name": {}
+                  },
+                  "k:{\"name\":\"shm\"}": {
+                    ".": {},
+                    "f:emptyDir": {
+                      ".": {},
+                      "f:medium": {},
+                      "f:sizeLimit": {}
+                    },
+                    "f:name": {}
+                  }
+                }
+              }
+            }
+          },
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T23:04:37Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:status": {
+                "f:conditions": {
+                  "k:{\"type\":\"ContainersReady\"}": {
+                    ".": {},
+                    "f:lastProbeTime": {},
+                    "f:lastTransitionTime": {},
+                    "f:observedGeneration": {},
+                    "f:status": {},
+                    "f:type": {}
+                  },
+                  "k:{\"type\":\"Initialized\"}": {
+                    ".": {},
+                    "f:lastProbeTime": {},
+                    "f:lastTransitionTime": {},
+                    "f:observedGeneration": {},
+                    "f:status": {},
+                    "f:type": {}
+                  },
+                  "k:{\"type\":\"PodReadyToStartContainers\"}": {
+                    ".": {},
+                    "f:lastProbeTime": {},
+                    "f:lastTransitionTime": {},
+                    "f:observedGeneration": {},
+                    "f:status": {},
+                    "f:type": {}
+                  },
+                  "k:{\"type\":\"PodScheduled\"}": {
+                    "f:observedGeneration": {}
+                  },
+                  "k:{\"type\":\"Ready\"}": {
+                    ".": {},
+                    "f:lastProbeTime": {},
+                    "f:lastTransitionTime": {},
+                    "f:observedGeneration": {},
+                    "f:status": {},
+                    "f:type": {}
+                  }
+                },
+                "f:containerStatuses": {},
+                "f:hostIP": {},
+                "f:hostIPs": {},
+                "f:initContainerStatuses": {},
+                "f:observedGeneration": {},
+                "f:phase": {},
+                "f:podIP": {},
+                "f:podIPs": {
+                  ".": {},
+                  "k:{\"ip\":\"10.42.13.218\"}": {
+                    ".": {},
+                    "f:ip": {}
+                  }
+                },
+                "f:startTime": {}
+              }
+            },
+            "subresource": "status"
+          },
+          {
+            "manager": "Python-urllib",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-10T06:48:58Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:annotations": {
+                  "f:controller.kubernetes.io/pod-deletion-cost": {}
+                }
+              }
+            }
+          }
+        ]
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "eks-pod-identity-token",
+            "projected": {
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "audience": "pods.eks.amazonaws.com",
+                    "expirationSeconds": 86217,
+                    "path": "eks-pod-identity-token"
+                  }
+                }
+              ],
+              "defaultMode": 420
+            }
+          },
+          {
+            "name": "model",
+            "hostPath": {
+              "path": "/var/lib/crossscale-model-cache",
+              "type": "DirectoryOrCreate"
+            }
+          },
+          {
+            "name": "model-bootstrap",
+            "configMap": {
+              "name": "vllm-model-bootstrap-k59ktkfthh",
+              "defaultMode": 420
+            }
+          },
+          {
+            "name": "shm",
+            "emptyDir": {
+              "medium": "Memory",
+              "sizeLimit": "4Gi"
+            }
+          },
+          {
+            "name": "kube-api-access-9c9rw",
+            "projected": {
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "name": "kube-root-ca.crt",
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "path": "namespace",
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "defaultMode": 420
+            }
+          }
+        ],
+        "initContainers": [
+          {
+            "name": "download-model",
+            "image": "public.ecr.aws/aws-cli/aws-cli:2.36.17",
+            "command": [
+              "/bin/sh",
+              "/model-bootstrap/download-model.sh"
+            ],
+            "env": [
+              {
+                "name": "MODEL_BUCKET",
+                "value": "huggingface-model-registry-646821141010-us-east-1"
+              },
+              {
+                "name": "MODEL_PREFIX",
+                "value": "inference/meta-llama/Llama-3.1-8B-Instruct"
+              },
+              {
+                "name": "AWS_DEFAULT_REGION",
+                "value": "us-east-1"
+              },
+              {
+                "name": "AWS_EC2_METADATA_DISABLED",
+                "value": "true"
+              },
+              {
+                "name": "MODEL_CACHE_ENABLED",
+                "value": "1"
+              },
+              {
+                "name": "AWS_STS_REGIONAL_ENDPOINTS",
+                "value": "regional"
+              },
+              {
+                "name": "AWS_CONTAINER_CREDENTIALS_FULL_URI",
+                "value": "http://169.254.170.23/v1/credentials"
+              },
+              {
+                "name": "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE",
+                "value": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount/eks-pod-identity-token"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "ephemeral-storage": "40Gi",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "1",
+                "ephemeral-storage": "20Gi",
+                "memory": "512Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "model",
+                "mountPath": "/models"
+              },
+              {
+                "name": "model-bootstrap",
+                "readOnly": true,
+                "mountPath": "/model-bootstrap"
+              },
+              {
+                "name": "kube-api-access-9c9rw",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              },
+              {
+                "name": "eks-pod-identity-token",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "containers": [
+          {
+            "name": "vllm",
+            "image": "vllm/vllm-openai:v0.28.0-cu129-ubuntu2404@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5",
+            "args": [
+              "/models/llama",
+              "--served-model-name",
+              "meta-llama/Llama-3.1-8B-Instruct",
+              "--max-model-len",
+              "32768",
+              "--max-num-seqs",
+              "4",
+              "--max-num-batched-tokens",
+              "1024",
+              "--enable-chunked-prefill",
+              "--no-enable-prefix-caching",
+              "--gpu-memory-utilization",
+              "0.90",
+              "--enforce-eager"
+            ],
+            "ports": [
+              {
+                "name": "http",
+                "containerPort": 8000,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "HF_HUB_OFFLINE",
+                "value": "1"
+              },
+              {
+                "name": "TRANSFORMERS_OFFLINE",
+                "value": "1"
+              },
+              {
+                "name": "AWS_STS_REGIONAL_ENDPOINTS",
+                "value": "regional"
+              },
+              {
+                "name": "AWS_DEFAULT_REGION",
+                "value": "us-east-1"
+              },
+              {
+                "name": "AWS_REGION",
+                "value": "us-east-1"
+              },
+              {
+                "name": "AWS_CONTAINER_CREDENTIALS_FULL_URI",
+                "value": "http://169.254.170.23/v1/credentials"
+              },
+              {
+                "name": "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE",
+                "value": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount/eks-pod-identity-token"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "ephemeral-storage": "40Gi",
+                "memory": "12Gi",
+                "nvidia.com/gpu": "1"
+              },
+              "requests": {
+                "cpu": "2",
+                "ephemeral-storage": "20Gi",
+                "memory": "10Gi",
+                "nvidia.com/gpu": "1"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "shm",
+                "mountPath": "/dev/shm"
+              },
+              {
+                "name": "model",
+                "readOnly": true,
+                "mountPath": "/models"
+              },
+              {
+                "name": "kube-api-access-9c9rw",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+              },
+              {
+                "name": "eks-pod-identity-token",
+                "readOnly": true,
+                "mountPath": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount"
+              }
+            ],
+            "readinessProbe": {
+              "httpGet": {
+                "path": "/health",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "timeoutSeconds": 1,
+              "periodSeconds": 1,
+              "successThreshold": 1,
+              "failureThreshold": 3
+            },
+            "startupProbe": {
+              "httpGet": {
+                "path": "/health",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "timeoutSeconds": 1,
+              "periodSeconds": 5,
+              "successThreshold": 1,
+              "failureThreshold": 180
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "nodeSelector": {
+          "node.kubernetes.io/instance-type": "g5.xlarge"
+        },
+        "serviceAccountName": "vllm-model-reader",
+        "serviceAccount": "vllm-model-reader",
+        "nodeName": "ip-10-42-9-196.ec2.internal",
+        "securityContext": {},
+        "schedulerName": "default-scheduler",
+        "tolerations": [
+          {
+            "key": "nvidia.com/gpu",
+            "operator": "Exists",
+            "effect": "NoSchedule"
+          },
+          {
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "effect": "NoExecute",
+            "tolerationSeconds": 300
+          },
+          {
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "effect": "NoExecute",
+            "tolerationSeconds": 300
+          }
+        ],
+        "priority": 0,
+        "enableServiceLinks": false,
+        "preemptionPolicy": "PreemptLowerPriority"
+      },
+      "status": {
+        "observedGeneration": 1,
+        "phase": "Running",
+        "conditions": [
+          {
+            "type": "PodReadyToStartContainers",
+            "observedGeneration": 1,
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-09-08T23:01:58Z"
+          },
+          {
+            "type": "Initialized",
+            "observedGeneration": 1,
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-09-08T23:01:58Z"
+          },
+          {
+            "type": "Ready",
+            "observedGeneration": 1,
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-09-08T23:04:37Z"
+          },
+          {
+            "type": "ContainersReady",
+            "observedGeneration": 1,
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-09-08T23:04:37Z"
+          },
+          {
+            "type": "PodScheduled",
+            "observedGeneration": 1,
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-09-08T23:01:57Z"
+          }
+        ],
+        "hostIP": "10.42.9.196",
+        "hostIPs": [
+          {
+            "ip": "10.42.9.196"
+          }
+        ],
+        "podIP": "10.42.13.218",
+        "podIPs": [
+          {
+            "ip": "10.42.13.218"
+          }
+        ],
+        "startTime": "2026-09-08T23:01:57Z",
+        "initContainerStatuses": [
+          {
+            "name": "download-model",
+            "state": {
+              "terminated": {
+                "exitCode": 0,
+                "reason": "Completed",
+                "startedAt": "2026-09-08T23:01:57Z",
+                "finishedAt": "2026-09-08T23:01:57Z",
+                "containerID": "containerd://73b1619c9172684c4e648846230f009fe5a2a8eac8624b10cb9af7937ebf73ba"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "public.ecr.aws/aws-cli/aws-cli:2.36.17",
+            "imageID": "public.ecr.aws/aws-cli/aws-cli@sha256:a6deeaf5ec96a8f2c0d1f84e6086018ac396c95473dcec34afc275a380fa4f29",
+            "containerID": "containerd://73b1619c9172684c4e648846230f009fe5a2a8eac8624b10cb9af7937ebf73ba",
+            "started": false,
+            "allocatedResources": {
+              "cpu": "1",
+              "ephemeral-storage": "20Gi",
+              "memory": "512Mi"
+            },
+            "resources": {
+              "limits": {
+                "ephemeral-storage": "40Gi",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "1",
+                "ephemeral-storage": "20Gi",
+                "memory": "512Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "model",
+                "mountPath": "/models"
+              },
+              {
+                "name": "model-bootstrap",
+                "mountPath": "/model-bootstrap",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              },
+              {
+                "name": "kube-api-access-9c9rw",
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              },
+              {
+                "name": "eks-pod-identity-token",
+                "mountPath": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ],
+            "user": {
+              "linux": {
+                "uid": 0,
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ]
+              }
+            }
+          }
+        ],
+        "containerStatuses": [
+          {
+            "name": "vllm",
+            "state": {
+              "running": {
+                "startedAt": "2026-09-08T23:01:58Z"
+              }
+            },
+            "lastState": {},
+            "ready": true,
+            "restartCount": 0,
+            "image": "sha256:a4997c1d8ea6082f46d5728d8bf3a7ddcc7fc746655486a7dffdf1cff92f25c4",
+            "imageID": "docker.io/vllm/vllm-openai@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5",
+            "containerID": "containerd://22dde8e4141add0e7555d1496c19f3a86cbd3e110593ddc0d859bef71cbdfe2f",
+            "started": true,
+            "allocatedResources": {
+              "cpu": "2",
+              "ephemeral-storage": "20Gi",
+              "memory": "10Gi",
+              "nvidia.com/gpu": "1"
+            },
+            "resources": {
+              "limits": {
+                "ephemeral-storage": "40Gi",
+                "memory": "12Gi",
+                "nvidia.com/gpu": "1"
+              },
+              "requests": {
+                "cpu": "2",
+                "ephemeral-storage": "20Gi",
+                "memory": "10Gi",
+                "nvidia.com/gpu": "1"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "shm",
+                "mountPath": "/dev/shm"
+              },
+              {
+                "name": "model",
+                "mountPath": "/models",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              },
+              {
+                "name": "kube-api-access-9c9rw",
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              },
+              {
+                "name": "eks-pod-identity-token",
+                "mountPath": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ],
+            "user": {
+              "linux": {
+                "uid": 0,
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ]
+              }
+            }
+          }
+        ],
+        "qosClass": "Burstable"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "metadata": {
+        "name": "ip-10-42-21-225.ec2.internal",
+        "uid": "dd700668-c869-461e-8bd2-20aa0a951642",
+        "resourceVersion": "611231",
+        "creationTimestamp": "2026-09-08T18:33:49Z",
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/instance-type": "m5.large",
+          "beta.kubernetes.io/os": "linux",
+          "eks.amazonaws.com/capacityType": "ON_DEMAND",
+          "eks.amazonaws.com/nodegroup": "crossscale-system-596eb5807f2030a1e7d1758c06",
+          "eks.amazonaws.com/nodegroup-image": "ami-0182b53b988e21ca3",
+          "eks.amazonaws.com/sourceLaunchTemplateId": "lt-088bf7d7a865a9c40",
+          "eks.amazonaws.com/sourceLaunchTemplateVersion": "1",
+          "failure-domain.beta.kubernetes.io/region": "us-east-1",
+          "failure-domain.beta.kubernetes.io/zone": "us-east-1b",
+          "k8s.io/cloud-provider-aws": "88a5ce66552da52d74f79e7d015ce4bd",
+          "karpenter.sh/controller": "true",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "ip-10-42-21-225.ec2.internal",
+          "kubernetes.io/os": "linux",
+          "node.kubernetes.io/instance-type": "m5.large",
+          "topology.k8s.aws/zone-id": "use1-az2",
+          "topology.kubernetes.io/region": "us-east-1",
+          "topology.kubernetes.io/zone": "us-east-1b"
+        },
+        "annotations": {
+          "alpha.kubernetes.io/provided-node-ip": "10.42.21.225",
+          "node.alpha.kubernetes.io/ttl": "0",
+          "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+        },
+        "managedFields": [
+          {
+            "manager": "kube-controller-manager",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T18:33:49Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:annotations": {
+                  "f:node.alpha.kubernetes.io/ttl": {}
+                }
+              }
+            }
+          },
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T18:33:49Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:annotations": {
+                  ".": {},
+                  "f:alpha.kubernetes.io/provided-node-ip": {},
+                  "f:volumes.kubernetes.io/controller-managed-attach-detach": {}
+                },
+                "f:labels": {
+                  ".": {},
+                  "f:beta.kubernetes.io/arch": {},
+                  "f:beta.kubernetes.io/os": {},
+                  "f:eks.amazonaws.com/capacityType": {},
+                  "f:eks.amazonaws.com/nodegroup": {},
+                  "f:eks.amazonaws.com/nodegroup-image": {},
+                  "f:eks.amazonaws.com/sourceLaunchTemplateId": {},
+                  "f:eks.amazonaws.com/sourceLaunchTemplateVersion": {},
+                  "f:karpenter.sh/controller": {},
+                  "f:kubernetes.io/arch": {},
+                  "f:kubernetes.io/hostname": {},
+                  "f:kubernetes.io/os": {}
+                }
+              },
+              "f:spec": {
+                "f:providerID": {}
+              }
+            }
+          },
+          {
+            "manager": "aws-cloud-controller-manager",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T18:33:50Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  "f:beta.kubernetes.io/instance-type": {},
+                  "f:failure-domain.beta.kubernetes.io/region": {},
+                  "f:failure-domain.beta.kubernetes.io/zone": {},
+                  "f:k8s.io/cloud-provider-aws": {},
+                  "f:node.kubernetes.io/instance-type": {},
+                  "f:topology.k8s.aws/zone-id": {},
+                  "f:topology.kubernetes.io/region": {},
+                  "f:topology.kubernetes.io/zone": {}
+                }
+              }
+            }
+          },
+          {
+            "manager": "aws-cloud-controller-manager",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T18:33:50Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:status": {
+                "f:addresses": {
+                  "k:{\"type\":\"InternalDNS\"}": {
+                    ".": {},
+                    "f:address": {},
+                    "f:type": {}
+                  }
+                }
+              }
+            },
+            "subresource": "status"
+          },
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-10T08:40:15Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:status": {
+                "f:conditions": {
+                  "k:{\"type\":\"DiskPressure\"}": {
+                    "f:lastHeartbeatTime": {}
+                  },
+                  "k:{\"type\":\"MemoryPressure\"}": {
+                    "f:lastHeartbeatTime": {}
+                  },
+                  "k:{\"type\":\"PIDPressure\"}": {
+                    "f:lastHeartbeatTime": {}
+                  },
+                  "k:{\"type\":\"Ready\"}": {
+                    "f:lastHeartbeatTime": {},
+                    "f:lastTransitionTime": {},
+                    "f:message": {},
+                    "f:reason": {},
+                    "f:status": {}
+                  }
+                },
+                "f:images": {}
+              }
+            },
+            "subresource": "status"
+          }
+        ]
+      },
+      "spec": {
+        "providerID": "aws:///us-east-1b/i-0128e9c80a1ed4ee9"
+      },
+      "status": {
+        "capacity": {
+          "cpu": "2",
+          "ephemeral-storage": "20893676Ki",
+          "hugepages-1Gi": "0",
+          "hugepages-2Mi": "0",
+          "memory": "7920048Ki",
+          "pods": "29"
+        },
+        "allocatable": {
+          "cpu": "1930m",
+          "ephemeral-storage": "18181869946",
+          "hugepages-1Gi": "0",
+          "hugepages-2Mi": "0",
+          "memory": "7229872Ki",
+          "pods": "29"
+        },
+        "conditions": [
+          {
+            "type": "MemoryPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-09-10T08:40:15Z",
+            "lastTransitionTime": "2026-09-08T18:33:45Z",
+            "reason": "KubeletHasSufficientMemory",
+            "message": "kubelet has sufficient memory available"
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-09-10T08:40:15Z",
+            "lastTransitionTime": "2026-09-08T18:33:45Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": "kubelet has no disk pressure"
+          },
+          {
+            "type": "PIDPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-09-10T08:40:15Z",
+            "lastTransitionTime": "2026-09-08T18:33:45Z",
+            "reason": "KubeletHasSufficientPID",
+            "message": "kubelet has sufficient PID available"
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastHeartbeatTime": "2026-09-10T08:40:15Z",
+            "lastTransitionTime": "2026-09-08T18:34:01Z",
+            "reason": "KubeletReady",
+            "message": "kubelet is posting ready status"
+          }
+        ],
+        "addresses": [
+          {
+            "type": "InternalIP",
+            "address": "10.42.21.225"
+          },
+          {
+            "type": "InternalDNS",
+            "address": "ip-10-42-21-225.ec2.internal"
+          },
+          {
+            "type": "Hostname",
+            "address": "ip-10-42-21-225.ec2.internal"
+          }
+        ],
+        "daemonEndpoints": {
+          "kubeletEndpoint": {
+            "Port": 10250
+          }
+        },
+        "nodeInfo": {
+          "machineID": "ec25d6430e77339e76fa01df94d80423",
+          "systemUUID": "ec25d643-0e77-339e-76fa-01df94d80423",
+          "bootID": "2f5b5258-2177-4865-b171-707d87fc5a79",
+          "kernelVersion": "6.12.100-125.179.amzn2023.x86_64",
+          "osImage": "Amazon Linux 2023.12.20260817",
+          "containerRuntimeVersion": "containerd://2.2.5+unknown",
+          "kubeletVersion": "v1.34.10-eks-cb19647",
+          "kubeProxyVersion": "",
+          "operatingSystem": "linux",
+          "architecture": "amd64"
+        },
+        "images": [
+          {
+            "names": [
+              "quay.io/prometheus/prometheus@sha256:78ed1f9050eb9eaf766af6e580230b1c4965728650e332cd1ee918c0c4699775",
+              "quay.io/prometheus/prometheus:v3.4.0"
+            ],
+            "sizeBytes": 119912915
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni-init@sha256:3cb1c200ccff7327c30b423373f31b0b43497a6aa20564a0aac1546ca60ce5ba",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni-init:v1.23.0-eksbuild.1"
+            ],
+            "sizeBytes": 69764824
+          },
+          {
+            "names": [
+              "public.ecr.aws/karpenter/controller@sha256:26743727998f19449a2621bbe79ad42ae9d6015866bf356b220718413ea62d98"
+            ],
+            "sizeBytes": 59114355
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni@sha256:0e9ecadbd5840dc09ce19a09d74be329a5f658cb1a8420343ef791de19d833b6",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni:v1.23.0-eksbuild.1"
+            ],
+            "sizeBytes": 58051136
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon/aws-network-policy-agent@sha256:f04db09c230196af48b73202aec2f3221b14fd194fbefd5f33a18eb31cf12bf2",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon/aws-network-policy-agent:v1.4.1-eksbuild.1"
+            ],
+            "sizeBytes": 34343287
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/eks-pod-identity-agent@sha256:8111fc61fb4c0ff14c1975bd6c5f473398113fa87cb9199a9465d42f95320130",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/eks-pod-identity-agent:v0.2.2"
+            ],
+            "sizeBytes": 32709094
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/kube-proxy@sha256:178495db6bf2f880445aa394f2c21157e290dad4988ff2a7c46ce48a05fc7857",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/kube-proxy:v1.34.6-eksbuild.21"
+            ],
+            "sizeBytes": 32176921
+          },
+          {
+            "names": [
+              "ghcr.io/kedacore/keda-admission-webhooks@sha256:c8227c6edb4d9926f7ed366bc8f383e9e461c6dd58d708e97539ad9393caffa8",
+              "ghcr.io/kedacore/keda-admission-webhooks:2.17.2"
+            ],
+            "sizeBytes": 27871426
+          },
+          {
+            "names": [
+              "registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:2cf4ebfa82a37c357455458f6dfc334aea1392d508270b2517795a9933a02524",
+              "registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.5.3"
+            ],
+            "sizeBytes": 27479411
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/coredns@sha256:da90aaedb5667cfe0b1c783039fb936036d8da05fe83560dfced0a36caa2094f",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/coredns:v1.13.2-eksbuild.24"
+            ],
+            "sizeBytes": 25614381
+          },
+          {
+            "names": [
+              "registry.k8s.io/kube-state-metrics/kube-state-metrics@sha256:db384bf43222b066c378e77027a675d4cd9911107adba46c2922b3a55e10d6fb",
+              "registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.15.0"
+            ],
+            "sizeBytes": 15293353
+          },
+          {
+            "names": [
+              "quay.io/prometheus-operator/prometheus-config-reloader@sha256:710458fdccd42d56bb5b20b548fe9a2f832c12aa26256e80cda48a9edb0454ff",
+              "quay.io/prometheus-operator/prometheus-config-reloader:v0.82.2"
+            ],
+            "sizeBytes": 14665293
+          },
+          {
+            "names": [
+              "quay.io/prometheus/node-exporter@sha256:d00a542e409ee618a4edc67da14dd48c5da66726bbd5537ab2af9c1dfc442c8a",
+              "quay.io/prometheus/node-exporter:v1.9.1"
+            ],
+            "sizeBytes": 12955907
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/pause:3.10",
+              "localhost/kubernetes/pause:latest"
+            ],
+            "sizeBytes": 318731
+          }
+        ],
+        "runtimeHandlers": [
+          {
+            "name": "",
+            "features": {
+              "recursiveReadOnlyMounts": true,
+              "userNamespaces": true
+            }
+          },
+          {
+            "name": "runc",
+            "features": {
+              "recursiveReadOnlyMounts": true,
+              "userNamespaces": true
+            }
+          }
+        ],
+        "features": {
+          "supplementalGroupsPolicy": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "ip-10-42-7-237.ec2.internal",
+        "uid": "1e9f15d9-5157-42ab-a646-341654544f7a",
+        "resourceVersion": "612204",
+        "creationTimestamp": "2026-09-08T18:33:50Z",
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/instance-type": "m5.large",
+          "beta.kubernetes.io/os": "linux",
+          "eks.amazonaws.com/capacityType": "ON_DEMAND",
+          "eks.amazonaws.com/nodegroup": "crossscale-system-596eb5807f2030a1e7d1758c06",
+          "eks.amazonaws.com/nodegroup-image": "ami-0182b53b988e21ca3",
+          "eks.amazonaws.com/sourceLaunchTemplateId": "lt-088bf7d7a865a9c40",
+          "eks.amazonaws.com/sourceLaunchTemplateVersion": "1",
+          "failure-domain.beta.kubernetes.io/region": "us-east-1",
+          "failure-domain.beta.kubernetes.io/zone": "us-east-1a",
+          "k8s.io/cloud-provider-aws": "88a5ce66552da52d74f79e7d015ce4bd",
+          "karpenter.sh/controller": "true",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "ip-10-42-7-237.ec2.internal",
+          "kubernetes.io/os": "linux",
+          "node.kubernetes.io/instance-type": "m5.large",
+          "topology.k8s.aws/zone-id": "use1-az1",
+          "topology.kubernetes.io/region": "us-east-1",
+          "topology.kubernetes.io/zone": "us-east-1a"
+        },
+        "annotations": {
+          "alpha.kubernetes.io/provided-node-ip": "10.42.7.237",
+          "node.alpha.kubernetes.io/ttl": "0",
+          "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+        },
+        "managedFields": [
+          {
+            "manager": "kube-controller-manager",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T18:33:50Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:annotations": {
+                  "f:node.alpha.kubernetes.io/ttl": {}
+                }
+              }
+            }
+          },
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T18:33:50Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:annotations": {
+                  ".": {},
+                  "f:alpha.kubernetes.io/provided-node-ip": {},
+                  "f:volumes.kubernetes.io/controller-managed-attach-detach": {}
+                },
+                "f:labels": {
+                  ".": {},
+                  "f:beta.kubernetes.io/arch": {},
+                  "f:beta.kubernetes.io/os": {},
+                  "f:eks.amazonaws.com/capacityType": {},
+                  "f:eks.amazonaws.com/nodegroup": {},
+                  "f:eks.amazonaws.com/nodegroup-image": {},
+                  "f:eks.amazonaws.com/sourceLaunchTemplateId": {},
+                  "f:eks.amazonaws.com/sourceLaunchTemplateVersion": {},
+                  "f:karpenter.sh/controller": {},
+                  "f:kubernetes.io/arch": {},
+                  "f:kubernetes.io/hostname": {},
+                  "f:kubernetes.io/os": {}
+                }
+              },
+              "f:spec": {
+                "f:providerID": {}
+              }
+            }
+          },
+          {
+            "manager": "aws-cloud-controller-manager",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T18:33:51Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  "f:beta.kubernetes.io/instance-type": {},
+                  "f:failure-domain.beta.kubernetes.io/region": {},
+                  "f:failure-domain.beta.kubernetes.io/zone": {},
+                  "f:k8s.io/cloud-provider-aws": {},
+                  "f:node.kubernetes.io/instance-type": {},
+                  "f:topology.k8s.aws/zone-id": {},
+                  "f:topology.kubernetes.io/region": {},
+                  "f:topology.kubernetes.io/zone": {}
+                }
+              }
+            }
+          },
+          {
+            "manager": "aws-cloud-controller-manager",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T18:33:51Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:status": {
+                "f:addresses": {
+                  "k:{\"type\":\"InternalDNS\"}": {
+                    ".": {},
+                    "f:address": {},
+                    "f:type": {}
+                  }
+                }
+              }
+            },
+            "subresource": "status"
+          },
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-10T08:44:29Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:status": {
+                "f:conditions": {
+                  "k:{\"type\":\"DiskPressure\"}": {
+                    "f:lastHeartbeatTime": {}
+                  },
+                  "k:{\"type\":\"MemoryPressure\"}": {
+                    "f:lastHeartbeatTime": {}
+                  },
+                  "k:{\"type\":\"PIDPressure\"}": {
+                    "f:lastHeartbeatTime": {}
+                  },
+                  "k:{\"type\":\"Ready\"}": {
+                    "f:lastHeartbeatTime": {},
+                    "f:lastTransitionTime": {},
+                    "f:message": {},
+                    "f:reason": {},
+                    "f:status": {}
+                  }
+                },
+                "f:images": {}
+              }
+            },
+            "subresource": "status"
+          }
+        ]
+      },
+      "spec": {
+        "providerID": "aws:///us-east-1a/i-0f3ea4dc64625e310"
+      },
+      "status": {
+        "capacity": {
+          "cpu": "2",
+          "ephemeral-storage": "20893676Ki",
+          "hugepages-1Gi": "0",
+          "hugepages-2Mi": "0",
+          "memory": "7920040Ki",
+          "pods": "29"
+        },
+        "allocatable": {
+          "cpu": "1930m",
+          "ephemeral-storage": "18181869946",
+          "hugepages-1Gi": "0",
+          "hugepages-2Mi": "0",
+          "memory": "7229864Ki",
+          "pods": "29"
+        },
+        "conditions": [
+          {
+            "type": "MemoryPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-09-10T08:44:29Z",
+            "lastTransitionTime": "2026-09-08T18:33:49Z",
+            "reason": "KubeletHasSufficientMemory",
+            "message": "kubelet has sufficient memory available"
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-09-10T08:44:29Z",
+            "lastTransitionTime": "2026-09-08T18:33:49Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": "kubelet has no disk pressure"
+          },
+          {
+            "type": "PIDPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-09-10T08:44:29Z",
+            "lastTransitionTime": "2026-09-08T18:33:49Z",
+            "reason": "KubeletHasSufficientPID",
+            "message": "kubelet has sufficient PID available"
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastHeartbeatTime": "2026-09-10T08:44:29Z",
+            "lastTransitionTime": "2026-09-08T18:34:03Z",
+            "reason": "KubeletReady",
+            "message": "kubelet is posting ready status"
+          }
+        ],
+        "addresses": [
+          {
+            "type": "InternalIP",
+            "address": "10.42.7.237"
+          },
+          {
+            "type": "InternalDNS",
+            "address": "ip-10-42-7-237.ec2.internal"
+          },
+          {
+            "type": "Hostname",
+            "address": "ip-10-42-7-237.ec2.internal"
+          }
+        ],
+        "daemonEndpoints": {
+          "kubeletEndpoint": {
+            "Port": 10250
+          }
+        },
+        "nodeInfo": {
+          "machineID": "ec28b6124bee1cefaef94427bae4311f",
+          "systemUUID": "ec28b612-4bee-1cef-aef9-4427bae4311f",
+          "bootID": "215de90a-f1b5-4c8b-8465-5a0604a8f13f",
+          "kernelVersion": "6.12.100-125.179.amzn2023.x86_64",
+          "osImage": "Amazon Linux 2023.12.20260817",
+          "containerRuntimeVersion": "containerd://2.2.5+unknown",
+          "kubeletVersion": "v1.34.10-eks-cb19647",
+          "kubeProxyVersion": "",
+          "operatingSystem": "linux",
+          "architecture": "amd64"
+        },
+        "images": [
+          {
+            "names": [
+              "ghcr.io/kedacore/keda@sha256:72dc058e478d7743a20f6f2f3af76a67d80b6f748a656a32d42a0ce560cc75c7",
+              "ghcr.io/kedacore/keda:2.17.2"
+            ],
+            "sizeBytes": 80288943
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni-init@sha256:3cb1c200ccff7327c30b423373f31b0b43497a6aa20564a0aac1546ca60ce5ba",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni-init:v1.23.0-eksbuild.1"
+            ],
+            "sizeBytes": 69764824
+          },
+          {
+            "names": [
+              "public.ecr.aws/karpenter/controller@sha256:26743727998f19449a2621bbe79ad42ae9d6015866bf356b220718413ea62d98"
+            ],
+            "sizeBytes": 59114355
+          },
+          {
+            "names": [
+              "ghcr.io/kedacore/keda-metrics-apiserver@sha256:f312f50ddc578ef1629c5a69adeb8672b44c9914383d1eea940245d3f5d18a85",
+              "ghcr.io/kedacore/keda-metrics-apiserver:2.17.2"
+            ],
+            "sizeBytes": 58200625
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni@sha256:0e9ecadbd5840dc09ce19a09d74be329a5f658cb1a8420343ef791de19d833b6",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni:v1.23.0-eksbuild.1"
+            ],
+            "sizeBytes": 58051136
+          },
+          {
+            "names": [
+              "docker.io/library/python@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534",
+              "docker.io/library/python:3.11-slim"
+            ],
+            "sizeBytes": 48526805
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon/aws-network-policy-agent@sha256:f04db09c230196af48b73202aec2f3221b14fd194fbefd5f33a18eb31cf12bf2",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon/aws-network-policy-agent:v1.4.1-eksbuild.1"
+            ],
+            "sizeBytes": 34343287
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/eks-pod-identity-agent@sha256:8111fc61fb4c0ff14c1975bd6c5f473398113fa87cb9199a9465d42f95320130",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/eks-pod-identity-agent:v0.2.2"
+            ],
+            "sizeBytes": 32709094
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/kube-proxy@sha256:178495db6bf2f880445aa394f2c21157e290dad4988ff2a7c46ce48a05fc7857",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/kube-proxy:v1.34.6-eksbuild.21"
+            ],
+            "sizeBytes": 32176921
+          },
+          {
+            "names": [
+              "registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:2cf4ebfa82a37c357455458f6dfc334aea1392d508270b2517795a9933a02524",
+              "registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.5.3"
+            ],
+            "sizeBytes": 27479411
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/coredns@sha256:da90aaedb5667cfe0b1c783039fb936036d8da05fe83560dfced0a36caa2094f",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/coredns:v1.13.2-eksbuild.24"
+            ],
+            "sizeBytes": 25614381
+          },
+          {
+            "names": [
+              "quay.io/prometheus-operator/prometheus-operator@sha256:1875f5418dbea75e79177fdadabcaa4aca69ea73a591aa463550f1d44b86393d",
+              "quay.io/prometheus-operator/prometheus-operator:v0.82.2"
+            ],
+            "sizeBytes": 18932033
+          },
+          {
+            "names": [
+              "quay.io/prometheus/node-exporter@sha256:d00a542e409ee618a4edc67da14dd48c5da66726bbd5537ab2af9c1dfc442c8a",
+              "quay.io/prometheus/node-exporter:v1.9.1"
+            ],
+            "sizeBytes": 12955907
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/pause:3.10",
+              "localhost/kubernetes/pause:latest"
+            ],
+            "sizeBytes": 318731
+          }
+        ],
+        "runtimeHandlers": [
+          {
+            "name": "",
+            "features": {
+              "recursiveReadOnlyMounts": true,
+              "userNamespaces": true
+            }
+          },
+          {
+            "name": "runc",
+            "features": {
+              "recursiveReadOnlyMounts": true,
+              "userNamespaces": true
+            }
+          }
+        ],
+        "features": {
+          "supplementalGroupsPolicy": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "ip-10-42-9-196.ec2.internal",
+        "uid": "1f6a0571-07af-42cc-a986-17e8b7eaf92b",
+        "resourceVersion": "611303",
+        "creationTimestamp": "2026-09-08T19:28:55Z",
+        "labels": {
+          "beta.kubernetes.io/arch": "amd64",
+          "beta.kubernetes.io/instance-type": "g5.xlarge",
+          "beta.kubernetes.io/os": "linux",
+          "failure-domain.beta.kubernetes.io/region": "us-east-1",
+          "failure-domain.beta.kubernetes.io/zone": "us-east-1a",
+          "k8s.io/cloud-provider-aws": "88a5ce66552da52d74f79e7d015ce4bd",
+          "karpenter.k8s.aws/ec2nodeclass": "crossscale-gpu",
+          "karpenter.k8s.aws/instance-category": "g",
+          "karpenter.k8s.aws/instance-cpu": "4",
+          "karpenter.k8s.aws/instance-cpu-manufacturer": "amd",
+          "karpenter.k8s.aws/instance-cpu-sustained-clock-speed-mhz": "3300",
+          "karpenter.k8s.aws/instance-ebs-bandwidth": "3500",
+          "karpenter.k8s.aws/instance-encryption-in-transit-supported": "true",
+          "karpenter.k8s.aws/instance-family": "g5",
+          "karpenter.k8s.aws/instance-generation": "5",
+          "karpenter.k8s.aws/instance-gpu-count": "1",
+          "karpenter.k8s.aws/instance-gpu-manufacturer": "nvidia",
+          "karpenter.k8s.aws/instance-gpu-memory": "22888",
+          "karpenter.k8s.aws/instance-gpu-name": "a10g",
+          "karpenter.k8s.aws/instance-hypervisor": "nitro",
+          "karpenter.k8s.aws/instance-local-nvme": "250",
+          "karpenter.k8s.aws/instance-memory": "16384",
+          "karpenter.k8s.aws/instance-network-bandwidth": "2500",
+          "karpenter.k8s.aws/instance-size": "xlarge",
+          "karpenter.sh/capacity-type": "on-demand",
+          "karpenter.sh/do-not-sync-taints": "true",
+          "karpenter.sh/initialized": "true",
+          "karpenter.sh/nodepool": "crossscale-gpu",
+          "karpenter.sh/registered": "true",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/hostname": "ip-10-42-9-196.ec2.internal",
+          "kubernetes.io/os": "linux",
+          "node.kubernetes.io/instance-type": "g5.xlarge",
+          "topology.k8s.aws/zone-id": "use1-az1",
+          "topology.kubernetes.io/region": "us-east-1",
+          "topology.kubernetes.io/zone": "us-east-1a"
+        },
+        "annotations": {
+          "alpha.kubernetes.io/provided-node-ip": "10.42.9.196",
+          "karpenter.k8s.aws/ec2nodeclass-hash": "4927229435887424221",
+          "karpenter.k8s.aws/ec2nodeclass-hash-version": "v4",
+          "karpenter.sh/nodeclaim-min-values-relaxed": "false",
+          "karpenter.sh/nodepool-hash": "4113750089938003361",
+          "karpenter.sh/nodepool-hash-version": "v3",
+          "node.alpha.kubernetes.io/ttl": "0",
+          "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+        },
+        "ownerReferences": [
+          {
+            "apiVersion": "karpenter.sh/v1",
+            "kind": "NodeClaim",
+            "name": "crossscale-gpu-2kh95",
+            "uid": "65dee11a-718f-49ed-a85e-f31bf7bc6f25",
+            "blockOwnerDeletion": true
+          }
+        ],
+        "finalizers": [
+          "karpenter.sh/termination"
+        ],
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T19:28:55Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:annotations": {
+                  ".": {},
+                  "f:alpha.kubernetes.io/provided-node-ip": {},
+                  "f:volumes.kubernetes.io/controller-managed-attach-detach": {}
+                },
+                "f:labels": {
+                  ".": {},
+                  "f:beta.kubernetes.io/arch": {},
+                  "f:beta.kubernetes.io/os": {},
+                  "f:karpenter.k8s.aws/ec2nodeclass": {},
+                  "f:karpenter.sh/capacity-type": {},
+                  "f:karpenter.sh/do-not-sync-taints": {},
+                  "f:karpenter.sh/nodepool": {},
+                  "f:kubernetes.io/arch": {},
+                  "f:kubernetes.io/hostname": {},
+                  "f:kubernetes.io/os": {}
+                }
+              },
+              "f:spec": {
+                "f:providerID": {}
+              }
+            }
+          },
+          {
+            "manager": "aws-cloud-controller-manager",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T19:28:56Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  "f:beta.kubernetes.io/instance-type": {},
+                  "f:failure-domain.beta.kubernetes.io/region": {},
+                  "f:failure-domain.beta.kubernetes.io/zone": {},
+                  "f:k8s.io/cloud-provider-aws": {}
+                }
+              }
+            }
+          },
+          {
+            "manager": "aws-cloud-controller-manager",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T19:28:56Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:status": {
+                "f:addresses": {
+                  "k:{\"type\":\"InternalDNS\"}": {
+                    ".": {},
+                    "f:address": {},
+                    "f:type": {}
+                  }
+                }
+              }
+            },
+            "subresource": "status"
+          },
+          {
+            "manager": "kube-controller-manager",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T19:29:12Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:annotations": {
+                  "f:node.alpha.kubernetes.io/ttl": {}
+                }
+              },
+              "f:spec": {
+                "f:taints": {}
+              }
+            }
+          },
+          {
+            "manager": "karpenter",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-08T19:46:25Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:annotations": {
+                  "f:karpenter.k8s.aws/ec2nodeclass-hash": {},
+                  "f:karpenter.k8s.aws/ec2nodeclass-hash-version": {},
+                  "f:karpenter.sh/nodeclaim-min-values-relaxed": {},
+                  "f:karpenter.sh/nodepool-hash": {},
+                  "f:karpenter.sh/nodepool-hash-version": {}
+                },
+                "f:finalizers": {
+                  ".": {},
+                  "v:\"karpenter.sh/termination\"": {}
+                },
+                "f:labels": {
+                  "f:karpenter.k8s.aws/instance-category": {},
+                  "f:karpenter.k8s.aws/instance-cpu": {},
+                  "f:karpenter.k8s.aws/instance-cpu-manufacturer": {},
+                  "f:karpenter.k8s.aws/instance-cpu-sustained-clock-speed-mhz": {},
+                  "f:karpenter.k8s.aws/instance-ebs-bandwidth": {},
+                  "f:karpenter.k8s.aws/instance-encryption-in-transit-supported": {},
+                  "f:karpenter.k8s.aws/instance-family": {},
+                  "f:karpenter.k8s.aws/instance-generation": {},
+                  "f:karpenter.k8s.aws/instance-gpu-count": {},
+                  "f:karpenter.k8s.aws/instance-gpu-manufacturer": {},
+                  "f:karpenter.k8s.aws/instance-gpu-memory": {},
+                  "f:karpenter.k8s.aws/instance-gpu-name": {},
+                  "f:karpenter.k8s.aws/instance-hypervisor": {},
+                  "f:karpenter.k8s.aws/instance-local-nvme": {},
+                  "f:karpenter.k8s.aws/instance-memory": {},
+                  "f:karpenter.k8s.aws/instance-network-bandwidth": {},
+                  "f:karpenter.k8s.aws/instance-size": {},
+                  "f:karpenter.sh/initialized": {},
+                  "f:karpenter.sh/registered": {},
+                  "f:node.kubernetes.io/instance-type": {},
+                  "f:topology.k8s.aws/zone-id": {},
+                  "f:topology.kubernetes.io/region": {},
+                  "f:topology.kubernetes.io/zone": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"65dee11a-718f-49ed-a85e-f31bf7bc6f25\"}": {}
+                }
+              }
+            }
+          },
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2026-09-10T08:40:33Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:status": {
+                "f:allocatable": {
+                  "f:nvidia.com/gpu": {}
+                },
+                "f:capacity": {
+                  "f:nvidia.com/gpu": {}
+                },
+                "f:conditions": {
+                  "k:{\"type\":\"DiskPressure\"}": {
+                    "f:lastHeartbeatTime": {}
+                  },
+                  "k:{\"type\":\"MemoryPressure\"}": {
+                    "f:lastHeartbeatTime": {}
+                  },
+                  "k:{\"type\":\"PIDPressure\"}": {
+                    "f:lastHeartbeatTime": {}
+                  },
+                  "k:{\"type\":\"Ready\"}": {
+                    "f:lastHeartbeatTime": {},
+                    "f:lastTransitionTime": {},
+                    "f:message": {},
+                    "f:reason": {},
+                    "f:status": {}
+                  }
+                },
+                "f:images": {}
+              }
+            },
+            "subresource": "status"
+          }
+        ]
+      },
+      "spec": {
+        "providerID": "aws:///us-east-1a/i-063f58e1698afc010",
+        "taints": [
+          {
+            "key": "nvidia.com/gpu",
+            "effect": "NoSchedule"
+          }
+        ]
+      },
+      "status": {
+        "capacity": {
+          "cpu": "4",
+          "ephemeral-storage": "104779756Ki",
+          "hugepages-1Gi": "0",
+          "hugepages-2Mi": "0",
+          "memory": "16164756Ki",
+          "nvidia.com/gpu": "1",
+          "pods": "58"
+        },
+        "allocatable": {
+          "cpu": "3920m",
+          "ephemeral-storage": "95491281146",
+          "hugepages-1Gi": "0",
+          "hugepages-2Mi": "0",
+          "memory": "15147924Ki",
+          "nvidia.com/gpu": "1",
+          "pods": "58"
+        },
+        "conditions": [
+          {
+            "type": "MemoryPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-09-10T08:40:33Z",
+            "lastTransitionTime": "2026-09-08T19:28:53Z",
+            "reason": "KubeletHasSufficientMemory",
+            "message": "kubelet has sufficient memory available"
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-09-10T08:40:33Z",
+            "lastTransitionTime": "2026-09-08T19:28:53Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": "kubelet has no disk pressure"
+          },
+          {
+            "type": "PIDPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-09-10T08:40:33Z",
+            "lastTransitionTime": "2026-09-08T19:28:53Z",
+            "reason": "KubeletHasSufficientPID",
+            "message": "kubelet has sufficient PID available"
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastHeartbeatTime": "2026-09-10T08:40:33Z",
+            "lastTransitionTime": "2026-09-08T19:29:09Z",
+            "reason": "KubeletReady",
+            "message": "kubelet is posting ready status"
+          }
+        ],
+        "addresses": [
+          {
+            "type": "InternalIP",
+            "address": "10.42.9.196"
+          },
+          {
+            "type": "InternalDNS",
+            "address": "ip-10-42-9-196.ec2.internal"
+          },
+          {
+            "type": "Hostname",
+            "address": "ip-10-42-9-196.ec2.internal"
+          }
+        ],
+        "daemonEndpoints": {
+          "kubeletEndpoint": {
+            "Port": 10250
+          }
+        },
+        "nodeInfo": {
+          "machineID": "ec2329ac255f2a8e3410791efea1a729",
+          "systemUUID": "ec2329ac-255f-2a8e-3410-791efea1a729",
+          "bootID": "e4ec2702-f0f7-48d7-b766-dc6a8ed51b54",
+          "kernelVersion": "6.12.100-125.179.amzn2023.x86_64",
+          "osImage": "Amazon Linux 2023.12.20260817",
+          "containerRuntimeVersion": "containerd://2.2.5+unknown",
+          "kubeletVersion": "v1.34.10-eks-cb19647",
+          "kubeProxyVersion": "",
+          "operatingSystem": "linux",
+          "architecture": "amd64"
+        },
+        "images": [
+          {
+            "names": [
+              "docker.io/vllm/vllm-openai@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5"
+            ],
+            "sizeBytes": 10918799852
+          },
+          {
+            "names": [
+              "nvcr.io/nvidia/k8s-device-plugin@sha256:af31e2b7c7f89834c4e5219860def7ac2e49a207b3d4e8610d5a26772b7738e5",
+              "nvcr.io/nvidia/k8s-device-plugin:v0.17.1"
+            ],
+            "sizeBytes": 198670519
+          },
+          {
+            "names": [
+              "public.ecr.aws/aws-cli/aws-cli@sha256:a6deeaf5ec96a8f2c0d1f84e6086018ac396c95473dcec34afc275a380fa4f29",
+              "public.ecr.aws/aws-cli/aws-cli:2.36.17"
+            ],
+            "sizeBytes": 139765240
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni-init@sha256:3cb1c200ccff7327c30b423373f31b0b43497a6aa20564a0aac1546ca60ce5ba",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni-init:v1.23.0-eksbuild.1"
+            ],
+            "sizeBytes": 69764824
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni@sha256:0e9ecadbd5840dc09ce19a09d74be329a5f658cb1a8420343ef791de19d833b6",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni:v1.23.0-eksbuild.1"
+            ],
+            "sizeBytes": 58051136
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon/aws-network-policy-agent@sha256:f04db09c230196af48b73202aec2f3221b14fd194fbefd5f33a18eb31cf12bf2",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon/aws-network-policy-agent:v1.4.1-eksbuild.1"
+            ],
+            "sizeBytes": 34343287
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/eks-pod-identity-agent@sha256:8111fc61fb4c0ff14c1975bd6c5f473398113fa87cb9199a9465d42f95320130",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/eks-pod-identity-agent:v0.2.2"
+            ],
+            "sizeBytes": 32709094
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/kube-proxy@sha256:178495db6bf2f880445aa394f2c21157e290dad4988ff2a7c46ce48a05fc7857",
+              "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/kube-proxy:v1.34.6-eksbuild.21"
+            ],
+            "sizeBytes": 32176921
+          },
+          {
+            "names": [
+              "quay.io/prometheus/node-exporter@sha256:d00a542e409ee618a4edc67da14dd48c5da66726bbd5537ab2af9c1dfc442c8a",
+              "quay.io/prometheus/node-exporter:v1.9.1"
+            ],
+            "sizeBytes": 12955907
+          },
+          {
+            "names": [
+              "602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/pause:3.10",
+              "localhost/kubernetes/pause:latest"
+            ],
+            "sizeBytes": 318731
+          }
+        ],
+        "runtimeHandlers": [
+          {
+            "name": "",
+            "features": {
+              "recursiveReadOnlyMounts": true,
+              "userNamespaces": true
+            }
+          },
+          {
+            "name": "nvidia",
+            "features": {
+              "recursiveReadOnlyMounts": true,
+              "userNamespaces": true
+            }
+          },
+          {
+            "name": "runc",
+            "features": {
+              "recursiveReadOnlyMounts": true,
+              "userNamespaces": true
+            }
+          }
+        ],
+        "features": {
+          "supplementalGroupsPolicy": true
+        }
+      }
+    }
+  ],
+  "nodeclaims": [
+    {
+      "apiVersion": "karpenter.sh/v1",
+      "kind": "NodeClaim",
+      "metadata": {
+        "annotations": {
+          "compatibility.karpenter.k8s.aws/cluster-name-tagged": "true",
+          "karpenter.k8s.aws/ec2nodeclass-hash": "4927229435887424221",
+          "karpenter.k8s.aws/ec2nodeclass-hash-version": "v4",
+          "karpenter.k8s.aws/tagged": "true",
+          "karpenter.sh/nodeclaim-min-values-relaxed": "false",
+          "karpenter.sh/nodepool-hash": "4113750089938003361",
+          "karpenter.sh/nodepool-hash-version": "v3"
+        },
+        "creationTimestamp": "2026-09-08T19:28:32Z",
+        "finalizers": [
+          "karpenter.sh/termination"
+        ],
+        "generateName": "crossscale-gpu-",
+        "generation": 1,
+        "labels": {
+          "karpenter.k8s.aws/ec2nodeclass": "crossscale-gpu",
+          "karpenter.k8s.aws/instance-category": "g",
+          "karpenter.k8s.aws/instance-cpu": "4",
+          "karpenter.k8s.aws/instance-cpu-manufacturer": "amd",
+          "karpenter.k8s.aws/instance-cpu-sustained-clock-speed-mhz": "3300",
+          "karpenter.k8s.aws/instance-ebs-bandwidth": "3500",
+          "karpenter.k8s.aws/instance-encryption-in-transit-supported": "true",
+          "karpenter.k8s.aws/instance-family": "g5",
+          "karpenter.k8s.aws/instance-generation": "5",
+          "karpenter.k8s.aws/instance-gpu-count": "1",
+          "karpenter.k8s.aws/instance-gpu-manufacturer": "nvidia",
+          "karpenter.k8s.aws/instance-gpu-memory": "22888",
+          "karpenter.k8s.aws/instance-gpu-name": "a10g",
+          "karpenter.k8s.aws/instance-hypervisor": "nitro",
+          "karpenter.k8s.aws/instance-local-nvme": "250",
+          "karpenter.k8s.aws/instance-memory": "16384",
+          "karpenter.k8s.aws/instance-network-bandwidth": "2500",
+          "karpenter.k8s.aws/instance-size": "xlarge",
+          "karpenter.sh/capacity-type": "on-demand",
+          "karpenter.sh/nodepool": "crossscale-gpu",
+          "kubernetes.io/arch": "amd64",
+          "kubernetes.io/os": "linux",
+          "node.kubernetes.io/instance-type": "g5.xlarge",
+          "topology.k8s.aws/zone-id": "use1-az1",
+          "topology.kubernetes.io/region": "us-east-1",
+          "topology.kubernetes.io/zone": "us-east-1a"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "karpenter.sh/v1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:annotations": {
+                  ".": {},
+                  "f:compatibility.karpenter.k8s.aws/cluster-name-tagged": {},
+                  "f:karpenter.k8s.aws/ec2nodeclass-hash": {},
+                  "f:karpenter.k8s.aws/ec2nodeclass-hash-version": {},
+                  "f:karpenter.k8s.aws/tagged": {},
+                  "f:karpenter.sh/nodeclaim-min-values-relaxed": {},
+                  "f:karpenter.sh/nodepool-hash": {},
+                  "f:karpenter.sh/nodepool-hash-version": {}
+                },
+                "f:finalizers": {
+                  ".": {},
+                  "v:\"karpenter.sh/termination\"": {}
+                },
+                "f:generateName": {},
+                "f:labels": {
+                  ".": {},
+                  "f:karpenter.k8s.aws/ec2nodeclass": {},
+                  "f:karpenter.k8s.aws/instance-category": {},
+                  "f:karpenter.k8s.aws/instance-cpu": {},
+                  "f:karpenter.k8s.aws/instance-cpu-manufacturer": {},
+                  "f:karpenter.k8s.aws/instance-cpu-sustained-clock-speed-mhz": {},
+                  "f:karpenter.k8s.aws/instance-ebs-bandwidth": {},
+                  "f:karpenter.k8s.aws/instance-encryption-in-transit-supported": {},
+                  "f:karpenter.k8s.aws/instance-family": {},
+                  "f:karpenter.k8s.aws/instance-generation": {},
+                  "f:karpenter.k8s.aws/instance-gpu-count": {},
+                  "f:karpenter.k8s.aws/instance-gpu-manufacturer": {},
+                  "f:karpenter.k8s.aws/instance-gpu-memory": {},
+                  "f:karpenter.k8s.aws/instance-gpu-name": {},
+                  "f:karpenter.k8s.aws/instance-hypervisor": {},
+                  "f:karpenter.k8s.aws/instance-local-nvme": {},
+                  "f:karpenter.k8s.aws/instance-memory": {},
+                  "f:karpenter.k8s.aws/instance-network-bandwidth": {},
+                  "f:karpenter.k8s.aws/instance-size": {},
+                  "f:karpenter.sh/capacity-type": {},
+                  "f:karpenter.sh/nodepool": {},
+                  "f:kubernetes.io/arch": {},
+                  "f:kubernetes.io/os": {},
+                  "f:node.kubernetes.io/instance-type": {},
+                  "f:topology.k8s.aws/zone-id": {},
+                  "f:topology.kubernetes.io/region": {},
+                  "f:topology.kubernetes.io/zone": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"f6fa4b07-1382-4b11-8797-dc3ef25a0b6c\"}": {}
+                }
+              },
+              "f:spec": {
+                ".": {},
+                "f:expireAfter": {},
+                "f:nodeClassRef": {
+                  ".": {},
+                  "f:group": {},
+                  "f:kind": {},
+                  "f:name": {}
+                },
+                "f:requirements": {},
+                "f:resources": {
+                  ".": {},
+                  "f:requests": {
+                    ".": {},
+                    "f:cpu": {},
+                    "f:ephemeral-storage": {},
+                    "f:memory": {},
+                    "f:nvidia.com/gpu": {},
+                    "f:pods": {}
+                  }
+                },
+                "f:taints": {}
+              }
+            },
+            "manager": "karpenter",
+            "operation": "Update",
+            "time": "2026-09-08T19:28:57Z"
+          },
+          {
+            "apiVersion": "karpenter.sh/v1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:status": {
+                ".": {},
+                "f:allocatable": {
+                  ".": {},
+                  "f:cpu": {},
+                  "f:ephemeral-storage": {},
+                  "f:memory": {},
+                  "f:nvidia.com/gpu": {},
+                  "f:pods": {},
+                  "f:vpc.amazonaws.com/pod-eni": {}
+                },
+                "f:capacity": {
+                  ".": {},
+                  "f:cpu": {},
+                  "f:ephemeral-storage": {},
+                  "f:memory": {},
+                  "f:nvidia.com/gpu": {},
+                  "f:pods": {},
+                  "f:vpc.amazonaws.com/pod-eni": {}
+                },
+                "f:conditions": {},
+                "f:imageID": {},
+                "f:lastPodEventTime": {},
+                "f:nodeName": {},
+                "f:providerID": {}
+              }
+            },
+            "manager": "karpenter",
+            "operation": "Update",
+            "subresource": "status",
+            "time": "2026-09-10T06:48:58Z"
+          }
+        ],
+        "name": "crossscale-gpu-2kh95",
+        "ownerReferences": [
+          {
+            "apiVersion": "karpenter.sh/v1",
+            "blockOwnerDeletion": true,
+            "kind": "NodePool",
+            "name": "crossscale-gpu",
+            "uid": "f6fa4b07-1382-4b11-8797-dc3ef25a0b6c"
+          }
+        ],
+        "resourceVersion": "585338",
+        "uid": "65dee11a-718f-49ed-a85e-f31bf7bc6f25"
+      },
+      "spec": {
+        "expireAfter": "Never",
+        "nodeClassRef": {
+          "group": "karpenter.k8s.aws",
+          "kind": "EC2NodeClass",
+          "name": "crossscale-gpu"
+        },
+        "requirements": [
+          {
+            "key": "karpenter.k8s.aws/ec2nodeclass",
+            "operator": "In",
+            "values": [
+              "crossscale-gpu"
+            ]
+          },
+          {
+            "key": "karpenter.sh/nodepool",
+            "operator": "In",
+            "values": [
+              "crossscale-gpu"
+            ]
+          },
+          {
+            "key": "node.kubernetes.io/instance-type",
+            "operator": "In",
+            "values": [
+              "g5.xlarge"
+            ]
+          },
+          {
+            "key": "kubernetes.io/arch",
+            "operator": "In",
+            "values": [
+              "amd64"
+            ]
+          },
+          {
+            "key": "karpenter.sh/capacity-type",
+            "operator": "In",
+            "values": [
+              "on-demand"
+            ]
+          }
+        ],
+        "resources": {
+          "requests": {
+            "cpu": "2150m",
+            "ephemeral-storage": "20Gi",
+            "memory": "10Gi",
+            "nvidia.com/gpu": "1",
+            "pods": "5"
+          }
+        },
+        "taints": [
+          {
+            "effect": "NoSchedule",
+            "key": "nvidia.com/gpu"
+          }
+        ]
+      },
+      "status": {
+        "allocatable": {
+          "cpu": "3920m",
+          "ephemeral-storage": "89Gi",
+          "memory": "14162Mi",
+          "nvidia.com/gpu": "1",
+          "pods": "58",
+          "vpc.amazonaws.com/pod-eni": "4"
+        },
+        "capacity": {
+          "cpu": "4",
+          "ephemeral-storage": "100Gi",
+          "memory": "15155Mi",
+          "nvidia.com/gpu": "1",
+          "pods": "58",
+          "vpc.amazonaws.com/pod-eni": "4"
+        },
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-09-08T19:38:34Z",
+            "message": "",
+            "observedGeneration": 1,
+            "reason": "ConsistentStateFound",
+            "status": "True",
+            "type": "ConsistentStateFound"
+          },
+          {
+            "lastTransitionTime": "2026-09-08T23:11:55Z",
+            "message": "",
+            "observedGeneration": 1,
+            "reason": "Consolidatable",
+            "status": "True",
+            "type": "Consolidatable"
+          },
+          {
+            "lastTransitionTime": "2026-09-08T19:46:25Z",
+            "message": "",
+            "observedGeneration": 1,
+            "reason": "Initialized",
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastTransitionTime": "2026-09-08T19:28:34Z",
+            "message": "",
+            "observedGeneration": 1,
+            "reason": "Launched",
+            "status": "True",
+            "type": "Launched"
+          },
+          {
+            "lastTransitionTime": "2026-09-08T19:46:25Z",
+            "message": "",
+            "observedGeneration": 1,
+            "reason": "Ready",
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastTransitionTime": "2026-09-08T19:28:55Z",
+            "message": "",
+            "observedGeneration": 1,
+            "reason": "Registered",
+            "status": "True",
+            "type": "Registered"
+          }
+        ],
+        "imageID": "ami-0c126bbe79be20f0a",
+        "lastPodEventTime": "2026-09-08T23:01:55Z",
+        "nodeName": "ip-10-42-9-196.ec2.internal",
+        "providerID": "aws:///us-east-1a/i-063f58e1698afc010"
+      }
+    }
+  ]
+}

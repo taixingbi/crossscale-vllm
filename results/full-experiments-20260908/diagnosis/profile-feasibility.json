@@ -1,0 +1,304 @@
+{
+  "runs": [
+    {
+      "run": "profile-one/rps-0.1-seed-17",
+      "max_dispatch_lag_s": 0.0424398052127799,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.75,
+        "B": 0.8571428571428571,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.1-seed-18",
+      "max_dispatch_lag_s": 0.0180451576015912,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.9166666666666666,
+        "B": 1.0,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.1-seed-19",
+      "max_dispatch_lag_s": 0.024308068968821317,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 1.0,
+        "B": 1.0,
+        "C": 0.6666666666666666
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.2-seed-17",
+      "max_dispatch_lag_s": 0.014401430322322994,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.7272727272727273,
+        "B": 0.6428571428571429,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.2-seed-18",
+      "max_dispatch_lag_s": 0.0149613082758151,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.85,
+        "B": 0.375,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.2-seed-19",
+      "max_dispatch_lag_s": 0.01569154573371634,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.35294117647058826,
+        "B": 0.2727272727272727,
+        "C": 0.6666666666666666
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.3-seed-17",
+      "max_dispatch_lag_s": 0.005291980691254139,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.14285714285714285
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.3-seed-18",
+      "max_dispatch_lag_s": 0.005979874316835776,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.7916666666666666,
+        "B": 0.8333333333333334,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.3-seed-19",
+      "max_dispatch_lag_s": 0.006208902486832812,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.03333333333333333,
+        "B": 0.0625,
+        "C": 0.25
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.4-seed-17",
+      "max_dispatch_lag_s": 0.0037623175303451717,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.06060606060606061,
+        "B": 0.13636363636363635,
+        "C": 0.07692307692307693
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.4-seed-18",
+      "max_dispatch_lag_s": 0.0020664079347625375,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.11764705882352941,
+        "B": 0.0,
+        "C": 0.07692307692307693
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.4-seed-19",
+      "max_dispatch_lag_s": 0.012146604305598885,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.2391304347826087,
+        "B": 0.29411764705882354,
+        "C": 0.2857142857142857
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.6-seed-17",
+      "max_dispatch_lag_s": 0.014681020169518888,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.047619047619047616
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.6-seed-18",
+      "max_dispatch_lag_s": 0.0021345235873013735,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.02127659574468085,
+        "B": 0.025,
+        "C": 0.047619047619047616
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.6-seed-19",
+      "max_dispatch_lag_s": 0.002531167643610388,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.014925373134328358,
+        "B": 0.0,
+        "C": 0.14285714285714285
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.8-seed-17",
+      "max_dispatch_lag_s": 0.003220325452275574,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.014084507042253521,
+        "B": 0.0,
+        "C": 0.05
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.8-seed-18",
+      "max_dispatch_lag_s": 0.0033758415083866566,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.109375,
+        "B": 0.06666666666666667,
+        "C": 0.05263157894736842
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one/rps-0.8-seed-19",
+      "max_dispatch_lag_s": 0.005259678931906819,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.012195121951219513,
+        "B": 0.06818181818181818,
+        "C": 0.05263157894736842
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one-low/rps-0.025-seed-17",
+      "max_dispatch_lag_s": 0.10109698789892718,
+      "dispatch_valid": false,
+      "tenant_goodput": {
+        "A": 1.0,
+        "B": 0.8571428571428571,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one-low/rps-0.025-seed-18",
+      "max_dispatch_lag_s": 0.09835683205164969,
+      "dispatch_valid": false,
+      "tenant_goodput": {
+        "A": 1.0,
+        "B": 1.0,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": true
+    },
+    {
+      "run": "profile-one-low/rps-0.025-seed-19",
+      "max_dispatch_lag_s": 0.10061646290705539,
+      "dispatch_valid": false,
+      "tenant_goodput": {
+        "A": 1.0,
+        "B": 1.0,
+        "C": 0.6666666666666666
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one-low/rps-0.05-seed-17",
+      "max_dispatch_lag_s": 0.0734566364553757,
+      "dispatch_valid": false,
+      "tenant_goodput": {
+        "A": 1.0,
+        "B": 0.9285714285714286,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one-low/rps-0.05-seed-18",
+      "max_dispatch_lag_s": 0.0727475650201086,
+      "dispatch_valid": false,
+      "tenant_goodput": {
+        "A": 1.0,
+        "B": 1.0,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": true
+    },
+    {
+      "run": "profile-one-low/rps-0.05-seed-19",
+      "max_dispatch_lag_s": 0.08691785298287868,
+      "dispatch_valid": false,
+      "tenant_goodput": {
+        "A": 0.9411764705882353,
+        "B": 1.0,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one-low/rps-0.075-seed-17",
+      "max_dispatch_lag_s": 0.030910887813661247,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.8260869565217391,
+        "B": 0.8260869565217391,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": false
+    },
+    {
+      "run": "profile-one-low/rps-0.075-seed-18",
+      "max_dispatch_lag_s": 0.04297285625943914,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.9583333333333334,
+        "B": 1.0,
+        "C": 1.0
+      },
+      "all_tenant_slo_pass": true
+    },
+    {
+      "run": "profile-one-low/rps-0.075-seed-19",
+      "max_dispatch_lag_s": 0.0269142450124491,
+      "dispatch_valid": true,
+      "tenant_goodput": {
+        "A": 0.7666666666666667,
+        "B": 0.8125,
+        "C": 0.9166666666666666
+      },
+      "all_tenant_slo_pass": false
+    }
+  ],
+  "count": 27,
+  "dispatch_invalid": 6,
+  "note": "Original results retained; no sustainable rate selected. Timing diagnostic pending; CPU cgroup reports zero throttled periods."
+}

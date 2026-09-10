@@ -38,3 +38,12 @@ Prebaked final cleanup completed. The condition summary confirms 20 training,
 10 held-out episodes and zero failures; training P90 is 1811.426 seconds.
 The final summary and remaining EC2 lifecycle evidence are included in
 `Finalize prebaked E0 phase checkpoint`. Full one-GPU profiling has started.
+
+## Initial full one-GPU profile
+
+All 27 runs completed across nine rates and three seeds. No rate qualified
+under the predeclared joint tenant-SLO and dispatch-validity requirements.
+The controller stopped for diagnosis; no capacity was substituted and E1/E2
+have not started. Raw results, telemetry, observer streams and a per-run
+validity audit are preserved. An idle observer/event-loop diagnostic is pending.
+Find this commit with `git log --grep="Preserve initial full profiling and feasibility diagnosis"`.

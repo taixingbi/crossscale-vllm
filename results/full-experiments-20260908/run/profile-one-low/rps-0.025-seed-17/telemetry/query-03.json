@@ -1,0 +1,1 @@
+{"name": "gpu_utilization", "query": "DCGM_FI_DEV_GPU_UTIL{namespace=\"crossscale\"}", "response": {"status": "success", "data": {"resultType": "matrix", "result": []}}}

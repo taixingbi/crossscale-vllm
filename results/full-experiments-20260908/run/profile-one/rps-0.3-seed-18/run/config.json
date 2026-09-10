@@ -1,0 +1,56 @@
+{
+  "seed": 18,
+  "duration_s": 180,
+  "drain_s": 180,
+  "initial_replicas": 1,
+  "max_replicas": 1,
+  "slow_interval_s": 5,
+  "fast_interval_s": 0.1,
+  "provisioning_lag_s": 60,
+  "eta_error": 0,
+  "eta_margin_s": 0.05,
+  "queue_target": 5,
+  "slots_per_replica": 8,
+  "prefill_tokens_s": 6000,
+  "decode_tokens_s": 40,
+  "request_timeout_s": 120,
+  "tenants": {
+    "A": {
+      "input_median": 256,
+      "output_median": 128,
+      "sigma": 0.35,
+      "ttft_s": 0.5,
+      "tpot_s": 0.05,
+      "weight": 3
+    },
+    "B": {
+      "input_median": 3072,
+      "output_median": 256,
+      "sigma": 0.35,
+      "ttft_s": 1.5,
+      "tpot_s": 0.08,
+      "weight": 2
+    },
+    "C": {
+      "input_median": 8192,
+      "output_median": 1024,
+      "sigma": 0.35,
+      "ttft_s": 5,
+      "tpot_s": 0.12,
+      "weight": 1
+    }
+  },
+  "phases": [
+    {
+      "start_s": 0,
+      "rates": {
+        "A": 0.17142857142857143,
+        "B": 0.08571428571428572,
+        "C": 0.04285714285714286
+      }
+    }
+  ],
+  "client_force_close": true,
+  "upstream_force_close": true,
+  "serving_condition": "full-context-32768-seqs4-batch1024-eager-prefix-cache-off"
+}
