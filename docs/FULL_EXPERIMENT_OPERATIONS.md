@@ -107,3 +107,19 @@ phase, verify the remote commit, then continue. The existing detached controller
 advances automatically; checkpoint completed phases at the next heartbeat without
 interrupting an active measurement. Preserve the unrelated pre-existing edit in
 docs/EXPERIMENT_PLAN.md. Track checkpoints in docs/EXPERIMENT_PUSH_CHECKPOINTS.md.
+
+## Profiling diagnosis, 2026-09-10
+
+Original study PID 140 stopped after 27 initial profile runs; all preserved and
+pushed at 22859c8. Six were dispatch-invalid. Idle timing diagnostics found
+under 6 ms lag both with and without a shared observer process. A separate
+load process repeated 0.025 RPS seed 18: all tenant SLOs passed, but maximum
+dispatch lag remained 96 ms. This does not establish observer contention.
+The next diagnostic uses client waits capped at 100 ms while retaining the
+absolute arrival deadline, measured lag and unchanged 50 ms validity limit.
+Serving settings are unchanged. Results are under diagnosis-bounded-wait-load;
+script bounded-wait-diagnostic.py, log bounded-wait-diagnostic.log in the runner.
+It holds suite.lock and must finish before any continuation. It is diagnostic
+evidence, not a replacement sample or measured capacity. Inspect complete.json.
+The original study.pid still points to the stopped controller; do not restart
+it blindly. Runner sleep expires around 22:56 UTC today.

@@ -47,7 +47,10 @@ async def run(c, baseline, out, url, model, tokens_path):
     async with http.ClientSession(timeout=http.ClientTimeout(total=c["request_timeout_s"]), connector=http.TCPConnector(limit=0, force_close=c.get("client_force_close", False)), headers=headers) as session:
         async def send(r):
             scheduled = begin + r["offered_s"]
-            await asyncio.sleep(max(0, scheduled-time.monotonic()))
+            # Bound timer waits: long idle poll timeouts can wake late on Linux.
+            # Keep the original absolute deadline and measure all residual lag.
+            while (remaining := scheduled-time.monotonic()) > 0:
+                await asyncio.sleep(min(remaining, 0.1))
             r["dispatch_lag_s"] = max(0, time.monotonic()-scheduled)
             first, last, count, done = None, None, None, False
             offset = r["id"] % (len(token_ids)-r["input_tokens"]+1)
