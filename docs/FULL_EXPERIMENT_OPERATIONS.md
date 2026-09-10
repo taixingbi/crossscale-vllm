@@ -153,3 +153,13 @@ run/diagnosis-prefill-2048/complete.json AND restored.json; complete.json alone
 does not prove restoration. Each rollout has a 1200-second deadline. The script
 does not update study.pid; inspect log/process/lock before starting anything.
 No E0 data may be silently combined with a changed serving condition.
+
+2048 diagnostic restored the original budget and passed warmup. All 12 requests
+completed; B tail now passes TTFT (1.426–1.430s), C tail narrowly fails
+(5.022–5.027s). Checkpoint 9f428fa verified remotely. The same isolated diagnostic
+with budget 4096 started around 20:44 UTC, log prefill-4096-diagnostic.log,
+output diagnosis-prefill-4096. It holds suite.lock and restores 1024 afterward;
+check both complete.json and restored.json. Original GPU claim is preserved;
+current original-condition pod after restoration is vllm-5b64c7b7d9-bx4zp
+(pod name will change again during the next trial). Runner migration is due
+before its 22:56 UTC expiry, after this short trial completes.
