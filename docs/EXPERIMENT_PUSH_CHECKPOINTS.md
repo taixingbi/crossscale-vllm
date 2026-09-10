@@ -69,3 +69,10 @@ Twelve serial requests completed. B tail TTFT improved to 1.426–1.430s;
 C tail remained above 5s at 5.022–5.027s. Original 1024 budget restored,
 Ready and warmup verified. This is separate diagnostic evidence.
 Find commit with `git log --grep="Checkpoint 2048-token prefill diagnostic"`.
+
+## Prefill budget 4096 diagnostic
+
+All 12 serial requests completed. B tail TTFT 1.414s and C tail 4.972–4.977s
+met their limits in each repetition; controls passed. Capacity is not established.
+Original 1024 budget restored and warmup passed.
+Find commit with `git log --grep="Checkpoint 4096-token prefill diagnostic"`.
