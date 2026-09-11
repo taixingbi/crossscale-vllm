@@ -232,3 +232,19 @@ runner filename/log, output profile-two-low-prefill4096 and control sibling.
 Nine one-hour runs at .005/.008/.01, seeds 17/18/19; protocol amendment
 records terminal feasibility rule. Holds suite.lock, updates study.pid, restores
 one original replica and removes only owned added GPU after completion.
+
+Lower two-GPU extension completed all nine dispatch-valid runs; .005 RPS
+qualified, higher rates failed. Raw checkpoint 5ece64d verified remotely.
+Added claim crossscale-gpu-bbmzq / i-000acd7e754206393 terminated normally.
+Next script scripts/e0-prefill4096.py collects separate 4096-serving E0:
+30 cached, 30 cold, 30 prebaked episodes. It acquires suite.lock, updates
+study.pid, keeps task-wide ownership current, and logs to e0-prefill4096.log.
+Output e0-prefill4096; original e0 remains separate. status.json includes
+new-condition counts under e0_prefill4096; progress.json's e0 counts continue
+to describe ORIGINAL E0, while its latest event identifies the new condition.
+On failure it preserves current state and writes error.json; do not blindly
+restart (the fresh-start script rejects an existing output directory).
+On success it restores one original-condition replica and warmup, recording
+restored.json. No comparisons start automatically. Push each cache phase as
+its summary appears, without interrupting the controller. Allow roughly two
+days for these startup measurements based on original timing evidence.

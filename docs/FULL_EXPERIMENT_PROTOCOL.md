@@ -129,3 +129,15 @@ Output profile-two-low-prefill4096; no prior samples overwritten or pooled
 as replacement runs. If none qualifies, record full-workload feasibility
 failure and E1/E2 as not run; the E3–E7 gate is unevaluated. Do not keep
 searching smaller rates for favorable sparse samples.
+
+## Separate 4096-condition E0, 2026-09-11
+
+The lower two-GPU extension qualified .005 RPS with three passing seeds;
+.008 and .01 fail seed 17. This is below the one-GPU .01 RPS qualification
+and has only 1–3 tenant C samples per passing seed. It does not demonstrate
+positive scaling. Preserve the observed rates without assuming linear scaling.
+Before comparisons, collect 30 new E0 episodes in each original cache condition
+under the 4096 batch budget, with all other serving settings unchanged.
+Use the same 2400-second deadline and first-20/last-10 split. Store under
+e0-prefill4096, including new prebake proof and raw observations. Original E0
+remains separate; no old timing sample is used to train the new-condition ETA.
