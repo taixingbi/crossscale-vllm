@@ -76,3 +76,12 @@ All 12 serial requests completed. B tail TTFT 1.414s and C tail 4.972–4.977s
 met their limits in each repetition; controls passed. Capacity is not established.
 Original 1024 budget restored and warmup passed.
 Find commit with `git log --grep="Checkpoint 4096-token prefill diagnostic"`.
+
+## Separate 4096-token full one-GPU profile
+
+All 18 runs completed; all dispatch-valid. The predeclared consecutive-rate
+rule qualifies 0.01 RPS. Higher rates fail at least one seed. All 330 files,
+including JSON and closed gzip streams, validated; original 1024 serving
+settings restored with Ready and warmup evidence. This exploratory condition
+is separate from original E0 and profiling.
+Find commit with `git log --grep="Checkpoint full 4096-token one-GPU profile"`.
