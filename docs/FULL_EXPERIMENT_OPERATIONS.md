@@ -224,3 +224,11 @@ lowest-rate B misses (6841 and 6309 tokens, preserved IDs) plus B median,
 three serial repetitions on one 4096 replica, then restores 1024.
 Output diagnosis-two-profile-tail4096, log diagnose-two-profile-tail4096.log.
 Holds suite.lock and updates study.pid. No capacity replacement or E0 reuse.
+
+Isolated B tail replay completed: 6841-token TTFT about 1.786s, 6309-token
+about 1.661s, all three fail even alone; median passes. Raw checkpoint bc8d78c.
+Restoration passed. Next scripts/profile-two-low-prefill4096.py, matching
+runner filename/log, output profile-two-low-prefill4096 and control sibling.
+Nine one-hour runs at .005/.008/.01, seeds 17/18/19; protocol amendment
+records terminal feasibility rule. Holds suite.lock, updates study.pid, restores
+one original replica and removes only owned added GPU after completion.

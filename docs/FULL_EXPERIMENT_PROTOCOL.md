@@ -116,3 +116,16 @@ Before outcomes, extend each arrival horizon to 1800 seconds to sample every
 tenant at these low rates. Keep all SLO/dispatch/consecutive-rate rules.
 If none qualifies, diagnose before a separately recorded lower-range extension.
 Restore one original-condition replica afterward. E0/ETA remains separate.
+
+## Lower-range two-GPU 4096 extension, 2026-09-11
+
+The initial nine runs all dispatch-valid but no rate qualified. Serial replay
+of the two lowest-rate B tail misses failed all three repetitions even alone;
+lower traffic cannot remove these individual service-time misses. To complete
+the lower-range feasibility check, predeclare .005/.008/.01 RPS, seeds
+17/18/19, 3600-second horizons; every tenant has offered samples in all nine
+traces. Retain the same SLO, dispatch and consecutive-rate criteria.
+Output profile-two-low-prefill4096; no prior samples overwritten or pooled
+as replacement runs. If none qualifies, record full-workload feasibility
+failure and E1/E2 as not run; the E3–E7 gate is unevaluated. Do not keep
+searching smaller rates for favorable sparse samples.
