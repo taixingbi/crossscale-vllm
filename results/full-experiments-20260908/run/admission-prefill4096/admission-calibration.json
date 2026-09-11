@@ -1,0 +1,186 @@
+{
+  "prefill_tokens_s": 3305.8201319531686,
+  "slots_per_replica": 1,
+  "isolated": [
+    {
+      "input_tokens": 256,
+      "output_tokens": 2,
+      "ttft_s": 0.07771259298897348,
+      "tpot_s": 0.033134738012449816,
+      "actual_output_tokens": 2
+    },
+    {
+      "input_tokens": 3072,
+      "output_tokens": 2,
+      "ttft_s": 0.7446111160097644,
+      "tpot_s": 0.032645997998770326,
+      "actual_output_tokens": 2
+    },
+    {
+      "input_tokens": 8192,
+      "output_tokens": 2,
+      "ttft_s": 2.175823372992454,
+      "tpot_s": 0.031086708011571318,
+      "actual_output_tokens": 2
+    },
+    {
+      "input_tokens": 256,
+      "output_tokens": 2,
+      "ttft_s": 0.07722764299251139,
+      "tpot_s": 0.03292754100402817,
+      "actual_output_tokens": 2
+    },
+    {
+      "input_tokens": 3072,
+      "output_tokens": 2,
+      "ttft_s": 0.7445379160053562,
+      "tpot_s": 0.032922598998993635,
+      "actual_output_tokens": 2
+    },
+    {
+      "input_tokens": 8192,
+      "output_tokens": 2,
+      "ttft_s": 2.1753430500102695,
+      "tpot_s": 0.031355415005236864,
+      "actual_output_tokens": 2
+    },
+    {
+      "input_tokens": 256,
+      "output_tokens": 2,
+      "ttft_s": 0.07737112700124271,
+      "tpot_s": 0.032923241989919916,
+      "actual_output_tokens": 2
+    },
+    {
+      "input_tokens": 3072,
+      "output_tokens": 2,
+      "ttft_s": 0.7438906359893735,
+      "tpot_s": 0.032740875001763925,
+      "actual_output_tokens": 2
+    },
+    {
+      "input_tokens": 8192,
+      "output_tokens": 2,
+      "ttft_s": 2.1752894549863413,
+      "tpot_s": 0.031297794019337744,
+      "actual_output_tokens": 2
+    }
+  ],
+  "concurrency": [
+    {
+      "size": 1,
+      "repeat": 0,
+      "passed": true,
+      "requests": [
+        {
+          "tenant": "A",
+          "input_tokens": 256,
+          "output_tokens": 128,
+          "ttft_s": 0.07713157800026238,
+          "tpot_s": 0.03346419011015357,
+          "actual_output_tokens": 128
+        }
+      ]
+    },
+    {
+      "size": 1,
+      "repeat": 1,
+      "passed": true,
+      "requests": [
+        {
+          "tenant": "B",
+          "input_tokens": 3072,
+          "output_tokens": 256,
+          "ttft_s": 0.745623783004703,
+          "tpot_s": 0.03445674843536051,
+          "actual_output_tokens": 256
+        }
+      ]
+    },
+    {
+      "size": 1,
+      "repeat": 2,
+      "passed": true,
+      "requests": [
+        {
+          "tenant": "C",
+          "input_tokens": 8192,
+          "output_tokens": 1024,
+          "ttft_s": 2.175821016979171,
+          "tpot_s": 0.035914499362653445,
+          "actual_output_tokens": 1024
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "repeat": 0,
+      "passed": false,
+      "requests": [
+        {
+          "tenant": "A",
+          "input_tokens": 256,
+          "output_tokens": 128,
+          "ttft_s": 0.8604248439951334,
+          "tpot_s": 0.036098533354224784,
+          "actual_output_tokens": 128
+        },
+        {
+          "tenant": "B",
+          "input_tokens": 3072,
+          "output_tokens": 256,
+          "ttft_s": 0.7463053819956258,
+          "tpot_s": 0.03559749455296197,
+          "actual_output_tokens": 256
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "repeat": 1,
+      "passed": false,
+      "requests": [
+        {
+          "tenant": "B",
+          "input_tokens": 3072,
+          "output_tokens": 256,
+          "ttft_s": 2.9323330570186954,
+          "tpot_s": 0.0383725751646767,
+          "actual_output_tokens": 256
+        },
+        {
+          "tenant": "C",
+          "input_tokens": 8192,
+          "output_tokens": 1024,
+          "ttft_s": 2.177207568020094,
+          "tpot_s": 0.037264005880717974,
+          "actual_output_tokens": 1024
+        }
+      ]
+    },
+    {
+      "size": 2,
+      "repeat": 2,
+      "passed": false,
+      "requests": [
+        {
+          "tenant": "C",
+          "input_tokens": 8192,
+          "output_tokens": 1024,
+          "ttft_s": 2.1763023789972067,
+          "tpot_s": 0.03621491683775173,
+          "actual_output_tokens": 1024
+        },
+        {
+          "tenant": "A",
+          "input_tokens": 256,
+          "output_tokens": 128,
+          "ttft_s": 2.2961387730028946,
+          "tpot_s": 0.037462619566871955,
+          "actual_output_tokens": 128
+        }
+      ]
+    }
+  ],
+  "limitation": "conservative sampled admission calibration, not a general service model"
+}
