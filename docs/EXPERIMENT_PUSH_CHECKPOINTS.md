@@ -106,3 +106,13 @@ Nine serial requests completed; B 6841-token TTFT 1.785–1.787s and
 6309-token TTFT 1.660–1.662s fail all three replays without competing
 requests. Median B passes. Original settings restored and warmup passed.
 Find commit with `git log --grep="Checkpoint isolated two-GPU profile tail diagnosis"`.
+
+## Lower-range 4096-token two-GPU profile
+
+All nine runs completed and dispatch-valid. The consecutive-rate rule qualifies
+0.005 RPS; .008 and .01 each fail seed 17. The passing rate has only 1–3
+tenant C requests per seed, so capacity is a sparse empirical qualification.
+All 167 profile/control files validated, including full closed gzip streams.
+Added claim crossscale-gpu-bbmzq / i-000acd7e754206393 terminated normally;
+original serving restoration is in progress and will be checkpointed afterward.
+Find commit with `git log --grep="Checkpoint lower-range 4096 two-GPU profile"`.
