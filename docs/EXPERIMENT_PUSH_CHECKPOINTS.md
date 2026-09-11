@@ -91,3 +91,11 @@ Find commit with `git log --grep="Checkpoint full 4096-token one-GPU profile"`.
 Completed: one slot per replica, empirical prefill throughput 3305.820 tokens/s.
 Original serving settings restored; warmup passed. All five JSON files parsed.
 Raw evidence commit b512e06.
+
+## Separate 4096-token two-GPU profile
+
+All nine runs completed and dispatch-valid; no tested rate qualified.
+All 167 profile/control files validated, including closed gzip streams.
+Controller is cleaning up its added GPU before restoring original settings;
+restoration evidence will be checkpointed separately when complete.
+Find commit with `git log --grep="Checkpoint full 4096-token two-GPU profile"`.
