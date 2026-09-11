@@ -99,3 +99,10 @@ All 167 profile/control files validated, including closed gzip streams.
 Controller is cleaning up its added GPU before restoring original settings;
 restoration evidence will be checkpointed separately when complete.
 Find commit with `git log --grep="Checkpoint full 4096-token two-GPU profile"`.
+
+## Two-GPU profile tail diagnosis
+
+Nine serial requests completed; B 6841-token TTFT 1.785–1.787s and
+6309-token TTFT 1.660–1.662s fail all three replays without competing
+requests. Median B passes. Original settings restored and warmup passed.
+Find commit with `git log --grep="Checkpoint isolated two-GPU profile tail diagnosis"`.
