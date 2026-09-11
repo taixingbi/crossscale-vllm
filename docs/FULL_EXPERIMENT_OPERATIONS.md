@@ -200,3 +200,10 @@ It acquires suite.lock and updates study.pid, rolls to batch budget 4096, runs
 Control evidence: profile-prefill4096-control. See protocol amendment. Expect
 about nine hours. It does not start comparisons or reuse original E0 as new
 condition evidence. Inspect study.pid, log and restoration before any next step.
+
+4096 full profile completed all 18 dispatch-valid runs, qualifying 0.01 RPS.
+Original serving settings restored. Evidence checkpoint 01b79f6. Next separate
+admission calibration uses scripts/admission-prefill4096.py, output
+admission-prefill4096, same predeclared three repetitions of prefill lengths
+256/3072/8192 and concurrency 1/2/4 with rotated median tenant requests.
+It holds suite.lock and restores 1024 after calibration. No E0 is reused.
