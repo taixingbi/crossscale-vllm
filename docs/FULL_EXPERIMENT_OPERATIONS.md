@@ -214,3 +214,13 @@ profile-two-prefill4096.log, output profile-two-prefill4096 and control sibling.
 Three rates .013/.02/.025, seeds 17/18/19, 1800-second horizons, about 4.5 hours
 plus provisioning. Holds suite.lock and updates study.pid. Restores one replica
 and original budget afterward. Does not start E1/E2 or reuse original E0.
+
+Two-GPU 4096 profile completed all nine dispatch-valid runs, no qualified rate;
+raw checkpoint 9153cfb. All six SLO misses are B TTFT on 6014–7578-token
+prompts. Added claim crossscale-gpu-gwfqm / i-079bdf9ea55349c8d terminated;
+original 1024 settings restored and warmup passed at 11:39 UTC Sep 11.
+Next diagnostic scripts/diagnose-two-profile-tail4096.py replays the two
+lowest-rate B misses (6841 and 6309 tokens, preserved IDs) plus B median,
+three serial repetitions on one 4096 replica, then restores 1024.
+Output diagnosis-two-profile-tail4096, log diagnose-two-profile-tail4096.log.
+Holds suite.lock and updates study.pid. No capacity replacement or E0 reuse.
