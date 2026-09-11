@@ -207,3 +207,10 @@ admission calibration uses scripts/admission-prefill4096.py, output
 admission-prefill4096, same predeclared three repetitions of prefill lengths
 256/3072/8192 and concurrency 1/2/4 with rotated median tenant requests.
 It holds suite.lock and restores 1024 after calibration. No E0 is reused.
+
+4096 admission completed with one slot and 3305.820 prefill tokens/s. Restored
+1024 and warmup passed. Next: scripts/profile-two-prefill4096.py, log
+profile-two-prefill4096.log, output profile-two-prefill4096 and control sibling.
+Three rates .013/.02/.025, seeds 17/18/19, 1800-second horizons, about 4.5 hours
+plus provisioning. Holds suite.lock and updates study.pid. Restores one replica
+and original budget afterward. Does not start E1/E2 or reuse original E0.

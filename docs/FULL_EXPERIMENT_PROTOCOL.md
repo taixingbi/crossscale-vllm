@@ -107,3 +107,12 @@ profile-one-prefill4096; original serving budget is restored afterward.
 This is exploratory condition selection, not a replacement for original results.
 No E1/E2 automatically starts: capacity and condition-specific E0/ETA evidence
 must be established first. Original 1024-condition E0 is not relabeled or pooled.
+
+## Separate 4096 two-GPU profile, 2026-09-11
+
+After one-GPU qualification at 0.01 RPS, test two replicas at 0.013, 0.02,
+and 0.025 RPS (1.3/2/2.5 times measured one-GPU capacity), seeds 17/18/19.
+Before outcomes, extend each arrival horizon to 1800 seconds to sample every
+tenant at these low rates. Keep all SLO/dispatch/consecutive-rate rules.
+If none qualifies, diagnose before a separately recorded lower-range extension.
+Restore one original-condition replica afterward. E0/ETA remains separate.

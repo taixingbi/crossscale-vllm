@@ -85,3 +85,9 @@ including JSON and closed gzip streams, validated; original 1024 serving
 settings restored with Ready and warmup evidence. This exploratory condition
 is separate from original E0 and profiling.
 Find commit with `git log --grep="Checkpoint full 4096-token one-GPU profile"`.
+
+## Separate 4096 admission calibration
+
+Completed: one slot per replica, empirical prefill throughput 3305.820 tokens/s.
+Original serving settings restored; warmup passed. All five JSON files parsed.
+Raw evidence commit b512e06.
