@@ -116,3 +116,11 @@ All 167 profile/control files validated, including full closed gzip streams.
 Added claim crossscale-gpu-bbmzq / i-000acd7e754206393 terminated normally;
 original serving restoration is in progress and will be checkpointed afterward.
 Find commit with `git log --grep="Checkpoint lower-range 4096 two-GPU profile"`.
+
+## Separate 4096 cached E0
+
+All 30 cached episodes completed, zero failures; first 20 training and last
+10 held out. Training p90 startup gap is 161.014 seconds. All 93 cached
+phase and deployment evidence files validated, including full gzip JSONL
+streams. Cold-node E0 is running under the existing controller.
+Find commit with `git log --grep="Checkpoint separate 4096 cached E0"`.
