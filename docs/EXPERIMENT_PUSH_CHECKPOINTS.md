@@ -124,3 +124,12 @@ All 30 cached episodes completed, zero failures; first 20 training and last
 phase and deployment evidence files validated, including full gzip JSONL
 streams. Cold-node E0 is running under the existing controller.
 Find commit with `git log --grep="Checkpoint separate 4096 cached E0"`.
+
+## Separate 4096 cold E0
+
+All 30 cold-node episodes completed with zero failures; first 20 training and
+last 10 held out. Training p90 startup gap is 982.808 seconds. All 90 episode
+files validated, including full gzip JSONL streams; the final phase summary
+was also parsed and checked. The existing controller verified the prebaked
+image and started its first episode without interruption.
+Find commit with `git log --grep="Checkpoint separate 4096 cold E0"`.
