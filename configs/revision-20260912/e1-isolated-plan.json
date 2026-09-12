@@ -1,0 +1,5686 @@
+{
+  "revision": "revision-20260912",
+  "phase": "e1-isolated",
+  "batch_tokens": 4096,
+  "min_samples": 60,
+  "seeds": [
+    601,
+    602,
+    603,
+    604,
+    605
+  ],
+  "qualification": "Every fixed repetition and every lower tested rate passes; no replacements",
+  "runs": [
+    {
+      "name": "A-rps-0.05-seed-601",
+      "tenant": "A",
+      "rps": 0.05,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.05,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.05-seed-602",
+      "tenant": "A",
+      "rps": 0.05,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.05,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.05-seed-603",
+      "tenant": "A",
+      "rps": 0.05,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.05,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.05-seed-604",
+      "tenant": "A",
+      "rps": 0.05,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.05,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.05-seed-605",
+      "tenant": "A",
+      "rps": 0.05,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.05,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.1-seed-601",
+      "tenant": "A",
+      "rps": 0.1,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.1,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.1-seed-602",
+      "tenant": "A",
+      "rps": 0.1,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.1,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.1-seed-603",
+      "tenant": "A",
+      "rps": 0.1,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.1,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.1-seed-604",
+      "tenant": "A",
+      "rps": 0.1,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.1,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.1-seed-605",
+      "tenant": "A",
+      "rps": 0.1,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.1,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.2-seed-601",
+      "tenant": "A",
+      "rps": 0.2,
+      "seed": 601,
+      "offered": 109,
+      "config": {
+        "seed": 601,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.2,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.2-seed-602",
+      "tenant": "A",
+      "rps": 0.2,
+      "seed": 602,
+      "offered": 116,
+      "config": {
+        "seed": 602,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.2,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.2-seed-603",
+      "tenant": "A",
+      "rps": 0.2,
+      "seed": 603,
+      "offered": 124,
+      "config": {
+        "seed": 603,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.2,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.2-seed-604",
+      "tenant": "A",
+      "rps": 0.2,
+      "seed": 604,
+      "offered": 127,
+      "config": {
+        "seed": 604,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.2,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.2-seed-605",
+      "tenant": "A",
+      "rps": 0.2,
+      "seed": 605,
+      "offered": 117,
+      "config": {
+        "seed": 605,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.2,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.4-seed-601",
+      "tenant": "A",
+      "rps": 0.4,
+      "seed": 601,
+      "offered": 235,
+      "config": {
+        "seed": 601,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.4,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.4-seed-602",
+      "tenant": "A",
+      "rps": 0.4,
+      "seed": 602,
+      "offered": 241,
+      "config": {
+        "seed": 602,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.4,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.4-seed-603",
+      "tenant": "A",
+      "rps": 0.4,
+      "seed": 603,
+      "offered": 251,
+      "config": {
+        "seed": 603,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.4,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.4-seed-604",
+      "tenant": "A",
+      "rps": 0.4,
+      "seed": 604,
+      "offered": 251,
+      "config": {
+        "seed": 604,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.4,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.4-seed-605",
+      "tenant": "A",
+      "rps": 0.4,
+      "seed": 605,
+      "offered": 230,
+      "config": {
+        "seed": 605,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.4,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.8-seed-601",
+      "tenant": "A",
+      "rps": 0.8,
+      "seed": 601,
+      "offered": 482,
+      "config": {
+        "seed": 601,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.8,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.8-seed-602",
+      "tenant": "A",
+      "rps": 0.8,
+      "seed": 602,
+      "offered": 451,
+      "config": {
+        "seed": 602,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.8,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.8-seed-603",
+      "tenant": "A",
+      "rps": 0.8,
+      "seed": 603,
+      "offered": 461,
+      "config": {
+        "seed": 603,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.8,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.8-seed-604",
+      "tenant": "A",
+      "rps": 0.8,
+      "seed": 604,
+      "offered": 497,
+      "config": {
+        "seed": 604,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.8,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-0.8-seed-605",
+      "tenant": "A",
+      "rps": 0.8,
+      "seed": 605,
+      "offered": 468,
+      "config": {
+        "seed": 605,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.8,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-1.6-seed-601",
+      "tenant": "A",
+      "rps": 1.6,
+      "seed": 601,
+      "offered": 955,
+      "config": {
+        "seed": 601,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 1.6,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-1.6-seed-602",
+      "tenant": "A",
+      "rps": 1.6,
+      "seed": 602,
+      "offered": 951,
+      "config": {
+        "seed": 602,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 1.6,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-1.6-seed-603",
+      "tenant": "A",
+      "rps": 1.6,
+      "seed": 603,
+      "offered": 903,
+      "config": {
+        "seed": 603,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 1.6,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-1.6-seed-604",
+      "tenant": "A",
+      "rps": 1.6,
+      "seed": 604,
+      "offered": 985,
+      "config": {
+        "seed": 604,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 1.6,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "A-rps-1.6-seed-605",
+      "tenant": "A",
+      "rps": 1.6,
+      "seed": 605,
+      "offered": 963,
+      "config": {
+        "seed": 605,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 1.6,
+              "B": 0,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.01-seed-601",
+      "tenant": "B",
+      "rps": 0.01,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 10000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.01,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.01-seed-602",
+      "tenant": "B",
+      "rps": 0.01,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 10000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.01,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.01-seed-603",
+      "tenant": "B",
+      "rps": 0.01,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 10000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.01,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.01-seed-604",
+      "tenant": "B",
+      "rps": 0.01,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 10000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.01,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.01-seed-605",
+      "tenant": "B",
+      "rps": 0.01,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 10000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.01,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.025-seed-601",
+      "tenant": "B",
+      "rps": 0.025,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 4000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.025,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.025-seed-602",
+      "tenant": "B",
+      "rps": 0.025,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 4000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.025,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.025-seed-603",
+      "tenant": "B",
+      "rps": 0.025,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 4000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.025,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.025-seed-604",
+      "tenant": "B",
+      "rps": 0.025,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 4000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.025,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.025-seed-605",
+      "tenant": "B",
+      "rps": 0.025,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 4000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.025,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.05-seed-601",
+      "tenant": "B",
+      "rps": 0.05,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.05,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.05-seed-602",
+      "tenant": "B",
+      "rps": 0.05,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.05,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.05-seed-603",
+      "tenant": "B",
+      "rps": 0.05,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.05,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.05-seed-604",
+      "tenant": "B",
+      "rps": 0.05,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.05,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.05-seed-605",
+      "tenant": "B",
+      "rps": 0.05,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.05,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.1-seed-601",
+      "tenant": "B",
+      "rps": 0.1,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.1,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.1-seed-602",
+      "tenant": "B",
+      "rps": 0.1,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.1,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.1-seed-603",
+      "tenant": "B",
+      "rps": 0.1,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.1,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.1-seed-604",
+      "tenant": "B",
+      "rps": 0.1,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.1,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.1-seed-605",
+      "tenant": "B",
+      "rps": 0.1,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.1,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.2-seed-601",
+      "tenant": "B",
+      "rps": 0.2,
+      "seed": 601,
+      "offered": 109,
+      "config": {
+        "seed": 601,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.2,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.2-seed-602",
+      "tenant": "B",
+      "rps": 0.2,
+      "seed": 602,
+      "offered": 116,
+      "config": {
+        "seed": 602,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.2,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.2-seed-603",
+      "tenant": "B",
+      "rps": 0.2,
+      "seed": 603,
+      "offered": 124,
+      "config": {
+        "seed": 603,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.2,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.2-seed-604",
+      "tenant": "B",
+      "rps": 0.2,
+      "seed": 604,
+      "offered": 127,
+      "config": {
+        "seed": 604,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.2,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.2-seed-605",
+      "tenant": "B",
+      "rps": 0.2,
+      "seed": 605,
+      "offered": 117,
+      "config": {
+        "seed": 605,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.2,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.4-seed-601",
+      "tenant": "B",
+      "rps": 0.4,
+      "seed": 601,
+      "offered": 235,
+      "config": {
+        "seed": 601,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.4,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.4-seed-602",
+      "tenant": "B",
+      "rps": 0.4,
+      "seed": 602,
+      "offered": 241,
+      "config": {
+        "seed": 602,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.4,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.4-seed-603",
+      "tenant": "B",
+      "rps": 0.4,
+      "seed": 603,
+      "offered": 251,
+      "config": {
+        "seed": 603,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.4,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.4-seed-604",
+      "tenant": "B",
+      "rps": 0.4,
+      "seed": 604,
+      "offered": 251,
+      "config": {
+        "seed": 604,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.4,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "B-rps-0.4-seed-605",
+      "tenant": "B",
+      "rps": 0.4,
+      "seed": 605,
+      "offered": 230,
+      "config": {
+        "seed": 605,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0.4,
+              "C": 0
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.005-seed-601",
+      "tenant": "C",
+      "rps": 0.005,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 20000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.005
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.005-seed-602",
+      "tenant": "C",
+      "rps": 0.005,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 20000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.005
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.005-seed-603",
+      "tenant": "C",
+      "rps": 0.005,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 20000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.005
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.005-seed-604",
+      "tenant": "C",
+      "rps": 0.005,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 20000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.005
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.005-seed-605",
+      "tenant": "C",
+      "rps": 0.005,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 20000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.005
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.01-seed-601",
+      "tenant": "C",
+      "rps": 0.01,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 10000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.01
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.01-seed-602",
+      "tenant": "C",
+      "rps": 0.01,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 10000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.01
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.01-seed-603",
+      "tenant": "C",
+      "rps": 0.01,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 10000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.01
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.01-seed-604",
+      "tenant": "C",
+      "rps": 0.01,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 10000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.01
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.01-seed-605",
+      "tenant": "C",
+      "rps": 0.01,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 10000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.01
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.025-seed-601",
+      "tenant": "C",
+      "rps": 0.025,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 4000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.025
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.025-seed-602",
+      "tenant": "C",
+      "rps": 0.025,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 4000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.025
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.025-seed-603",
+      "tenant": "C",
+      "rps": 0.025,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 4000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.025
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.025-seed-604",
+      "tenant": "C",
+      "rps": 0.025,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 4000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.025
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.025-seed-605",
+      "tenant": "C",
+      "rps": 0.025,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 4000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.025
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.05-seed-601",
+      "tenant": "C",
+      "rps": 0.05,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.05
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.05-seed-602",
+      "tenant": "C",
+      "rps": 0.05,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.05
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.05-seed-603",
+      "tenant": "C",
+      "rps": 0.05,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.05
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.05-seed-604",
+      "tenant": "C",
+      "rps": 0.05,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.05
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.05-seed-605",
+      "tenant": "C",
+      "rps": 0.05,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 2000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.05
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.1-seed-601",
+      "tenant": "C",
+      "rps": 0.1,
+      "seed": 601,
+      "offered": 87,
+      "config": {
+        "seed": 601,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.1
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.1-seed-602",
+      "tenant": "C",
+      "rps": 0.1,
+      "seed": 602,
+      "offered": 101,
+      "config": {
+        "seed": 602,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.1
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.1-seed-603",
+      "tenant": "C",
+      "rps": 0.1,
+      "seed": 603,
+      "offered": 103,
+      "config": {
+        "seed": 603,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.1
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.1-seed-604",
+      "tenant": "C",
+      "rps": 0.1,
+      "seed": 604,
+      "offered": 107,
+      "config": {
+        "seed": 604,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.1
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.1-seed-605",
+      "tenant": "C",
+      "rps": 0.1,
+      "seed": 605,
+      "offered": 102,
+      "config": {
+        "seed": 605,
+        "duration_s": 1000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.1
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.2-seed-601",
+      "tenant": "C",
+      "rps": 0.2,
+      "seed": 601,
+      "offered": 109,
+      "config": {
+        "seed": 601,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.2
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.2-seed-602",
+      "tenant": "C",
+      "rps": 0.2,
+      "seed": 602,
+      "offered": 116,
+      "config": {
+        "seed": 602,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.2
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.2-seed-603",
+      "tenant": "C",
+      "rps": 0.2,
+      "seed": 603,
+      "offered": 124,
+      "config": {
+        "seed": 603,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.2
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.2-seed-604",
+      "tenant": "C",
+      "rps": 0.2,
+      "seed": 604,
+      "offered": 127,
+      "config": {
+        "seed": 604,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.2
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "C-rps-0.2-seed-605",
+      "tenant": "C",
+      "rps": 0.2,
+      "seed": 605,
+      "offered": 117,
+      "config": {
+        "seed": 605,
+        "duration_s": 600,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0,
+              "B": 0,
+              "C": 0.2
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    }
+  ]
+}

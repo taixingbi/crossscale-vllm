@@ -133,3 +133,11 @@ files validated, including full gzip JSONL streams; the final phase summary
 was also parsed and checked. The existing controller verified the prebaked
 image and started its first episode without interruption.
 Find commit with `git log --grep="Checkpoint separate 4096 cold E0"`.
+
+## Revised E1 isolated preparation — 2026-09-12
+
+Prepared crossscale/revision_e1.py, frozen 90-run isolated A/B/C plan, operational
+notes and three passing offline tests. Five fixed seeds per rate, >=60 requests
+per active tenant, 85 arrival-hours; no outcome-driven seed replacement.
+No runtime source copied, measurement launched or serving state changed.
+Mixed calibration and E2/E3 remain subsequent work under POST_E0_EXECUTION.md.
