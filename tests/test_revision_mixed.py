@@ -1,12 +1,30 @@
 import json
+import hashlib
+import tempfile
 from pathlib import Path
 import unittest
 
 from crossscale.core import workload
-from crossscale.revision_mixed import plan, qualifies, capacity
+from crossscale.revision_mixed import plan, qualifies, capacity, freeze
 
 
 class MixedPlanTests(unittest.TestCase):
+    def test_freeze_records_runtime_and_refuses_overwrite(self):
+        base = json.loads(Path('configs/default.json').read_text())
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder)/'plan.json'
+            report = freeze(base, [.01], path)
+            original = path.read_bytes()
+            self.assertEqual(report['sha256'], hashlib.sha256(original).hexdigest())
+            self.assertEqual(report['runs'], 10)
+            self.assertAlmostEqual(report['arrival_hours'], 700000/3600)
+            self.assertAlmostEqual(report['minimum_runtime_hours'],
+                                   (700000+10*base['drain_s'])/3600)
+            self.assertFalse(report['execution_started'])
+            with self.assertRaises(FileExistsError):
+                freeze(base, [.02], path)
+            self.assertEqual(path.read_bytes(), original)
+
     def test_paired_traces_and_sample_sufficiency(self):
         base = json.loads(Path('configs/default.json').read_text())
         frozen = plan(base, [.01, .02])

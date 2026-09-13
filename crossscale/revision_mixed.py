@@ -1,6 +1,10 @@
 """Offline mixed-load plan builder; this module never contacts the cluster."""
 import copy
+import argparse
+import hashlib
+import json
 import math
+from pathlib import Path
 
 from .core import workload
 
@@ -64,3 +68,32 @@ def capacity(records, frozen, replicas):
             break
         result = rate
     return result
+
+
+def freeze(base, rates, destination):
+    """Write a new plan exclusively; never overwrite a prior declaration."""
+    frozen = plan(base, rates)
+    payload = (json.dumps(frozen, indent=2, allow_nan=False)+'\n').encode()
+    arrival = sum(r['config']['duration_s'] for r in frozen['runs'])
+    drain = sum(r['config']['drain_s'] for r in frozen['runs'])
+    with Path(destination).open('xb') as stream:
+        stream.write(payload)
+    return dict(plan=str(destination), sha256=hashlib.sha256(payload).hexdigest(),
+                runs=len(frozen['runs']), arrival_hours=arrival/3600,
+                drain_hours=drain/3600,
+                minimum_runtime_hours=(arrival+drain)/3600,
+                excludes='Provisioning, rollouts, warmups, export and restoration',
+                execution_started=False)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--config', type=Path, default=Path('configs/default.json'))
+    parser.add_argument('--rates', type=float, nargs='+', required=True)
+    parser.add_argument('--plan', type=Path, required=True)
+    args = parser.parse_args()
+    print(json.dumps(freeze(json.loads(args.config.read_text()), args.rates, args.plan)))
+
+
+if __name__ == '__main__':
+    main()

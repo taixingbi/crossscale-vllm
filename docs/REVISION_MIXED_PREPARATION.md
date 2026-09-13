@@ -5,6 +5,17 @@ is an offline planning and qualification module, not a live controller. No mixed
 rates are frozen yet and no mixed measurements have started. The rates used in
 unit tests are test fixtures, not an approved experimental rate grid.
 
+The offline CLI `python3 -m crossscale.revision_mixed --help` documents how to
+persist a plan with explicit `--rates` and `--plan` arguments. It exclusively
+creates the destination, refuses to overwrite an existing plan, and returns
+the exact file SHA-256, run count, arrival/drain hours and minimum runtime.
+Provisioning, rollouts, warmups, export and restoration add to that minimum.
+There is no execution option. No actual rate grid was frozen by this tooling
+change. Runtime is material: even a single .01 RPS test-fixture point across
+both replica counts and five seeds requires about 194.4 arrival-hours to target
+100 C requests per run. Review total duration before declaring the real grid;
+do not silently reduce the sample requirement or substitute favorable seeds.
+
 The builder uses five fixed seeds 701–705 and identical 4:2:1 tenant traces for
 one and two fixed replicas. Horizons target 100 offered C requests, with a hard
 minimum of 60 for every tenant. It does not search seeds. Qualification retains
@@ -34,5 +45,6 @@ The E2/E3 audit identified outstanding work:
   must be reported as a limitation, not replaced with a sum of isolated rates.
 
 Validation: `python3 -m unittest tests.test_revision_mixed tests.test_revision_e1`
-passes six tests, including paired trace identity, sample sufficiency, missing
-tenant/dispatch rejection and complete consecutive-rate qualification.
+passes seven tests, including paired trace identity, sample sufficiency, missing
+tenant/dispatch rejection, complete consecutive-rate qualification, runtime/hash
+reporting and refusal to overwrite a frozen plan.
