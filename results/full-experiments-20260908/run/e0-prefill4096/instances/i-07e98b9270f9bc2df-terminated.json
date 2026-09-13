@@ -1,0 +1,22 @@
+{
+  "observed_unix_s": 1789205402.3275216,
+  "instances": [
+    {
+      "InstanceId": "i-07e98b9270f9bc2df",
+      "ImageId": "ami-0c126bbe79be20f0a",
+      "InstanceType": "g5.xlarge",
+      "LaunchTime": "2026-09-12T09:07:06+00:00",
+      "State": {
+        "Code": 48,
+        "Name": "terminated"
+      },
+      "StateTransitionReason": "User initiated (2026-09-12 09:25:29 GMT)",
+      "Placement": {
+        "AvailabilityZoneId": "use1-az1",
+        "GroupName": "",
+        "Tenancy": "default",
+        "AvailabilityZone": "us-east-1a"
+      }
+    }
+  ]
+}

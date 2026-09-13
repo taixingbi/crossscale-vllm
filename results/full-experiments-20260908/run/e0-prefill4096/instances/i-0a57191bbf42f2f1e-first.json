@@ -1,0 +1,22 @@
+{
+  "observed_unix_s": 1789241532.7425065,
+  "instances": [
+    {
+      "InstanceId": "i-0a57191bbf42f2f1e",
+      "ImageId": "ami-006c1eb16c0aa3517",
+      "InstanceType": "g5.xlarge",
+      "LaunchTime": "2026-09-12T19:32:09+00:00",
+      "State": {
+        "Code": 0,
+        "Name": "pending"
+      },
+      "StateTransitionReason": "",
+      "Placement": {
+        "AvailabilityZoneId": "use1-az2",
+        "GroupName": "",
+        "Tenancy": "default",
+        "AvailabilityZone": "us-east-1b"
+      }
+    }
+  ]
+}

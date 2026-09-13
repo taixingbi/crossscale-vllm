@@ -141,3 +141,13 @@ notes and three passing offline tests. Five fixed seeds per rate, >=60 requests
 per active tenant, 85 arrival-hours; no outcome-driven seed replacement.
 No runtime source copied, measurement launched or serving state changed.
 Mixed calibration and E2/E3 remain subsequent work under POST_E0_EXECUTION.md.
+
+## Separate 4096 prebaked E0 — 2026-09-13
+
+All 30 prebaked episodes completed with zero failures; all 90 condition-specific
+E0 episodes are now complete. Training p90 is 1185.753 seconds, with the
+first-20/last-10 split preserved. Validated all 651 currently archived E0 files,
+including full gzip JSONL observations and lifecycle records. Checkpoint includes
+prebake verification and measurement completion. Controller cleanup/restoration
+is still active; completion of measurements does not establish restoration.
+Find commit with `git log --grep="Checkpoint separate 4096 prebaked E0"`.
