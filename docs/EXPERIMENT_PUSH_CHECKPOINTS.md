@@ -151,3 +151,11 @@ including full gzip JSONL observations and lifecycle records. Checkpoint include
 prebake verification and measurement completion. Controller cleanup/restoration
 is still active; completion of measurements does not establish restoration.
 Find commit with `git log --grep="Checkpoint separate 4096 prebaked E0"`.
+
+## E0 restoration and revised E1 launch — 2026-09-13
+
+E0 restored 1024 with successful warmup, original GPU only; PID exited and
+lock released. Checkpoint remaining lifecycle/restoration evidence. Required
+vLLM metrics and Prometheus series exist; runtime pins verified. Launched
+frozen revised E1 isolated controller PID 35593 with exclusive suite.lock.
+Serving rollout and post-rollout telemetry preflight precede measurements.

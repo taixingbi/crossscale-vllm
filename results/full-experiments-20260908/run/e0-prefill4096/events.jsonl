@@ -3837,3 +3837,8 @@
 {"unix_s": 1789260529.7621822, "event": "waiting-termination", "instance": "i-0b58e9d7ab6b2bb33", "states": ["shutting-down"], "serving_condition": "prefill4096", "e0_root": "/tmp/experiments/e0-prefill4096"}
 {"unix_s": 1789260560.2075562, "event": "waiting-termination", "instance": "i-0b58e9d7ab6b2bb33", "states": ["shutting-down"], "serving_condition": "prefill4096", "e0_root": "/tmp/experiments/e0-prefill4096"}
 {"unix_s": 1789260590.7341473, "event": "waiting-termination", "instance": "i-0b58e9d7ab6b2bb33", "states": ["shutting-down"], "serving_condition": "prefill4096", "e0_root": "/tmp/experiments/e0-prefill4096"}
+{"unix_s": 1789260621.1932547, "event": "waiting-termination", "instance": "i-0b58e9d7ab6b2bb33", "states": ["shutting-down"], "serving_condition": "prefill4096", "e0_root": "/tmp/experiments/e0-prefill4096"}
+{"unix_s": 1789260651.7794921, "event": "waiting-termination", "instance": "i-0b58e9d7ab6b2bb33", "states": ["shutting-down"], "serving_condition": "prefill4096", "e0_root": "/tmp/experiments/e0-prefill4096"}
+{"unix_s": 1789260682.201722, "event": "waiting-termination", "instance": "i-0b58e9d7ab6b2bb33", "states": ["shutting-down"], "serving_condition": "prefill4096", "e0_root": "/tmp/experiments/e0-prefill4096"}
+{"unix_s": 1789260697.5781267, "event": "instance-terminated", "claim": "crossscale-gpu-s2hfv", "instance": "i-0b58e9d7ab6b2bb33", "serving_condition": "prefill4096", "e0_root": "/tmp/experiments/e0-prefill4096"}
+{"unix_s": 1789260862.0114956, "event": "e0-prefill4096-restored", "serving_condition": "prefill4096", "e0_root": "/tmp/experiments/e0-prefill4096"}

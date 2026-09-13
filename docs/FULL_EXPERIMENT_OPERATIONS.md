@@ -254,3 +254,14 @@ On success it restores one original-condition replica and warmup, recording
 restored.json. No comparisons start automatically. Push each cache phase as
 its summary appears, without interrupting the controller. Allow roughly two
 days for these startup measurements based on original timing evidence.
+
+Separate 4096 E0 completed all 90 episodes without failures and restored
+1024 plus warmup at 00:54:22 UTC Sep 13. PID 9660 exited; suite.lock was free.
+Raw checkpoint df4eed2 verified remotely. Revised E1 isolated controller
+launched about 01:09 UTC, PID 35593, log revision-e1-isolated.log, output
+revision-20260912/e1-isolated. Required installed vLLM metrics and Prometheus
+series were checked before launch; runtime versions match renewal pins.
+Controller reapplies 4096 and runs a telemetry preflight before any measured
+load. Inspect its log, error.json and run events; never start another worker.
+The frozen 90-run plan takes 85 arrival-hours plus drains and warmups.
+Mixed calibration remains subsequent work, not automatically launched.
