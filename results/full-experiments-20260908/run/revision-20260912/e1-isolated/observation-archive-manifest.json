@@ -1,0 +1,545 @@
+{
+  "note": "Full raw observation streams retained locally and in private S3; size checked against S3, local SHA256; excluded from Git due to file sizes.",
+  "files": [
+    {
+      "path": "A-rps-0.05-seed-601/observations.jsonl.gz",
+      "bytes": 17724573,
+      "sha256": "b97a34fa08f75872bfe0560c25718f0c2081636743f3b8b7cbdc950e6bcdc5de",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.05-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.05-seed-602/observations.jsonl.gz",
+      "bytes": 17762545,
+      "sha256": "7d626bf84b40a2044c9128b0c863bf05ff3d6a8f6b0d3837f38d38e394b215b4",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.05-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.05-seed-603/observations.jsonl.gz",
+      "bytes": 17720180,
+      "sha256": "72f1f9fd74da3e9f4642ff726bf08cbc530de4b5375160e69cfbf940c07a1fe4",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.05-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.05-seed-604/observations.jsonl.gz",
+      "bytes": 17755868,
+      "sha256": "d535396b3c5ab107e0f03965204e4af114cddb8b1e4e8a720bc6f01ef2d999fc",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.05-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.05-seed-605/observations.jsonl.gz",
+      "bytes": 17760401,
+      "sha256": "999d87cebb95326a1946a95ffbd9e0eec010b4acb7822ac1f7ed6a817905b573",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.05-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.1-seed-601/observations.jsonl.gz",
+      "bytes": 9622274,
+      "sha256": "3d3b21285716fc2963ed1f8ad5e7b4fe4459058a9d083a19011edaa92b1e6e8b",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.1-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.1-seed-602/observations.jsonl.gz",
+      "bytes": 9625768,
+      "sha256": "06024ce32765de5cfb93dd01e6917899807123616d5a745fc0d1676d73d709d3",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.1-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.1-seed-603/observations.jsonl.gz",
+      "bytes": 9624211,
+      "sha256": "04648ba84d773c94147e28567e044ce04b64215c18e476ad656909d6f57e392b",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.1-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.1-seed-604/observations.jsonl.gz",
+      "bytes": 9617409,
+      "sha256": "c239d758c2776c3475e489284da07ee91100ab4d944c8a9038b31623fad4fc46",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.1-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.1-seed-605/observations.jsonl.gz",
+      "bytes": 9614172,
+      "sha256": "57d97e06446d7ee8b85bbfaa346ee4f9ba836be82ec1bce936dad35cf823039b",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.1-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.2-seed-601/observations.jsonl.gz",
+      "bytes": 6359729,
+      "sha256": "066c77206278070087c02478f57c210b98029ac714ac88fdb5775935da0f7d80",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.2-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.2-seed-602/observations.jsonl.gz",
+      "bytes": 6360114,
+      "sha256": "e5a43bb07c07c2a730edfc09ec64cee85b731a358eaaf475f3af51fec403559a",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.2-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.2-seed-603/observations.jsonl.gz",
+      "bytes": 6362957,
+      "sha256": "7ec8704b8e506cc9aa213c8a7573bf56901d630ce8a0d78adf0779512ca4607a",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.2-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.2-seed-604/observations.jsonl.gz",
+      "bytes": 6363355,
+      "sha256": "2faf5ede0aae6400e73e851da859fb42966c872e9985cc7febfbba09c55fe99c",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.2-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.2-seed-605/observations.jsonl.gz",
+      "bytes": 6362664,
+      "sha256": "6666bc3687715c08e7a46a8059dc9a8e9f35f1d9f083f58837da9d8002008b19",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.2-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.4-seed-601/observations.jsonl.gz",
+      "bytes": 6364243,
+      "sha256": "a3e496450a43d91e275a49a773a311e696492bd1d2f5ff089ea23670eac35b05",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.4-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.4-seed-602/observations.jsonl.gz",
+      "bytes": 6355787,
+      "sha256": "8951c0bc5711cdeff68873df8e571a4216874c54ba75b67fa27fde9acf57365a",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.4-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.4-seed-603/observations.jsonl.gz",
+      "bytes": 6346128,
+      "sha256": "81ad0827745c54f4393b7dfd87ce59a4e8a553864a67c159bfaf941daed1ff2a",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.4-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.4-seed-604/observations.jsonl.gz",
+      "bytes": 6345321,
+      "sha256": "0f2305310af98202eea400a04688e0013b47c678b47bb48775449f1bd342724e",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.4-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.4-seed-605/observations.jsonl.gz",
+      "bytes": 6346142,
+      "sha256": "eba90ec0183ba3adada5d58c90a5a8ccf0e4cba74655bdfe341be3b63ad233b8",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.4-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.8-seed-601/observations.jsonl.gz",
+      "bytes": 6342415,
+      "sha256": "bbf5396e17edba34dfdd01c6d976ab4236d43fda10ef8d966852858e216d4300",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.8-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.8-seed-602/observations.jsonl.gz",
+      "bytes": 6351580,
+      "sha256": "eeb0c13e19418d42d656dbefecdd4893b012df58ad20dc8cf78483b247994ec4",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.8-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.8-seed-603/observations.jsonl.gz",
+      "bytes": 6351469,
+      "sha256": "41d73ae407876e5ee9d296db15d0e31102e1eadaf322c0304b4ae12ad4aeb1d2",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.8-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.8-seed-604/observations.jsonl.gz",
+      "bytes": 6357220,
+      "sha256": "facb6e9e07d43307536ad42980c455d252b9d4c1e23ee03c7ebf52df21ff3327",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.8-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-0.8-seed-605/observations.jsonl.gz",
+      "bytes": 6349198,
+      "sha256": "38bfc719ed36b3011b6d53c625c1493891589c600784ddac08a2b08620606953",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-0.8-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-1.6-seed-601/observations.jsonl.gz",
+      "bytes": 6352975,
+      "sha256": "c3892c91e37f2e1d59cda5b1f699b25f313edeebf06df5fd30b1ba59dd7cd555",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-1.6-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-1.6-seed-602/observations.jsonl.gz",
+      "bytes": 6339420,
+      "sha256": "19ee08ea4999f022ab1dfd37b2b27f4ebd1d16dfa346b14d7b769992e2f050fa",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-1.6-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-1.6-seed-603/observations.jsonl.gz",
+      "bytes": 6337901,
+      "sha256": "0ecd67227e615878a58bda955ce0c0b242e69bc1381af73fc648f3067104b182",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-1.6-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-1.6-seed-604/observations.jsonl.gz",
+      "bytes": 6337865,
+      "sha256": "485d4c68435e0094af9fd0f74b8eb49734e8985044c345510160a7ca898e9499",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-1.6-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "A-rps-1.6-seed-605/observations.jsonl.gz",
+      "bytes": 6344879,
+      "sha256": "7370650611acc8302bdffa9eb8630de7d5c4e2a5ae7bee20973714644a9294a5",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/A-rps-1.6-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.01-seed-601/observations.jsonl.gz",
+      "bytes": 82909852,
+      "sha256": "acb213dfef4bd8bd1205f18bb4d7c17a3515bb936768e2820eb87bfd0e610646",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.01-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.01-seed-602/observations.jsonl.gz",
+      "bytes": 82874001,
+      "sha256": "5dfef9e4cc61d054a18221f03ebccecc9987aaeddf8a2ead59d1f3e3b4a6c541",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.01-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.01-seed-603/observations.jsonl.gz",
+      "bytes": 82809151,
+      "sha256": "8df57db19192d8e6936d19433912f189ebb67cf171f601e18d1a985196aa9195",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.01-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.01-seed-604/observations.jsonl.gz",
+      "bytes": 82907737,
+      "sha256": "8e4c4bf345a9570a1f9fd596ea708be294ca53afea3628cc071cda2ad193e696",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.01-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.01-seed-605/observations.jsonl.gz",
+      "bytes": 82800819,
+      "sha256": "a94aabb587f31347ea256486a4256ec0e5421f52e62bfa33b2439a886263d293",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.01-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.025-seed-601/observations.jsonl.gz",
+      "bytes": 34090495,
+      "sha256": "f08857fd1e5117c817daa43951e2971513e0e01533b835fa8748bde90933fa67",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.025-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.025-seed-602/observations.jsonl.gz",
+      "bytes": 34076039,
+      "sha256": "ec56c83ca0581ae4b591d2e0244e5e6212eedbce5c49cdc45388088c7eff3eb0",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.025-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.025-seed-603/observations.jsonl.gz",
+      "bytes": 34081045,
+      "sha256": "504ab64a19efd50bdbe1e94828c1b6fcdba6a9879292730420ba537c4a1df6fe",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.025-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.025-seed-604/observations.jsonl.gz",
+      "bytes": 34037937,
+      "sha256": "b255b0a4454841ce9c03a1c53153706e10e282ca713e69fb3d4c21bc570b728a",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.025-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.025-seed-605/observations.jsonl.gz",
+      "bytes": 34077946,
+      "sha256": "5967719a22d1b37bae24196556e66393a32a792afe2eea20990a045a2b77ea2f",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.025-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.05-seed-601/observations.jsonl.gz",
+      "bytes": 17781968,
+      "sha256": "9dfd1b205ad90b1faebb0e44ebbfe886f37846229a1e8a571f0f41b444f39af9",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.05-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.05-seed-602/observations.jsonl.gz",
+      "bytes": 17786891,
+      "sha256": "f95fc4c5cf032215dab4296f5e470a0981360feb050aa82730063b351d8c48bc",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.05-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.05-seed-603/observations.jsonl.gz",
+      "bytes": 17776559,
+      "sha256": "5e79dab772279a82b095b2b0dbd8bf9e5e1052e5ba79945713cb39a9aad71332",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.05-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.05-seed-604/observations.jsonl.gz",
+      "bytes": 17754279,
+      "sha256": "6056b61d736c368d968742dcbe532400ed148dc6902719ef2783fb255d69a28f",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.05-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.05-seed-605/observations.jsonl.gz",
+      "bytes": 17781729,
+      "sha256": "f9c88cd5ab523ac37c8ab009e28b1ad4240203525d263c08f5314f4faf2787a8",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.05-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.1-seed-601/observations.jsonl.gz",
+      "bytes": 9627984,
+      "sha256": "f44c469922b1d8f6f1c24027e5bf4336fa226685e5db3691db74fefba9c6e5c1",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.1-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.1-seed-602/observations.jsonl.gz",
+      "bytes": 9619404,
+      "sha256": "a44c0f5e8f6e59b622634cc28d9f9c032c16f71e348921afe786cf1494b1014a",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.1-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.1-seed-603/observations.jsonl.gz",
+      "bytes": 9618948,
+      "sha256": "d3e287c52e0a5165c9114846d99d19e20aed3003e9de28c2fea419e7e3c4db36",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.1-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.1-seed-604/observations.jsonl.gz",
+      "bytes": 9628912,
+      "sha256": "f38e793cee4b3419672f509034125a9589250bd645758cb8f45b31d8af603788",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.1-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.1-seed-605/observations.jsonl.gz",
+      "bytes": 9609887,
+      "sha256": "96013e2af2daf833e7af73b370e6a7e4c06cd6b907ca146b59522a5468b95e45",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.1-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.2-seed-601/observations.jsonl.gz",
+      "bytes": 6346121,
+      "sha256": "59136bd458459287ee79490b6be6acfc99b55c9f1a9b66067d058753892b8362",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.2-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.2-seed-602/observations.jsonl.gz",
+      "bytes": 6346177,
+      "sha256": "8ec15ae0b550dd0d8c8601bc083e18590eca27bc28bffcf25e028b25fced9e4a",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.2-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.2-seed-603/observations.jsonl.gz",
+      "bytes": 6358947,
+      "sha256": "28ed76197b711486bad9e831013ec766f814c4775718b955a50fcee32f0180cc",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.2-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.2-seed-604/observations.jsonl.gz",
+      "bytes": 6367094,
+      "sha256": "5d80249c4991fb668ca31102ba5f2c246dd1a6529b1ae765f6eee1ce1c1ebb45",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.2-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.2-seed-605/observations.jsonl.gz",
+      "bytes": 6355996,
+      "sha256": "627f38707ccd5481a65b7018c2743fbc6099e83f237b6c5e610dd96ded41d711",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.2-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.4-seed-601/observations.jsonl.gz",
+      "bytes": 6352902,
+      "sha256": "5d4f5aa478741f81b5610543235c900aa513e89026231040119002d1f002470f",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.4-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.4-seed-602/observations.jsonl.gz",
+      "bytes": 6354603,
+      "sha256": "0fbc8f5122c9f31d4687710c42551b0c95ad37793a2b55db56b7cdef8b09667f",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.4-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.4-seed-603/observations.jsonl.gz",
+      "bytes": 6359057,
+      "sha256": "d027f77951094154bc775c015e7bd52a0182f6484f377e941b7593417c3b41c2",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.4-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.4-seed-604/observations.jsonl.gz",
+      "bytes": 6366817,
+      "sha256": "0847e7dfc04a427b9f1f25e522bb0ba045cdcc593bbd6624f22bc8c008bde187",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.4-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "B-rps-0.4-seed-605/observations.jsonl.gz",
+      "bytes": 6359207,
+      "sha256": "7218346b8fe24e0dd80b66fcf970b48a331d1ecb6184d7d1be581832db2d7749",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/B-rps-0.4-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.005-seed-601/observations.jsonl.gz",
+      "bytes": 164337248,
+      "sha256": "4f35cf7a6f21b261da4fa2f418ed7ce4568523be067bab74ad3b28da3485f5ba",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.005-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.005-seed-602/observations.jsonl.gz",
+      "bytes": 164300282,
+      "sha256": "1ca17588a5f3b1c9bff26f4476362aa3e0c50e8ce38def0aa85aa6ab21c36a72",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.005-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.005-seed-603/observations.jsonl.gz",
+      "bytes": 164392551,
+      "sha256": "33a60f37dd0a661a80c447c338a7439f8d92b18a572a0aa3446010bd202d37aa",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.005-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.005-seed-604/observations.jsonl.gz",
+      "bytes": 164409057,
+      "sha256": "2421037f3a762a586a8f9756c3600c11e31f8fc1bc7e6adb6d8fb41278201e0c",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.005-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.005-seed-605/observations.jsonl.gz",
+      "bytes": 164508252,
+      "sha256": "1ccf61e1b51121554d029260524e338a0935b7626dc5abf70189ce9af911765d",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.005-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.01-seed-601/observations.jsonl.gz",
+      "bytes": 82969794,
+      "sha256": "30ab2041b9aade503139b16428cb6fa64948dad688b2cba962b21f69ae76f6c2",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.01-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.01-seed-602/observations.jsonl.gz",
+      "bytes": 82991114,
+      "sha256": "f70606201159d6a0feb15861f551c3122d3a1857bf345fb2bdd2abc369310177",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.01-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.01-seed-603/observations.jsonl.gz",
+      "bytes": 82878202,
+      "sha256": "acc30bddb4be23b1e76a63a0bf84ecb3579b970e568d91f93604cb4423c35801",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.01-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.01-seed-604/observations.jsonl.gz",
+      "bytes": 83022828,
+      "sha256": "ff2cf8237800a3d8c2b51cb263b7a52e4b748b2bcf1500bd2ff770d6f4f5d93b",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.01-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.01-seed-605/observations.jsonl.gz",
+      "bytes": 83012682,
+      "sha256": "9522e68d305fe02c3647a04feee797ce96b5eb7f27bf39fb8a3f5b97175020fc",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.01-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.025-seed-601/observations.jsonl.gz",
+      "bytes": 34128949,
+      "sha256": "c2903b668e9b1cde6b0d84863341ea517f4ebfdd38856549526b23b9edb3044a",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.025-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.025-seed-602/observations.jsonl.gz",
+      "bytes": 34120243,
+      "sha256": "be6f6b7aa12d7e8f5dbe7153d8b9ca5c3269fdb12571f7cd00954f8eb0753b4e",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.025-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.025-seed-603/observations.jsonl.gz",
+      "bytes": 34065751,
+      "sha256": "a6f2152d1be2319be928398872ec2e74aa0cdfd9f3ea6c38051e4d69645c6311",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.025-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.025-seed-604/observations.jsonl.gz",
+      "bytes": 34072505,
+      "sha256": "32b10758cc6200b87111c441f6a60d45b830b35b1fb4808e90b964ba2261c72b",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.025-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.025-seed-605/observations.jsonl.gz",
+      "bytes": 34024450,
+      "sha256": "3b63607a8f922708af2c170a6834a5940c79531300844d9198b8ce320296afd0",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.025-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.05-seed-601/observations.jsonl.gz",
+      "bytes": 17771514,
+      "sha256": "6b77f535b6b2d40464953d41227ab7c9a84506605b56a2b8cd760c99dfa07b61",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.05-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.05-seed-602/observations.jsonl.gz",
+      "bytes": 17779110,
+      "sha256": "9bbb09b5bdb546eff4b04530e77103ee44e1052f5c0d19a1d74893f0e524f287",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.05-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.05-seed-603/observations.jsonl.gz",
+      "bytes": 17771831,
+      "sha256": "8cf5d6e798815c49a28fa351e8b22e303261234836f6ec0394670113b082f114",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.05-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.05-seed-604/observations.jsonl.gz",
+      "bytes": 17736435,
+      "sha256": "0a4e961dfe898f093a6fb6289f7c63795a43890efeee6c583fbdf4e15188608f",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.05-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.05-seed-605/observations.jsonl.gz",
+      "bytes": 17734709,
+      "sha256": "6d7f6edf70d2fccbcac3028cd1a29ef741baab222aabbecca545968ff1ffe0b4",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.05-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.1-seed-601/observations.jsonl.gz",
+      "bytes": 9605303,
+      "sha256": "938ee079cf4035b1b8bf8700d45e8073f84591affbb7c9426f813e04bbb17690",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.1-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.1-seed-602/observations.jsonl.gz",
+      "bytes": 9613833,
+      "sha256": "731d5d1dc1eb88336612073be4d9d1aaccaa281a43947c37f765a60d7a2c21ff",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.1-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.1-seed-603/observations.jsonl.gz",
+      "bytes": 9629368,
+      "sha256": "244bfbf4bbdef27bab48acfd02e54a866102780982bec1c73b8e79b23ceba176",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.1-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.1-seed-604/observations.jsonl.gz",
+      "bytes": 9631575,
+      "sha256": "706c5735ec62c1f33ec2dba16a897d3442d1239c21fb5f16c78a5617b1e79964",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.1-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.1-seed-605/observations.jsonl.gz",
+      "bytes": 9621138,
+      "sha256": "0725955869a1b4ef24b145ed6258e1d9586931018904cab86fc3099da9b03bb1",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.1-seed-605/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.2-seed-601/observations.jsonl.gz",
+      "bytes": 6368855,
+      "sha256": "95033f328cf9e8a5960b5f02ec303679af7430a7a292c633abbd74a13a508efe",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.2-seed-601/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.2-seed-602/observations.jsonl.gz",
+      "bytes": 6360329,
+      "sha256": "133cd523ce9cbbe1a68eaf03180a6956204324ef2fb651cd12e4e11913367220",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.2-seed-602/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.2-seed-603/observations.jsonl.gz",
+      "bytes": 6368146,
+      "sha256": "6a8a9f5d22f392ec4da3aebdd0b21b53ee14bb26ce50b885368b43eaa127c95d",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.2-seed-603/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.2-seed-604/observations.jsonl.gz",
+      "bytes": 6368804,
+      "sha256": "3e8913339f17d51f8860015c338b77096964695135ed15bffa1c699919430472",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.2-seed-604/observations.jsonl.gz"
+    },
+    {
+      "path": "C-rps-0.2-seed-605/observations.jsonl.gz",
+      "bytes": 6367580,
+      "sha256": "dd7321bda9b00daf0a39ba244b6a910952a2650a895f65082305cd32c7fa46fb",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-isolated/C-rps-0.2-seed-605/observations.jsonl.gz"
+    }
+  ]
+}

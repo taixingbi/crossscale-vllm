@@ -159,3 +159,12 @@ lock released. Checkpoint remaining lifecycle/restoration evidence. Required
 vLLM metrics and Prometheus series exist; runtime pins verified. Launched
 frozen revised E1 isolated controller PID 35593 with exclusive suite.lock.
 Serving rollout and post-rollout telemetry preflight precede measurements.
+
+## Revised isolated E1 completion — 2026-09-17
+
+All 90 frozen runs completed, all dispatch-valid. Highest consecutively passing
+tested isolated rates: A .2, B .05, C .01 RPS. These are isolated capacities,
+not a mixed capacity or a scaling claim. Completion September 16 18:48:35 UTC;
+restoration and inference warmup succeeded afterward. PID 35593 is a zombie,
+suite.lock released, original GPU retained and vLLM Ready. Raw evidence synced
+from private S3; mixed calibration and E2/E3 remain unfinished.

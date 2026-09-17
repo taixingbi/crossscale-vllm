@@ -1,0 +1,1 @@
+{"name": "waiting", "query": "sum(vllm:num_requests_waiting{namespace=\"crossscale\"})", "response": {"status": "success", "data": {"resultType": "matrix", "result": [{"metric": {}, "values": [[1789261892.385, "0"], [1789261897.385, "0"]]}]}}}
