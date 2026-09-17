@@ -265,3 +265,25 @@ Controller reapplies 4096 and runs a telemetry preflight before any measured
 load. Inspect its log, error.json and run events; never start another worker.
 The frozen 90-run plan takes 85 arrival-hours plus drains and warmups.
 Mixed calibration remains subsequent work, not automatically launched.
+
+## September 17: revised E1 isolated complete; mixed calibration launched
+
+Isolated E1 completed September 16 with 90/90 dispatch-valid runs; capacities
+A .2, B .05, C .01 RPS. Restoration and warmup completed at 18:51:14 UTC.
+PID 35593 is a zombie. Raw results checkpoint c12d7b11c08a5536b6794cec7d330f09927f26e8
+verified on origin/main. Large raw observer streams remain locally/private S3;
+Git contains SHA256/size/location manifest plus all requests and telemetry.
+
+Mixed calibration launched September 17 with PID 67469, log revision-e1-mixed.log,
+output revision-20260912/e1-mixed, under suite.lock. Source/frozen plan checkpoint
+42e094f3881f1430879b45715517d281f7e48ca4 verified on origin/main.
+Read REVISION_MIXED_PREPARATION.md for the fixed .01/.025/.05 total RPS grid,
+paired seeds 701–705, one then two GPUs and >=60 samples per tenant. Total
+minimum runtime 312.611 hours (13.03 days); first individual run about 19.5h.
+Kubernetes snapshots 5s, Prometheus query step 10s to stay within range limits.
+Do not mistake quiet logs for a dead process. Inspect /proc, lock, observation
+state timestamp and archive. On completion inspect BOTH complete/restored.json.
+No E2/E3 automatically starts; implement those separately while this calibration
+runs, then use measured two-GPU capacity. If no rate qualifies, report the
+unestablished calibration rather than substituting isolated rates or sparse old
+results. Do not rerun E1, mutate active measurements, or launch duplicate workers.
