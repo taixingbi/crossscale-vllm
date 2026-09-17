@@ -18,7 +18,10 @@ def save(path, value):
 
 
 class Observer:
-    def __init__(self, cluster, out, eta=60):
+    def __init__(self, cluster, out, eta=60, interval_s=1):
+        if interval_s <= 0:
+            raise ValueError("Observer interval must be positive")
+        self.interval_s = interval_s
         self.cluster, self.out, self.eta = cluster, Path(out), eta
         self.stop = threading.Event()
         self.started = threading.Event()
@@ -37,7 +40,7 @@ class Observer:
                         'ready': sum(ready(p) for p in pods), 'desired': obs['deployment']['spec']['replicas'],
                         'pending_eta_unix_s': [stamp(p['metadata']['creationTimestamp']) + self.eta for p in pods if not ready(p)]})
                     self.started.set()
-                    self.stop.wait(1)
+                    self.stop.wait(self.interval_s)
         except Exception as exc:
             self.error = repr(exc)
             save(self.out / 'observer-error.json', {'error': self.error, 'unix_s': time.time()})

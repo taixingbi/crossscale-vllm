@@ -48,3 +48,35 @@ Validation: `python3 -m unittest tests.test_revision_mixed tests.test_revision_e
 passes seven tests, including paired trace identity, sample sufficiency, missing
 tenant/dispatch rejection, complete consecutive-rate qualification, runtime/hash
 reporting and refusal to overwrite a frozen plan.
+
+## September 17 execution declaration
+
+Isolated E1 has completed all 90 valid runs and restored original serving.
+Freeze mixed total rates .01/.025/.05 RPS, five seeds 701–705, paired across
+one and two fixed GPUs. The low anchor is the historical exploratory one-GPU
+.01 point; .025 and .05 extend upward to test overlap sensitivity. This is a
+new qualification with substantial per-tenant samples, not reuse of historical
+qualification. Do not sum isolated rates or infer two-GPU capacity from one GPU.
+No lower-rate seed search or outcome-driven replacement is authorized by this
+plan. If .01 fails, capacity is unqualified on this grid and the E2 input remains
+unestablished; report that limitation before choosing a different experiment.
+
+Frozen plan configs/revision-20260912/e1-mixed-plan.json SHA256
+`c4b3a2ef8ce5a9689dac039ce78ce1c2eb4713ad1192df3e4b0ae7e2df4cc051`.
+30 runs, 311.111 arrival-hours plus 1.5 drain-hours: at least 312.611 hours
+(13.03 days), excluding provisioning, rollouts, warmups, export and restoration.
+The longest individual arrival horizon is 19h26m40s. Sample requirements and
+seeds are unchanged; long quiet log intervals are expected.
+
+Explicit controller: python -m crossscale.revision_mixed_live --execute
+--config configs/default.json --plan configs/revision-20260912/e1-mixed-plan.json.
+It checks isolated completion/restoration, takes suite.lock, rejects an existing
+output directory, records all outcomes and restores one original-condition
+replica with inference warmup. Original GPU deletion preference and owned-only
+cleanup are retained. No E2/E3 automatically launches from this controller.
+Kubernetes raw snapshots every 5s, Prometheus every 10s, all request timing retained.
+The 10s query step keeps even 19-hour runs below the Prometheus range point limit.
+The slower fixed-capacity snapshot cadence avoids exhausting runner storage;
+default cadence for provisioning observers remains 1s. GPU utilization remains
+explicitly unavailable if no exporter series exists. E2/E3 implementation and
+policy audit can proceed offline during this long-running calibration.

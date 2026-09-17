@@ -1,0 +1,2030 @@
+{
+  "revision": "revision-20260912",
+  "phase": "e1-mixed",
+  "batch_tokens": 4096,
+  "rates": [
+    0.01,
+    0.025,
+    0.05
+  ],
+  "seeds": [
+    701,
+    702,
+    703,
+    704,
+    705
+  ],
+  "min_samples": 60,
+  "runs": [
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-701",
+      "replicas": 1,
+      "rps": 0.01,
+      "seed": 701,
+      "offered_by_tenant": {
+        "A": 428,
+        "B": 195,
+        "C": 97
+      },
+      "config": {
+        "seed": 701,
+        "duration_s": 70000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.005714285714285714,
+              "B": 0.002857142857142857,
+              "C": 0.0014285714285714286
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-702",
+      "replicas": 1,
+      "rps": 0.01,
+      "seed": 702,
+      "offered_by_tenant": {
+        "A": 390,
+        "B": 189,
+        "C": 101
+      },
+      "config": {
+        "seed": 702,
+        "duration_s": 70000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.005714285714285714,
+              "B": 0.002857142857142857,
+              "C": 0.0014285714285714286
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-703",
+      "replicas": 1,
+      "rps": 0.01,
+      "seed": 703,
+      "offered_by_tenant": {
+        "A": 422,
+        "B": 219,
+        "C": 92
+      },
+      "config": {
+        "seed": 703,
+        "duration_s": 70000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.005714285714285714,
+              "B": 0.002857142857142857,
+              "C": 0.0014285714285714286
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-704",
+      "replicas": 1,
+      "rps": 0.01,
+      "seed": 704,
+      "offered_by_tenant": {
+        "A": 412,
+        "B": 196,
+        "C": 111
+      },
+      "config": {
+        "seed": 704,
+        "duration_s": 70000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.005714285714285714,
+              "B": 0.002857142857142857,
+              "C": 0.0014285714285714286
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-705",
+      "replicas": 1,
+      "rps": 0.01,
+      "seed": 705,
+      "offered_by_tenant": {
+        "A": 398,
+        "B": 206,
+        "C": 119
+      },
+      "config": {
+        "seed": 705,
+        "duration_s": 70000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.005714285714285714,
+              "B": 0.002857142857142857,
+              "C": 0.0014285714285714286
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-701",
+      "replicas": 1,
+      "rps": 0.025,
+      "seed": 701,
+      "offered_by_tenant": {
+        "A": 428,
+        "B": 195,
+        "C": 97
+      },
+      "config": {
+        "seed": 701,
+        "duration_s": 28000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.014285714285714287,
+              "B": 0.0071428571428571435,
+              "C": 0.0035714285714285718
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-702",
+      "replicas": 1,
+      "rps": 0.025,
+      "seed": 702,
+      "offered_by_tenant": {
+        "A": 390,
+        "B": 189,
+        "C": 101
+      },
+      "config": {
+        "seed": 702,
+        "duration_s": 28000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.014285714285714287,
+              "B": 0.0071428571428571435,
+              "C": 0.0035714285714285718
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-703",
+      "replicas": 1,
+      "rps": 0.025,
+      "seed": 703,
+      "offered_by_tenant": {
+        "A": 422,
+        "B": 219,
+        "C": 92
+      },
+      "config": {
+        "seed": 703,
+        "duration_s": 28000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.014285714285714287,
+              "B": 0.0071428571428571435,
+              "C": 0.0035714285714285718
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-704",
+      "replicas": 1,
+      "rps": 0.025,
+      "seed": 704,
+      "offered_by_tenant": {
+        "A": 412,
+        "B": 196,
+        "C": 111
+      },
+      "config": {
+        "seed": 704,
+        "duration_s": 28000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.014285714285714287,
+              "B": 0.0071428571428571435,
+              "C": 0.0035714285714285718
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-705",
+      "replicas": 1,
+      "rps": 0.025,
+      "seed": 705,
+      "offered_by_tenant": {
+        "A": 398,
+        "B": 206,
+        "C": 119
+      },
+      "config": {
+        "seed": 705,
+        "duration_s": 28000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.014285714285714287,
+              "B": 0.0071428571428571435,
+              "C": 0.0035714285714285718
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-701",
+      "replicas": 1,
+      "rps": 0.05,
+      "seed": 701,
+      "offered_by_tenant": {
+        "A": 428,
+        "B": 195,
+        "C": 97
+      },
+      "config": {
+        "seed": 701,
+        "duration_s": 14000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.028571428571428574,
+              "B": 0.014285714285714287,
+              "C": 0.0071428571428571435
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-702",
+      "replicas": 1,
+      "rps": 0.05,
+      "seed": 702,
+      "offered_by_tenant": {
+        "A": 390,
+        "B": 189,
+        "C": 101
+      },
+      "config": {
+        "seed": 702,
+        "duration_s": 14000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.028571428571428574,
+              "B": 0.014285714285714287,
+              "C": 0.0071428571428571435
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-703",
+      "replicas": 1,
+      "rps": 0.05,
+      "seed": 703,
+      "offered_by_tenant": {
+        "A": 422,
+        "B": 219,
+        "C": 92
+      },
+      "config": {
+        "seed": 703,
+        "duration_s": 14000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.028571428571428574,
+              "B": 0.014285714285714287,
+              "C": 0.0071428571428571435
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-704",
+      "replicas": 1,
+      "rps": 0.05,
+      "seed": 704,
+      "offered_by_tenant": {
+        "A": 412,
+        "B": 196,
+        "C": 111
+      },
+      "config": {
+        "seed": 704,
+        "duration_s": 14000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.028571428571428574,
+              "B": 0.014285714285714287,
+              "C": 0.0071428571428571435
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-705",
+      "replicas": 1,
+      "rps": 0.05,
+      "seed": 705,
+      "offered_by_tenant": {
+        "A": 398,
+        "B": 206,
+        "C": 119
+      },
+      "config": {
+        "seed": 705,
+        "duration_s": 14000,
+        "drain_s": 180,
+        "initial_replicas": 1,
+        "max_replicas": 1,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.028571428571428574,
+              "B": 0.014285714285714287,
+              "C": 0.0071428571428571435
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-701",
+      "replicas": 2,
+      "rps": 0.01,
+      "seed": 701,
+      "offered_by_tenant": {
+        "A": 428,
+        "B": 195,
+        "C": 97
+      },
+      "config": {
+        "seed": 701,
+        "duration_s": 70000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.005714285714285714,
+              "B": 0.002857142857142857,
+              "C": 0.0014285714285714286
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-702",
+      "replicas": 2,
+      "rps": 0.01,
+      "seed": 702,
+      "offered_by_tenant": {
+        "A": 390,
+        "B": 189,
+        "C": 101
+      },
+      "config": {
+        "seed": 702,
+        "duration_s": 70000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.005714285714285714,
+              "B": 0.002857142857142857,
+              "C": 0.0014285714285714286
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-703",
+      "replicas": 2,
+      "rps": 0.01,
+      "seed": 703,
+      "offered_by_tenant": {
+        "A": 422,
+        "B": 219,
+        "C": 92
+      },
+      "config": {
+        "seed": 703,
+        "duration_s": 70000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.005714285714285714,
+              "B": 0.002857142857142857,
+              "C": 0.0014285714285714286
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-704",
+      "replicas": 2,
+      "rps": 0.01,
+      "seed": 704,
+      "offered_by_tenant": {
+        "A": 412,
+        "B": 196,
+        "C": 111
+      },
+      "config": {
+        "seed": 704,
+        "duration_s": 70000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.005714285714285714,
+              "B": 0.002857142857142857,
+              "C": 0.0014285714285714286
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-705",
+      "replicas": 2,
+      "rps": 0.01,
+      "seed": 705,
+      "offered_by_tenant": {
+        "A": 398,
+        "B": 206,
+        "C": 119
+      },
+      "config": {
+        "seed": 705,
+        "duration_s": 70000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.005714285714285714,
+              "B": 0.002857142857142857,
+              "C": 0.0014285714285714286
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-701",
+      "replicas": 2,
+      "rps": 0.025,
+      "seed": 701,
+      "offered_by_tenant": {
+        "A": 428,
+        "B": 195,
+        "C": 97
+      },
+      "config": {
+        "seed": 701,
+        "duration_s": 28000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.014285714285714287,
+              "B": 0.0071428571428571435,
+              "C": 0.0035714285714285718
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-702",
+      "replicas": 2,
+      "rps": 0.025,
+      "seed": 702,
+      "offered_by_tenant": {
+        "A": 390,
+        "B": 189,
+        "C": 101
+      },
+      "config": {
+        "seed": 702,
+        "duration_s": 28000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.014285714285714287,
+              "B": 0.0071428571428571435,
+              "C": 0.0035714285714285718
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-703",
+      "replicas": 2,
+      "rps": 0.025,
+      "seed": 703,
+      "offered_by_tenant": {
+        "A": 422,
+        "B": 219,
+        "C": 92
+      },
+      "config": {
+        "seed": 703,
+        "duration_s": 28000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.014285714285714287,
+              "B": 0.0071428571428571435,
+              "C": 0.0035714285714285718
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-704",
+      "replicas": 2,
+      "rps": 0.025,
+      "seed": 704,
+      "offered_by_tenant": {
+        "A": 412,
+        "B": 196,
+        "C": 111
+      },
+      "config": {
+        "seed": 704,
+        "duration_s": 28000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.014285714285714287,
+              "B": 0.0071428571428571435,
+              "C": 0.0035714285714285718
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-705",
+      "replicas": 2,
+      "rps": 0.025,
+      "seed": 705,
+      "offered_by_tenant": {
+        "A": 398,
+        "B": 206,
+        "C": 119
+      },
+      "config": {
+        "seed": 705,
+        "duration_s": 28000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.014285714285714287,
+              "B": 0.0071428571428571435,
+              "C": 0.0035714285714285718
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-701",
+      "replicas": 2,
+      "rps": 0.05,
+      "seed": 701,
+      "offered_by_tenant": {
+        "A": 428,
+        "B": 195,
+        "C": 97
+      },
+      "config": {
+        "seed": 701,
+        "duration_s": 14000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.028571428571428574,
+              "B": 0.014285714285714287,
+              "C": 0.0071428571428571435
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-702",
+      "replicas": 2,
+      "rps": 0.05,
+      "seed": 702,
+      "offered_by_tenant": {
+        "A": 390,
+        "B": 189,
+        "C": 101
+      },
+      "config": {
+        "seed": 702,
+        "duration_s": 14000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.028571428571428574,
+              "B": 0.014285714285714287,
+              "C": 0.0071428571428571435
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-703",
+      "replicas": 2,
+      "rps": 0.05,
+      "seed": 703,
+      "offered_by_tenant": {
+        "A": 422,
+        "B": 219,
+        "C": 92
+      },
+      "config": {
+        "seed": 703,
+        "duration_s": 14000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.028571428571428574,
+              "B": 0.014285714285714287,
+              "C": 0.0071428571428571435
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-704",
+      "replicas": 2,
+      "rps": 0.05,
+      "seed": 704,
+      "offered_by_tenant": {
+        "A": 412,
+        "B": 196,
+        "C": 111
+      },
+      "config": {
+        "seed": 704,
+        "duration_s": 14000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.028571428571428574,
+              "B": 0.014285714285714287,
+              "C": 0.0071428571428571435
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-705",
+      "replicas": 2,
+      "rps": 0.05,
+      "seed": 705,
+      "offered_by_tenant": {
+        "A": 398,
+        "B": 206,
+        "C": 119
+      },
+      "config": {
+        "seed": 705,
+        "duration_s": 14000,
+        "drain_s": 180,
+        "initial_replicas": 2,
+        "max_replicas": 2,
+        "slow_interval_s": 5,
+        "fast_interval_s": 0.1,
+        "provisioning_lag_s": 60,
+        "eta_error": 0,
+        "eta_margin_s": 0.05,
+        "queue_target": 5,
+        "slots_per_replica": 8,
+        "prefill_tokens_s": 6000,
+        "decode_tokens_s": 40,
+        "request_timeout_s": 120,
+        "tenants": {
+          "A": {
+            "input_median": 256,
+            "output_median": 128,
+            "sigma": 0.35,
+            "ttft_s": 0.5,
+            "tpot_s": 0.05,
+            "weight": 3
+          },
+          "B": {
+            "input_median": 3072,
+            "output_median": 256,
+            "sigma": 0.35,
+            "ttft_s": 1.5,
+            "tpot_s": 0.08,
+            "weight": 2
+          },
+          "C": {
+            "input_median": 8192,
+            "output_median": 1024,
+            "sigma": 0.35,
+            "ttft_s": 5,
+            "tpot_s": 0.12,
+            "weight": 1
+          }
+        },
+        "phases": [
+          {
+            "start_s": 0,
+            "rates": {
+              "A": 0.028571428571428574,
+              "B": 0.014285714285714287,
+              "C": 0.0071428571428571435
+            }
+          }
+        ],
+        "client_force_close": true,
+        "upstream_force_close": true,
+        "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off"
+      }
+    }
+  ]
+}
