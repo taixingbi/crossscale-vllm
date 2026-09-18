@@ -3,8 +3,9 @@
 This revision supersedes the old E1–E7 numbering and automatic continuation
 gate in FULL_EXPERIMENT_PROTOCOL.md. Preserve all historical results and labels;
 new artifacts must use a distinct `revision-20260912` root and explicit phase
-names. Current authorization is E0 completion, then E1, E2, and the priority
-E3 B3/B5/B6 comparison. E4–E8 are deferred until the E3 checkpoint is reviewed.
+names. On September 18 the user authorized continuing until all experiments
+are done: E0–E8, including mixed/two-GPU calibration and the full E3 baseline
+set. This supersedes the earlier stop after E3. Preserve ongoing frozen runs.
 Do not optimize for an expected baseline ordering or suppress negative results.
 
 ## Transition from E0
@@ -81,13 +82,22 @@ Retain any historical gate analysis under its historical name, not as a reason
 to skip this new E3 trio. Avoid claiming a causal decomposition from ordering
 alone; identify other differences or use matched scale schedules as needed.
 
-Stop expansion at this checkpoint and report whether B6's additional benefit
+Report at this checkpoint whether B6's additional benefit
 over B5 is supported and concentrated between scale decision and readiness.
 If B6 and B5 are similar, report weak ETA evidence; if B5/B6 are similar to B3,
 report weak fast-admission evidence. Inconclusive low-count results remain
-inconclusive. Do not automatically start E4–E8 even for a favorable result.
+inconclusive. Then complete E3 B2/B4 and proceed through E4–E8 regardless of
+whether the desired ordering holds. A scientific or infrastructure blocker
+requires diagnosis and honest reporting, not fabricated completion.
 
-## Deferred roadmap (not currently authorized to launch)
+## Authorized remaining experiments (September 18 extension)
+
+Before each new phase, implement and validate missing live capabilities and
+freeze its seeds, repetitions, conditions, metrics and analysis plan. Use
+paired traces across variants and at least five paired repetitions for
+comparisons unless a documented protocol amendment explains another design.
+Preserve negative outcomes and distinguish controlled readiness delays from
+natural provisioning latency. Never alter an ongoing run's frozen plan.
 
 - E4: A/B constant, C 1x to 4x; A protection, C defer/reject and utilization.
 - E5: controlled usable-capacity lag 0/15/30/60/90/120 seconds; B3/B5/B6.
@@ -100,6 +110,8 @@ inconclusive. Do not automatically start E4–E8 even for a favorable result.
   cost–SLO frontier. Use actual instance lifecycle/billing evidence and disclose
   cost assumptions; ready-time GPU-hours are not AWS cost.
 
-After E3 evidence is secured, retain one healthy original GPU/replica and avoid
-leaving added experiment GPUs idle. Follow existing scoped cleanup rules while
-preserving evidence needed for a user-approved later phase.
+After all phases, produce the evidence-based report, figures and cost frontier,
+checkpoint and push results, verify inference on one healthy original GPU,
+and perform documented scoped cleanup. Avoid leaving added GPUs idle between
+phases. Pause the heartbeat only after final reporting, cleanup and push, or
+report an actual unresolved blocker without labeling missing phases complete.

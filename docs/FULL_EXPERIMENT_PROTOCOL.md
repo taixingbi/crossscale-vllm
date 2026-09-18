@@ -1,8 +1,8 @@
 # Full live experiment execution protocol
 
 **2026-09-12 execution revision:** Read [POST_E0_EXECUTION.md](POST_E0_EXECUTION.md)
-first for current E1–E8 numbering, E0 → E1 → E2 → E3 priority and the E3 stop
-checkpoint. It supersedes conflicting continuation instructions below; the
+first for current E1–E8 numbering, E0 → E1 → E2 → E3 priority and the September
+18 authorization to continue through E8. It supersedes conflicting continuation instructions below; the
 historical protocol and evidence remain intact.
 
 Recorded before collecting the full-workload E0/E1/E2 measurements. The earlier

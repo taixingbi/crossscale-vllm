@@ -2,9 +2,10 @@
 
 **Current continuation scope (2026-09-12):** Follow
 [POST_E0_EXECUTION.md](POST_E0_EXECUTION.md) after the active E0 finishes.
-Run new E1 capacity profiling, E2 B2/B3, then priority E3 B3/B5/B6; stop
-expansion at E3 and report the evidence. Do not automatically run E4–E8 or use
-the historical numbering/gate to skip the new E3 comparison.
+September 18 authorization extends through all E0–E8: run E1 capacity
+profiling, E2 B2/B3, priority E3 B3/B5/B6, then complete E3 B2/B4 and E4–E8.
+Report the E3 checkpoint without stopping automatically. Do not use the
+historical numbering/gate to skip the new comparisons.
 
 Started 2026-09-08. This is a live, unfinished measurement suite. Do not confuse
 the earlier short-context results with these full-workload measurements.
