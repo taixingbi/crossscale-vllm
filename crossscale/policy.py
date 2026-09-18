@@ -11,8 +11,12 @@ def decision(c, baseline, request, now, ready, desired, active, pending_etas):
     if remaining <= 0:
         return "reject"
     total = max(0, ready) * c["slots_per_replica"]
-    # B5 is the deliberately optimistic desired-capacity ablation.
-    perceived = desired * c["slots_per_replica"] if baseline == "B5" else total
+    # Preserve historical B5; the revised ETA ablation uses identical Ready slots.
+    revision = c.get("admission_policy_revision", "historical")
+    if revision not in ("historical", "revision-20260912"):
+        raise ValueError("Unknown admission policy revision")
+    perceived = (desired * c["slots_per_replica"]
+                 if baseline == "B5" and revision == "historical" else total)
     used = sum(active.values())
     weight = 1 if baseline == "no-tenant" else spec["weight"]
     denominator = len(c["tenants"]) if baseline == "no-tenant" else sum(t["weight"] for t in c["tenants"].values())

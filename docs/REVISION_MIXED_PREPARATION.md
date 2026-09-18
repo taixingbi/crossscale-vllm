@@ -80,3 +80,18 @@ The slower fixed-capacity snapshot cadence avoids exhausting runner storage;
 default cadence for provisioning observers remains 1s. GPU utilization remains
 explicitly unavailable if no exporter series exists. E2/E3 implementation and
 policy audit can proceed offline during this long-running calibration.
+
+## September 18: offline policy ablation implementation
+
+The explicit config field `admission_policy_revision: revision-20260912` now
+makes B5 use the same Ready-slot and tenant budgets as B6; only B6 can defer
+using pending ETA. Without that field, historical B5 still uses desired slots.
+This preserves historical results and prevents conflating speculative capacity
+with ETA in the revised comparison. Tests cover no-Ready/pending capacity,
+feasible/infeasible ETA, matched no-ETA decisions over Ready/desired/active
+states, and preserved historical behavior. This is offline preparation only:
+no source copied to the active runner and no serving or measurement changes.
+The eventual E3 frozen config must explicitly select this revision. Actual
+scale histories can still diverge across baselines, so this alone does not
+establish a causal decomposition. E2/E3 controllers, training/frozen scaler
+settings, actual readiness cohorts/censoring and GPU telemetry remain pending.
