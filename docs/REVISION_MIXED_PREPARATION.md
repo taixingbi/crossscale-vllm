@@ -95,3 +95,14 @@ The eventual E3 frozen config must explicitly select this revision. Actual
 scale histories can still diverge across baselines, so this alone does not
 establish a causal decomposition. E2/E3 controllers, training/frozen scaler
 settings, actual readiness cohorts/censoring and GPU telemetry remain pending.
+
+Revised gap analysis is now available offline in crossscale/revision_gap.py.
+It distinguishes no observed scale-out from readiness censoring, uses the first
+observed desired-capacity increase through actual target readiness, and retains
+all offered requests in the interval, including rejection/error/timeout outcomes.
+Separate KEDA/HPA evidence is required for attribution; replica observations do
+not prove scaler causality. Four tests cover stepwise scaling, interval boundaries,
+censoring, no scale-out, and invalid initial/timestamp evidence. This helper is
+not yet connected to a revised live E2/E3 controller and has not been copied to
+the active runner. September 18 authorization now continues through E8; the
+remaining phase designs and live controllers must still be implemented/frozen.
