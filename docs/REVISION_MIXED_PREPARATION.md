@@ -106,3 +106,16 @@ censoring, no scale-out, and invalid initial/timestamp evidence. This helper is
 not yet connected to a revised live E2/E3 controller and has not been copied to
 the active runner. September 18 authorization now continues through E8; the
 remaining phase designs and live controllers must still be implemented/frozen.
+# September 19: offline paired comparison preparation
+
+`crossscale/revision_compare.py` adds run-level paired bootstrap analysis for
+subsequent comparisons. Call separately for each metric/cohort and condition,
+passing the frozen seeds and practical-effect threshold. It rejects duplicate
+runs, unexpected seeds, mismatched paired traces and mixed conditions/modes.
+Missing, dispatch-invalid, censored or unavailable-metric pairs remain explicitly
+accounted for; no supported-benefit conclusion is emitted unless all declared
+pairs are available and at least five are valid. Missing-pair estimates are
+descriptive only. The practical criterion is mean difference at least the
+declared threshold and bootstrap lower bound above zero; it is not a causal
+decomposition. This helper is offline preparation, not an executed comparison
+or a frozen E2/E3 plan. No code was copied into the active runner.
