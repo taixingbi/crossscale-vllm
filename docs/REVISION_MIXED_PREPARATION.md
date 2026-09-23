@@ -119,3 +119,22 @@ descriptive only. The practical criterion is mean difference at least the
 declared threshold and bootstrap lower bound above zero; it is not a causal
 decomposition. This helper is offline preparation, not an executed comparison
 or a frozen E2/E3 plan. No code was copied into the active runner.
+
+## September 23: continuous scaler evidence preparation
+
+`Observer(..., capture_scaler=True)` now retains raw ScaledObject, HPA and
+namespace Event API responses alongside each capacity snapshot. Raw UIDs,
+owner references, resource versions, HPA desired replicas and rescale events
+remain available for the revised controller's attribution audit. Sequential API
+reads have explicit start/end timestamps; they are not an atomic observation.
+A missing ScaledObject is recorded as null, while API errors fail the observer
+and preserve observer-error.json rather than becoming fabricated absence.
+Events are best-effort Kubernetes evidence and may expire; this capture alone
+does not prove that HPA exclusively caused a deployment change.
+
+The option defaults off, preserving existing controllers. Three offline tests
+cover raw evidence retention, unchanged default behavior and API failure.
+The revised E2/E3 controller must opt in and validate ownership/target links
+and decision timing before attributing scaling. That controller is still pending;
+this is preparation, not a live E2 result. No code was copied to the active E1
+runner and its frozen measurement configuration remains unchanged.

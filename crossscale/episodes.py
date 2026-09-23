@@ -18,10 +18,11 @@ def save(path, value):
 
 
 class Observer:
-    def __init__(self, cluster, out, eta=60, interval_s=1):
+    def __init__(self, cluster, out, eta=60, interval_s=1, capture_scaler=False):
         if interval_s <= 0:
             raise ValueError("Observer interval must be positive")
         self.interval_s = interval_s
+        self.capture_scaler = capture_scaler
         self.cluster, self.out, self.eta = cluster, Path(out), eta
         self.stop = threading.Event()
         self.started = threading.Event()
@@ -32,6 +33,16 @@ class Observer:
             with gzip.open(self.out / 'observations.jsonl.gz', 'wt') as stream:
                 while not self.stop.is_set():
                     obs = self.cluster.snapshot()
+                    if self.capture_scaler:
+                        # API reads are sequential, not an atomic cluster snapshot.
+                        # Preserve their observation window and raw object UIDs,
+                        # resource versions, owner references and status/events.
+                        scaler = {'read_started_unix_s': time.time()}
+                        scaler['scaledobject'] = self.cluster.get('scaledobject', 'vllm', missing_ok=True)
+                        scaler['hpa'] = self.cluster.get('hpa')
+                        scaler['events'] = self.cluster.get('events')
+                        scaler['read_finished_unix_s'] = time.time()
+                        obs['scaler'] = scaler
                     stream.write(json.dumps(obs) + '\n')
                     stream.flush()
                     pods = [p for p in obs['pods'] if not p['metadata'].get('deletionTimestamp')]
