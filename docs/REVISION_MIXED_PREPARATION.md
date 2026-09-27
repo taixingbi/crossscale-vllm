@@ -138,3 +138,24 @@ The revised E2/E3 controller must opt in and validate ownership/target links
 and decision timing before attributing scaling. That controller is still pending;
 this is preparation, not a live E2 result. No code was copied to the active E1
 runner and its frozen measurement configuration remains unchanged.
+
+## September 27: offline scaler identity audit
+
+`crossscale/revision_scaler.py` audits the optional captured evidence against
+deployment and ScaledObject UIDs pinned separately at phase setup. It requires
+the experiment label, correct deployment targets, and exactly one target HPA
+controlled by that ScaledObject. Replaced identities, competing HPAs (including
+deleting ones), missing API lists/status, and invalid sequential read windows
+remain unverified. SuccessfulRescale events are selected by HPA UID, kind,
+namespace and name; their original timestamps and payloads are retained.
+
+An `identity-linked` result is not a scaling decision or causal attribution.
+HPA status may lag, events may be old or absent, and sequential reads are not
+atomic. The future live controller must still check event timing against the
+run, observe desired/Ready transitions, and record competing/manual mutations.
+Six synthetic-evidence tests cover correct links, replacement UIDs, competing
+HPAs, wrong ownership/targets, absent or unrelated events, and missing evidence.
+This helper has not been copied to the active runner or integrated into a revised
+live controller. E1 continues under its existing frozen plan; E2's measured
+capacity prerequisite remains unresolved after the lowest-rate two-GPU SLO
+failure. No unrun phase is represented as complete.
