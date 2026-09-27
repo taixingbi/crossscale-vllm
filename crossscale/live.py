@@ -1,5 +1,6 @@
 """Real vLLM streaming runner and single-process experimental gateway."""
 import asyncio
+import copy
 from collections import deque
 import json
 import os
@@ -31,11 +32,11 @@ async def events(response):
                 yield json.loads(payload)
 
 
-async def run(c, baseline, out, url, model, tokens_path):
+async def run(c, baseline, out, url, model, tokens_path, *, trace=None):
     if Path(out).exists():
         raise FileExistsError(out)
     http = aio()
-    rows = workload(c)
+    rows = workload(c) if trace is None else copy.deepcopy(trace)
     token_ids = json.loads(Path(tokens_path).read_text())
     if not token_ids or any(type(x) is not int or x < 0 for x in token_ids):
         raise ValueError("tokens file must be a nonempty JSON array from the serving model tokenizer")

@@ -77,6 +77,22 @@ class Streaming(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result['tenants']['A']['rejected'], 2)
         self.assertEqual(result['tenants']['A']['goodput'], 0)
 
+    async def test_explicit_trace_preserves_source_and_does_not_generate_workload(self):
+        async def handler(request):
+            body = await request.json()
+            self.assertEqual(len(body['prompt']), 10)
+            return web.Response(text='data: {"choices":[{"text":"ok"}]}\n\n'
+                                     'data: {"usage":{"completion_tokens":4,"prompt_tokens":10}}\n\n'
+                                     'data: [DONE]\n\n')
+        url = await self.serve(handler)
+        trace = self.trace()
+        original = copy.deepcopy(trace)
+        with patch('crossscale.live.workload', side_effect=AssertionError('must use supplied trace')):
+            result = await run(self.c, 'B0', self.root/'explicit', url, 'fake',
+                               self.root/'tokens.json', trace=trace)
+        self.assertEqual(trace, original)
+        self.assertEqual(result['tenants']['A']['completed'], 1)
+
     async def test_gateway_does_not_forward_pending_capacity(self):
         calls = []
         async def handler(_):

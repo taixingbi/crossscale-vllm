@@ -49,6 +49,12 @@ with per-run evidence, aggregate uncertainty and frozen calibration artifacts.
 
 ## E2 — provisioning-gap baseline
 
+**September 27 recovery:** The user chose serving improvements followed by
+new-condition calibration to resolve the failed mixed-capacity prerequisite.
+Follow [E2_SERVING_RECOVERY.md](E2_SERVING_RECOVERY.md) after the active frozen
+mixed suite completes/restores. Preserve capacity-normalized E2 and its SLOs;
+do not substitute fixed offered loads or reuse old-condition ETA as new evidence.
+
 Run B2 Queue-KEDA and B3 SLO-KEDA only, initially two Ready GPUs. Use 65% of
 measured two-GPU mixed capacity before t=60 seconds and 165% afterward (fixed
 choices within the user's 60–70% / 150–180% ranges). KEDA/HPA must actually request
