@@ -181,3 +181,13 @@ E2, and does not replace the frozen plan. Closed gzip streams are local and in
 private S3; Git has the SHA256/size/location manifest plus requests, telemetry
 and cluster snapshots. Serving recovery stays blocked until all 30 runs
 complete and restore.
+
+## Mixed calibration 26/30 — 2026-09-29 evening
+
+Two more frozen runs completed and remain dispatch-valid: two-GPU 0.025 seed
+705 passed (B 0.961) and two-GPU 0.05 seed 701 failed (B 0.949). Two-GPU 0.025
+is now 4/5; two-GPU 0.05 is 0/1 so far. The lowest-rate seed-704 B failure is
+unchanged, so mixed capacity on this grid remains unqualified. The controller
+is still running `mixed-gpu-2-rps-0.05-seed-702`; three 0.05 seeds remain.
+The in-progress run is omitted. E2 serving recovery stays blocked until all
+30 runs complete and restore.

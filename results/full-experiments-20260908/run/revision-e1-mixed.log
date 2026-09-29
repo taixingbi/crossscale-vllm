@@ -77,3 +77,7 @@
 {"unix_s": 1790643228.0894008, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.025-seed-704"}
 {"unix_s": 1790671417.1780977, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.025-seed-704", "passed": false}
 {"unix_s": 1790671417.178351, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.025-seed-705"}
+{"unix_s": 1790699606.321464, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.025-seed-705", "passed": true}
+{"unix_s": 1790699606.32168, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.05-seed-701"}
+{"unix_s": 1790713795.3975399, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.05-seed-701", "passed": false}
+{"unix_s": 1790713795.3977938, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.05-seed-702"}

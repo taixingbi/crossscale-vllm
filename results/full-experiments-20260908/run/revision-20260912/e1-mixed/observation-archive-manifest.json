@@ -1,6 +1,6 @@
 {
-  "note": "Full raw observation streams retained locally and in private S3; local SHA256 and size recorded; excluded from Git due to file sizes. This checkpoint covers 24 completed mixed runs; mixed-gpu-2-rps-0.025-seed-705 is still in progress and is omitted.",
-  "completed_runs": 24,
+  "note": "Full raw observation streams retained locally and in private S3; local SHA256 and size recorded; excluded from Git due to file sizes. This checkpoint covers 26 completed mixed runs; mixed-gpu-2-rps-0.05-seed-702 is still in progress and is omitted.",
+  "completed_runs": 26,
   "planned_runs": 30,
   "files": [
     {
@@ -146,6 +146,18 @@
       "bytes": 54021335,
       "sha256": "5e50343eeccc555a50ba33ae8957e255290dc68b63f21c7b34895d5abd82ad8e",
       "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-704/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.025-seed-705/observations.jsonl.gz",
+      "bytes": 54013336,
+      "sha256": "021bc5ef53560ca9dae41cdcd8a85784c3173afbe9a79525d83274ba1723eb2f",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-705/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.05-seed-701/observations.jsonl.gz",
+      "bytes": 27203099,
+      "sha256": "40f6440cea2185e4b4beff0ba3d595ba8fddf933bc873c3c0bd8d39c77db54c4",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.05-seed-701/observations.jsonl.gz"
     }
   ]
 }
