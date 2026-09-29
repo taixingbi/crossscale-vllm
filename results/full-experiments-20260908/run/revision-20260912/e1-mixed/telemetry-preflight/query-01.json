@@ -1,0 +1,1 @@
+{"name": "running", "query": "sum(vllm:num_requests_running{namespace=\"crossscale\"})", "response": {"status": "success", "data": {"resultType": "matrix", "result": [{"metric": {}, "values": [[1789644048.838, "0"], [1789644053.838, "1"]]}]}}}

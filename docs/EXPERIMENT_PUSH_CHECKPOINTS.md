@@ -168,3 +168,16 @@ not a mixed capacity or a scaling claim. Completion September 16 18:48:35 UTC;
 restoration and inference warmup succeeded afterward. PID 35593 is a zombie,
 suite.lock released, original GPU retained and vLLM Ready. Raw evidence synced
 from private S3; mixed calibration and E2/E3 remain unfinished.
+
+## Mixed calibration in progress — 2026-09-29
+
+24 of 30 frozen mixed runs are complete and dispatch-valid. One-GPU 0.01 is
+4/5, 0.025 is 3/5, 0.05 is 0/5. Two-GPU 0.01 is 4/5 and 0.025 is 3/4 so far.
+Seed 704 tenant B is below 95% SLO-goodput at 0.01 on both GPU counts
+(182/196, 92.857%), so this grid cannot qualify mixed capacity. The controller
+is still running `mixed-gpu-2-rps-0.025-seed-705`; five 0.05 two-GPU seeds
+remain. This checkpoint does not include the in-progress run, does not launch
+E2, and does not replace the frozen plan. Closed gzip streams are local and in
+private S3; Git has the SHA256/size/location manifest plus requests, telemetry
+and cluster snapshots. Serving recovery stays blocked until all 30 runs
+complete and restore.

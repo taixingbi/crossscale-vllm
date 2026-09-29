@@ -1,0 +1,151 @@
+{
+  "note": "Full raw observation streams retained locally and in private S3; local SHA256 and size recorded; excluded from Git due to file sizes. This checkpoint covers 24 completed mixed runs; mixed-gpu-2-rps-0.025-seed-705 is still in progress and is omitted.",
+  "completed_runs": 24,
+  "planned_runs": 30,
+  "files": [
+    {
+      "path": "mixed-gpu-1-rps-0.01-seed-701/observations.jsonl.gz",
+      "bytes": 118911526,
+      "sha256": "d06873d6634ec42b516d75f2c701a820774bd4d48c8a36eb26f03e3a5316d1fd",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-701/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.01-seed-702/observations.jsonl.gz",
+      "bytes": 118957197,
+      "sha256": "f408eed3af90e81ff64ad65884f855c2bae90b4147a38d1449ee1043714fe166",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-702/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.01-seed-703/observations.jsonl.gz",
+      "bytes": 118976538,
+      "sha256": "adf994875dac6f5603a95ca1397aa918a530423b7ae5cdfa9d3288b80fa20533",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-703/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.01-seed-704/observations.jsonl.gz",
+      "bytes": 118962358,
+      "sha256": "724ecbeacbc59844cd5554088feb2708dcf6623c4c09e96c3582dd85894b4730",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-704/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.01-seed-705/observations.jsonl.gz",
+      "bytes": 118954386,
+      "sha256": "4dfb65cfaace62120fc987333ad9e25492486483121ff2137d075fac2fad8388",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-705/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.025-seed-701/observations.jsonl.gz",
+      "bytes": 47764551,
+      "sha256": "9813b0b982cf0b356dedc2af38508e5f77f06746c68972716b51c8fdfac57b8a",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-701/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.025-seed-702/observations.jsonl.gz",
+      "bytes": 47760130,
+      "sha256": "a9f251b8518b3922d0156a628e4583f5b5fe1798b9c0b945c63feb4cebe665e9",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-702/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.025-seed-703/observations.jsonl.gz",
+      "bytes": 47776160,
+      "sha256": "28259deed9c180e8fa76f1d943b338a24c903bf3acaefb7debb2a359bad63f1a",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-703/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.025-seed-704/observations.jsonl.gz",
+      "bytes": 47757883,
+      "sha256": "1837835ff85ab5e45989688f53f1932c63399d7d3798c4a7a140d60de3467295",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-704/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.025-seed-705/observations.jsonl.gz",
+      "bytes": 47763926,
+      "sha256": "7555579bc0ef13d24ef530a9aeed0ea87e0fd0161dd03773577ee91ed72f3c0c",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-705/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.05-seed-701/observations.jsonl.gz",
+      "bytes": 24044685,
+      "sha256": "5e5a8c69b292e256210e7738b6a710863cc02db4e37ef9b27674002d5c772804",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-701/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.05-seed-702/observations.jsonl.gz",
+      "bytes": 24044178,
+      "sha256": "e6d88b5714ac8c08e1b880d9aa3b460ab18dad405da58e5340c15ecc813fa8e7",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-702/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.05-seed-703/observations.jsonl.gz",
+      "bytes": 24043921,
+      "sha256": "14ee3ac2215330233badca76a2e3d97eb642bdda125d2d7b78415d0dff962aa1",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-703/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.05-seed-704/observations.jsonl.gz",
+      "bytes": 24035956,
+      "sha256": "c753e22a213570ae046224f04a81908e9c6ddbfa107f9b73bb527501be16c05e",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-704/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-1-rps-0.05-seed-705/observations.jsonl.gz",
+      "bytes": 24036073,
+      "sha256": "6833ae18a8987d809c0e6c2acf054f56d47ad87ab9b8f09490b7102e6a70cf92",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-705/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.01-seed-701/observations.jsonl.gz",
+      "bytes": 134523059,
+      "sha256": "dee251c32781629a08b6ea70d4119db292115a90b79ea48dc483a943a0a17178",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-701/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.01-seed-702/observations.jsonl.gz",
+      "bytes": 134500561,
+      "sha256": "83eb286e44f6191d946f55a5f417a922e0c189f5311327c4461b8a326a0334f9",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-702/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.01-seed-703/observations.jsonl.gz",
+      "bytes": 134492451,
+      "sha256": "c753ec0b6ed405af50df01686e97ebd4b04e067467bfe54556b5995f7bd9c034",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-703/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.01-seed-704/observations.jsonl.gz",
+      "bytes": 134491477,
+      "sha256": "f9498947fc9144b9211846fe646bf7aefe6a4b337aaea8e9036b51b0c3045c22",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-704/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.01-seed-705/observations.jsonl.gz",
+      "bytes": 134569755,
+      "sha256": "80e8e6c936cfd145a47e207e226f38e3d5574083bd47fa0d28d0f01063c7abee",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-705/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.025-seed-701/observations.jsonl.gz",
+      "bytes": 54039010,
+      "sha256": "ae13ed49950094b838b00db9d53ba7a807747668f4eb259caa63c75d4d9e828d",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-701/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.025-seed-702/observations.jsonl.gz",
+      "bytes": 54019591,
+      "sha256": "1afb50e39586cc5b04662b49e51cbc6896e0ecc7350d8b9b7bd9d506fe4e0d00",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-702/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.025-seed-703/observations.jsonl.gz",
+      "bytes": 53997727,
+      "sha256": "b7f2cd2f958d954d8762ea68914f5271c04c6e85610a4aa090479ad0404b2172",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-703/observations.jsonl.gz"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.025-seed-704/observations.jsonl.gz",
+      "bytes": 54021335,
+      "sha256": "5e50343eeccc555a50ba33ae8957e255290dc68b63f21c7b34895d5abd82ad8e",
+      "s3_uri": "s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-704/observations.jsonl.gz"
+    }
+  ]
+}

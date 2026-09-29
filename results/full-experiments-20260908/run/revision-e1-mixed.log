@@ -1,0 +1,79 @@
+{"unix_s": 1789644053.86423, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.01-seed-701"}
+{"unix_s": 1789714238.576747, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.01-seed-701", "passed": true}
+{"unix_s": 1789714238.5769582, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.01-seed-702"}
+{"unix_s": 1789784423.3716972, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.01-seed-702", "passed": true}
+{"unix_s": 1789784423.3719149, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.01-seed-703"}
+{"unix_s": 1789854608.145019, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.01-seed-703", "passed": true}
+{"unix_s": 1789854608.1452365, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.01-seed-704"}
+{"unix_s": 1789924792.8727524, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.01-seed-704", "passed": false}
+{"unix_s": 1789924792.8729718, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.01-seed-705"}
+{"unix_s": 1789994977.670328, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.01-seed-705", "passed": true}
+{"unix_s": 1789994977.6705446, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.025-seed-701"}
+{"unix_s": 1790023162.381794, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.025-seed-701", "passed": false}
+{"unix_s": 1790023162.3820198, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.025-seed-702"}
+{"unix_s": 1790051347.0437598, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.025-seed-702", "passed": true}
+{"unix_s": 1790051347.0439892, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.025-seed-703"}
+{"unix_s": 1790079531.8722355, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.025-seed-703", "passed": true}
+{"unix_s": 1790079531.8724546, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.025-seed-704"}
+{"unix_s": 1790107716.541277, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.025-seed-704", "passed": false}
+{"unix_s": 1790107716.5415022, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.025-seed-705"}
+{"unix_s": 1790135901.195922, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.025-seed-705", "passed": true}
+{"unix_s": 1790135901.196141, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.05-seed-701"}
+{"unix_s": 1790150085.8371634, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.05-seed-701", "passed": false}
+{"unix_s": 1790150085.8373888, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.05-seed-702"}
+{"unix_s": 1790164270.4843473, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.05-seed-702", "passed": false}
+{"unix_s": 1790164270.4846063, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.05-seed-703"}
+{"unix_s": 1790178455.2657535, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.05-seed-703", "passed": false}
+{"unix_s": 1790178455.2659738, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.05-seed-704"}
+{"unix_s": 1790192639.9175525, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.05-seed-704", "passed": false}
+{"unix_s": 1790192639.917769, "event": "revision-mixed-run-start", "name": "mixed-gpu-1-rps-0.05-seed-705"}
+{"unix_s": 1790206824.5596852, "event": "revision-mixed-run-complete", "name": "mixed-gpu-1-rps-0.05-seed-705", "passed": false}
+{"unix_s": 1790206824.6309416, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 1}
+{"unix_s": 1790206855.0537145, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790206885.412651, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790206915.6632054, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790206945.898639, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790206976.1365786, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207006.3784478, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207036.6209598, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207066.8745384, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207097.1152139, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207127.3713896, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207157.619368, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207187.8657708, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207218.0984616, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207248.4655128, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207278.7219422, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207308.971105, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207339.243025, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207369.5169394, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207399.7645836, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207430.011689, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207460.2817793, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207490.5178242, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207520.7498167, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207550.9993484, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207581.2863653, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207611.5249498, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207641.766001, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207672.007179, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207702.2561755, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790207714.4079342, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.01-seed-701"}
+{"unix_s": 1790277903.6079242, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.01-seed-701", "passed": true}
+{"unix_s": 1790277903.60816, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.01-seed-702"}
+{"unix_s": 1790348092.9077737, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.01-seed-702", "passed": true}
+{"unix_s": 1790348092.9080005, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.01-seed-703"}
+{"unix_s": 1790418282.0953703, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.01-seed-703", "passed": true}
+{"unix_s": 1790418282.0955906, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.01-seed-704"}
+{"unix_s": 1790488471.3557525, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.01-seed-704", "passed": false}
+{"unix_s": 1790488471.3559718, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.01-seed-705"}
+{"unix_s": 1790558660.6209145, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.01-seed-705", "passed": true}
+{"unix_s": 1790558660.6211698, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.025-seed-701"}
+{"unix_s": 1790586849.7957528, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.025-seed-701", "passed": true}
+{"unix_s": 1790586849.7960026, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.025-seed-702"}
+{"unix_s": 1790615038.9622114, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.025-seed-702", "passed": true}
+{"unix_s": 1790615038.962435, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.025-seed-703"}
+{"unix_s": 1790643228.089164, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.025-seed-703", "passed": true}
+{"unix_s": 1790643228.0894008, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.025-seed-704"}
+{"unix_s": 1790671417.1780977, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.025-seed-704", "passed": false}
+{"unix_s": 1790671417.178351, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.025-seed-705"}

@@ -1,0 +1,1 @@
+{"name": "prompt_tokens_s", "query": "sum(rate(vllm:prompt_tokens_total{namespace=\"crossscale\"}[1m]))", "response": {"status": "success", "data": {"resultType": "matrix", "result": [{"metric": {}, "values": [[1789643933.838, "0"], [1789643938.838, "0"], [1789643943.838, "0"], [1789644053.838, "7.591253333333333"]]}]}}}
