@@ -128,3 +128,30 @@ class TerminalRecoveryTests(unittest.TestCase):
             save(mixed/plan['runs'][27]['name']/'complete.json', {})
             with self.assertRaises(RuntimeError):
                 require_completed_mixed(root)
+
+class RemainingConditionTests(unittest.TestCase):
+    def test_only_untouched_fourth_condition_is_selected(self):
+        from crossscale.revision_recovery import remaining_recovery_condition, RECOVERY
+        plan = dict(conditions=[dict(name=n) for n in ('a', 'b', 'c', 'd')],
+                    cases=[dict(name='case')], repetitions=1)
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp)/'revision-20260912'/RECOVERY
+            source.mkdir(parents=True)
+            def save(path, value):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(json.dumps(value))
+            save(source/'frozen-plan.json', plan)
+            save(source/'error.json', dict(error="TimeoutError('Diagnostic rollout did not become Ready within 2400 seconds')", unix_s=1))
+            save(source/'restored.json', dict(unix_s=2))
+            for name in ('a', 'b'):
+                save(source/name/'complete.json', dict(results=[dict(case='case', repetition=0,
+                      request=dict(status='completed'), dispatch_valid=True)]))
+            (source/'c').mkdir()
+            self.assertEqual(remaining_recovery_condition(tmp, plan), [dict(name='d')])
+            (source/'d').mkdir()
+            with self.assertRaisesRegex(ValueError, 'already attempted'):
+                remaining_recovery_condition(tmp, plan)
+            (source/'d').rmdir()
+            (source/'restored.json').unlink()
+            with self.assertRaises(FileNotFoundError):
+                remaining_recovery_condition(tmp, plan)

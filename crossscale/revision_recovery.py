@@ -143,7 +143,38 @@ def condition_containers(original, condition):
     return containers
 
 
-def execute(root, frozen):
+def remaining_recovery_condition(root, frozen):
+    """Continue only the untouched fourth condition after the diagnosed timeout."""
+    source = Path(root) / 'revision-20260912' / RECOVERY
+    prior = json.loads((source / 'frozen-plan.json').read_text())
+    if prior != frozen or len(frozen['conditions']) != 4:
+        raise ValueError('Recovery frozen plan mismatch')
+    if (source / 'complete.json').exists():
+        raise ValueError('Recovery already complete')
+    error = json.loads((source / 'error.json').read_text())
+    restored = json.loads((source / 'restored.json').read_text())
+    if error['error'] != "TimeoutError('Diagnostic rollout did not become Ready within 2400 seconds')":
+        raise ValueError('Unexpected recovery failure')
+    if restored['unix_s'] <= error['unix_s']:
+        raise ValueError('Recovery restoration missing after failure')
+    for condition in frozen['conditions'][:2]:
+        folder = source / condition['name']
+        rows = json.loads((folder / 'complete.json').read_text())['results']
+        expected = {(case['name'], rep) for case in frozen['cases']
+                    for rep in range(frozen['repetitions'])}
+        if len(rows) != len(expected) or {(r['case'], r['repetition']) for r in rows} != expected:
+            raise ValueError('Incomplete eager evidence')
+        if any(r['request']['status'] != 'completed' or not r['dispatch_valid'] for r in rows):
+            raise ValueError('Invalid eager evidence')
+    failed = source / frozen['conditions'][2]['name']
+    if not failed.is_dir() or (failed / 'complete.json').exists() or (failed / 'progress.json').exists():
+        raise ValueError('Expected startup-only failure')
+    if (source / frozen['conditions'][3]['name']).exists():
+        raise ValueError('Fourth condition already attempted')
+    return frozen['conditions'][3:]
+
+
+def execute(root, frozen, continue_unstarted=False):
     import asyncio
     import fcntl
     import os
@@ -159,7 +190,8 @@ def execute(root, frozen):
         mixed = require_completed_mixed(root)
         if frozen != build_plan(json.loads((root / 'configs/default.json').read_text()), mixed):
             raise ValueError('Frozen recovery plan differs from source evidence/config')
-        dest = root / 'revision-20260912' / RECOVERY
+        selected = remaining_recovery_condition(root, frozen) if continue_unstarted else frozen['conditions']
+        dest = root / 'revision-20260912' / (RECOVERY + '-remaining' if continue_unstarted else RECOVERY)
         dest.mkdir(exist_ok=False)
         save(dest / 'frozen-plan.json', frozen)
         (root / 'study.pid').write_text(str(os.getpid()))
@@ -194,7 +226,7 @@ def execute(root, frozen):
 
         try:
             study.idle()
-            for condition in frozen['conditions']:
+            for condition in selected:
                 study.event('serving-recovery-condition-start', condition=condition['name'])
                 folder = dest / condition['name']
                 with Observer(study.k, folder, interval_s=5):
@@ -245,9 +277,10 @@ def main():
     parser.add_argument('--config', type=Path, default=Path('configs/default.json'))
     parser.add_argument('--mixed', type=Path)
     parser.add_argument('--execute', action='store_true')
+    parser.add_argument('--continue-unstarted', action='store_true')
     args = parser.parse_args()
     if args.execute:
-        execute(args.root, json.loads(args.plan.read_text()))
+        execute(args.root, json.loads(args.plan.read_text()), args.continue_unstarted)
     else:
         if args.mixed is None:
             parser.error('--mixed source directory required to freeze plan')

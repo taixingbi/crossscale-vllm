@@ -172,3 +172,13 @@ or either completed eager condition. A separately guarded continuation is needed
 for the untouched fourth condition, followed by a separately documented memory
 configuration diagnostic if required; do not shorten context or relax SLOs.
 E2 remains blocked on serving feasibility and qualified two-GPU capacity.
+
+The guarded continuation uses `--continue-unstarted` with the identical frozen
+plan and writes to `e2-serving-recovery-20260927-remaining`. It selects only
+batch8192-compiled after verifying both complete eager case/repetition sets,
+the diagnosed startup timeout, subsequent restoration, startup-only third
+condition, and an absent fourth-condition directory. It keeps the same full
+context, .90 memory fraction, 2400-second timeout, warmups and 54 serial cases.
+The exclusive lock and fresh destination prevent duplicate launch. Six targeted
+recovery tests pass; the real preserved evidence selects only the fourth entry.
+This is continuation of an untouched condition, not a retry of the failed one.
