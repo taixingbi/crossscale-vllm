@@ -146,3 +146,11 @@ those copies; the manifest was refreshed. The guard then verified every archived
 file against the runner, including the full observation streams. Historical
 checkpoint bytes remain in Git history. Raw metrics retain their original
 trailing whitespace; code/test changes pass diff whitespace checks.
+
+Recovery diagnostic launched September 30 at Unix 1790773917.6969485
+(13:11:57 UTC), worker PID 158849, holding suite.lock. Log:
+`/tmp/experiments/revision-e2-serving-recovery.log`. The first condition is
+batch4096-eager. Source and plan hashes matched local reviewed files before
+launch. Inspect diagnostic complete/error and restored markers before another
+phase; do not launch this diagnostic again. The terminal evidence checkpoint
+is e0decd066bf9143025303f0d1530de87bd426a62, verified on origin/main.
