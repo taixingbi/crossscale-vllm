@@ -213,3 +213,16 @@ rejects an existing destination, observes rollouts, and restores original 1024
 settings plus warmup. Eight targeted tests pass. Memory fraction .95 reduces
 unreserved headroom, so retain actual startup/memory failure evidence and stop
 on the first failed condition without silently substituting a new setting.
+
+## Memory diagnostic completed, September 30
+
+Both .95 compiled conditions completed 54 requests each and restored at Unix
+1790805139.361672. PID 161648 exited with the lock released; one original GPU
+replica is healthy. Increasing the memory fraction solved startup feasibility,
+but did not materially improve the selected B-tail latency: batch4096 missed
+TTFT 42/42 times (1.517–2.822s), batch8192 missed 39/42 (1.480–2.766s).
+These values are similar to the eager diagnostic and do not justify treating
+compilation as a latency fix or launching another lengthy capacity calibration.
+All 108 request records and observations are preserved. E2 remains blocked;
+further serving diagnosis needs a different performance hypothesis, while
+retaining model/context/workload/SLO comparability and all negative evidence.
