@@ -182,3 +182,14 @@ context, .90 memory fraction, 2400-second timeout, warmups and 54 serial cases.
 The exclusive lock and fresh destination prevent duplicate launch. Six targeted
 recovery tests pass; the real preserved evidence selects only the fourth entry.
 This is continuation of an untouched condition, not a retry of the failed one.
+
+The untouched 8192-compiled continuation also reached its 2400-second startup
+timeout (Unix 1790801533.7617018), then restored one healthy original replica.
+Worker 161323 exited and suite.lock is free. Startup logs show 3.87 GiB KV cache
+available versus 4.0 GiB required for full context. All four original conditions
+are now accounted for: two completed eager trials, two compiled startup failures.
+No compiled latency or capacity result exists. Preserve both error/restoration
+pairs and do not rerun either failed condition under its original identity.
+The next serving hypothesis is a separately frozen compiled condition with a
+larger GPU memory fraction, retaining context, precision, workloads and SLOs;
+startup feasibility and actual replay outcomes must precede capacity calibration.

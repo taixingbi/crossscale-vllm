@@ -1,0 +1,277 @@
+{
+  "phase": "e2-serving-recovery-20260927",
+  "repetitions": 3,
+  "sources": [
+    {
+      "path": "mixed-gpu-1-rps-0.01-seed-704/run/requests.jsonl",
+      "sha256": "55013ce33c104fe8ac72104ca95a2ed8f0aa8c54483e4b21114740c9ca2fa4e1"
+    },
+    {
+      "path": "mixed-gpu-2-rps-0.01-seed-704/run/requests.jsonl",
+      "sha256": "cdb63957d9375abebd5fa5b78f9365051e866b061f4df4fd06570b8b22611a39"
+    }
+  ],
+  "cases": [
+    {
+      "name": "B-source-704-id-34",
+      "request": {
+        "id": 34,
+        "tenant": "B",
+        "input_tokens": 6836,
+        "output_tokens": 303
+      }
+    },
+    {
+      "name": "B-source-704-id-156",
+      "request": {
+        "id": 156,
+        "tenant": "B",
+        "input_tokens": 10131,
+        "output_tokens": 309
+      }
+    },
+    {
+      "name": "B-source-704-id-160",
+      "request": {
+        "id": 160,
+        "tenant": "B",
+        "input_tokens": 7124,
+        "output_tokens": 199
+      }
+    },
+    {
+      "name": "B-source-704-id-236",
+      "request": {
+        "id": 236,
+        "tenant": "B",
+        "input_tokens": 6353,
+        "output_tokens": 211
+      }
+    },
+    {
+      "name": "B-source-704-id-293",
+      "request": {
+        "id": 293,
+        "tenant": "B",
+        "input_tokens": 6217,
+        "output_tokens": 248
+      }
+    },
+    {
+      "name": "B-source-704-id-357",
+      "request": {
+        "id": 357,
+        "tenant": "B",
+        "input_tokens": 6476,
+        "output_tokens": 193
+      }
+    },
+    {
+      "name": "B-source-704-id-365",
+      "request": {
+        "id": 365,
+        "tenant": "B",
+        "input_tokens": 6219,
+        "output_tokens": 271
+      }
+    },
+    {
+      "name": "B-source-704-id-426",
+      "request": {
+        "id": 426,
+        "tenant": "B",
+        "input_tokens": 6435,
+        "output_tokens": 355
+      }
+    },
+    {
+      "name": "B-source-704-id-446",
+      "request": {
+        "id": 446,
+        "tenant": "B",
+        "input_tokens": 5888,
+        "output_tokens": 317
+      }
+    },
+    {
+      "name": "B-source-704-id-478",
+      "request": {
+        "id": 478,
+        "tenant": "B",
+        "input_tokens": 6901,
+        "output_tokens": 303
+      }
+    },
+    {
+      "name": "B-source-704-id-507",
+      "request": {
+        "id": 507,
+        "tenant": "B",
+        "input_tokens": 6053,
+        "output_tokens": 303
+      }
+    },
+    {
+      "name": "B-source-704-id-534",
+      "request": {
+        "id": 534,
+        "tenant": "B",
+        "input_tokens": 6177,
+        "output_tokens": 227
+      }
+    },
+    {
+      "name": "B-source-704-id-543",
+      "request": {
+        "id": 543,
+        "tenant": "B",
+        "input_tokens": 5917,
+        "output_tokens": 275
+      }
+    },
+    {
+      "name": "B-source-704-id-608",
+      "request": {
+        "id": 608,
+        "tenant": "B",
+        "input_tokens": 7964,
+        "output_tokens": 385
+      }
+    },
+    {
+      "name": "A-control-256",
+      "request": {
+        "id": 0,
+        "tenant": "A",
+        "input_tokens": 256,
+        "output_tokens": 128
+      }
+    },
+    {
+      "name": "B-control-3072",
+      "request": {
+        "id": 0,
+        "tenant": "B",
+        "input_tokens": 3072,
+        "output_tokens": 256
+      }
+    },
+    {
+      "name": "C-control-8192",
+      "request": {
+        "id": 0,
+        "tenant": "C",
+        "input_tokens": 8192,
+        "output_tokens": 1024
+      }
+    },
+    {
+      "name": "C-control-16384",
+      "request": {
+        "id": 0,
+        "tenant": "C",
+        "input_tokens": 16384,
+        "output_tokens": 1024
+      }
+    }
+  ],
+  "config": {
+    "seed": 17,
+    "duration_s": 1,
+    "drain_s": 180,
+    "initial_replicas": 1,
+    "max_replicas": 1,
+    "slow_interval_s": 5,
+    "fast_interval_s": 0.1,
+    "provisioning_lag_s": 60,
+    "eta_error": 0,
+    "eta_margin_s": 0.05,
+    "queue_target": 5,
+    "slots_per_replica": 8,
+    "prefill_tokens_s": 6000,
+    "decode_tokens_s": 40,
+    "request_timeout_s": 120,
+    "tenants": {
+      "A": {
+        "input_median": 256,
+        "output_median": 128,
+        "sigma": 0.35,
+        "ttft_s": 0.5,
+        "tpot_s": 0.05,
+        "weight": 3
+      },
+      "B": {
+        "input_median": 3072,
+        "output_median": 256,
+        "sigma": 0.35,
+        "ttft_s": 1.5,
+        "tpot_s": 0.08,
+        "weight": 2
+      },
+      "C": {
+        "input_median": 8192,
+        "output_median": 1024,
+        "sigma": 0.35,
+        "ttft_s": 5,
+        "tpot_s": 0.12,
+        "weight": 1
+      }
+    },
+    "phases": [
+      {
+        "start_s": 0,
+        "rates": {
+          "A": 0.8,
+          "B": 0.4,
+          "C": 0.2
+        }
+      },
+      {
+        "start_s": 60,
+        "rates": {
+          "A": 2.0,
+          "B": 1.0,
+          "C": 0.6
+        }
+      },
+      {
+        "start_s": 180,
+        "rates": {
+          "A": 0.8,
+          "B": 0.4,
+          "C": 0.2
+        }
+      }
+    ],
+    "client_force_close": true,
+    "upstream_force_close": true
+  },
+  "conditions": [
+    {
+      "name": "batch4096-eager",
+      "batch_tokens": 4096,
+      "eager": true
+    },
+    {
+      "name": "batch8192-eager",
+      "batch_tokens": 8192,
+      "eager": true
+    },
+    {
+      "name": "batch4096-compiled",
+      "batch_tokens": 4096,
+      "eager": false
+    },
+    {
+      "name": "batch8192-compiled",
+      "batch_tokens": 8192,
+      "eager": false
+    }
+  ],
+  "selection": "Diagnostic only; no automatic capacity qualification or E2 launch",
+  "limitations": [
+    "Cases selected from failures, not an unbiased capacity sample.",
+    "New serving conditions require new calibration and condition-specific ETA evidence.",
+    "Larger batch or compilation may regress performance or fail startup; retain all failures."
+  ]
+}

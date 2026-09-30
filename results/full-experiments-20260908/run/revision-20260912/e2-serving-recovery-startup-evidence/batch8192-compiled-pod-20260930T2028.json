@@ -1,0 +1,547 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "annotations": {
+            "prometheus.io/path": "/metrics",
+            "prometheus.io/port": "8000",
+            "prometheus.io/scrape": "true"
+        },
+        "creationTimestamp": "2026-09-30T20:12:13Z",
+        "generateName": "vllm-b4d67795-",
+        "generation": 1,
+        "labels": {
+            "app": "vllm",
+            "eks.amazonaws.com/pod-identity": "enabled",
+            "pod-template-hash": "b4d67795"
+        },
+        "name": "vllm-b4d67795-bk5pc",
+        "namespace": "crossscale",
+        "ownerReferences": [
+            {
+                "apiVersion": "apps/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "ReplicaSet",
+                "name": "vllm-b4d67795",
+                "uid": "4c14b43c-73df-41c5-aadc-b4efe6ccd8d3"
+            }
+        ],
+        "resourceVersion": "7562496",
+        "uid": "4df79da1-e964-4138-b390-8e95ceeb9319"
+    },
+    "spec": {
+        "containers": [
+            {
+                "args": [
+                    "/models/llama",
+                    "--served-model-name",
+                    "meta-llama/Llama-3.1-8B-Instruct",
+                    "--max-model-len",
+                    "32768",
+                    "--max-num-seqs",
+                    "4",
+                    "--max-num-batched-tokens",
+                    "8192",
+                    "--enable-chunked-prefill",
+                    "--no-enable-prefix-caching",
+                    "--gpu-memory-utilization",
+                    "0.90"
+                ],
+                "env": [
+                    {
+                        "name": "HF_HUB_OFFLINE",
+                        "value": "1"
+                    },
+                    {
+                        "name": "TRANSFORMERS_OFFLINE",
+                        "value": "1"
+                    },
+                    {
+                        "name": "AWS_STS_REGIONAL_ENDPOINTS",
+                        "value": "regional"
+                    },
+                    {
+                        "name": "AWS_DEFAULT_REGION",
+                        "value": "us-east-1"
+                    },
+                    {
+                        "name": "AWS_REGION",
+                        "value": "us-east-1"
+                    },
+                    {
+                        "name": "AWS_CONTAINER_CREDENTIALS_FULL_URI",
+                        "value": "http://169.254.170.23/v1/credentials"
+                    },
+                    {
+                        "name": "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE",
+                        "value": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount/eks-pod-identity-token"
+                    }
+                ],
+                "image": "vllm/vllm-openai:v0.28.0-cu129-ubuntu2404@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5",
+                "imagePullPolicy": "IfNotPresent",
+                "name": "vllm",
+                "ports": [
+                    {
+                        "containerPort": 8000,
+                        "name": "http",
+                        "protocol": "TCP"
+                    }
+                ],
+                "readinessProbe": {
+                    "failureThreshold": 3,
+                    "httpGet": {
+                        "path": "/health",
+                        "port": "http",
+                        "scheme": "HTTP"
+                    },
+                    "periodSeconds": 1,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 1
+                },
+                "resources": {
+                    "limits": {
+                        "ephemeral-storage": "40Gi",
+                        "memory": "12Gi",
+                        "nvidia.com/gpu": "1"
+                    },
+                    "requests": {
+                        "cpu": "2",
+                        "ephemeral-storage": "20Gi",
+                        "memory": "10Gi",
+                        "nvidia.com/gpu": "1"
+                    }
+                },
+                "startupProbe": {
+                    "failureThreshold": 180,
+                    "httpGet": {
+                        "path": "/health",
+                        "port": "http",
+                        "scheme": "HTTP"
+                    },
+                    "periodSeconds": 5,
+                    "successThreshold": 1,
+                    "timeoutSeconds": 1
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                    {
+                        "mountPath": "/dev/shm",
+                        "name": "shm"
+                    },
+                    {
+                        "mountPath": "/models",
+                        "name": "model",
+                        "readOnly": true
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "kube-api-access-m2jtw",
+                        "readOnly": true
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount",
+                        "name": "eks-pod-identity-token",
+                        "readOnly": true
+                    }
+                ]
+            }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": false,
+        "initContainers": [
+            {
+                "command": [
+                    "/bin/sh",
+                    "/model-bootstrap/download-model.sh"
+                ],
+                "env": [
+                    {
+                        "name": "MODEL_BUCKET",
+                        "value": "huggingface-model-registry-646821141010-us-east-1"
+                    },
+                    {
+                        "name": "MODEL_PREFIX",
+                        "value": "inference/meta-llama/Llama-3.1-8B-Instruct"
+                    },
+                    {
+                        "name": "AWS_DEFAULT_REGION",
+                        "value": "us-east-1"
+                    },
+                    {
+                        "name": "AWS_EC2_METADATA_DISABLED",
+                        "value": "true"
+                    },
+                    {
+                        "name": "MODEL_CACHE_ENABLED",
+                        "value": "1"
+                    },
+                    {
+                        "name": "AWS_STS_REGIONAL_ENDPOINTS",
+                        "value": "regional"
+                    },
+                    {
+                        "name": "AWS_CONTAINER_CREDENTIALS_FULL_URI",
+                        "value": "http://169.254.170.23/v1/credentials"
+                    },
+                    {
+                        "name": "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE",
+                        "value": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount/eks-pod-identity-token"
+                    }
+                ],
+                "image": "public.ecr.aws/aws-cli/aws-cli:2.36.17",
+                "imagePullPolicy": "IfNotPresent",
+                "name": "download-model",
+                "resources": {
+                    "limits": {
+                        "ephemeral-storage": "40Gi",
+                        "memory": "1Gi"
+                    },
+                    "requests": {
+                        "cpu": "1",
+                        "ephemeral-storage": "20Gi",
+                        "memory": "512Mi"
+                    }
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                    {
+                        "mountPath": "/models",
+                        "name": "model"
+                    },
+                    {
+                        "mountPath": "/model-bootstrap",
+                        "name": "model-bootstrap",
+                        "readOnly": true
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "kube-api-access-m2jtw",
+                        "readOnly": true
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount",
+                        "name": "eks-pod-identity-token",
+                        "readOnly": true
+                    }
+                ]
+            }
+        ],
+        "nodeName": "ip-10-42-9-196.ec2.internal",
+        "nodeSelector": {
+            "node.kubernetes.io/instance-type": "g5.xlarge"
+        },
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "vllm-model-reader",
+        "serviceAccountName": "vllm-model-reader",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+            {
+                "effect": "NoSchedule",
+                "key": "nvidia.com/gpu",
+                "operator": "Exists"
+            },
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            },
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            }
+        ],
+        "volumes": [
+            {
+                "name": "eks-pod-identity-token",
+                "projected": {
+                    "defaultMode": 420,
+                    "sources": [
+                        {
+                            "serviceAccountToken": {
+                                "audience": "pods.eks.amazonaws.com",
+                                "expirationSeconds": 80652,
+                                "path": "eks-pod-identity-token"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "hostPath": {
+                    "path": "/var/lib/crossscale-model-cache",
+                    "type": "DirectoryOrCreate"
+                },
+                "name": "model"
+            },
+            {
+                "configMap": {
+                    "defaultMode": 420,
+                    "name": "vllm-model-bootstrap-k59ktkfthh"
+                },
+                "name": "model-bootstrap"
+            },
+            {
+                "emptyDir": {
+                    "medium": "Memory",
+                    "sizeLimit": "4Gi"
+                },
+                "name": "shm"
+            },
+            {
+                "name": "kube-api-access-m2jtw",
+                "projected": {
+                    "defaultMode": 420,
+                    "sources": [
+                        {
+                            "serviceAccountToken": {
+                                "expirationSeconds": 3607,
+                                "path": "token"
+                            }
+                        },
+                        {
+                            "configMap": {
+                                "items": [
+                                    {
+                                        "key": "ca.crt",
+                                        "path": "ca.crt"
+                                    }
+                                ],
+                                "name": "kube-root-ca.crt"
+                            }
+                        },
+                        {
+                            "downwardAPI": {
+                                "items": [
+                                    {
+                                        "fieldRef": {
+                                            "apiVersion": "v1",
+                                            "fieldPath": "metadata.namespace"
+                                        },
+                                        "path": "namespace"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-30T20:12:14Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodReadyToStartContainers"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-30T20:12:14Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Initialized"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-30T20:12:13Z",
+                "message": "containers with unready status: [vllm]",
+                "observedGeneration": 1,
+                "reason": "ContainersNotReady",
+                "status": "False",
+                "type": "Ready"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-30T20:12:13Z",
+                "message": "containers with unready status: [vllm]",
+                "observedGeneration": 1,
+                "reason": "ContainersNotReady",
+                "status": "False",
+                "type": "ContainersReady"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-09-30T20:12:13Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodScheduled"
+            }
+        ],
+        "containerStatuses": [
+            {
+                "allocatedResources": {
+                    "cpu": "2",
+                    "ephemeral-storage": "20Gi",
+                    "memory": "10Gi",
+                    "nvidia.com/gpu": "1"
+                },
+                "containerID": "containerd://749e0cb3c6cee41383d12ebc9cb7b40ddd218298db39dc804151322c95024175",
+                "image": "sha256:a4997c1d8ea6082f46d5728d8bf3a7ddcc7fc746655486a7dffdf1cff92f25c4",
+                "imageID": "docker.io/vllm/vllm-openai@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5",
+                "lastState": {
+                    "terminated": {
+                        "containerID": "containerd://749e0cb3c6cee41383d12ebc9cb7b40ddd218298db39dc804151322c95024175",
+                        "exitCode": 1,
+                        "finishedAt": "2026-09-30T20:27:58Z",
+                        "reason": "Error",
+                        "startedAt": "2026-09-30T20:24:57Z"
+                    }
+                },
+                "name": "vllm",
+                "ready": false,
+                "resources": {
+                    "limits": {
+                        "ephemeral-storage": "40Gi",
+                        "memory": "12Gi",
+                        "nvidia.com/gpu": "1"
+                    },
+                    "requests": {
+                        "cpu": "2",
+                        "ephemeral-storage": "20Gi",
+                        "memory": "10Gi",
+                        "nvidia.com/gpu": "1"
+                    }
+                },
+                "restartCount": 4,
+                "started": false,
+                "state": {
+                    "waiting": {
+                        "message": "back-off 1m20s restarting failed container=vllm pod=vllm-b4d67795-bk5pc_crossscale(4df79da1-e964-4138-b390-8e95ceeb9319)",
+                        "reason": "CrashLoopBackOff"
+                    }
+                },
+                "user": {
+                    "linux": {
+                        "gid": 0,
+                        "supplementalGroups": [
+                            0
+                        ],
+                        "uid": 0
+                    }
+                },
+                "volumeMounts": [
+                    {
+                        "mountPath": "/dev/shm",
+                        "name": "shm"
+                    },
+                    {
+                        "mountPath": "/models",
+                        "name": "model",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "kube-api-access-m2jtw",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount",
+                        "name": "eks-pod-identity-token",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    }
+                ]
+            }
+        ],
+        "hostIP": "10.42.9.196",
+        "hostIPs": [
+            {
+                "ip": "10.42.9.196"
+            }
+        ],
+        "initContainerStatuses": [
+            {
+                "allocatedResources": {
+                    "cpu": "1",
+                    "ephemeral-storage": "20Gi",
+                    "memory": "512Mi"
+                },
+                "containerID": "containerd://0149e6914127776dc3ebf70ef5a7d0f34361d8784be4975fa32ad5ae35675261",
+                "image": "public.ecr.aws/aws-cli/aws-cli:2.36.17",
+                "imageID": "public.ecr.aws/aws-cli/aws-cli@sha256:a6deeaf5ec96a8f2c0d1f84e6086018ac396c95473dcec34afc275a380fa4f29",
+                "lastState": {},
+                "name": "download-model",
+                "ready": true,
+                "resources": {
+                    "limits": {
+                        "ephemeral-storage": "40Gi",
+                        "memory": "1Gi"
+                    },
+                    "requests": {
+                        "cpu": "1",
+                        "ephemeral-storage": "20Gi",
+                        "memory": "512Mi"
+                    }
+                },
+                "restartCount": 0,
+                "started": false,
+                "state": {
+                    "terminated": {
+                        "containerID": "containerd://0149e6914127776dc3ebf70ef5a7d0f34361d8784be4975fa32ad5ae35675261",
+                        "exitCode": 0,
+                        "finishedAt": "2026-09-30T20:12:13Z",
+                        "reason": "Completed",
+                        "startedAt": "2026-09-30T20:12:13Z"
+                    }
+                },
+                "user": {
+                    "linux": {
+                        "gid": 0,
+                        "supplementalGroups": [
+                            0
+                        ],
+                        "uid": 0
+                    }
+                },
+                "volumeMounts": [
+                    {
+                        "mountPath": "/models",
+                        "name": "model"
+                    },
+                    {
+                        "mountPath": "/model-bootstrap",
+                        "name": "model-bootstrap",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                        "name": "kube-api-access-m2jtw",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    },
+                    {
+                        "mountPath": "/var/run/secrets/pods.eks.amazonaws.com/serviceaccount",
+                        "name": "eks-pod-identity-token",
+                        "readOnly": true,
+                        "recursiveReadOnly": "Disabled"
+                    }
+                ]
+            }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.42.2.208",
+        "podIPs": [
+            {
+                "ip": "10.42.2.208"
+            }
+        ],
+        "qosClass": "Burstable",
+        "startTime": "2026-09-30T20:12:13Z"
+    }
+}
