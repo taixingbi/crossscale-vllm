@@ -191,3 +191,15 @@ unchanged, so mixed capacity on this grid remains unqualified. The controller
 is still running `mixed-gpu-2-rps-0.05-seed-702`; three 0.05 seeds remain.
 The in-progress run is omitted. E2 serving recovery stays blocked until all
 30 runs complete and restore.
+
+## Suite blocked at E2–E8 — 2026-09-30
+
+Mixed calibration finished (29 complete, run 28 preserved observer 429). Serving
+recovery and the `.95` memory diagnostic completed and restored original 1024
+serving. Two-GPU mixed capacity remains null; serial B-tail prefill cannot meet
+the 1.5s SLO. Gated E2 execute refused; E3–E8 are also blocked (same capacity
+input, missing live controllers, simulation-only oracle). One original GPU is
+healthy, `suite.lock` is free, archive PID 42 continues. Ledger:
+`results/full-experiments-20260908/run/revision-20260912/suite-blocked.json`.
+E2–E8 are not complete. Find commit with
+`git log --grep="Record suite blocked at unqualified mixed capacity"`.

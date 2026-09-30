@@ -1,5 +1,12 @@
 # Post-E0 execution order — user revision, 2026-09-12
 
+**Current status (2026-09-30):** E0 and isolated E1 are complete. Mixed E1 is
+complete and **unqualified** (seed 704 tenant B). E2–E8 are blocked: no
+qualified two-GPU mixed capacity, and no live revision controllers for those
+phases. Do not launch E2–E8, substitute isolated/.005 rates, or label missing
+phases complete. See [E2_SERVING_RECOVERY.md](E2_SERVING_RECOVERY.md) and
+`revision-20260912/suite-blocked.json`.
+
 This revision supersedes the old E1–E7 numbering and automatic continuation
 gate in FULL_EXPERIMENT_PROTOCOL.md. Preserve all historical results and labels;
 new artifacts must use a distinct `revision-20260912` root and explicit phase

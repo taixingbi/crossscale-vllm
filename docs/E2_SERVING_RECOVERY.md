@@ -263,3 +263,14 @@ refuses unless two-GPU mixed capacity is qualified. The live B2/B3 controller
 is still unimplemented; a passed capacity gate records that fact rather than
 inventing rates. Inspect prefill infeasibility with
 `python -m crossscale.revision_e2 --root results/full-experiments-20260908/run`.
+
+## Suite blocked at E2–E8, September 30
+
+E2 execute was run once on the idle runner and refused. `suite.lock` is free and
+`revision-20260912/e2-b2-b3` was not created. Original serving is one Ready
+1024-budget eager replica on `crossscale-gpu-2kh95`; no scaler is installed.
+Archive PID 42 continues. E3–E8 share the unqualified mixed-capacity input
+and also lack live controllers/frozen plans. E6/E7 cannot use live `oracle-eta`.
+Do not launch historical `study.py` comparisons. Record
+`revision-20260912/suite-blocked.json`; it is a blocker ledger, not completion
+of E2–E8. Cleanup waits for an explicit amendment or a finished suite.

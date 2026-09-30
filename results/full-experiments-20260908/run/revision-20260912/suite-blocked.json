@@ -1,0 +1,68 @@
+{
+  "revision": "revision-20260912",
+  "status": "blocked",
+  "complete": false,
+  "unix_s": 1790808077.351406,
+  "phases": {
+    "E0": "complete",
+    "E1-isolated": {
+      "status": "complete",
+      "capacities": {
+        "A": 0.2,
+        "B": 0.05,
+        "C": 0.01
+      }
+    },
+    "E1-mixed": {
+      "status": "complete-unqualified",
+      "completed": 29,
+      "failed": 1,
+      "unstarted": 0,
+      "qualified_capacity": {
+        "1": null,
+        "2": null
+      },
+      "capacity_reason": "Lowest tested rate .01 seed704 fails tenant B on both replica counts; higher rates cannot qualify under frozen consecutive-rate rule."
+    },
+    "E2": "blocked",
+    "E3": "blocked",
+    "E4": "blocked",
+    "E5": "blocked",
+    "E6": "blocked",
+    "E7": "blocked",
+    "E8": "blocked"
+  },
+  "scientific_blocker": "Tenant B 1.5s TTFT SLO is infeasible for mixed 4:2:1 traces whose B prompts reach 5888-10131 tokens at measured 3895 tok/s prefill on g5.xlarge A10G (1.5s covers ~5842 tokens).",
+  "forbidden_substitutes": [
+    "isolated rates A 0.2 / B 0.05 / C 0.01",
+    "historical sparse 0.005 RPS two-GPU qualification",
+    "rerunning seed 704",
+    "shortened prompts",
+    "relaxed SLOs",
+    "GPU/model/precision change without amendment",
+    "another batch/compile serving diagnostic",
+    "historical study.py E1/E2 numbering and skip-E3-E7 gate"
+  ],
+  "implementation_blockers": {
+    "E2": "live B2/B3 controller unimplemented; requires qualified two-GPU mixed capacity for 0.65x/1.65x offered loads and real KEDA 2-to-4",
+    "E3": "no revision_e3 live controller; B5/B6 Ready-slot ablation, scaler capture, gap cohorts and frozen seeds/order/effect criterion not wired",
+    "E4": "no live controller or frozen plan",
+    "E5": "no live controlled-readiness lag; simulation is not live evidence",
+    "E6": "live gateway has no eta_error; oracle-eta is simulation-only",
+    "E7": "oracle-eta is simulation-only; no live controller",
+    "E8": "no live long-trace controller; ready-time GPU-hours are not AWS cost"
+  },
+  "serving": {
+    "replicas": 1,
+    "batch_tokens": 1024,
+    "eager": true,
+    "gpu_memory_utilization": "0.90",
+    "scaler": false,
+    "original_gpu_claim": "crossscale-gpu-2kh95"
+  },
+  "workers": {
+    "measurement_controller": "none",
+    "suite.lock": "free",
+    "archive.pid": 42
+  }
+}

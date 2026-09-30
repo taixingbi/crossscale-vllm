@@ -1,11 +1,12 @@
 # Full experiment operations
 
-**Current continuation scope (2026-09-12):** Follow
-[POST_E0_EXECUTION.md](POST_E0_EXECUTION.md) after the active E0 finishes.
-September 18 authorization extends through all E0–E8: run E1 capacity
-profiling, E2 B2/B3, priority E3 B3/B5/B6, then complete E3 B2/B4 and E4–E8.
-Report the E3 checkpoint without stopping automatically. Do not use the
-historical numbering/gate to skip the new comparisons.
+**Current continuation scope (2026-09-30):** The suite is blocked after mixed
+E1. Do not launch E2–E8. Follow
+[POST_E0_EXECUTION.md](POST_E0_EXECUTION.md) and
+[E2_SERVING_RECOVERY.md](E2_SERVING_RECOVERY.md). September 18 authorization
+still covers E0–E8, but mixed capacity is unqualified and later live
+controllers are unimplemented. Report that blocker; do not skip via the
+historical numbering/gate or substitute rates.
 
 Started 2026-09-08. This is a live, unfinished measurement suite. Do not confuse
 the earlier short-context results with these full-workload measurements.
