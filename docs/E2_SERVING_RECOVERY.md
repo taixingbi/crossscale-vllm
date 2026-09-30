@@ -193,3 +193,23 @@ pairs and do not rerun either failed condition under its original identity.
 The next serving hypothesis is a separately frozen compiled condition with a
 larger GPU memory fraction, retaining context, precision, workloads and SLOs;
 startup feasibility and actual replay outcomes must precede capacity calibration.
+
+## Frozen memory diagnostic, September 30
+
+Plan: configs/revision-20260912/e2-serving-memory-plan.json, SHA256
+8fb913127030f3bcf0d1bcc08e38e36797679cf5c46fc691af4041186318cfc6.
+New phase e2-serving-memory-20260930 tests compiled batch4096 then batch8192,
+with gpu-memory-utilization 0.95 instead of 0.90. This reserves more GPU memory
+for serving after both original compiled settings failed KV-cache feasibility.
+It is a hypothesis, not a guaranteed startup or latency fix. All other settings,
+full 32768 context, precision, source cases, three repetitions, warmups and SLOs
+remain unchanged. Total 108 diagnostic requests if both conditions start.
+Retain failures; do not infer capacity from these failure-selected cases.
+
+Run revision_recovery with --execute --memory-recovery and the new plan only
+after both prior error/restoration pairs are verified and suite.lock is free.
+The executor checks the frozen plan against source evidence, acquires the lock,
+rejects an existing destination, observes rollouts, and restores original 1024
+settings plus warmup. Eight targeted tests pass. Memory fraction .95 reduces
+unreserved headroom, so retain actual startup/memory failure evidence and stop
+on the first failed condition without silently substituting a new setting.

@@ -48,6 +48,26 @@ def build_plan(base, mixed):
                              'Larger batch or compilation may regress performance or fail startup; retain all failures.'])
 
 
+def build_memory_plan(base, mixed):
+    plan = build_plan(base, mixed)
+    plan['phase'] = 'e2-serving-memory-20260930'
+    plan['conditions'] = [dict(name=f'batch{batch}-compiled-memory95', batch_tokens=batch,
+                               eager=False, gpu_memory_utilization='0.95') for batch in (4096, 8192)]
+    plan['limitations'].append('Separately selected memory condition after .90 compiled startup failures; not a replacement trial.')
+    return plan
+
+
+def require_failed_compiled_restoration(root):
+    for name in (RECOVERY, RECOVERY + '-remaining'):
+        folder = Path(root) / 'revision-20260912' / name
+        error = json.loads((folder / 'error.json').read_text())
+        restored = json.loads((folder / 'restored.json').read_text())
+        if (folder / 'complete.json').exists() or error['error'] != "TimeoutError('Diagnostic rollout did not become Ready within 2400 seconds')":
+            raise ValueError('Expected preserved compiled startup timeout')
+        if restored['unix_s'] <= error['unix_s']:
+            raise ValueError('Prior diagnostic not restored after failure')
+
+
 def require_completed_mixed(root):
     mixed = Path(root) / 'revision-20260912/e1-mixed'
     if (mixed / 'error.json').exists():
@@ -140,6 +160,8 @@ def condition_containers(original, condition):
         args.remove('--enforce-eager')
     if condition['eager']:
         args.append('--enforce-eager')
+    if 'gpu_memory_utilization' in condition:
+        args[args.index('--gpu-memory-utilization') + 1] = condition['gpu_memory_utilization']
     return containers
 
 
@@ -174,7 +196,7 @@ def remaining_recovery_condition(root, frozen):
     return frozen['conditions'][3:]
 
 
-def execute(root, frozen, continue_unstarted=False):
+def execute(root, frozen, continue_unstarted=False, memory_recovery=False):
     import asyncio
     import fcntl
     import os
@@ -188,10 +210,16 @@ def execute(root, frozen, continue_unstarted=False):
     with (root / 'suite.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         mixed = require_completed_mixed(root)
-        if frozen != build_plan(json.loads((root / 'configs/default.json').read_text()), mixed):
+        if memory_recovery and continue_unstarted:
+            raise ValueError('Choose one diagnostic mode')
+        builder = build_memory_plan if memory_recovery else build_plan
+        if memory_recovery:
+            require_failed_compiled_restoration(root)
+        if frozen != builder(json.loads((root / 'configs/default.json').read_text()), mixed):
             raise ValueError('Frozen recovery plan differs from source evidence/config')
         selected = remaining_recovery_condition(root, frozen) if continue_unstarted else frozen['conditions']
-        dest = root / 'revision-20260912' / (RECOVERY + '-remaining' if continue_unstarted else RECOVERY)
+        phase = frozen['phase'] if memory_recovery else (RECOVERY + '-remaining' if continue_unstarted else RECOVERY)
+        dest = root / 'revision-20260912' / phase
         dest.mkdir(exist_ok=False)
         save(dest / 'frozen-plan.json', frozen)
         (root / 'study.pid').write_text(str(os.getpid()))
@@ -278,9 +306,10 @@ def main():
     parser.add_argument('--mixed', type=Path)
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--continue-unstarted', action='store_true')
+    parser.add_argument('--memory-recovery', action='store_true')
     args = parser.parse_args()
     if args.execute:
-        execute(args.root, json.loads(args.plan.read_text()), args.continue_unstarted)
+        execute(args.root, json.loads(args.plan.read_text()), args.continue_unstarted, args.memory_recovery)
     else:
         if args.mixed is None:
             parser.error('--mixed source directory required to freeze plan')

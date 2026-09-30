@@ -155,3 +155,33 @@ class RemainingConditionTests(unittest.TestCase):
             (source/'restored.json').unlink()
             with self.assertRaises(FileNotFoundError):
                 remaining_recovery_condition(tmp, plan)
+
+class MemoryRecoveryTests(unittest.TestCase):
+    def test_memory_condition_changes_only_declared_args(self):
+        original = [dict(image='pinned', args=['model', '--max-model-len', '32768',
+                    '--max-num-batched-tokens', '1024', '--gpu-memory-utilization', '0.90', '--enforce-eager'])]
+        frozen = json.loads(Path('configs/revision-20260912/e2-serving-memory-plan.json').read_text())
+        prior = json.loads(Path('configs/revision-20260912/e2-serving-recovery-plan.json').read_text())
+        self.assertEqual(frozen['cases'], prior['cases'])
+        self.assertEqual(frozen['sources'], prior['sources'])
+        self.assertEqual(frozen['config'], prior['config'])
+        self.assertEqual(len(frozen['conditions']), 2)
+        for condition in frozen['conditions']:
+            changed = condition_containers(original, condition)[0]['args']
+            self.assertIn('32768', changed)
+            self.assertIn('0.95', changed)
+            self.assertNotIn('--enforce-eager', changed)
+        self.assertIn('0.90', original[0]['args'])
+
+    def test_unrestored_memory_predecessor_is_rejected(self):
+        from crossscale.revision_recovery import require_failed_compiled_restoration, RECOVERY
+        with tempfile.TemporaryDirectory() as tmp:
+            for name in (RECOVERY, RECOVERY+'-remaining'):
+                folder = Path(tmp)/'revision-20260912'/name
+                folder.mkdir(parents=True)
+                (folder/'error.json').write_text(json.dumps(dict(error="TimeoutError('Diagnostic rollout did not become Ready within 2400 seconds')", unix_s=1)))
+                (folder/'restored.json').write_text(json.dumps(dict(unix_s=2)))
+            require_failed_compiled_restoration(tmp)
+            (folder/'restored.json').write_text(json.dumps(dict(unix_s=0)))
+            with self.assertRaises(ValueError):
+                require_failed_compiled_restoration(tmp)
