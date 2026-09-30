@@ -106,7 +106,8 @@ TRAIN_START = 801
 EVAL_START = 811
 THRESHOLDS = (0.8, 1.0, 1.2)
 ORDER_SEED = 20260930
-DEST = 'revision-20260912/e2-b2-b3'
+FAILED_DEST = 'revision-20260912/e2-b2-b3'
+DEST = 'revision-20260912/e2-b2-b3-continuation-20260930'
 
 
 def offered_rates(capacity_rps, factor):
@@ -357,6 +358,22 @@ def _run_suite(root, dest, frozen):
         save(dest / 'restored.json', dict(unix_s=time.time(), deployment=study.k.get('deployment', 'vllm')))
 
 
+def require_unstarted_e2(root, frozen):
+    source = Path(root) / FAILED_DEST
+    allowed = {'frozen-plan.json', 'deployment-before.json', 'deployment-trial.json',
+               'error.json', 'restored.json'}
+    if {p.name for p in source.iterdir()} != allowed:
+        raise RuntimeError('Unexpected evidence: refusing to replay attempted measurements')
+    if json.loads((source/'frozen-plan.json').read_text()) != frozen:
+        raise RuntimeError('Continuation plan differs from failed preflight')
+    error = json.loads((source/'error.json').read_text())
+    if error['error'] != 'TypeError("Observer.__init__() got an unexpected keyword argument \'capture_scaler\'")':
+        raise RuntimeError('Unexpected E2 failure')
+    restored = json.loads((source/'restored.json').read_text())
+    if restored['unix_s'] <= error['unix_s']:
+        raise RuntimeError('Failed E2 not restored')
+
+
 def execute(root, frozen):
     import fcntl
     from .episodes import save
@@ -364,9 +381,14 @@ def execute(root, frozen):
     root = Path(root)
     with (root / 'suite.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        import inspect
+        from .episodes import Observer
+        if 'capture_scaler' not in inspect.signature(Observer).parameters:
+            raise RuntimeError('Observer deployment is outdated')
         capacity = require_qualified_two_gpu_capacity(root)
         if frozen.get('capacity_rps') != capacity:
             raise RuntimeError('Frozen E2 plan does not match qualified two-GPU mixed capacity')
+        require_unstarted_e2(root, frozen)
         dest = root / DEST
         dest.mkdir(exist_ok=False)
         save(dest / 'frozen-plan.json', frozen)

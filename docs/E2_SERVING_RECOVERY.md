@@ -308,3 +308,11 @@ includes capture_scaler=False. Three observer tests passed. Deployed SHA256:
 aabf29dab6d936087a4006ef338c0bbf7f56ec51716e138131363a1af2237033.
 A guarded fresh-destination continuation is still needed; do not delete the
 failed E2 directory or restart the old E3 waiter blindly.
+
+E2 continuation now uses e2-b2-b3-continuation-20260930. Its mandatory guard
+requires exactly the five premeasurement artifacts in the failed directory,
+the exact Observer TypeError, matching frozen plan and later restoration.
+It refuses any attempted measurement evidence and checks capture_scaler support
+before cluster work. The E3 controller imports this new E2 destination, so its
+next waiter must follow the continuation rather than the preserved failure.
+E2's nine and E3's eight targeted tests pass. Existing failed attempts stay intact.
