@@ -90,3 +90,27 @@ Do not copy changed runtime modules into the active E1 runner. After E1 finishes
 As of preparation, no candidate has run and E2 is not unblocked. This recovery
 plan is the next authorized work after the active frozen suite, not completion
 of E2 or evidence that compilation/larger batches solve the latency floor.
+
+## September 30 infrastructure interruption
+
+The original mixed controller stopped after run 28 (.05 RPS, two GPUs,
+seed 703): Kubernetes NodeClaim GET returned HTTP 429, storage reinitializing,
+at Unix 1790734291.9062233. The observer stopped; the load completed its frozen
+horizon before the observer exception propagated. Preserve its raw requests,
+partial observations, observer-error and suite error. It is not a valid complete
+measurement and will not be rerun. Runs 1–27 remain complete.
+
+After verified restoration and lock release, `revision_mixed_live` with
+`--continue-unstarted` runs only original frozen entries 29–30 in a fresh
+`e1-mixed-continuation-20260930` directory. It retains the original frozen plan,
+rejects previously attempted remaining runs, and restores the original settings.
+A new added GPU is necessary following the failed controller's cleanup; record
+this interruption in analysis. No runtime or measurement change is made to
+completed runs. The continuation emits no capacity estimate by itself.
+
+The earlier 30-complete-record recovery guard must not be bypassed or supplied
+fabricated completion markers. After the two remaining runs, implement a
+reviewed terminal-outcome guard accepting the preserved failed run explicitly,
+with an honest combined ledger, restoration and archive proof. Existing
+lowest-rate failures already preclude qualified capacity; incomplete telemetry
+on run 28 cannot improve that conclusion.

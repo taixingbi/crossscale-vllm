@@ -11,7 +11,31 @@ from urllib.request import urlopen
 
 from .revision_mixed import plan, qualifies, capacity
 
-def execute(root, frozen):
+def remaining_after_observer_failure(source, frozen):
+    """Validate the preserved interrupted suite; never replay an attempted run."""
+    if not (source/'restored.json').exists() or not (source/'error.json').exists():
+        raise ValueError('Failed suite restoration required')
+    if json.loads((source/'frozen-plan.json').read_text()) != frozen:
+        raise ValueError('Original frozen plan mismatch')
+    runs = frozen['runs']
+    if len(runs) != 30:
+        raise ValueError('Expected original 30-run plan')
+    for spec in runs[:27]:
+        record = json.loads((source/spec['name']/'complete.json').read_text())
+        if record['name'] != spec['name']:
+            raise ValueError('Completed run identity mismatch')
+    failed = source/runs[27]['name']
+    if not (failed/'observer-error.json').exists() or (failed/'complete.json').exists():
+        raise ValueError('Expected preserved observer failure on run 28')
+    if not (failed/'run'/'requests.jsonl').exists():
+        raise ValueError('Failed run request evidence required')
+    for spec in runs[28:]:
+        if (source/spec['name']).exists():
+            raise ValueError('Remaining run already attempted')
+    return runs[28:]
+
+
+def execute(root, frozen, continue_unstarted=False):
     # Imports needing cluster/runtime dependencies occur only for explicit execution.
     from .study import Study, SERVICE, MODEL, PROMETHEUS
     from .episodes import Observer, ready, save
@@ -25,7 +49,9 @@ def execute(root, frozen):
         prior = json.loads((isolated/'complete.json').read_text())
         if len(prior['results']) != 90:
             raise RuntimeError('Isolated E1 incomplete')
-        dest = root/'revision-20260912'/'e1-mixed'
+        source = root/'revision-20260912'/'e1-mixed'
+        selected = remaining_after_observer_failure(source, frozen) if continue_unstarted else frozen['runs']
+        dest = root/'revision-20260912'/('e1-mixed-continuation-20260930' if continue_unstarted else 'e1-mixed')
         dest.mkdir(parents=True, exist_ok=False)
         save(dest/'frozen-plan.json', frozen)
         (root/'study.pid').write_text(str(os.getpid()))
@@ -72,7 +98,7 @@ def execute(root, frozen):
                 raise RuntimeError('Required Prometheus series unavailable before measurement')
             records = []
             replicas = 1
-            for spec in frozen['runs']:
+            for spec in selected:
                 if spec['replicas'] != replicas:
                     study.fixed(spec['replicas'])
                     replicas = spec['replicas']
@@ -98,7 +124,9 @@ def execute(root, frozen):
                 save(folder/'complete.json', record)
                 save(dest/'progress.json', records)
                 study.event('revision-mixed-run-complete', name=spec['name'], passed=passed)
-            save(dest/'complete.json', dict(results=records, capacities={str(n): capacity(records, frozen, n) for n in (1, 2)}, completed_unix_s=time.time()))
+            save(dest/'complete.json', dict(results=records,
+                capacities=None if continue_unstarted else {str(n): capacity(records, frozen, n) for n in (1, 2)},
+                continuation_only=continue_unstarted, completed_unix_s=time.time()))
         except BaseException as exc:
             save(dest/'error.json', dict(error=repr(exc), unix_s=time.time()))
             raise
@@ -117,13 +145,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config', type=Path, default=Path('configs/default.json'))
     parser.add_argument('--plan', type=Path, required=True)
+    parser.add_argument('--continue-unstarted', action='store_true')
     parser.add_argument('--execute', action='store_true', required=True)
     parser.add_argument('--root', type=Path, default=Path('/tmp/experiments'))
     args = parser.parse_args()
     frozen = json.loads(args.plan.read_text())
     if frozen != plan(json.loads(args.config.read_text()), frozen['rates']):
         raise ValueError('Frozen plan differs from current code/config')
-    execute(args.root, frozen)
+    execute(args.root, frozen, args.continue_unstarted)
 
 
 if __name__ == '__main__':
