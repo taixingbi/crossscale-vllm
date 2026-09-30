@@ -139,3 +139,10 @@ cluster. Five targeted recovery tests pass, including rejecting missing final
 results, altered archived evidence, and fabricated failed-run completion.
 This supersedes the earlier requirement for 30 successful completion markers;
 it does not qualify capacity or treat the failed observation as valid.
+
+Before launch, the deployed guard detected 14 stale local state.json copies:
+S3 sync had retained same-size local versions. Forced S3 downloads corrected
+those copies; the manifest was refreshed. The guard then verified every archived
+file against the runner, including the full observation streams. Historical
+checkpoint bytes remain in Git history. Raw metrics retain their original
+trailing whitespace; code/test changes pass diff whitespace checks.
