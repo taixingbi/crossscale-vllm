@@ -1,0 +1,1082 @@
+[
+  {
+    "case": "B-source-704-id-34",
+    "repetition": 0,
+    "request": {
+      "id": 34,
+      "tenant": "B",
+      "input_tokens": 6836,
+      "output_tokens": 303,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002955447416752577,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6836,
+      "status": "completed",
+      "ttft_s": 1.7497170309070498,
+      "tpot_s": 0.03546989749999877,
+      "actual_output_tokens": 303
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-156",
+    "repetition": 0,
+    "request": {
+      "id": 156,
+      "tenant": "B",
+      "input_tokens": 10131,
+      "output_tokens": 309,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002938907127827406,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 10131,
+      "status": "completed",
+      "ttft_s": 2.7606014877092093,
+      "tpot_s": 0.03630915738327743,
+      "actual_output_tokens": 309
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-160",
+    "repetition": 0,
+    "request": {
+      "id": 160,
+      "tenant": "B",
+      "input_tokens": 7124,
+      "output_tokens": 199,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0003429139032959938,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 7124,
+      "status": "completed",
+      "ttft_s": 1.8487408999353647,
+      "tpot_s": 0.03551988255096167,
+      "actual_output_tokens": 199
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-236",
+    "repetition": 0,
+    "request": {
+      "id": 236,
+      "tenant": "B",
+      "input_tokens": 6353,
+      "output_tokens": 211,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00027382606640458107,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6353,
+      "status": "completed",
+      "ttft_s": 1.5942017161287367,
+      "tpot_s": 0.035316409409001825,
+      "actual_output_tokens": 211
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-293",
+    "repetition": 0,
+    "request": {
+      "id": 293,
+      "tenant": "B",
+      "input_tokens": 6217,
+      "output_tokens": 248,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00025912304408848286,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6217,
+      "status": "completed",
+      "ttft_s": 1.572371596004814,
+      "tpot_s": 0.03528552755868055,
+      "actual_output_tokens": 248
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-357",
+    "repetition": 0,
+    "request": {
+      "id": 357,
+      "tenant": "B",
+      "input_tokens": 6476,
+      "output_tokens": 193,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00026218988932669163,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6476,
+      "status": "completed",
+      "ttft_s": 1.6721605188213289,
+      "tpot_s": 0.035344220323167974,
+      "actual_output_tokens": 193
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-365",
+    "repetition": 0,
+    "request": {
+      "id": 365,
+      "tenant": "B",
+      "input_tokens": 6219,
+      "output_tokens": 271,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00026151794008910656,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6219,
+      "status": "completed",
+      "ttft_s": 1.5719206889625639,
+      "tpot_s": 0.03530099551814298,
+      "actual_output_tokens": 271
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-426",
+    "repetition": 0,
+    "request": {
+      "id": 426,
+      "tenant": "B",
+      "input_tokens": 6435,
+      "output_tokens": 355,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00028305500745773315,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6435,
+      "status": "completed",
+      "ttft_s": 1.6698345649056137,
+      "tpot_s": 0.035368281488943484,
+      "actual_output_tokens": 355
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-446",
+    "repetition": 0,
+    "request": {
+      "id": 446,
+      "tenant": "B",
+      "input_tokens": 5888,
+      "output_tokens": 317,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00026390491984784603,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 5888,
+      "status": "completed",
+      "ttft_s": 1.4791891099885106,
+      "tpot_s": 0.03520391067737549,
+      "actual_output_tokens": 317
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-478",
+    "repetition": 0,
+    "request": {
+      "id": 478,
+      "tenant": "B",
+      "input_tokens": 6901,
+      "output_tokens": 303,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00026883790269494057,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6901,
+      "status": "completed",
+      "ttft_s": 1.7560591448564082,
+      "tpot_s": 0.035476526394270555,
+      "actual_output_tokens": 303
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-507",
+    "repetition": 0,
+    "request": {
+      "id": 507,
+      "tenant": "B",
+      "input_tokens": 6053,
+      "output_tokens": 303,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002917698584496975,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6053,
+      "status": "completed",
+      "ttft_s": 1.5482254528906196,
+      "tpot_s": 0.035246580685735586,
+      "actual_output_tokens": 303
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-534",
+    "repetition": 0,
+    "request": {
+      "id": 534,
+      "tenant": "B",
+      "input_tokens": 6177,
+      "output_tokens": 227,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002871148753911257,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6177,
+      "status": "completed",
+      "ttft_s": 1.567241596058011,
+      "tpot_s": 0.035287094963879315,
+      "actual_output_tokens": 227
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-543",
+    "repetition": 0,
+    "request": {
+      "id": 543,
+      "tenant": "B",
+      "input_tokens": 5917,
+      "output_tokens": 275,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00026940577663481236,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 5917,
+      "status": "completed",
+      "ttft_s": 1.5204936149530113,
+      "tpot_s": 0.03519067180642083,
+      "actual_output_tokens": 275
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-608",
+    "repetition": 0,
+    "request": {
+      "id": 608,
+      "tenant": "B",
+      "input_tokens": 7964,
+      "output_tokens": 385,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002833020407706499,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 7964,
+      "status": "completed",
+      "ttft_s": 2.0847626929171383,
+      "tpot_s": 0.03577391905249291,
+      "actual_output_tokens": 385
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "A-control-256",
+    "repetition": 0,
+    "request": {
+      "id": 0,
+      "tenant": "A",
+      "input_tokens": 256,
+      "output_tokens": 128,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002786880359053612,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 256,
+      "status": "completed",
+      "ttft_s": 0.07783594890497625,
+      "tpot_s": 0.03345984885997073,
+      "actual_output_tokens": 128
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-control-3072",
+    "repetition": 0,
+    "request": {
+      "id": 0,
+      "tenant": "B",
+      "input_tokens": 3072,
+      "output_tokens": 256,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00027220603078603745,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 3072,
+      "status": "completed",
+      "ttft_s": 0.746714626904577,
+      "tpot_s": 0.03445510940041904,
+      "actual_output_tokens": 256
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "C-control-8192",
+    "repetition": 0,
+    "request": {
+      "id": 0,
+      "tenant": "C",
+      "input_tokens": 8192,
+      "output_tokens": 1024,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00027966685593128204,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 8192,
+      "status": "completed",
+      "ttft_s": 2.123152269748971,
+      "tpot_s": 0.03592946380354056,
+      "actual_output_tokens": 1024
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "C-control-16384",
+    "repetition": 0,
+    "request": {
+      "id": 0,
+      "tenant": "C",
+      "input_tokens": 16384,
+      "output_tokens": 1024,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.000260339817032218,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 16384,
+      "status": "completed",
+      "ttft_s": 4.852575143799186,
+      "tpot_s": 0.03802793659725002,
+      "actual_output_tokens": 1024
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-156",
+    "repetition": 1,
+    "request": {
+      "id": 156,
+      "tenant": "B",
+      "input_tokens": 10131,
+      "output_tokens": 309,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00027800980024039745,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 10131,
+      "status": "completed",
+      "ttft_s": 2.760239169932902,
+      "tpot_s": 0.036324431973830014,
+      "actual_output_tokens": 309
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-160",
+    "repetition": 1,
+    "request": {
+      "id": 160,
+      "tenant": "B",
+      "input_tokens": 7124,
+      "output_tokens": 199,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00026915688067674637,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 7124,
+      "status": "completed",
+      "ttft_s": 1.849297579843551,
+      "tpot_s": 0.03553995008538054,
+      "actual_output_tokens": 199
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-236",
+    "repetition": 1,
+    "request": {
+      "id": 236,
+      "tenant": "B",
+      "input_tokens": 6353,
+      "output_tokens": 211,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002741478383541107,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6353,
+      "status": "completed",
+      "ttft_s": 1.5943606528453529,
+      "tpot_s": 0.03533381957649475,
+      "actual_output_tokens": 211
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-293",
+    "repetition": 1,
+    "request": {
+      "id": 293,
+      "tenant": "B",
+      "input_tokens": 6217,
+      "output_tokens": 248,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00027739093638956547,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6217,
+      "status": "completed",
+      "ttft_s": 1.5715343728661537,
+      "tpot_s": 0.03529770367661951,
+      "actual_output_tokens": 248
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-357",
+    "repetition": 1,
+    "request": {
+      "id": 357,
+      "tenant": "B",
+      "input_tokens": 6476,
+      "output_tokens": 193,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0003321059048175812,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6476,
+      "status": "completed",
+      "ttft_s": 1.674325639847666,
+      "tpot_s": 0.03535931919274541,
+      "actual_output_tokens": 193
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-365",
+    "repetition": 1,
+    "request": {
+      "id": 365,
+      "tenant": "B",
+      "input_tokens": 6219,
+      "output_tokens": 271,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002686928492039442,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6219,
+      "status": "completed",
+      "ttft_s": 1.5733810618985444,
+      "tpot_s": 0.035305085278081676,
+      "actual_output_tokens": 271
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-426",
+    "repetition": 1,
+    "request": {
+      "id": 426,
+      "tenant": "B",
+      "input_tokens": 6435,
+      "output_tokens": 355,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0003365699667483568,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6435,
+      "status": "completed",
+      "ttft_s": 1.668929988751188,
+      "tpot_s": 0.03538163218681443,
+      "actual_output_tokens": 355
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-446",
+    "repetition": 1,
+    "request": {
+      "id": 446,
+      "tenant": "B",
+      "input_tokens": 5888,
+      "output_tokens": 317,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002706910017877817,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 5888,
+      "status": "completed",
+      "ttft_s": 1.4787274119444191,
+      "tpot_s": 0.03520453098094491,
+      "actual_output_tokens": 317
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-478",
+    "repetition": 1,
+    "request": {
+      "id": 478,
+      "tenant": "B",
+      "input_tokens": 6901,
+      "output_tokens": 303,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002737077884376049,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6901,
+      "status": "completed",
+      "ttft_s": 1.7535399058833718,
+      "tpot_s": 0.03551565580122444,
+      "actual_output_tokens": 303
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-507",
+    "repetition": 1,
+    "request": {
+      "id": 507,
+      "tenant": "B",
+      "input_tokens": 6053,
+      "output_tokens": 303,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00028278608806431293,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6053,
+      "status": "completed",
+      "ttft_s": 1.546457929071039,
+      "tpot_s": 0.035272767195256044,
+      "actual_output_tokens": 303
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-534",
+    "repetition": 1,
+    "request": {
+      "id": 534,
+      "tenant": "B",
+      "input_tokens": 6177,
+      "output_tokens": 227,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00026938109658658504,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6177,
+      "status": "completed",
+      "ttft_s": 1.567251715110615,
+      "tpot_s": 0.0353050166761618,
+      "actual_output_tokens": 227
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-543",
+    "repetition": 1,
+    "request": {
+      "id": 543,
+      "tenant": "B",
+      "input_tokens": 5917,
+      "output_tokens": 275,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00028325803577899933,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 5917,
+      "status": "completed",
+      "ttft_s": 1.520016415975988,
+      "tpot_s": 0.03522154087979129,
+      "actual_output_tokens": 275
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-608",
+    "repetition": 1,
+    "request": {
+      "id": 608,
+      "tenant": "B",
+      "input_tokens": 7964,
+      "output_tokens": 385,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002799027133733034,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 7964,
+      "status": "completed",
+      "ttft_s": 2.0846342977602035,
+      "tpot_s": 0.03578272375792343,
+      "actual_output_tokens": 385
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "A-control-256",
+    "repetition": 1,
+    "request": {
+      "id": 0,
+      "tenant": "A",
+      "input_tokens": 256,
+      "output_tokens": 128,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0003095138818025589,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 256,
+      "status": "completed",
+      "ttft_s": 0.0778416998218745,
+      "tpot_s": 0.03345681110389648,
+      "actual_output_tokens": 128
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-control-3072",
+    "repetition": 1,
+    "request": {
+      "id": 0,
+      "tenant": "B",
+      "input_tokens": 3072,
+      "output_tokens": 256,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00028626900166273117,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 3072,
+      "status": "completed",
+      "ttft_s": 0.7455061918590218,
+      "tpot_s": 0.03445610449028512,
+      "actual_output_tokens": 256
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "C-control-8192",
+    "repetition": 1,
+    "request": {
+      "id": 0,
+      "tenant": "C",
+      "input_tokens": 8192,
+      "output_tokens": 1024,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002782817464321852,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 8192,
+      "status": "completed",
+      "ttft_s": 2.1204215507023036,
+      "tpot_s": 0.03594210966197066,
+      "actual_output_tokens": 1024
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "C-control-16384",
+    "repetition": 1,
+    "request": {
+      "id": 0,
+      "tenant": "C",
+      "input_tokens": 16384,
+      "output_tokens": 1024,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002622969914227724,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 16384,
+      "status": "completed",
+      "ttft_s": 4.85623763804324,
+      "tpot_s": 0.038030852305813025,
+      "actual_output_tokens": 1024
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-34",
+    "repetition": 1,
+    "request": {
+      "id": 34,
+      "tenant": "B",
+      "input_tokens": 6836,
+      "output_tokens": 303,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00028417794965207577,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6836,
+      "status": "completed",
+      "ttft_s": 1.749581801937893,
+      "tpot_s": 0.03549486549959722,
+      "actual_output_tokens": 303
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-160",
+    "repetition": 2,
+    "request": {
+      "id": 160,
+      "tenant": "B",
+      "input_tokens": 7124,
+      "output_tokens": 199,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00029026088304817677,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 7124,
+      "status": "completed",
+      "ttft_s": 1.8466631348710507,
+      "tpot_s": 0.0355467678793245,
+      "actual_output_tokens": 199
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-236",
+    "repetition": 2,
+    "request": {
+      "id": 236,
+      "tenant": "B",
+      "input_tokens": 6353,
+      "output_tokens": 211,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002614657860249281,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6353,
+      "status": "completed",
+      "ttft_s": 1.5920439208857715,
+      "tpot_s": 0.035332055632690235,
+      "actual_output_tokens": 211
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-293",
+    "repetition": 2,
+    "request": {
+      "id": 293,
+      "tenant": "B",
+      "input_tokens": 6217,
+      "output_tokens": 248,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.000261188019067049,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6217,
+      "status": "completed",
+      "ttft_s": 1.5723149210680276,
+      "tpot_s": 0.03531250863916689,
+      "actual_output_tokens": 248
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-357",
+    "repetition": 2,
+    "request": {
+      "id": 357,
+      "tenant": "B",
+      "input_tokens": 6476,
+      "output_tokens": 193,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00026305578649044037,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6476,
+      "status": "completed",
+      "ttft_s": 1.6727134338580072,
+      "tpot_s": 0.03537185749519267,
+      "actual_output_tokens": 193
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-365",
+    "repetition": 2,
+    "request": {
+      "id": 365,
+      "tenant": "B",
+      "input_tokens": 6219,
+      "output_tokens": 271,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00027897185645997524,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6219,
+      "status": "completed",
+      "ttft_s": 1.5721091548912227,
+      "tpot_s": 0.03531572276346937,
+      "actual_output_tokens": 271
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-426",
+    "repetition": 2,
+    "request": {
+      "id": 426,
+      "tenant": "B",
+      "input_tokens": 6435,
+      "output_tokens": 355,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00026304973289370537,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6435,
+      "status": "completed",
+      "ttft_s": 1.6687515578232706,
+      "tpot_s": 0.035386543454586576,
+      "actual_output_tokens": 355
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-446",
+    "repetition": 2,
+    "request": {
+      "id": 446,
+      "tenant": "B",
+      "input_tokens": 5888,
+      "output_tokens": 317,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002662818878889084,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 5888,
+      "status": "completed",
+      "ttft_s": 1.4777195218484849,
+      "tpot_s": 0.03521020244364922,
+      "actual_output_tokens": 317
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-478",
+    "repetition": 2,
+    "request": {
+      "id": 478,
+      "tenant": "B",
+      "input_tokens": 6901,
+      "output_tokens": 303,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002666779328137636,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6901,
+      "status": "completed",
+      "ttft_s": 1.755947136785835,
+      "tpot_s": 0.03549864620204694,
+      "actual_output_tokens": 303
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-507",
+    "repetition": 2,
+    "request": {
+      "id": 507,
+      "tenant": "B",
+      "input_tokens": 6053,
+      "output_tokens": 303,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002672560513019562,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6053,
+      "status": "completed",
+      "ttft_s": 1.5478963400237262,
+      "tpot_s": 0.03525878992995605,
+      "actual_output_tokens": 303
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-534",
+    "repetition": 2,
+    "request": {
+      "id": 534,
+      "tenant": "B",
+      "input_tokens": 6177,
+      "output_tokens": 227,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00028105080127716064,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6177,
+      "status": "completed",
+      "ttft_s": 1.5673476390074939,
+      "tpot_s": 0.035291121469035874,
+      "actual_output_tokens": 227
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-543",
+    "repetition": 2,
+    "request": {
+      "id": 543,
+      "tenant": "B",
+      "input_tokens": 5917,
+      "output_tokens": 275,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00027187285013496876,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 5917,
+      "status": "completed",
+      "ttft_s": 1.520319274859503,
+      "tpot_s": 0.035201816364993636,
+      "actual_output_tokens": 275
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-608",
+    "repetition": 2,
+    "request": {
+      "id": 608,
+      "tenant": "B",
+      "input_tokens": 7964,
+      "output_tokens": 385,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00027375691570341587,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 7964,
+      "status": "completed",
+      "ttft_s": 2.084956220816821,
+      "tpot_s": 0.03577945361212187,
+      "actual_output_tokens": 385
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "A-control-256",
+    "repetition": 2,
+    "request": {
+      "id": 0,
+      "tenant": "A",
+      "input_tokens": 256,
+      "output_tokens": 128,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00026002200320363045,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 256,
+      "status": "completed",
+      "ttft_s": 0.07726439600810409,
+      "tpot_s": 0.03345862327429547,
+      "actual_output_tokens": 128
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-control-3072",
+    "repetition": 2,
+    "request": {
+      "id": 0,
+      "tenant": "B",
+      "input_tokens": 3072,
+      "output_tokens": 256,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.000286271795630455,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 3072,
+      "status": "completed",
+      "ttft_s": 0.745195330819115,
+      "tpot_s": 0.03446082818851459,
+      "actual_output_tokens": 256
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "C-control-8192",
+    "repetition": 2,
+    "request": {
+      "id": 0,
+      "tenant": "C",
+      "input_tokens": 8192,
+      "output_tokens": 1024,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00027124490588903427,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 8192,
+      "status": "completed",
+      "ttft_s": 2.122781126992777,
+      "tpot_s": 0.03593430917310407,
+      "actual_output_tokens": 1024
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "C-control-16384",
+    "repetition": 2,
+    "request": {
+      "id": 0,
+      "tenant": "C",
+      "input_tokens": 16384,
+      "output_tokens": 1024,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00027866591699421406,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 16384,
+      "status": "completed",
+      "ttft_s": 4.85163808776997,
+      "tpot_s": 0.038035589863181125,
+      "actual_output_tokens": 1024
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-34",
+    "repetition": 2,
+    "request": {
+      "id": 34,
+      "tenant": "B",
+      "input_tokens": 6836,
+      "output_tokens": 303,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.00028463685885071754,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 6836,
+      "status": "completed",
+      "ttft_s": 1.749753287062049,
+      "tpot_s": 0.03548979309591039,
+      "actual_output_tokens": 303
+    },
+    "dispatch_valid": true
+  },
+  {
+    "case": "B-source-704-id-156",
+    "repetition": 2,
+    "request": {
+      "id": 156,
+      "tenant": "B",
+      "input_tokens": 10131,
+      "output_tokens": 309,
+      "offered_s": 0.1,
+      "dispatch_lag_s": 0.0002637228462845087,
+      "http_status": 200,
+      "admission_delay_s": 0.0,
+      "actual_input_tokens": 10131,
+      "status": "completed",
+      "ttft_s": 2.762957939878106,
+      "tpot_s": 0.03630957159050438,
+      "actual_output_tokens": 309
+    },
+    "dispatch_valid": true
+  }
+]

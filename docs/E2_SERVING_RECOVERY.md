@@ -154,3 +154,21 @@ batch4096-eager. Source and plan hashes matched local reviewed files before
 launch. Inspect diagnostic complete/error and restored markers before another
 phase; do not launch this diagnostic again. The terminal evidence checkpoint
 is e0decd066bf9143025303f0d1530de87bd426a62, verified on origin/main.
+
+## September 30 diagnostic failure and restored state
+
+The first two conditions each completed 54 serial requests. Among the 42
+failure-selected B-tail replays, 4096-eager missed TTFT 42/42 times (range
+1.514–2.819 seconds); 8192-eager missed 39/42 (1.478–2.763 seconds).
+These diagnostic counts are not capacity estimates or independent workload samples.
+
+4096-compiled failed startup: 32768 context needs 4.0 GiB KV cache but the
+runtime reported 3.94 GiB available. Raw startup logs and pod state are retained
+in e2-serving-recovery-startup-evidence. The frozen 2400-second timeout expired
+at Unix 1790778233.4579518; original 1024 eager settings and warmup restored at
+1790778407.2673361. PID 158849 exited and suite.lock is free. The fourth frozen
+condition, 8192-compiled, was never attempted. Do not rerun the failed condition
+or either completed eager condition. A separately guarded continuation is needed
+for the untouched fourth condition, followed by a separately documented memory
+configuration diagnostic if required; do not shorten context or relax SLOs.
+E2 remains blocked on serving feasibility and qualified two-GPU capacity.

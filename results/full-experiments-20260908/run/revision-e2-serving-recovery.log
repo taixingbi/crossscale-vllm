@@ -1,0 +1,17 @@
+{"unix_s": 1790773917.6969485, "event": "serving-recovery-condition-start", "condition": "batch4096-eager"}
+{"unix_s": 1790774876.2516541, "event": "serving-recovery-condition-complete", "condition": "batch4096-eager"}
+{"unix_s": 1790774876.251943, "event": "serving-recovery-condition-start", "condition": "batch8192-eager"}
+{"unix_s": 1790775832.5282307, "event": "serving-recovery-condition-complete", "condition": "batch8192-eager"}
+{"unix_s": 1790775832.528526, "event": "serving-recovery-condition-start", "condition": "batch4096-compiled"}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/experiments/crossscale/revision_recovery.py", line 263, in <module>
+    main()
+  File "/tmp/experiments/crossscale/revision_recovery.py", line 250, in main
+    execute(args.root, json.loads(args.plan.read_text()))
+  File "/tmp/experiments/crossscale/revision_recovery.py", line 201, in execute
+    rollout(condition_containers(original, condition))
+  File "/tmp/experiments/crossscale/revision_recovery.py", line 193, in rollout
+    raise TimeoutError('Diagnostic rollout did not become Ready within 2400 seconds')
+TimeoutError: Diagnostic rollout did not become Ready within 2400 seconds

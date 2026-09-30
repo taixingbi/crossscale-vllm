@@ -1,0 +1,1 @@
+{"id": 426, "tenant": "B", "input_tokens": 6435, "output_tokens": 355, "offered_s": 0.1, "dispatch_lag_s": 0.00026304973289370537, "http_status": 200, "admission_delay_s": 0.0, "actual_input_tokens": 6435, "status": "completed", "ttft_s": 1.6687515578232706, "tpot_s": 0.035386543454586576, "actual_output_tokens": 355}
