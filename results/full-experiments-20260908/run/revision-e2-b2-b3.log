@@ -1,0 +1,61 @@
+{"unix_s": 1790808976.5690315, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 1}
+{"unix_s": 1790809007.0437706, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809037.3724794, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809067.7068083, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809098.0428953, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809128.3714101, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809158.7426395, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809189.0536897, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809219.41374, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809249.7990124, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809280.1909785, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809310.5370238, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809340.9463978, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809371.3541355, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809401.7128336, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809432.0624247, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809462.3777058, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809492.7349253, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809523.1091259, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809553.459958, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809583.8381476, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809614.193022, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809644.534783, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809674.853855, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809705.1828485, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809735.5309927, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809765.85118, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809796.1637688, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809826.582269, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809856.9858458, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809887.3680818, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809917.705484, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790809944.8527954, "event": "e2-training-start", "seed": 802, "threshold": 0.8}
+{"unix_s": 1790809954.1644645, "event": "waiting-ready", "target": 1, "ready": 2, "pods": 2}
+{"unix_s": 1790809957.4884021, "event": "terminate-empty-claim", "claim": "crossscale-gpu-89sm4", "instance": "i-0f57c6e6d8ba44efe"}
+{"unix_s": 1790809957.5812323, "event": "waiting-termination", "instance": "i-0f57c6e6d8ba44efe", "states": ["running"]}
+{"unix_s": 1790809988.5026362, "event": "waiting-termination", "instance": "i-0f57c6e6d8ba44efe", "states": ["shutting-down"]}
+{"unix_s": 1790810018.950616, "event": "waiting-termination", "instance": "i-0f57c6e6d8ba44efe", "states": ["shutting-down"]}
+{"unix_s": 1790810049.3895452, "event": "waiting-termination", "instance": "i-0f57c6e6d8ba44efe", "states": ["shutting-down"]}
+{"unix_s": 1790810079.916347, "event": "waiting-termination", "instance": "i-0f57c6e6d8ba44efe", "states": ["shutting-down"]}
+{"unix_s": 1790810110.4212513, "event": "waiting-termination", "instance": "i-0f57c6e6d8ba44efe", "states": ["shutting-down"]}
+{"unix_s": 1790810141.0581207, "event": "waiting-termination", "instance": "i-0f57c6e6d8ba44efe", "states": ["shutting-down"]}
+{"unix_s": 1790810171.517643, "event": "waiting-termination", "instance": "i-0f57c6e6d8ba44efe", "states": ["shutting-down"]}
+{"unix_s": 1790810202.0694025, "event": "waiting-termination", "instance": "i-0f57c6e6d8ba44efe", "states": ["shutting-down"]}
+{"unix_s": 1790810222.4390464, "event": "instance-terminated", "claim": "crossscale-gpu-89sm4", "instance": "i-0f57c6e6d8ba44efe"}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/experiments/crossscale/revision_e2.py", line 399, in <module>
+    main()
+  File "/tmp/experiments/crossscale/revision_e2.py", line 393, in main
+    execute(args.root, frozen)
+  File "/tmp/experiments/crossscale/revision_e2.py", line 373, in execute
+    _run_suite(root, dest, frozen)
+  File "/tmp/experiments/crossscale/revision_e2.py", line 323, in _run_suite
+    record = measure(dest / 'training' / f'threshold-{threshold}' / f'seed-{seed}', 'B3', config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/experiments/crossscale/revision_e2.py", line 240, in measure
+    with Observer(study.k, folder, eta=eta, interval_s=1, capture_scaler=True) as observer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Observer.__init__() got an unexpected keyword argument 'capture_scaler'

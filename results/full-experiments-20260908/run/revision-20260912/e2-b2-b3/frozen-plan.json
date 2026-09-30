@@ -1,0 +1,180 @@
+{
+  "revision": "revision-20260930",
+  "phase": "e2-b2-b3",
+  "slo_revision": "revision-20260930-b-ttft-3s",
+  "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off",
+  "capacity_rps": 0.025,
+  "low_factor": 0.65,
+  "high_factor": 1.65,
+  "duration_s": 300,
+  "drain_s": 180,
+  "burst_s": [
+    60,
+    180
+  ],
+  "training_seeds": [
+    802,
+    803
+  ],
+  "training_examined": [
+    {
+      "seed": 801,
+      "offered_by_tenant": {
+        "A": 5,
+        "B": 2,
+        "C": 0
+      },
+      "selected": false
+    },
+    {
+      "seed": 802,
+      "offered_by_tenant": {
+        "A": 2,
+        "B": 3,
+        "C": 2
+      },
+      "selected": true
+    },
+    {
+      "seed": 803,
+      "offered_by_tenant": {
+        "A": 5,
+        "B": 5,
+        "C": 3
+      },
+      "selected": true
+    }
+  ],
+  "thresholds": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "eval_seeds": [
+    811,
+    812,
+    813,
+    816,
+    818
+  ],
+  "eval_examined": [
+    {
+      "seed": 811,
+      "offered_by_tenant": {
+        "A": 4,
+        "B": 2,
+        "C": 1
+      },
+      "selected": true
+    },
+    {
+      "seed": 812,
+      "offered_by_tenant": {
+        "A": 4,
+        "B": 1,
+        "C": 4
+      },
+      "selected": true
+    },
+    {
+      "seed": 813,
+      "offered_by_tenant": {
+        "A": 2,
+        "B": 3,
+        "C": 2
+      },
+      "selected": true
+    },
+    {
+      "seed": 814,
+      "offered_by_tenant": {
+        "A": 6,
+        "B": 0,
+        "C": 1
+      },
+      "selected": false
+    },
+    {
+      "seed": 815,
+      "offered_by_tenant": {
+        "A": 6,
+        "B": 2,
+        "C": 0
+      },
+      "selected": false
+    },
+    {
+      "seed": 816,
+      "offered_by_tenant": {
+        "A": 6,
+        "B": 4,
+        "C": 4
+      },
+      "selected": true
+    },
+    {
+      "seed": 817,
+      "offered_by_tenant": {
+        "A": 9,
+        "B": 0,
+        "C": 2
+      },
+      "selected": false
+    },
+    {
+      "seed": 818,
+      "offered_by_tenant": {
+        "A": 6,
+        "B": 1,
+        "C": 2
+      },
+      "selected": true
+    }
+  ],
+  "eval_order": [
+    [
+      811,
+      "B3"
+    ],
+    [
+      818,
+      "B2"
+    ],
+    [
+      811,
+      "B2"
+    ],
+    [
+      818,
+      "B3"
+    ],
+    [
+      813,
+      "B2"
+    ],
+    [
+      812,
+      "B2"
+    ],
+    [
+      813,
+      "B3"
+    ],
+    [
+      812,
+      "B3"
+    ],
+    [
+      816,
+      "B2"
+    ],
+    [
+      816,
+      "B3"
+    ]
+  ],
+  "order_seed": 20260930,
+  "queue_threshold": 5,
+  "limitation": "300s capacity-normalized traces are sparse at 0.025 RPS; nonempty tenants were required, not 60 mixed samples.",
+  "matched_scale": "forbidden; KEDA/HPA must request 2-to-4"
+}

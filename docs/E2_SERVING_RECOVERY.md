@@ -294,3 +294,17 @@ E3 priority trio B3/B5/B6 is frozen before outcomes. Seeds **821, 822, 824,
 It starts only after E2 `complete.json` and `restored.json`, and refuses if
 E2 has `error.json` without `complete.json`. Plan SHA
 `58ecbb11962108a71346dd9a16134829d268ccbf6cbcc74853aed6b239f44921`.
+
+## E2 deployment mismatch, September 30 23:23 UTC
+
+E2 PID 163681 failed before creating the first measurement folder: runner
+Observer lacked capture_scaler. Only frozen-plan, deployment-before/trial,
+error and restored files exist; no training/evaluation requests were dispatched.
+The cluster restored one Ready original-condition replica and released the lock.
+The E3 waiter stopped with 'E2 failed; E3 not started'. Preserve both failures.
+
+The tested repository episodes.py is now deployed while idle; its signature
+includes capture_scaler=False. Three observer tests passed. Deployed SHA256:
+aabf29dab6d936087a4006ef338c0bbf7f56ec51716e138131363a1af2237033.
+A guarded fresh-destination continuation is still needed; do not delete the
+failed E2 directory or restart the old E3 waiter blindly.

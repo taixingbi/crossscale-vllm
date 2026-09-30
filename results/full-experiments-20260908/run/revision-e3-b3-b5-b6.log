@@ -1,0 +1,11 @@
+e3 waiter polling for E2 complete.json and restored.json
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/experiments/crossscale/revision_e3.py", line 335, in <module>
+    main()
+  File "/tmp/experiments/crossscale/revision_e3.py", line 326, in main
+    wait_then_execute(args.root, frozen)
+  File "/tmp/experiments/crossscale/revision_e3.py", line 295, in wait_then_execute
+    raise RuntimeError('E2 failed; E3 not started')
+RuntimeError: E2 failed; E3 not started

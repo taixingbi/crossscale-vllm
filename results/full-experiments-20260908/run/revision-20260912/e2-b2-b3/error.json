@@ -1,0 +1,4 @@
+{
+  "error": "TypeError(\"Observer.__init__() got an unexpected keyword argument 'capture_scaler'\")",
+  "unix_s": 1790809953.932491
+}
