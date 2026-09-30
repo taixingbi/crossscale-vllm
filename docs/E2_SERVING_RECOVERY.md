@@ -226,3 +226,40 @@ compilation as a latency fix or launching another lengthy capacity calibration.
 All 108 request records and observations are preserved. E2 remains blocked;
 further serving diagnosis needs a different performance hypothesis, while
 retaining model/context/workload/SLO comparability and all negative evidence.
+
+## Prefill-floor infeasibility, September 30
+
+A further 16384-token batch or another compile trial is not protocol-legal
+on this evidence. Serial 8192-eager B-tails (repetition 0) prefill at about
+3900–4000 tok/s on the original g5.xlarge A10G. Tenant B's 1.5 s TTFT SLO
+therefore covers about 5900–6000 tokens. The failed seed-704 prompts reach
+5888–10131 tokens; 13 of 14 already fit in one 8192-token engine step (12 of
+13 SLO misses), so a larger `max-num-batched-tokens` cannot remove their
+prefill work. The remaining
+10131-token prompt would still need about 2.5 s of prefill at the measured
+rate. Compilation at `.95` GPU memory started but matched eager TTFT. Admission
+calibration already recorded 8192-token TTFT above 2 s.
+
+Do not launch another serving diagnostic, rerun seed 704, shorten prompts,
+relax SLOs, change GPU/model/precision, or substitute isolated/.005 RPS
+qualifications. The mixed terminal ledger remains 29 completed, 1 failed
+observer interruption (run 28), 0 unstarted, and `qualified_capacity` 1 and 2
+are both null. Capacity-normalized E2 therefore cannot start.
+
+## Observer 429 retries and E2 execute gate
+
+`Cluster.request` now retries Kubernetes GET/PATCH on HTTP 429/502/503 for up
+to 120 seconds, honoring `Retry-After` and `retryAfterSeconds`. That is the
+failure that killed mixed run 28 (`storage is (re)initializing`). Persistent
+429s still fail the observer after the budget. Run 28 remains archived; it is
+not rerun. Copied onto the runner (lock free, no live controller; archive PID 42
+only) on September 30:
+
+- `crossscale/cluster.py` SHA256 `5484155558b07a47d1256dabf158d3b1db5210213b7d35b99160b54f0d14119d`
+- `crossscale/revision_e2.py` SHA256 `285cf9db97e05bc97c159a0913df292f4c061c2ba27ac8e4725fcafa11483fce`
+
+`python -m crossscale.revision_e2 --execute` acquires the exclusive lock and
+refuses unless two-GPU mixed capacity is qualified. The live B2/B3 controller
+is still unimplemented; a passed capacity gate records that fact rather than
+inventing rates. Inspect prefill infeasibility with
+`python -m crossscale.revision_e2 --root results/full-experiments-20260908/run`.

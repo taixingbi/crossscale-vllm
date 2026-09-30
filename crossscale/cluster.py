@@ -2,9 +2,29 @@
 import json
 from pathlib import Path
 import ssl
+import time
 from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+
+RETRY_CODES = {429, 502, 503}
+RETRY_BUDGET_S = 120
+
+
+def retry_wait_s(exc, body):
+    header = exc.headers.get('Retry-After') if exc.headers is not None else None
+    if header:
+        try:
+            return min(max(float(header), 0.05), 5)
+        except ValueError:
+            pass
+    try:
+        seconds = json.loads(body).get('details', {}).get('retryAfterSeconds')
+        if seconds is not None:
+            return min(max(float(seconds), 0.05), 5)
+    except (ValueError, TypeError, json.JSONDecodeError):
+        pass
+    return 1
 
 
 class Cluster:
@@ -20,15 +40,21 @@ class Cluster:
         headers = {'Authorization': 'Bearer ' + (self.identity / 'token').read_text().strip()}
         if body is not None:
             headers['Content-Type'] = 'application/merge-patch+json' if method == 'PATCH' else 'application/json'
-        req = Request(self.base + path, data=json.dumps(body).encode() if body is not None else None,
-                      method=method, headers=headers)
-        try:
-            with urlopen(req, context=self.tls, timeout=20) as response:
-                return json.load(response)
-        except HTTPError as exc:
-            if missing_ok and exc.code == 404:
-                return None
-            raise RuntimeError(f'{method} {path}: HTTP {exc.code}: {exc.read().decode()}') from exc
+        payload = json.dumps(body).encode() if body is not None else None
+        deadline = time.monotonic() + RETRY_BUDGET_S
+        while True:
+            req = Request(self.base + path, data=payload, method=method, headers=headers)
+            try:
+                with urlopen(req, context=self.tls, timeout=20) as response:
+                    return json.load(response)
+            except HTTPError as exc:
+                text = exc.read().decode()
+                if missing_ok and exc.code == 404:
+                    return None
+                if exc.code in RETRY_CODES and time.monotonic() < deadline:
+                    time.sleep(retry_wait_s(exc, text))
+                    continue
+                raise RuntimeError(f'{method} {path}: HTTP {exc.code}: {text}') from exc
 
     @staticmethod
     def path(kind, name=None, all_namespaces=False):
