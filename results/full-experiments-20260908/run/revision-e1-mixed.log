@@ -81,3 +81,29 @@
 {"unix_s": 1790699606.32168, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.05-seed-701"}
 {"unix_s": 1790713795.3975399, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.05-seed-701", "passed": false}
 {"unix_s": 1790713795.3977938, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.05-seed-702"}
+{"unix_s": 1790727984.4508789, "event": "revision-mixed-run-complete", "name": "mixed-gpu-2-rps-0.05-seed-702", "passed": true}
+{"unix_s": 1790727984.4511003, "event": "revision-mixed-run-start", "name": "mixed-gpu-2-rps-0.05-seed-703"}
+{"unix_s": 1790742173.9504979, "event": "waiting-ready", "target": 1, "ready": 2, "pods": 2}
+{"unix_s": 1790742177.213492, "event": "terminate-empty-claim", "claim": "crossscale-gpu-xnncw", "instance": "i-01b3edd474433103f"}
+{"unix_s": 1790742177.343185, "event": "waiting-termination", "instance": "i-01b3edd474433103f", "states": ["running"]}
+{"unix_s": 1790742207.8033247, "event": "waiting-termination", "instance": "i-01b3edd474433103f", "states": ["shutting-down"]}
+{"unix_s": 1790742238.25686, "event": "waiting-termination", "instance": "i-01b3edd474433103f", "states": ["shutting-down"]}
+{"unix_s": 1790742268.8292055, "event": "waiting-termination", "instance": "i-01b3edd474433103f", "states": ["shutting-down"]}
+{"unix_s": 1790742299.3340442, "event": "waiting-termination", "instance": "i-01b3edd474433103f", "states": ["shutting-down"]}
+{"unix_s": 1790742329.8177624, "event": "waiting-termination", "instance": "i-01b3edd474433103f", "states": ["shutting-down"]}
+{"unix_s": 1790742360.3094237, "event": "waiting-termination", "instance": "i-01b3edd474433103f", "states": ["shutting-down"]}
+{"unix_s": 1790742390.8628047, "event": "waiting-termination", "instance": "i-01b3edd474433103f", "states": ["shutting-down"]}
+{"unix_s": 1790742421.3480074, "event": "waiting-termination", "instance": "i-01b3edd474433103f", "states": ["shutting-down"]}
+{"unix_s": 1790742451.92736, "event": "instance-terminated", "claim": "crossscale-gpu-xnncw", "instance": "i-01b3edd474433103f"}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/experiments/crossscale/revision_mixed_live.py", line 130, in <module>
+    main()
+  File "/tmp/experiments/crossscale/revision_mixed_live.py", line 126, in main
+    execute(args.root, frozen)
+  File "/tmp/experiments/crossscale/revision_mixed_live.py", line 83, in execute
+    with Observer(study.k, folder, interval_s=5):
+  File "/tmp/experiments/crossscale/episodes.py", line 63, in __exit__
+    raise RuntimeError('observer failed: ' + self.error)
+RuntimeError: observer failed: RuntimeError('GET /apis/karpenter.sh/v1/nodeclaims?labelSelector=karpenter.sh%2Fnodepool%3Dcrossscale-gpu: HTTP 429: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"storage is (re)initializing","reason":"TooManyRequests","details":{"retryAfterSeconds":1},"code":429}\n')

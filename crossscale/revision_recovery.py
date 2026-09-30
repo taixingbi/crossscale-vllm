@@ -51,7 +51,8 @@ def build_plan(base, mixed):
 def require_completed_mixed(root):
     mixed = Path(root) / 'revision-20260912/e1-mixed'
     if (mixed / 'error.json').exists():
-        raise RuntimeError('Mixed calibration error requires diagnosis')
+        require_terminal_mixed(Path(root), mixed)
+        return mixed
     if not all((mixed / f).exists() for f in ('complete.json', 'restored.json', 'frozen-plan.json')):
         raise RuntimeError('Frozen mixed calibration must complete and restore before diagnostics')
     plan = json.loads((mixed / 'frozen-plan.json').read_text())
@@ -61,6 +62,74 @@ def require_completed_mixed(root):
     if len(expected) != 30 or len(actual) != 30 or set(actual) != set(expected):
         raise RuntimeError('All 30 frozen runs must be accounted for')
     return mixed
+
+
+
+def require_terminal_mixed(root, mixed):
+    """Accept only the documented interruption and archived, restored continuation."""
+    from .revision_mixed_live import remaining_after_observer_failure
+    continuation = mixed.parent / 'e1-mixed-continuation-20260930'
+    checkpoint = mixed.parent / 'e1-mixed-terminal'
+    try:
+        plan = json.loads((mixed / 'frozen-plan.json').read_text())
+        if hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':')).encode()).hexdigest() != 'defdea3414b96e782367c1078c7db02de9fd7f6520ecc3a4781992ca63561ab2':
+            raise ValueError('Unexpected original frozen plan')
+        remaining = remaining_after_observer_failure(mixed, plan)
+        if (mixed / 'complete.json').exists() or (continuation / 'error.json').exists():
+            raise ValueError('Unexpected suite outcome')
+        if json.loads((continuation / 'frozen-plan.json').read_text()) != plan:
+            raise ValueError('Continuation plan mismatch')
+        restored = json.loads((continuation / 'restored.json').read_text())
+        complete = json.loads((continuation / 'complete.json').read_text())
+        if complete.get('continuation_only') is not True or complete.get('capacities') is not None:
+            raise ValueError('Expected separately recorded continuation')
+        if restored['unix_s'] < complete['completed_unix_s']:
+            raise ValueError('Restoration predates completion')
+        if [r['name'] for r in complete['results']] != [r['name'] for r in remaining]:
+            raise ValueError('Continuation does not account for both remaining runs')
+        failed = mixed / plan['runs'][27]['name']
+        error = json.loads((failed / 'observer-error.json').read_text())['error']
+        if not all(x in error for x in ('nodeclaims', 'HTTP 429', 'storage is (re)initializing')):
+            raise ValueError('Unexpected observer failure')
+        ledger = json.loads((checkpoint / 'terminal-ledger.json').read_text())
+        if (ledger['completed'], ledger['failed'], ledger['unstarted']) != (29, 1, 0):
+            raise ValueError('Terminal totals mismatch')
+        if len(ledger['runs']) != 30:
+            raise ValueError('Terminal ledger incomplete')
+        for i, (spec, entry) in enumerate(zip(plan['runs'], ledger['runs'])):
+            folder = (mixed if i < 28 else continuation) / spec['name']
+            if entry['name'] != spec['name'] or entry['path'] != str(folder.relative_to(root)):
+                raise ValueError('Terminal identity mismatch')
+            if entry['outcome'] != ('failed_observer' if i == 27 else 'completed'):
+                raise ValueError('Terminal outcome mismatch')
+            if i != 27:
+                record = json.loads((folder / 'complete.json').read_text())
+                if any(record[k] != spec[k] for k in ('name', 'replicas', 'rps', 'seed', 'offered_by_tenant')):
+                    raise ValueError('Run differs from frozen plan')
+                if (folder / 'observer-error.json').exists() or (folder / 'error.json').exists():
+                    raise ValueError('Completed run has error marker')
+                if i >= 28 and record != complete['results'][i-28]:
+                    raise ValueError('Continuation summary differs from run evidence')
+        manifest = json.loads((checkpoint / 'archive-manifest.json').read_text())['files']
+        indexed = {item['path']: item for item in manifest}
+        if len(indexed) != len(manifest):
+            raise ValueError('Duplicate archive entries')
+        for folder in (mixed, continuation):
+            for path in folder.rglob('*'):
+                if not path.is_file() or path.name == 'observation-archive-manifest.json':
+                    continue
+                rel = str(path.relative_to(root))
+                item = indexed[rel]
+                if item['s3_uri'] != 's3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/' + rel:
+                    raise ValueError('Unexpected archive location')
+                digest = hashlib.sha256()
+                with path.open('rb') as stream:
+                    for chunk in iter(lambda: stream.read(1024*1024), b''):
+                        digest.update(chunk)
+                if path.stat().st_size != item['bytes'] or digest.hexdigest() != item['sha256']:
+                    raise ValueError('Archived evidence changed')
+    except (OSError, KeyError, ValueError, TypeError) as exc:
+        raise RuntimeError('Mixed terminal evidence is missing or inconsistent') from exc
 
 
 def condition_containers(original, condition):

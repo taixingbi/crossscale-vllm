@@ -72,3 +72,59 @@ class RecoveryTests(unittest.TestCase):
             (folder/'error.json').write_text('{}')
             with self.assertRaises(RuntimeError):
                 require_completed_mixed(tmp)
+
+class TerminalRecoveryTests(unittest.TestCase):
+    def test_preserved_failure_requires_complete_unchanged_archived_evidence(self):
+        import hashlib
+        plan = json.loads(Path('configs/revision-20260912/e1-mixed-plan.json').read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            mixed = root/'revision-20260912/e1-mixed'
+            cont = mixed.parent/'e1-mixed-continuation-20260930'
+            checkpoint = mixed.parent/'e1-mixed-terminal'
+            def save(path, value):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(json.dumps(value))
+            for folder in (mixed, cont):
+                save(folder/'frozen-plan.json', plan)
+                save(folder/'restored.json', dict(unix_s=2))
+            save(mixed/'error.json', dict(error='observer failure'))
+            entries, continued = [], []
+            for i, spec in enumerate(plan['runs']):
+                folder = (mixed if i < 28 else cont)/spec['name']
+                outcome = 'failed_observer' if i == 27 else 'completed'
+                entries.append(dict(name=spec['name'], outcome=outcome,
+                                    path=str(folder.relative_to(root))))
+                if i == 27:
+                    save(folder/'observer-error.json', dict(error='nodeclaims HTTP 429 storage is (re)initializing'))
+                    save(folder/'run/requests.jsonl', dict(status='completed'))
+                else:
+                    record = {k: spec[k] for k in ('name', 'replicas', 'rps', 'seed', 'offered_by_tenant')}
+                    save(folder/'complete.json', record)
+                    if i >= 28:
+                        continued.append(record)
+            save(cont/'complete.json', dict(results=continued, continuation_only=True,
+                                           capacities=None, completed_unix_s=1))
+            save(checkpoint/'terminal-ledger.json', dict(completed=29, failed=1, unstarted=0, runs=entries))
+            files = []
+            for folder in (mixed, cont):
+                for p in folder.rglob('*'):
+                    if p.is_file():
+                        rel = str(p.relative_to(root))
+                        files.append(dict(path=rel, bytes=p.stat().st_size,
+                                          sha256=hashlib.sha256(p.read_bytes()).hexdigest(),
+                                          s3_uri='s3://crossscale-experiment-results-646821141010-us-east-1/full-20260908/'+rel))
+            save(checkpoint/'archive-manifest.json', dict(files=files))
+            self.assertEqual(require_completed_mixed(root), mixed)
+            last = cont/plan['runs'][-1]['name']/'complete.json'
+            original = last.read_text()
+            last.unlink()
+            with self.assertRaises(RuntimeError):
+                require_completed_mixed(root)
+            last.write_text(original+' ')
+            with self.assertRaises(RuntimeError):
+                require_completed_mixed(root)
+            last.write_text(original)
+            save(mixed/plan['runs'][27]['name']/'complete.json', {})
+            with self.assertRaises(RuntimeError):
+                require_completed_mixed(root)

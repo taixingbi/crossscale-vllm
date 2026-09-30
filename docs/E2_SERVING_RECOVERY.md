@@ -114,3 +114,28 @@ reviewed terminal-outcome guard accepting the preserved failed run explicitly,
 with an honest combined ledger, restoration and archive proof. Existing
 lowest-rate failures already preclude qualified capacity; incomplete telemetry
 on run 28 cannot improve that conclusion.
+
+## September 30 terminal checkpoint and recovery prerequisite
+
+The continuation completed both untouched frozen entries and restored at Unix
+1790773470.4167933 (13:04:30 UTC). Final totals are 29 completed runs and one
+preserved observer failure, with no unstarted entries. Run 30 is dispatch-valid
+and passes the SLO criterion. Neither one- nor two-GPU mixed capacity qualifies
+because the original lowest-rate seed 704 fails tenant B. No failed run was rerun.
+Added instance i-0aaa2e019f1f1a9d5 terminated normally; the original GPU remains.
+
+`revision-20260912/e1-mixed-terminal/terminal-ledger.json` accounts for every
+frozen entry. Its archive manifest covers 604 files (2,054,688,619 bytes), with
+local SHA256 and verified private S3 object sizes, not remote content hashes.
+Large observation streams remain in local/private S3 storage; other evidence is
+in Git. The old 26-run observation manifest remains a historical checkpoint.
+
+The recovery prerequisite now accepts this explicitly diagnosed terminal path:
+canonical frozen-plan identity, original failure/restoration, both continuation
+results and subsequent restoration, matching per-run identities, no replacement
+of run 28, complete terminal ledger, and unchanged archive hashes for all files.
+It still acquires the exclusive lock before checking evidence or mutating the
+cluster. Five targeted recovery tests pass, including rejecting missing final
+results, altered archived evidence, and fabricated failed-run completion.
+This supersedes the earlier requirement for 30 successful completion markers;
+it does not qualify capacity or treat the failed observation as valid.

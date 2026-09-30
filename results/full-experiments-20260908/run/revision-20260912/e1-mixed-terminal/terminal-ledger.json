@@ -1,0 +1,221 @@
+{
+  "completed": 29,
+  "failed": 1,
+  "unstarted": 0,
+  "qualified_capacity": {
+    "1": null,
+    "2": null
+  },
+  "capacity_reason": "Lowest tested rate .01 seed704 fails tenant B on both replica counts; higher rates cannot qualify under frozen consecutive-rate rule.",
+  "runs": [
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-701",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-701",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-702",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-702",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-703",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-703",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-704",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-704",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-705",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-705",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-701",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-701",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-702",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-702",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-703",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-703",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-704",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-704",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-705",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-705",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-701",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-701",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-702",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-702",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-703",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-703",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-704",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-704",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-705",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-705",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-701",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-701",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-702",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-702",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-703",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-703",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-704",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-704",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-705",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-705",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-701",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-701",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-702",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-702",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-703",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-703",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-704",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-704",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-705",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-705",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-701",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.05-seed-701",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-702",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.05-seed-702",
+      "dispatch_valid": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-703",
+      "outcome": "failed_observer",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.05-seed-703",
+      "reason": "Kubernetes NodeClaim GET HTTP 429 storage reinitializing; partial telemetry preserved; not rerun"
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-704",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed-continuation-20260930/mixed-gpu-2-rps-0.05-seed-704",
+      "dispatch_valid": true,
+      "passed": false
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-705",
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed-continuation-20260930/mixed-gpu-2-rps-0.05-seed-705",
+      "dispatch_valid": true,
+      "passed": true
+    }
+  ]
+}

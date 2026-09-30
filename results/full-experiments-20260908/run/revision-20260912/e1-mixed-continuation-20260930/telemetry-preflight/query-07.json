@@ -1,0 +1,1 @@
+{"name": "generation_tokens_s", "query": "sum(rate(vllm:generation_tokens_total{namespace=\"crossscale\"}[1m]))", "response": {"status": "success", "data": {"resultType": "matrix", "result": [{"metric": {}, "values": [[1790743546.897, "0"], [1790743551.897, "0"], [1790743556.897, "0"], [1790743666.897, "0.7314133333333334"]]}]}}}

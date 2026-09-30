@@ -1,0 +1,7 @@
+{
+  "vllm:num_requests_waiting": true,
+  "vllm:num_requests_running": true,
+  "vllm:kv_cache_usage_perc": true,
+  "vllm:prompt_tokens_total": true,
+  "vllm:generation_tokens_total": true
+}

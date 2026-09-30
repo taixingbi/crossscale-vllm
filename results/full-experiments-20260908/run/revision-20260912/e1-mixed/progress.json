@@ -2078,5 +2078,85 @@
       "model": "meta-llama/Llama-3.1-8B-Instruct",
       "tpot_definition": "(last nonempty text arrival - first)/(usage completion_tokens - 1); SSE chunks may coalesce tokens"
     }
+  },
+  {
+    "name": "mixed-gpu-2-rps-0.05-seed-702",
+    "replicas": 2,
+    "rps": 0.05,
+    "seed": 702,
+    "offered_by_tenant": {
+      "A": 390,
+      "B": 189,
+      "C": 101
+    },
+    "dispatch_valid": true,
+    "passed": true,
+    "summary": {
+      "tenants": {
+        "A": {
+          "offered": 390,
+          "completed": 390,
+          "good": 376,
+          "goodput": 0.9641025641025641,
+          "rejected": 0,
+          "timeout": 0,
+          "errors": 0,
+          "deferred": 0,
+          "p95_ttft_s": 0.192134653928224,
+          "p99_ttft_s": 0.7177069812058502,
+          "p95_tpot_s": 0.04265758797037649,
+          "p99_tpot_s": 0.058144743236070606,
+          "p95_admission_delay_s": 0.0,
+          "p99_admission_delay_s": 0.0,
+          "p95_dispatch_lag_s": 0.0017806096002459515,
+          "p99_dispatch_lag_s": 0.0020558202243410053
+        },
+        "B": {
+          "offered": 189,
+          "completed": 189,
+          "good": 184,
+          "goodput": 0.9735449735449735,
+          "rejected": 0,
+          "timeout": 0,
+          "errors": 0,
+          "deferred": 0,
+          "p95_ttft_s": 1.3374101432040333,
+          "p99_ttft_s": 1.6421688688639555,
+          "p95_tpot_s": 0.041045932689927046,
+          "p99_tpot_s": 0.047846605434730544,
+          "p95_admission_delay_s": 0.0,
+          "p99_admission_delay_s": 0.0,
+          "p95_dispatch_lag_s": 0.0013879220001399516,
+          "p99_dispatch_lag_s": 0.001813552351668477
+        },
+        "C": {
+          "offered": 101,
+          "completed": 101,
+          "good": 100,
+          "goodput": 0.9900990099009901,
+          "rejected": 0,
+          "timeout": 0,
+          "errors": 0,
+          "deferred": 0,
+          "p95_ttft_s": 4.293348627630621,
+          "p99_ttft_s": 4.976437691599131,
+          "p95_tpot_s": 0.04303431497317497,
+          "p99_tpot_s": 0.0454252731046023,
+          "p95_admission_delay_s": 0.0,
+          "p99_admission_delay_s": 0.0,
+          "p95_dispatch_lag_s": 0.0017442663665860891,
+          "p99_dispatch_lag_s": 0.001966596581041813
+        }
+      },
+      "weighted_slo_goodput": 0.9715827748831048,
+      "jain_goodput": 0.9998788006461852,
+      "completed_tokens_s": 15.045928571428572,
+      "tokens_rate_denominator": "offered duration; includes drain completions",
+      "latency_population": "completed requests only; failures remain in goodput denominator",
+      "start_unix_s": 1790713804.3295145,
+      "elapsed_s": 14005.961401010863,
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "tpot_definition": "(last nonempty text arrival - first)/(usage completion_tokens - 1); SSE chunks may coalesce tokens"
+    }
   }
 ]
