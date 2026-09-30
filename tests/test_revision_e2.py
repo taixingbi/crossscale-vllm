@@ -64,25 +64,47 @@ class E2Gate(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'seed704 fails tenant B'):
                 require_qualified_two_gpu_capacity(root)
             with self.assertRaisesRegex(RuntimeError, 'Do not substitute isolated rates'):
-                execute(root)
+                execute(root, dict(capacity_rps=0.025))
             self.assertFalse((root / 'revision-20260912/e2-b2-b3').exists())
 
-    def test_qualified_capacity_still_refuses_unimplemented_controller(self):
+    def test_plan_mismatch_is_rejected_before_live_work(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root = _write_unqualified(tmp, capacity=0.01)
-            self.assertEqual(require_qualified_two_gpu_capacity(root), 0.01)
-            with self.assertRaisesRegex(RuntimeError, 'not implemented'):
-                execute(root)
-            self.assertTrue((root / 'revision-20260912/e2-b2-b3/error.json').exists())
+            root = _write_unqualified(tmp, capacity=0.025)
+            with self.assertRaisesRegex(RuntimeError, 'does not match qualified'):
+                execute(root, dict(capacity_rps=0.01))
+            self.assertFalse((root / 'revision-20260912/e2-b2-b3').exists())
 
     def test_held_lock_blocks_before_capacity_or_destination(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root = _write_unqualified(tmp, capacity=0.01)
+            root = _write_unqualified(tmp, capacity=0.025)
             with (root / 'suite.lock').open('a') as lock:
                 fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
                 with self.assertRaises(BlockingIOError):
-                    execute(root)
+                    execute(root, dict(capacity_rps=0.025))
             self.assertFalse((root / 'revision-20260912/e2-b2-b3').exists())
+
+
+class E2Plan(unittest.TestCase):
+    def test_paired_traces_and_nonempty_seed_scan(self):
+        from crossscale.core import workload
+        from crossscale.revision_e2 import plan, run_config
+        base = json.loads(Path('configs/revision-20260930.json').read_text())
+        frozen = plan(base, 0.025)
+        self.assertEqual(frozen['training_seeds'], [802, 803])
+        self.assertEqual(frozen['eval_seeds'], [811, 812, 813, 816, 818])
+        self.assertEqual(frozen['capacity_rps'] * frozen['low_factor'], 0.01625)
+        self.assertEqual(frozen['capacity_rps'] * frozen['high_factor'], 0.04125)
+        self.assertEqual(len(frozen['eval_order']), 10)
+        self.assertEqual({tuple(x) for x in frozen['eval_order']},
+                         {(s, b) for s in frozen['eval_seeds'] for b in ('B2', 'B3')})
+        left, _, _ = run_config(base, frozen['eval_seeds'][0], 0.025, 1)
+        right, _, _ = run_config(base, frozen['eval_seeds'][0], 0.025, 0.8)
+        self.assertEqual([{k: r[k] for k in ('id', 'tenant', 'offered_s', 'input_tokens', 'output_tokens')}
+                          for r in workload(left)],
+                         [{k: r[k] for k in ('id', 'tenant', 'offered_s', 'input_tokens', 'output_tokens')}
+                          for r in workload(right)])
+        with self.assertRaises(ValueError):
+            plan(json.loads(Path('configs/default.json').read_text()), 0.025)
 
 
 class LiveEvidence(unittest.TestCase):
