@@ -1,0 +1,466 @@
+{
+  "slo_revision": "revision-20260930-b-ttft-3s",
+  "b_ttft_s": 3.0,
+  "original_b_ttft_s": 1.5,
+  "original_qualified_capacity": {
+    "1": null,
+    "2": null
+  },
+  "qualified_capacity": {
+    "1": 0.025,
+    "2": 0.025
+  },
+  "e2_offered_total_rps": {
+    "0.65x": 0.01625,
+    "1.65x": 0.04125
+  },
+  "skipped": "Observer-failed run 28 is not rerun; it cannot qualify a rate that needs every seed.",
+  "runs": [
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-701",
+      "replicas": 1,
+      "rps": 0.01,
+      "seed": 701,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-701",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9929906542056075,
+        "B": 1.0,
+        "C": 1.0
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-702",
+      "replicas": 1,
+      "rps": 0.01,
+      "seed": 702,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-702",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9794871794871794,
+        "B": 1.0,
+        "C": 0.9801980198019802
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-703",
+      "replicas": 1,
+      "rps": 0.01,
+      "seed": 703,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-703",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9928909952606635,
+        "B": 1.0,
+        "C": 0.9891304347826086
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-704",
+      "replicas": 1,
+      "rps": 0.01,
+      "seed": 704,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-704",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9902912621359223,
+        "B": 1.0,
+        "C": 1.0
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.01-seed-705",
+      "replicas": 1,
+      "rps": 0.01,
+      "seed": 705,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.01-seed-705",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9849246231155779,
+        "B": 1.0,
+        "C": 0.9915966386554622
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-701",
+      "replicas": 1,
+      "rps": 0.025,
+      "seed": 701,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-701",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9789719626168224,
+        "B": 0.9948717948717949,
+        "C": 1.0
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-702",
+      "replicas": 1,
+      "rps": 0.025,
+      "seed": 702,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-702",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9666666666666667,
+        "B": 1.0,
+        "C": 0.9801980198019802
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-703",
+      "replicas": 1,
+      "rps": 0.025,
+      "seed": 703,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-703",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9786729857819905,
+        "B": 1.0,
+        "C": 0.9891304347826086
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-704",
+      "replicas": 1,
+      "rps": 0.025,
+      "seed": 704,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-704",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9830097087378641,
+        "B": 1.0,
+        "C": 0.990990990990991
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.025-seed-705",
+      "replicas": 1,
+      "rps": 0.025,
+      "seed": 705,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.025-seed-705",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9623115577889447,
+        "B": 1.0,
+        "C": 0.9831932773109243
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-701",
+      "replicas": 1,
+      "rps": 0.05,
+      "seed": 701,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-701",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9532710280373832,
+        "B": 0.9948717948717949,
+        "C": 0.9896907216494846
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-702",
+      "replicas": 1,
+      "rps": 0.05,
+      "seed": 702,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-702",
+      "dispatch_valid": true,
+      "passed": false,
+      "tenants": {
+        "A": 0.941025641025641,
+        "B": 1.0,
+        "C": 0.9702970297029703
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-703",
+      "replicas": 1,
+      "rps": 0.05,
+      "seed": 703,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-703",
+      "dispatch_valid": true,
+      "passed": false,
+      "tenants": {
+        "A": 0.9478672985781991,
+        "B": 0.9817351598173516,
+        "C": 0.9891304347826086
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-704",
+      "replicas": 1,
+      "rps": 0.05,
+      "seed": 704,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-704",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9563106796116505,
+        "B": 0.9948979591836735,
+        "C": 0.972972972972973
+      }
+    },
+    {
+      "name": "mixed-gpu-1-rps-0.05-seed-705",
+      "replicas": 1,
+      "rps": 0.05,
+      "seed": 705,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-1-rps-0.05-seed-705",
+      "dispatch_valid": true,
+      "passed": false,
+      "tenants": {
+        "A": 0.9396984924623115,
+        "B": 0.9854368932038835,
+        "C": 0.9831932773109243
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-701",
+      "replicas": 2,
+      "rps": 0.01,
+      "seed": 701,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-701",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 1.0,
+        "B": 1.0,
+        "C": 1.0
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-702",
+      "replicas": 2,
+      "rps": 0.01,
+      "seed": 702,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-702",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9871794871794872,
+        "B": 1.0,
+        "C": 0.9900990099009901
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-703",
+      "replicas": 2,
+      "rps": 0.01,
+      "seed": 703,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-703",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 1.0,
+        "B": 1.0,
+        "C": 1.0
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-704",
+      "replicas": 2,
+      "rps": 0.01,
+      "seed": 704,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-704",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9927184466019418,
+        "B": 1.0,
+        "C": 1.0
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.01-seed-705",
+      "replicas": 2,
+      "rps": 0.01,
+      "seed": 705,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.01-seed-705",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9949748743718593,
+        "B": 1.0,
+        "C": 0.9915966386554622
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-701",
+      "replicas": 2,
+      "rps": 0.025,
+      "seed": 701,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-701",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9883177570093458,
+        "B": 0.9948717948717949,
+        "C": 1.0
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-702",
+      "replicas": 2,
+      "rps": 0.025,
+      "seed": 702,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-702",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9769230769230769,
+        "B": 1.0,
+        "C": 0.9801980198019802
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-703",
+      "replicas": 2,
+      "rps": 0.025,
+      "seed": 703,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-703",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9928909952606635,
+        "B": 1.0,
+        "C": 1.0
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-704",
+      "replicas": 2,
+      "rps": 0.025,
+      "seed": 704,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-704",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9975728155339806,
+        "B": 1.0,
+        "C": 1.0
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.025-seed-705",
+      "replicas": 2,
+      "rps": 0.025,
+      "seed": 705,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.025-seed-705",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9798994974874372,
+        "B": 1.0,
+        "C": 0.9831932773109243
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-701",
+      "replicas": 2,
+      "rps": 0.05,
+      "seed": 701,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.05-seed-701",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9789719626168224,
+        "B": 0.9948717948717949,
+        "C": 0.9896907216494846
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-702",
+      "replicas": 2,
+      "rps": 0.05,
+      "seed": 702,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.05-seed-702",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9641025641025641,
+        "B": 1.0,
+        "C": 0.9900990099009901
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-703",
+      "replicas": 2,
+      "rps": 0.05,
+      "seed": 703,
+      "outcome": "failed_observer",
+      "path": "revision-20260912/e1-mixed/mixed-gpu-2-rps-0.05-seed-703",
+      "dispatch_valid": false,
+      "passed": false,
+      "tenants": null
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-704",
+      "replicas": 2,
+      "rps": 0.05,
+      "seed": 704,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed-continuation-20260930/mixed-gpu-2-rps-0.05-seed-704",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.9781553398058253,
+        "B": 1.0,
+        "C": 0.9819819819819819
+      }
+    },
+    {
+      "name": "mixed-gpu-2-rps-0.05-seed-705",
+      "replicas": 2,
+      "rps": 0.05,
+      "seed": 705,
+      "outcome": "completed",
+      "path": "revision-20260912/e1-mixed-continuation-20260930/mixed-gpu-2-rps-0.05-seed-705",
+      "dispatch_valid": true,
+      "passed": true,
+      "tenants": {
+        "A": 0.964824120603015,
+        "B": 0.9951456310679612,
+        "C": 0.9915966386554622
+      }
+    }
+  ]
+}

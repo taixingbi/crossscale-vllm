@@ -64,7 +64,17 @@ def diagnostic_b_tails(root, relative='revision-20260912/e2-serving-recovery-202
 
 
 def require_qualified_two_gpu_capacity(root):
-    ledger = json.loads((Path(root) / 'revision-20260912/e1-mixed-terminal/terminal-ledger.json').read_text())
+    root = Path(root)
+    amended = root / 'revision-20260930/requalified-mixed-ledger.json'
+    if amended.exists():
+        ledger = json.loads(amended.read_text())
+        capacity = ledger.get('qualified_capacity', {}).get('2')
+        if capacity is None:
+            raise RuntimeError('Amended mixed capacity is still unqualified')
+        if ledger.get('slo_revision') != 'revision-20260930-b-ttft-3s':
+            raise RuntimeError('Unexpected SLO revision')
+        return capacity
+    ledger = json.loads((root / 'revision-20260912/e1-mixed-terminal/terminal-ledger.json').read_text())
     capacity = ledger.get('qualified_capacity', {}).get('2')
     if capacity is not None:
         return capacity
@@ -81,7 +91,7 @@ def require_qualified_two_gpu_capacity(root):
         reason += '; serial B-tail prefill evidence is required before another serving hypothesis'
     raise RuntimeError(
         reason
-        + ' Do not substitute isolated rates, sparse historical qualifications, shortened prompts, or relaxed SLOs.'
+        + ' Do not substitute isolated rates, sparse historical qualifications, shortened prompts, or relaxed SLOs without docs/PROTOCOL_AMENDMENT_20260930.md.'
     )
 
 

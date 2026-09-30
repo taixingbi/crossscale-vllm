@@ -1,12 +1,9 @@
 # Full experiment operations
 
-**Current continuation scope (2026-09-30):** The suite is blocked after mixed
-E1. Do not launch E2–E8. Follow
-[POST_E0_EXECUTION.md](POST_E0_EXECUTION.md) and
-[E2_SERVING_RECOVERY.md](E2_SERVING_RECOVERY.md). September 18 authorization
-still covers E0–E8, but mixed capacity is unqualified and later live
-controllers are unimplemented. Report that blocker; do not skip via the
-historical numbering/gate or substitute rates.
+**Current continuation scope (2026-09-30):** Original 1.5s mixed capacity is
+unqualified. Follow [PROTOCOL_AMENDMENT_20260930.md](PROTOCOL_AMENDMENT_20260930.md)
+for the 3.0s B TTFT requalification (mixed 0.025 RPS). Do not launch E2 until
+the live B2/B3 controller exists. Do not skip via historical numbering/gate.
 
 Started 2026-09-08. This is a live, unfinished measurement suite. Do not confuse
 the earlier short-context results with these full-workload measurements.

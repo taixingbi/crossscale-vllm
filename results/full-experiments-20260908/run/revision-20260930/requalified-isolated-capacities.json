@@ -1,0 +1,14 @@
+{
+  "slo_revision": "revision-20260930-b-ttft-3s",
+  "original_capacities": {
+    "A": 0.2,
+    "B": 0.05,
+    "C": 0.01
+  },
+  "capacities": {
+    "A": 0.2,
+    "B": 0.1,
+    "C": 0.01
+  },
+  "note": "Isolated capacities are not mixed capacity and are not summed for E2."
+}

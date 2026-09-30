@@ -274,3 +274,12 @@ and also lack live controllers/frozen plans. E6/E7 cannot use live `oracle-eta`.
 Do not launch historical `study.py` comparisons. Record
 `revision-20260912/suite-blocked.json`; it is a blocker ledger, not completion
 of E2–E8. Cleanup waits for an explicit amendment or a finished suite.
+
+## Protocol amendment, September 30
+
+[PROTOCOL_AMENDMENT_20260930.md](PROTOCOL_AMENDMENT_20260930.md) changes only
+tenant B TTFT 1.5s → 3.0s and requalifies existing traces. Mixed two-GPU
+capacity under the new named condition is 0.025 RPS. Original 1.5s mixed
+ledger remains null. E2 is still not launched: the B2/B3 controller is
+unimplemented. Offered loads, when that controller exists, are 0.01625 and
+0.04125 RPS.

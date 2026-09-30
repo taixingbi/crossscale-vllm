@@ -97,9 +97,16 @@ class LiveEvidence(unittest.TestCase):
         self.assertGreaterEqual(analysis['misses_already_one_chunk'], 12)
         self.assertGreater(analysis['longest_prompt_tokens'], 10000)
 
-    def test_terminal_ledger_blocks_e2(self):
+    def test_original_1s5_ledger_remains_unqualified(self):
         ledger = LIVE / 'revision-20260912/e1-mixed-terminal/terminal-ledger.json'
         if not ledger.exists():
             self.skipTest('terminal mixed ledger is not present')
-        with self.assertRaisesRegex(RuntimeError, 'Lowest tested rate'):
-            require_qualified_two_gpu_capacity(LIVE)
+        payload = json.loads(ledger.read_text())
+        self.assertIsNone(payload['qualified_capacity']['2'])
+        self.assertIsNone(payload['qualified_capacity']['1'])
+
+    def test_amended_slo_unblocks_two_gpu_capacity_gate(self):
+        amended = LIVE / 'revision-20260930/requalified-mixed-ledger.json'
+        if not amended.exists():
+            self.skipTest('amendment ledger is not present')
+        self.assertEqual(require_qualified_two_gpu_capacity(LIVE), 0.025)

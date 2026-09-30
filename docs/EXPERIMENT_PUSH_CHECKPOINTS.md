@@ -203,3 +203,12 @@ healthy, `suite.lock` is free, archive PID 42 continues. Ledger:
 `results/full-experiments-20260908/run/revision-20260912/suite-blocked.json`.
 E2–E8 are not complete. Find commit with
 `git log --grep="Record suite blocked at unqualified mixed capacity"`.
+
+## Protocol amendment 3.0s B TTFT — 2026-09-30
+
+Frozen amendment raises only tenant B TTFT to 3.0s and requalifies existing
+isolated/mixed traces. Original 1.5s mixed capacity stays null. Amended mixed
+capacity is 0.025 RPS on one and two GPUs; E2 .65×/.165× totals are 0.01625 and
+0.04125 RPS. Seed 704 was not rerun. E2 was not launched. Ledgers:
+`results/full-experiments-20260908/run/revision-20260930/`. Find commit with
+`git log --grep="Amend B TTFT to 3s and requalify existing mixed traces"`.

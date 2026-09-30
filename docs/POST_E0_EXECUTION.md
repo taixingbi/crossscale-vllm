@@ -1,11 +1,12 @@
 # Post-E0 execution order — user revision, 2026-09-12
 
-**Current status (2026-09-30):** E0 and isolated E1 are complete. Mixed E1 is
-complete and **unqualified** (seed 704 tenant B). E2–E8 are blocked: no
-qualified two-GPU mixed capacity, and no live revision controllers for those
-phases. Do not launch E2–E8, substitute isolated/.005 rates, or label missing
-phases complete. See [E2_SERVING_RECOVERY.md](E2_SERVING_RECOVERY.md) and
-`revision-20260912/suite-blocked.json`.
+**Current status (2026-09-30):** E0 and isolated E1 are complete under the
+original 1.5s B SLO. Mixed E1 is complete and **unqualified at 1.5s**.
+[PROTOCOL_AMENDMENT_20260930.md](PROTOCOL_AMENDMENT_20260930.md) changes only
+B TTFT to 3.0s and requalifies existing traces: mixed 0.025 RPS on one and two
+GPUs. E2 offered loads are 0.01625 / 0.04125 RPS. The live B2/B3 controller is
+still unimplemented; do not launch historical `study.py`. See
+`revision-20260930/` and [E2_SERVING_RECOVERY.md](E2_SERVING_RECOVERY.md).
 
 This revision supersedes the old E1–E7 numbering and automatic continuation
 gate in FULL_EXPERIMENT_PROTOCOL.md. Preserve all historical results and labels;
