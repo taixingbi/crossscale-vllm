@@ -212,3 +212,19 @@ capacity is 0.025 RPS on one and two GPUs; E2 .65×/.165× totals are 0.01625 an
 0.04125 RPS. Seed 704 was not rerun. E2 was not launched. Ledgers:
 `results/full-experiments-20260908/run/revision-20260930/`. Find commit with
 `git log --grep="Amend B TTFT to 3s and requalify existing mixed traces"`.
+
+## E2 B2/B3 launched — 2026-09-30
+
+Capacity-normalized E2 is running once under exclusive `suite.lock`, PID
+163681, dest `revision-20260912/e2-b2-b3`. Frozen plan SHA `c3654b35…`.
+Training seeds 802/803; eval 811/812/813/816/818. Serving rolled to 4096.
+Do not launch a duplicate. Find commit with
+`git log --grep="Launch capacity-normalized E2 B2/B3"`.
+
+## E3 B3/B5/B6 waiter armed — 2026-09-30
+
+Priority trio frozen before outcomes (seeds 821/822/824/826/828, practical
+effect 0.05, Ready-slot admission, slots=1). Waiter polls E2 complete+restore
+and will not start from a failed-only E2 error. B2/B4 stay for a later
+checkpoint. Find commit with
+`git log --grep="Freeze E3 B3/B5/B6 and wait for E2"`.

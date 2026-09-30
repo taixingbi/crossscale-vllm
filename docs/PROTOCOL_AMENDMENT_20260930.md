@@ -54,11 +54,12 @@ summed for E2.
 Two-GPU mixed capacity for the amended condition is 0.025 RPS. E2 uses
 **0.65× = 0.01625** RPS before t=60s and **1.65× = 0.04125** RPS afterward,
 split 4:2:1. KEDA/HPA must still actually request 2→4. The live B2/B3
-controller remains unimplemented; this amendment only supplies the missing
-capacity input. Do not launch historical `study.py` numbering.
+controller is running under exclusive `suite.lock`; this amendment supplied
+the missing capacity input. Do not launch historical `study.py` numbering.
 
-E3–E8 stay unimplemented until each phase is frozen on this SLO revision.
-They may use the same amended SLOs; they still need live controllers.
+E3 B3/B5/B6 is frozen on this SLO revision (`configs/revision-20260930-e3-b3-b5-b6-plan.json`)
+and waits for E2 to complete and restore. E3 B2/B4 and E4–E8 still need live
+controllers. They may use the same amended SLOs.
 
 ## Reporting
 

@@ -280,6 +280,17 @@ of E2–E8. Cleanup waits for an explicit amendment or a finished suite.
 [PROTOCOL_AMENDMENT_20260930.md](PROTOCOL_AMENDMENT_20260930.md) changes only
 tenant B TTFT 1.5s → 3.0s and requalifies existing traces. Mixed two-GPU
 capacity under the new named condition is 0.025 RPS. Original 1.5s mixed
-ledger remains null. E2 is still not launched: the B2/B3 controller is
-unimplemented. Offered loads, when that controller exists, are 0.01625 and
-0.04125 RPS.
+ledger remains null. E2 B2/B3 is running under exclusive `suite.lock`
+(PID 163681, dest `revision-20260912/e2-b2-b3`). Offered loads are 0.01625
+and 0.04125 RPS.
+
+## E3 waiter, September 30
+
+E3 priority trio B3/B5/B6 is frozen before outcomes. Seeds **821, 822, 824,
+826, 828**; randomized 15-run order; practical effect 0.05; admission
+`revision-20260912` with calibrated `slots_per_replica=1` and
+`prefill_tokens_s=3305.82`. B2/B4 are not in this launch. The waiter
+(`e3-waiter.pid`) polls E2 and does not take `suite.lock` until execute.
+It starts only after E2 `complete.json` and `restored.json`, and refuses if
+E2 has `error.json` without `complete.json`. Plan SHA
+`58ecbb11962108a71346dd9a16134829d268ccbf6cbcc74853aed6b239f44921`.
