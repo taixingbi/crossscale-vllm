@@ -55,3 +55,23 @@ actual inference exclusion/release, usable-capacity observation and ETA input
 integration, restoration validation, and frozen measurement protocol. A fixed
 controlled release schedule must be labeled as such; it cannot be represented
 as a natural KEDA decision or natural EC2 provisioning. No E5–E8 result exists.
+
+## GPU validation launched
+
+October 1 about 19:01 UTC: scripts/validate-gpu-readiness-gate.py launched once,
+using a separate proof Pod and Service named
+crossscale-gate-gpu-validation-20261001. Original vLLM Deployment is unchanged.
+Proof uses the pinned full-context model with batch 4096 and the custom gate.
+The runner holds suite.lock via PID 173632 for the validation lifetime; local
+exec session 47528 owns the controller. Do not launch another suite.
+
+A temporary same-named Role/RoleBinding grants the runner pods/status patch
+only for the proof pod name. This exercises the actual in-cluster helper and
+permission, not an administrator patch. Remove these two RBAC resources after
+validation cleanup. Raw local directory and private S3 prefix are both named
+readiness-gpu-validation-20261001. The controller captures pod/service UIDs,
+remembers added claims, deletes only its proof resources, and uses the existing
+ownership-aware empty-claim cleanup. Startup deadline is 2400 seconds; all six
+delays retain the CPU validation's predeclared 5-second release tolerance.
+Each released probe requests a real four-token completion; gated probes must
+fail to connect. This is capability validation, not a paired E5 result.
