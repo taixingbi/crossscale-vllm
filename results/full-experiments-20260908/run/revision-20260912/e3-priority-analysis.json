@@ -1,0 +1,498 @@
+{
+  "scope": "Priority E3 whole-run weighted SLO goodput over all offered requests",
+  "slo_revision": "revision-20260930-b-ttft-3s",
+  "runs": [
+    {
+      "seed": 826,
+      "baseline": "B3",
+      "offered": 7,
+      "tenant_counts": {
+        "A": 2,
+        "B": 2,
+        "C": 3
+      },
+      "weighted_slo_goodput": 0.75,
+      "gap": {
+        "decision_unix_s": 1790824324.2097063,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790824640.266332,
+        "gap_s": null,
+        "censored": true,
+        "status": "readiness-censored",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 3
+    },
+    {
+      "seed": 828,
+      "baseline": "B3",
+      "offered": 10,
+      "tenant_counts": {
+        "A": 7,
+        "B": 1,
+        "C": 2
+      },
+      "weighted_slo_goodput": 1.0,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790825447.3558133,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 821,
+      "baseline": "B5",
+      "offered": 6,
+      "tenant_counts": {
+        "A": 3,
+        "B": 2,
+        "C": 1
+      },
+      "weighted_slo_goodput": 1.0,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790825946.8939128,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 821,
+      "baseline": "B6",
+      "offered": 6,
+      "tenant_counts": {
+        "A": 3,
+        "B": 2,
+        "C": 1
+      },
+      "weighted_slo_goodput": 1.0,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790826446.0216308,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 822,
+      "baseline": "B6",
+      "offered": 9,
+      "tenant_counts": {
+        "A": 4,
+        "B": 4,
+        "C": 1
+      },
+      "weighted_slo_goodput": 0.9166666666666666,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790826939.6971056,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 821,
+      "baseline": "B3",
+      "offered": 6,
+      "tenant_counts": {
+        "A": 3,
+        "B": 2,
+        "C": 1
+      },
+      "weighted_slo_goodput": 1.0,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790827435.8413773,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 828,
+      "baseline": "B6",
+      "offered": 10,
+      "tenant_counts": {
+        "A": 7,
+        "B": 1,
+        "C": 2
+      },
+      "weighted_slo_goodput": 0.9285714285714285,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790827931.595321,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 828,
+      "baseline": "B5",
+      "offered": 10,
+      "tenant_counts": {
+        "A": 7,
+        "B": 1,
+        "C": 2
+      },
+      "weighted_slo_goodput": 0.9285714285714285,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790828429.8898215,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 824,
+      "baseline": "B6",
+      "offered": 6,
+      "tenant_counts": {
+        "A": 2,
+        "B": 3,
+        "C": 1
+      },
+      "weighted_slo_goodput": 1.0,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790828927.0049846,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 822,
+      "baseline": "B5",
+      "offered": 9,
+      "tenant_counts": {
+        "A": 4,
+        "B": 4,
+        "C": 1
+      },
+      "weighted_slo_goodput": 0.9166666666666666,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790829426.4534693,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 822,
+      "baseline": "B3",
+      "offered": 9,
+      "tenant_counts": {
+        "A": 4,
+        "B": 4,
+        "C": 1
+      },
+      "weighted_slo_goodput": 1.0,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790829927.240594,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 826,
+      "baseline": "B6",
+      "offered": 7,
+      "tenant_counts": {
+        "A": 2,
+        "B": 2,
+        "C": 3
+      },
+      "weighted_slo_goodput": 0.8888888888888888,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790830426.7361994,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 826,
+      "baseline": "B5",
+      "offered": 7,
+      "tenant_counts": {
+        "A": 2,
+        "B": 2,
+        "C": 3
+      },
+      "weighted_slo_goodput": 0.8888888888888888,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790830927.1857316,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 824,
+      "baseline": "B3",
+      "offered": 6,
+      "tenant_counts": {
+        "A": 2,
+        "B": 3,
+        "C": 1
+      },
+      "weighted_slo_goodput": 1.0,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790831426.476011,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    },
+    {
+      "seed": 824,
+      "baseline": "B5",
+      "offered": 6,
+      "tenant_counts": {
+        "A": 2,
+        "B": 3,
+        "C": 1
+      },
+      "weighted_slo_goodput": 1.0,
+      "gap": {
+        "decision_unix_s": null,
+        "target_requested_unix_s": null,
+        "usable_unix_s": null,
+        "observation_end_unix_s": 1790831927.1288717,
+        "gap_s": null,
+        "censored": false,
+        "status": "no-scale-observed",
+        "timing": "First observed transitions; resolution bounded by sample cadence",
+        "scaler_attribution": "Requires separate KEDA/HPA evidence"
+      },
+      "gap_offered": 0
+    }
+  ],
+  "comparisons": [
+    {
+      "left": "B6",
+      "right": "B5",
+      "declared_seeds": [
+        821,
+        822,
+        824,
+        826,
+        828
+      ],
+      "pairs": [
+        {
+          "seed": 821,
+          "difference": 0.0
+        },
+        {
+          "seed": 822,
+          "difference": 0.0
+        },
+        {
+          "seed": 824,
+          "difference": 0.0
+        },
+        {
+          "seed": 826,
+          "difference": 0.0
+        },
+        {
+          "seed": 828,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": 0.0,
+      "paired_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "practical_effect": 0.05,
+      "practical_benefit_supported": false,
+      "status": "complete",
+      "bootstrap_seed": 20260919,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "left": "B5",
+      "right": "B3",
+      "declared_seeds": [
+        821,
+        822,
+        824,
+        826,
+        828
+      ],
+      "pairs": [
+        {
+          "seed": 821,
+          "difference": 0.0
+        },
+        {
+          "seed": 822,
+          "difference": -0.08333333333333337
+        },
+        {
+          "seed": 824,
+          "difference": 0.0
+        },
+        {
+          "seed": 826,
+          "difference": 0.13888888888888884
+        },
+        {
+          "seed": 828,
+          "difference": -0.07142857142857151
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.0031746031746032076,
+      "paired_bootstrap_95": [
+        -0.06428571428571432,
+        0.069047619047619
+      ],
+      "practical_effect": 0.05,
+      "practical_benefit_supported": false,
+      "status": "complete",
+      "bootstrap_seed": 20260919,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "left": "B6",
+      "right": "B3",
+      "declared_seeds": [
+        821,
+        822,
+        824,
+        826,
+        828
+      ],
+      "pairs": [
+        {
+          "seed": 821,
+          "difference": 0.0
+        },
+        {
+          "seed": 822,
+          "difference": -0.08333333333333337
+        },
+        {
+          "seed": 824,
+          "difference": 0.0
+        },
+        {
+          "seed": 826,
+          "difference": 0.13888888888888884
+        },
+        {
+          "seed": 828,
+          "difference": -0.07142857142857151
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.0031746031746032076,
+      "paired_bootstrap_95": [
+        -0.06428571428571432,
+        0.069047619047619
+      ],
+      "practical_effect": 0.05,
+      "practical_benefit_supported": false,
+      "status": "complete",
+      "bootstrap_seed": 20260919,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    }
+  ],
+  "limitations": [
+    "Five paired seeds; sparse tenant samples.",
+    "Whole-run censor flag refers to completion of the frozen request horizon, not target readiness.",
+    "Readiness censoring is retained separately in each gap record.",
+    "No causal ETA attribution from ordering; no matched-scale experiment included.",
+    "Negative priority checkpoint does not stop E3 B2/B4 or E4\u2013E8."
+  ]
+}

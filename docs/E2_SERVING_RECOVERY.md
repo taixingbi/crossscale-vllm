@@ -338,3 +338,14 @@ logs and telemetry are archived under e3-b3-b5-b6 and mirrored locally.
 The paired go/no-go and provisioning-gap analysis remain pending. Completion
 alone does not support the desired baseline ordering or ETA benefit. E3 B2/B4
 and E4–E8 remain unrun and must continue after the priority analysis checkpoint.
+
+Priority paired checkpoint: B6-B5 is exactly zero in all five seeds. B5-B3
+and B6-B3 mean weighted-goodput differences are -0.0031746, paired-bootstrap
+95% interval [-0.0642857, 0.0690476] (10,000 resamples). None meets the
+predeclared +0.05 practical benefit criterion. Fourteen runs have no observed
+scale decision; one has a readiness-censored scale interval. This is weak ETA
+and admission-benefit evidence on sparse traces, not proof of equivalence.
+No completed provisioning-gap benefit is established. Reproduce using
+scripts/report-priority-e3.py; full per-run gaps, sample counts and pairing
+checks are in revision-20260912/e3-priority-analysis.json. Proceed to B2/B4
+and E4–E8 despite the negative checkpoint, with fresh frozen phase plans.
