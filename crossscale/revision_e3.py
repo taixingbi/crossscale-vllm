@@ -102,7 +102,7 @@ def b5_b6_differ_only_by_eta(config):
         raise ValueError('B5 and B6 must match when no ETA is pending')
 
 
-def _run_suite(root, dest, frozen, slo_threshold):
+def _run_suite(root, dest, frozen, slo_threshold, config_factory=e3_config):
     import asyncio
     import os
     import subprocess
@@ -124,7 +124,7 @@ def _run_suite(root, dest, frozen, slo_threshold):
     base = json.loads((cfg if cfg.exists() else Path('configs/revision-20260930.json')).read_text())
     eta_path = root / 'e0-prefill4096/cold-new-node/summary.json'
     eta = json.loads(eta_path.read_text())['training_p90_s'] if eta_path.exists() else 60
-    sample, _, _ = e3_config(base, frozen['eval_seeds'][0], frozen['capacity_rps'], slo_threshold)
+    sample, _, _ = config_factory(base, frozen['eval_seeds'][0], frozen['capacity_rps'], slo_threshold)
     b5_b6_differ_only_by_eta(sample)
     study.remove_scaler()
     study.idle()
@@ -222,8 +222,9 @@ def _run_suite(root, dest, frozen, slo_threshold):
             if observer.error:
                 raise RuntimeError(observer.error)
         rows = [json.loads(line) for line in (folder / 'run' / 'requests.jsonl').read_text().splitlines()]
-        burst = summarize([r for r in rows if BURST[0] <= r['offered_s'] < BURST[1]],
-                          dict(config, duration_s=BURST[1] - BURST[0]))
+        burst_start, burst_end = frozen['burst_s']
+        burst = summarize([r for r in rows if burst_start <= r['offered_s'] < burst_end],
+                          dict(config, duration_s=burst_end - burst_start))
         save(folder / 'burst-summary.json', burst)
         save(folder / 'scale-summary.json', extract(folder / 'observations.jsonl.gz'))
         valid = max((r.get('dispatch_lag_s', 0) for r in rows), default=0) <= .05
@@ -243,8 +244,8 @@ def _run_suite(root, dest, frozen, slo_threshold):
         save(dest / 'slo-threshold.json', dict(selected_threshold=slo_threshold, source=str(E2_DEST) + '/slo-tuning.json'))
         results = []
         for seed, baseline in frozen['eval_order']:
-            config, _, _ = e3_config(base, seed, frozen['capacity_rps'], slo_threshold)
-            study.event('e3-eval-start', seed=seed, baseline=baseline)
+            config, _, _ = config_factory(base, seed, frozen['capacity_rps'], slo_threshold)
+            study.event(f"{frozen['phase']}-eval-start", seed=seed, baseline=baseline)
             record = measure(dest / 'eval' / f'seed-{seed}' / baseline, baseline, config)
             results.append(record)
             save(dest / 'progress.json', results)
