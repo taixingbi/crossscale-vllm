@@ -12,6 +12,18 @@ LAGS = (0, 15, 30, 60, 90, 120)
 BASELINES = ('B3', 'B5', 'B6')
 
 
+def verify_frozen_trace(rows, generated, expected_sha256):
+    if hashlib.sha256(json.dumps(rows, sort_keys=True).encode()).hexdigest() != expected_sha256:
+        raise ValueError('Frozen trace hash mismatch')
+    if len(rows) != len(generated):
+        raise ValueError('Frozen trace length mismatch')
+    for left, right in zip(rows, generated):
+        if (any(left[k] != right[k] for k in ('id', 'tenant', 'input_tokens', 'output_tokens'))
+                or abs(left['offered_s'] - right['offered_s']) > 1e-9):
+            raise ValueError('Frozen trace differs from declared workload')
+    return rows
+
+
 def run_config(base, seed, capacity, threshold):
     config, _, _ = e3_config(base, seed, capacity, threshold)
     config.update(duration_s=600, drain_s=180, phases=[

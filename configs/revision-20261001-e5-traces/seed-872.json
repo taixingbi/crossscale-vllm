@@ -1,0 +1,114 @@
+[
+  {
+    "tenant": "A",
+    "offered_s": 88.35560255667829,
+    "input_tokens": 326,
+    "output_tokens": 223,
+    "id": 0
+  },
+  {
+    "tenant": "C",
+    "offered_s": 92.39435527306316,
+    "input_tokens": 6762,
+    "output_tokens": 1059,
+    "id": 1
+  },
+  {
+    "tenant": "A",
+    "offered_s": 101.8003615440904,
+    "input_tokens": 256,
+    "output_tokens": 82,
+    "id": 2
+  },
+  {
+    "tenant": "B",
+    "offered_s": 103.13303293927638,
+    "input_tokens": 3007,
+    "output_tokens": 172,
+    "id": 3
+  },
+  {
+    "tenant": "A",
+    "offered_s": 124.3269907697163,
+    "input_tokens": 185,
+    "output_tokens": 118,
+    "id": 4
+  },
+  {
+    "tenant": "A",
+    "offered_s": 131.0005231166234,
+    "input_tokens": 360,
+    "output_tokens": 146,
+    "id": 5
+  },
+  {
+    "tenant": "C",
+    "offered_s": 147.18746821128164,
+    "input_tokens": 8471,
+    "output_tokens": 1547,
+    "id": 6
+  },
+  {
+    "tenant": "A",
+    "offered_s": 159.7601224330878,
+    "input_tokens": 292,
+    "output_tokens": 137,
+    "id": 7
+  },
+  {
+    "tenant": "B",
+    "offered_s": 281.3832549024895,
+    "input_tokens": 2922,
+    "output_tokens": 321,
+    "id": 8
+  },
+  {
+    "tenant": "A",
+    "offered_s": 292.3019923418709,
+    "input_tokens": 393,
+    "output_tokens": 369,
+    "id": 9
+  },
+  {
+    "tenant": "A",
+    "offered_s": 374.6042768857053,
+    "input_tokens": 423,
+    "output_tokens": 159,
+    "id": 10
+  },
+  {
+    "tenant": "B",
+    "offered_s": 403.2565153479593,
+    "input_tokens": 4134,
+    "output_tokens": 314,
+    "id": 11
+  },
+  {
+    "tenant": "A",
+    "offered_s": 468.4635054383417,
+    "input_tokens": 286,
+    "output_tokens": 292,
+    "id": 12
+  },
+  {
+    "tenant": "A",
+    "offered_s": 541.8856255228663,
+    "input_tokens": 259,
+    "output_tokens": 113,
+    "id": 13
+  },
+  {
+    "tenant": "A",
+    "offered_s": 566.5359676328906,
+    "input_tokens": 119,
+    "output_tokens": 112,
+    "id": 14
+  },
+  {
+    "tenant": "A",
+    "offered_s": 574.588498228248,
+    "input_tokens": 199,
+    "output_tokens": 293,
+    "id": 15
+  }
+]

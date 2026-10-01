@@ -135,3 +135,13 @@ the virtual environment rerun passed all 24 without skips. Deployment requires
 the owned controlled-capacity Role/RoleBinding (pods/status patch plus read-only
 EndpointSlice access); remove it when controlled experiments finish. Pod status
 writes are additionally guarded by owner label, UID and resource version.
+
+Initial launch was rejected before output creation or cluster mutation: Python
+math on the runner regenerated seed 872 arrival 124.32699076971632 versus frozen
+124.3269907697163 (one floating-point rounding difference). No measurement ran.
+The exact original frozen traces are now serialized under
+configs/revision-20261001-e5-traces, hash-checked against the unchanged plan,
+and passed directly to the live client. Validation also checks generated IDs,
+tenants and lengths exactly and arrival differences within 1ns; this tolerance
+only diagnoses generator portability, never changes the deployed frozen trace.
+The original launch log is retained separately. All 24 tests still pass.

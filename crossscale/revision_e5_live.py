@@ -30,7 +30,15 @@ def execute(root, frozen):
     with (root/'suite.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         base=json.loads((root/'configs/revision-20260930.json').read_text())
-        if frozen != design.plan(base): raise ValueError('Frozen E5 plan mismatch')
+        generated_plan=design.plan(base)
+        if ({k:v for k,v in frozen.items() if k!='traces'} !=
+                {k:v for k,v in generated_plan.items() if k!='traces'}):
+            raise ValueError('Frozen E5 plan mismatch')
+        traces={}
+        for entry in frozen['traces']:
+            seed=entry['seed']
+            rows=json.loads((root/f'configs/revision-20261001-e5-traces/seed-{seed}.json').read_text())
+            traces[seed]=design.verify_frozen_trace(rows,design.run_config(base,seed,.025,.8)[1],entry['sha256'])
         e4=root/'revision-20260912/e4-noisy-neighbor'
         records=json.loads((e4/'complete.json').read_text())['results']
         if (len(records)!=15 or not all(r['dispatch_valid'] for r in records)
@@ -131,7 +139,7 @@ def execute(root, frozen):
                             raise RuntimeError('Controlled schedule requires no autoscaler')
                         study.event('e5-measure-start',seed=seed,lag=lag,baseline=baseline_name)
                         summary=asyncio.run(run(config,baseline_name,folder/'run','http://127.0.0.1:8080',MODEL,
-                                                root/'tokens.json',on_start=driver.on_start))
+                                                root/'tokens.json',trace=traces[seed],on_start=driver.on_start))
                         until=summary['start_unix_s']+config['duration_s']+config['drain_s']
                         while time.time()<until:
                             if observer.error:raise RuntimeError(observer.error)

@@ -1,0 +1,163 @@
+[
+  {
+    "tenant": "C",
+    "offered_s": 5.497223123586303,
+    "input_tokens": 6576,
+    "output_tokens": 826,
+    "id": 0
+  },
+  {
+    "tenant": "A",
+    "offered_s": 16.35349729915971,
+    "input_tokens": 271,
+    "output_tokens": 118,
+    "id": 1
+  },
+  {
+    "tenant": "C",
+    "offered_s": 106.93043469224862,
+    "input_tokens": 4934,
+    "output_tokens": 796,
+    "id": 2
+  },
+  {
+    "tenant": "B",
+    "offered_s": 143.59051266735844,
+    "input_tokens": 2385,
+    "output_tokens": 182,
+    "id": 3
+  },
+  {
+    "tenant": "A",
+    "offered_s": 150.40165719090737,
+    "input_tokens": 168,
+    "output_tokens": 147,
+    "id": 4
+  },
+  {
+    "tenant": "B",
+    "offered_s": 157.35309708447878,
+    "input_tokens": 1995,
+    "output_tokens": 345,
+    "id": 5
+  },
+  {
+    "tenant": "A",
+    "offered_s": 184.26019254745074,
+    "input_tokens": 191,
+    "output_tokens": 193,
+    "id": 6
+  },
+  {
+    "tenant": "A",
+    "offered_s": 222.1540755645472,
+    "input_tokens": 205,
+    "output_tokens": 189,
+    "id": 7
+  },
+  {
+    "tenant": "B",
+    "offered_s": 258.9763499833734,
+    "input_tokens": 2731,
+    "output_tokens": 279,
+    "id": 8
+  },
+  {
+    "tenant": "A",
+    "offered_s": 282.54198160897874,
+    "input_tokens": 430,
+    "output_tokens": 123,
+    "id": 9
+  },
+  {
+    "tenant": "A",
+    "offered_s": 310.2321650929564,
+    "input_tokens": 330,
+    "output_tokens": 186,
+    "id": 10
+  },
+  {
+    "tenant": "A",
+    "offered_s": 337.1132203245381,
+    "input_tokens": 298,
+    "output_tokens": 154,
+    "id": 11
+  },
+  {
+    "tenant": "B",
+    "offered_s": 340.641938033891,
+    "input_tokens": 2121,
+    "output_tokens": 298,
+    "id": 12
+  },
+  {
+    "tenant": "A",
+    "offered_s": 346.48800845027034,
+    "input_tokens": 497,
+    "output_tokens": 209,
+    "id": 13
+  },
+  {
+    "tenant": "B",
+    "offered_s": 351.4483409368421,
+    "input_tokens": 3306,
+    "output_tokens": 309,
+    "id": 14
+  },
+  {
+    "tenant": "A",
+    "offered_s": 368.4379886451057,
+    "input_tokens": 196,
+    "output_tokens": 140,
+    "id": 15
+  },
+  {
+    "tenant": "A",
+    "offered_s": 370.58730183967504,
+    "input_tokens": 471,
+    "output_tokens": 204,
+    "id": 16
+  },
+  {
+    "tenant": "A",
+    "offered_s": 394.8307341488947,
+    "input_tokens": 244,
+    "output_tokens": 167,
+    "id": 17
+  },
+  {
+    "tenant": "A",
+    "offered_s": 446.87370894919616,
+    "input_tokens": 248,
+    "output_tokens": 179,
+    "id": 18
+  },
+  {
+    "tenant": "A",
+    "offered_s": 447.03061340642125,
+    "input_tokens": 227,
+    "output_tokens": 137,
+    "id": 19
+  },
+  {
+    "tenant": "B",
+    "offered_s": 530.2503800260904,
+    "input_tokens": 3559,
+    "output_tokens": 351,
+    "id": 20
+  },
+  {
+    "tenant": "B",
+    "offered_s": 546.5430451828702,
+    "input_tokens": 2661,
+    "output_tokens": 277,
+    "id": 21
+  },
+  {
+    "tenant": "A",
+    "offered_s": 552.5031280099766,
+    "input_tokens": 156,
+    "output_tokens": 153,
+    "id": 22
+  }
+]
