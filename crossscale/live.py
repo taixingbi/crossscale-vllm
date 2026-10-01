@@ -32,7 +32,7 @@ async def events(response):
                 yield json.loads(payload)
 
 
-async def run(c, baseline, out, url, model, tokens_path, *, trace=None):
+async def run(c, baseline, out, url, model, tokens_path, *, trace=None, on_start=None):
     if Path(out).exists():
         raise FileExistsError(out)
     http = aio()
@@ -44,6 +44,8 @@ async def run(c, baseline, out, url, model, tokens_path, *, trace=None):
         raise ValueError("token corpus too short for sampled inputs; supply a larger tokenized corpus")
     begin = time.monotonic()
     wall = time.time()
+    if on_start is not None:
+        on_start(wall)
     headers = {"Authorization": "Bearer " + os.environ["VLLM_API_KEY"]} if os.environ.get("VLLM_API_KEY") else {}
     async with http.ClientSession(timeout=http.ClientTimeout(total=c["request_timeout_s"]), connector=http.TCPConnector(limit=0, force_close=c.get("client_force_close", False)), headers=headers) as session:
         async def send(r):

@@ -68,6 +68,7 @@ class Cluster:
             'scaledobject': '/apis/keda.sh/v1alpha1/namespaces/crossscale/scaledobjects',
             'hpa': '/apis/autoscaling/v2/namespaces/crossscale/horizontalpodautoscalers',
             'events': '/api/v1/namespaces/crossscale/events',
+            'endpointslices': '/apis/discovery.k8s.io/v1/namespaces/crossscale/endpointslices',
         }
         return paths[kind] + ('/' + name if name else '')
 

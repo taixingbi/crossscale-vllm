@@ -97,7 +97,7 @@ without changing the model/SLO condition. E5–E8 remain unrun.
 
 configs/revision-20261001-e5-plan.json fixes 90 paired runs: five nonempty-tenant
 seeds, six nominal delays, and three admission variants. Arrivals last 600s,
-drain 180s, burst from 60–360s using .65/.1.65 times the amended measured mixed
+drain 180s, burst from 60–360s using .65/1.65 times the amended measured mixed
 capacity. Two of four prewarmed replicas become eligible at t=60+delay. Four
 GPUs remain allocated during each run, including when only two can serve.
 The randomized order, examined seeds, trace hashes, metrics and paired analysis
@@ -113,3 +113,25 @@ early release, or lost baseline capacity abort with evidence preserved.
 Six local gate/state/plan tests pass. The live suite executor, four-model setup,
 EndpointSlice verification and restoration integration are still to be built;
 no E5 measurement is running. The healthy original GPU remains the only replica.
+
+## Live executor implemented
+
+revision_e5_live.py uses exclusive suite.lock, rejects an existing output,
+requires restored E4 and both six-condition validations, and checks exact plan
+equality. Recreate rollout limits prewarming to four GPUs. All four engines
+must independently complete a 16,384-token prompt before measured runs. Each
+run verifies exactly two baseline Ready and Service-routable UIDs before
+starting its clock; gates then release the other two at the frozen deadline.
+Observer retains raw Kubernetes/EndpointSlice evidence plus separately labeled
+controlled desired capacity and nominal ETA. It never rewrites raw deployment
+replica counts. Observed readiness/routing must satisfy the five-second limit.
+Failures stop the phase, preserve evidence, and enter scoped original-template
+restoration. No autoscaler is installed during this controlled comparison.
+
+24 local tests pass in the project virtual environment, including streaming
+HTTP integration, observer compatibility, early routing, late release, actual
+readiness slots and paired traces. The system Python skipped four HTTP tests;
+the virtual environment rerun passed all 24 without skips. Deployment requires
+the owned controlled-capacity Role/RoleBinding (pods/status patch plus read-only
+EndpointSlice access); remove it when controlled experiments finish. Pod status
+writes are additionally guarded by owner label, UID and resource version.

@@ -18,11 +18,12 @@ def save(path, value):
 
 
 class Observer:
-    def __init__(self, cluster, out, eta=60, interval_s=1, capture_scaler=False):
+    def __init__(self, cluster, out, eta=60, interval_s=1, capture_scaler=False, state_builder=None):
         if interval_s <= 0:
             raise ValueError("Observer interval must be positive")
         self.interval_s = interval_s
         self.capture_scaler = capture_scaler
+        self.state_builder = state_builder
         self.cluster, self.out, self.eta = cluster, Path(out), eta
         self.stop = threading.Event()
         self.started = threading.Event()
@@ -43,13 +44,17 @@ class Observer:
                         scaler['events'] = self.cluster.get('events')
                         scaler['read_finished_unix_s'] = time.time()
                         obs['scaler'] = scaler
-                    stream.write(json.dumps(obs) + '\n')
-                    stream.flush()
                     pods = [p for p in obs['pods'] if not p['metadata'].get('deletionTimestamp')]
-                    save(self.out / 'state.json', {
+                    state = {
                         'observed_unix_s': obs['observed_unix_s'],
                         'ready': sum(ready(p) for p in pods), 'desired': obs['deployment']['spec']['replicas'],
-                        'pending_eta_unix_s': [stamp(p['metadata']['creationTimestamp']) + self.eta for p in pods if not ready(p)]})
+                        'pending_eta_unix_s': [stamp(p['metadata']['creationTimestamp']) + self.eta for p in pods if not ready(p)]}
+                    if self.state_builder is not None:
+                        state = self.state_builder(obs)
+                        obs['controlled_capacity'] = state
+                    stream.write(json.dumps(obs) + '\n')
+                    stream.flush()
+                    save(self.out / 'state.json', state)
                     self.started.set()
                     self.stop.wait(self.interval_s)
         except Exception as exc:
