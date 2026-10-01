@@ -253,3 +253,10 @@ restoration are checkpointed with this entry. Outcome analysis remains pending.
 E5–E8 remain unrun. E5 requires implementation and live validation of controlled
 usable-capacity delay; natural provisioning observations cannot substitute for
 its 0/15/30/60/90/120-second controlled conditions.
+
+## E6 ETA-error waiter armed — 2026-10-01
+
+E5 is the live controller. E6 is frozen on E5 traces, lag 60s, seven variants
+(no-ETA, ±50/±25/0, scheduled oracle), 35 runs. Waiter polls E5
+complete+restore and will not start from a failed-only E5 error. Find commit
+with `git log --grep="Freeze E6 ETA-error and wait for E5"`.

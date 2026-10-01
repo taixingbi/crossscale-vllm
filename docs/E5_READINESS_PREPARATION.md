@@ -145,3 +145,15 @@ and passed directly to the live client. Validation also checks generated IDs,
 tenants and lengths exactly and arrival differences within 1ns; this tolerance
 only diagnoses generator portability, never changes the deployed frozen trace.
 The original launch log is retained separately. All 24 tests still pass.
+
+## E6 waiter, October 1
+
+E6 is frozen before outcomes on the same E5 traces and the 60s controlled lag:
+no-ETA (B5), B6 ETA errors -50/-25/0/+25/+50%, and a scheduled-release oracle.
+35 paired runs; practical effect 0.05. Oracle is known controlled-release
+knowledge, not a natural EC2 predictor. `eta-0` and oracle share that instant.
+The waiter (`e6-waiter.pid`) polls E5 and does not take `suite.lock` until
+execute. It starts only after E5 `complete.json` and `restored.json`, and
+refuses a failed-only E5 error. Plan SHA
+`dd66e98af0ae0a692b8c79f532036f6941ba8c5c5f3a9e89164928dba08ad23b`.
+Do not overwrite the live E5 executor.

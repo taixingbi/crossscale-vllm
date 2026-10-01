@@ -1,14 +1,11 @@
 # Post-E0 execution order — user revision, 2026-09-12
 
-**Current status (2026-09-30):** E0 and isolated E1 are complete under the
-original 1.5s B SLO. Mixed E1 is complete and **unqualified at 1.5s**.
-[PROTOCOL_AMENDMENT_20260930.md](PROTOCOL_AMENDMENT_20260930.md) changes only
-B TTFT to 3.0s and requalifies existing traces: mixed 0.025 RPS on one and two
-GPUs. E2 offered loads are 0.01625 / 0.04125 RPS. The live B2/B3 controller
-(PID 163681) holds `suite.lock`. E3 B3/B5/B6 is frozen and waits for E2
-`complete.json` plus `restored.json`; it will not start from a failed-only
-`error.json`. Do not launch a second controller or historical `study.py`.
-See `revision-20260930/` and [E2_SERVING_RECOVERY.md](E2_SERVING_RECOVERY.md).
+**Current status (2026-10-01):** E0–E4 are complete and restored. E5 controlled
+prewarmed-capacity (PID 174125) holds `suite.lock` (90 paired cells; dest
+`revision-20260912/e5-controlled-prewarmed-capacity`). E6 ETA-error is frozen
+and waits for E5 `complete.json` plus `restored.json`; it will not start from a
+failed-only `error.json`. Do not launch a second controller or historical
+`study.py`. See [E5_READINESS_PREPARATION.md](E5_READINESS_PREPARATION.md).
 
 This revision supersedes the old E1–E7 numbering and automatic continuation
 gate in FULL_EXPERIMENT_PROTOCOL.md. Preserve all historical results and labels;
