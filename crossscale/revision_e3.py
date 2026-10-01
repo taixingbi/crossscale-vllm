@@ -184,12 +184,16 @@ def _run_suite(root, dest, frozen, slo_threshold):
                     if time.monotonic() > deadline:
                         raise RuntimeError('gateway not freshly scraped by Prometheus')
                     time.sleep(2)
-                study.install_scaler(baseline, config.get('slo_threshold', 1))
-                until = time.monotonic() + 60
-                while time.monotonic() < until and not study.k.get('hpa')['items']:
-                    time.sleep(1)
-                if not study.k.get('hpa')['items']:
-                    raise RuntimeError('KEDA did not create an HPA')
+                if baseline == 'B4':
+                    if study.k.get('hpa')['items'] or study.k.get('scaledobject', 'vllm', missing_ok=True):
+                        raise RuntimeError('Admission-only must have no autoscaler')
+                else:
+                    study.install_scaler(baseline, config.get('slo_threshold', 1))
+                    until = time.monotonic() + 60
+                    while time.monotonic() < until and not study.k.get('hpa')['items']:
+                        time.sleep(1)
+                    if not study.k.get('hpa')['items']:
+                        raise RuntimeError('KEDA did not create an HPA')
                 save(folder / 'scaler-before.json', {
                     'scaledobject': study.k.get('scaledobject', 'vllm', missing_ok=True),
                     'hpa': study.k.get('hpa'),

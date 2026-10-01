@@ -349,3 +349,15 @@ No completed provisioning-gap benefit is established. Reproduce using
 scripts/report-priority-e3.py; full per-run gaps, sample counts and pairing
 checks are in revision-20260912/e3-priority-analysis.json. Proceed to B2/B4
 and E4–E8 despite the negative checkpoint, with fresh frozen phase plans.
+
+## Frozen E3 B2/B4 extension, October 1
+
+configs/revision-20261001-e3-b2-b4-plan.json freezes ten runs on the same
+five seeds and trace generator as the priority trio, with randomized order
+seed 20261001. B2 uses actual queue KEDA; B4 runs admission on two fixed GPUs
+and refuses an existing HPA/ScaledObject. All workload/SLO/serving/admission
+settings and E2-selected threshold remain unchanged. The extension is measured
+later, not concurrently with the priority trio; report that temporal limitation.
+The new executor requires priority completion/restoration and writes a fresh
+e3-b2-b4 directory under suite.lock. Eight existing E3 tests pass. The negative
+priority checkpoint is retained and does not prevent this authorized extension.
