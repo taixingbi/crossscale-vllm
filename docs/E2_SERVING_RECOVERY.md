@@ -327,3 +327,14 @@ is retained under e2-b2-b3-continuation-20260930 and mirrored from private S3.
 This records execution completion; actual scale-out, censoring and comparative
 SLO results still require analysis, and must not be inferred from run markers.
 The frozen E3 trio can now execute against this continuation's tuning record.
+
+## Priority E3 execution completed, October 1
+
+All 15 frozen B3/B5/B6 runs completed and are dispatch-valid. Completion and
+restoration records are present; PID 166231 exited, suite.lock is free and
+one original-condition replica is Ready. The added baseline instance
+ i-01e9666c2d77fe60c terminated normally. Raw requests, observations, gateway
+logs and telemetry are archived under e3-b3-b5-b6 and mirrored locally.
+The paired go/no-go and provisioning-gap analysis remain pending. Completion
+alone does not support the desired baseline ordering or ETA benefit. E3 B2/B4
+and E4–E8 remain unrun and must continue after the priority analysis checkpoint.

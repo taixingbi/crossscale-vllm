@@ -1,0 +1,171 @@
+{
+  "revision": "revision-20260930",
+  "phase": "e3-b3-b5-b6",
+  "slo_revision": "revision-20260930-b-ttft-3s",
+  "admission_policy_revision": "revision-20260912",
+  "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off",
+  "capacity_rps": 0.025,
+  "low_factor": 0.65,
+  "high_factor": 1.65,
+  "duration_s": 300,
+  "drain_s": 180,
+  "burst_s": [
+    60,
+    180
+  ],
+  "eval_seeds": [
+    821,
+    822,
+    824,
+    826,
+    828
+  ],
+  "eval_examined": [
+    {
+      "seed": 821,
+      "offered_by_tenant": {
+        "A": 3,
+        "B": 2,
+        "C": 1
+      },
+      "selected": true
+    },
+    {
+      "seed": 822,
+      "offered_by_tenant": {
+        "A": 4,
+        "B": 4,
+        "C": 1
+      },
+      "selected": true
+    },
+    {
+      "seed": 823,
+      "offered_by_tenant": {
+        "A": 3,
+        "B": 0,
+        "C": 0
+      },
+      "selected": false
+    },
+    {
+      "seed": 824,
+      "offered_by_tenant": {
+        "A": 2,
+        "B": 3,
+        "C": 1
+      },
+      "selected": true
+    },
+    {
+      "seed": 825,
+      "offered_by_tenant": {
+        "A": 5,
+        "B": 6,
+        "C": 0
+      },
+      "selected": false
+    },
+    {
+      "seed": 826,
+      "offered_by_tenant": {
+        "A": 2,
+        "B": 2,
+        "C": 3
+      },
+      "selected": true
+    },
+    {
+      "seed": 827,
+      "offered_by_tenant": {
+        "A": 6,
+        "B": 4,
+        "C": 0
+      },
+      "selected": false
+    },
+    {
+      "seed": 828,
+      "offered_by_tenant": {
+        "A": 7,
+        "B": 1,
+        "C": 2
+      },
+      "selected": true
+    }
+  ],
+  "eval_order": [
+    [
+      826,
+      "B3"
+    ],
+    [
+      828,
+      "B3"
+    ],
+    [
+      821,
+      "B5"
+    ],
+    [
+      821,
+      "B6"
+    ],
+    [
+      822,
+      "B6"
+    ],
+    [
+      821,
+      "B3"
+    ],
+    [
+      828,
+      "B6"
+    ],
+    [
+      828,
+      "B5"
+    ],
+    [
+      824,
+      "B6"
+    ],
+    [
+      822,
+      "B5"
+    ],
+    [
+      822,
+      "B3"
+    ],
+    [
+      826,
+      "B6"
+    ],
+    [
+      826,
+      "B5"
+    ],
+    [
+      824,
+      "B3"
+    ],
+    [
+      824,
+      "B5"
+    ]
+  ],
+  "order_seed": 20260930,
+  "baselines": [
+    "B3",
+    "B5",
+    "B6"
+  ],
+  "slots_per_replica": 1,
+  "prefill_tokens_s": 3305.8201319531686,
+  "practical_effect": 0.05,
+  "slo_threshold": "e2-slo-tuning.json",
+  "limitation": "Priority trio only; B2/B4 wait for this checkpoint. Uses E2 frozen SLO threshold.",
+  "matched_scale": "forbidden; KEDA/HPA must request 2-to-4"
+}

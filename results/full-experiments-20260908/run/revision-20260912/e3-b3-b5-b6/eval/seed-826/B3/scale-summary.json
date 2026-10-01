@@ -1,0 +1,55 @@
+{
+  "episodes": [
+    {
+      "scale_observed_unix_s": 1790824324.2097063,
+      "target": 3,
+      "from_replicas": 2,
+      "capacity_ready_unix_s": null,
+      "gap_s": null,
+      "censor_reason": "observation_ended"
+    }
+  ],
+  "pod_stages": [
+    {
+      "pod": "vllm-6f9588fbdf-9dnc4",
+      "uid": "b2e77713-6e20-4fbc-ba83-1e83ac57a6f3",
+      "pod_created_unix_s": 1790823133.0,
+      "vllm_ready_unix_s": 1790824133.0,
+      "pod_scheduled_unix_s": 1790823188.0,
+      "container_started_unix_s": 1790823932.0,
+      "node": "ip-10-42-19-173.ec2.internal",
+      "node_ready_unix_s": 1790823172.0,
+      "nodeclaim_created_unix_s": 1790823134.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-jprb4",
+      "uid": "9ab08413-ca2a-475f-8f1e-a674ff12a7b9",
+      "pod_created_unix_s": 1790822974.0,
+      "vllm_ready_unix_s": 1790823130.0,
+      "pod_scheduled_unix_s": 1790822974.0,
+      "container_started_unix_s": 1790822977.0,
+      "node": "ip-10-42-9-196.ec2.internal",
+      "node_ready_unix_s": 1788895749.0,
+      "nodeclaim_created_unix_s": 1788895712.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-shnfv",
+      "uid": "2e37b330-e8c1-4bc5-a830-6766a1bd4360",
+      "pod_created_unix_s": 1790824323.0,
+      "pod_scheduled_unix_s": 1790824378.0,
+      "node": "ip-10-42-19-253.ec2.internal",
+      "node_ready_unix_s": 1790824361.0,
+      "nodeclaim_created_unix_s": 1790824324.0
+    }
+  ],
+  "gap_statistics": {
+    "completed": 0,
+    "censored": 1,
+    "p50_s": null,
+    "p90_s": null,
+    "p99_s": null,
+    "min_s": null,
+    "max_s": null
+  },
+  "timing": "poll-observed transitions, not exact HPA decision timestamps; raw Kubernetes conditions retained"
+}
