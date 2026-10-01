@@ -1,0 +1,128 @@
+[
+  {
+    "lag_s": 0,
+    "start_unix_s": 1790878923.4033458,
+    "target_unix_s": 1790878923.4033458,
+    "patch_requested_unix_s": 1790878923.403349,
+    "endpoint_ready_unix_s": 1790878924.4507189,
+    "observed_lag_s": 1.0473730564117432,
+    "late_s": 1.0473730564117432,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790878923.402575
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "<!DOCTYPE HTML>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Directory listing for /</title>\n</head>\n<body>\n<h1>Directory listing for /</h1>\n<hr>\n<ul>\n<li><a href=\"bin/\">bin@</a></li>\n<li><a href=\"boot/\">boot/</a></li>\n<li><a href=\"dev/\">dev/</a></li>\n<li><a href=\"etc/\">etc/</a></li>\n<li><a href=\"home/\">home/</a></li>\n<li><a href=\"lib/\">lib@</a></li>\n<li><a href=\"lib64/\">lib64@</a></li>\n<li><a href=\"media/\">media/</a></li>\n<li><a href=\"mnt/\">mnt/</a></li>\n<li><a href=\"opt/\">opt/</a></li>\n<li><a href=\"proc/\">proc/</a></li>\n<li><a href=\"root/\">root/</a></li>\n<li><a href=\"run/\">run/</a></li>\n<li><a href=\"sbin/\">sbin@</a></li>\n<li><a href=\"srv/\">srv/</a></li>\n<li><a href=\"sys/\">sys/</a></li>\n<li><a href=\"tmp/\">tmp/</a></li>\n<li><a href=\"usr/\">usr/</a></li>\n<li><a href=\"var/\">var/</a></li>\n</ul>\n<hr>\n</body>\n</html>\n\n",
+      "error": "",
+      "unix_s": 1790878924.978282
+    }
+  },
+  {
+    "lag_s": 15,
+    "start_unix_s": 1790878926.534768,
+    "target_unix_s": 1790878941.534768,
+    "patch_requested_unix_s": 1790878941.537167,
+    "endpoint_ready_unix_s": 1790878942.638842,
+    "observed_lag_s": 16.104074001312256,
+    "late_s": 1.1040740013122559,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790878926.533964
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "<!DOCTYPE HTML>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Directory listing for /</title>\n</head>\n<body>\n<h1>Directory listing for /</h1>\n<hr>\n<ul>\n<li><a href=\"bin/\">bin@</a></li>\n<li><a href=\"boot/\">boot/</a></li>\n<li><a href=\"dev/\">dev/</a></li>\n<li><a href=\"etc/\">etc/</a></li>\n<li><a href=\"home/\">home/</a></li>\n<li><a href=\"lib/\">lib@</a></li>\n<li><a href=\"lib64/\">lib64@</a></li>\n<li><a href=\"media/\">media/</a></li>\n<li><a href=\"mnt/\">mnt/</a></li>\n<li><a href=\"opt/\">opt/</a></li>\n<li><a href=\"proc/\">proc/</a></li>\n<li><a href=\"root/\">root/</a></li>\n<li><a href=\"run/\">run/</a></li>\n<li><a href=\"sbin/\">sbin@</a></li>\n<li><a href=\"srv/\">srv/</a></li>\n<li><a href=\"sys/\">sys/</a></li>\n<li><a href=\"tmp/\">tmp/</a></li>\n<li><a href=\"usr/\">usr/</a></li>\n<li><a href=\"var/\">var/</a></li>\n</ul>\n<hr>\n</body>\n</html>\n\n",
+      "error": "",
+      "unix_s": 1790878943.164331
+    }
+  },
+  {
+    "lag_s": 30,
+    "start_unix_s": 1790878944.88304,
+    "target_unix_s": 1790878974.88304,
+    "patch_requested_unix_s": 1790878974.890455,
+    "endpoint_ready_unix_s": 1790878975.9341528,
+    "observed_lag_s": 31.05111289024353,
+    "late_s": 1.0511128902435303,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790878944.88226
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "<!DOCTYPE HTML>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Directory listing for /</title>\n</head>\n<body>\n<h1>Directory listing for /</h1>\n<hr>\n<ul>\n<li><a href=\"bin/\">bin@</a></li>\n<li><a href=\"boot/\">boot/</a></li>\n<li><a href=\"dev/\">dev/</a></li>\n<li><a href=\"etc/\">etc/</a></li>\n<li><a href=\"home/\">home/</a></li>\n<li><a href=\"lib/\">lib@</a></li>\n<li><a href=\"lib64/\">lib64@</a></li>\n<li><a href=\"media/\">media/</a></li>\n<li><a href=\"mnt/\">mnt/</a></li>\n<li><a href=\"opt/\">opt/</a></li>\n<li><a href=\"proc/\">proc/</a></li>\n<li><a href=\"root/\">root/</a></li>\n<li><a href=\"run/\">run/</a></li>\n<li><a href=\"sbin/\">sbin@</a></li>\n<li><a href=\"srv/\">srv/</a></li>\n<li><a href=\"sys/\">sys/</a></li>\n<li><a href=\"tmp/\">tmp/</a></li>\n<li><a href=\"usr/\">usr/</a></li>\n<li><a href=\"var/\">var/</a></li>\n</ul>\n<hr>\n</body>\n</html>\n\n",
+      "error": "",
+      "unix_s": 1790878976.468226
+    }
+  },
+  {
+    "lag_s": 60,
+    "start_unix_s": 1790878978.027777,
+    "target_unix_s": 1790879038.027777,
+    "patch_requested_unix_s": 1790879038.0317419,
+    "endpoint_ready_unix_s": 1790879039.128012,
+    "observed_lag_s": 61.10023498535156,
+    "late_s": 1.1002349853515625,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790878978.026965
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "<!DOCTYPE HTML>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Directory listing for /</title>\n</head>\n<body>\n<h1>Directory listing for /</h1>\n<hr>\n<ul>\n<li><a href=\"bin/\">bin@</a></li>\n<li><a href=\"boot/\">boot/</a></li>\n<li><a href=\"dev/\">dev/</a></li>\n<li><a href=\"etc/\">etc/</a></li>\n<li><a href=\"home/\">home/</a></li>\n<li><a href=\"lib/\">lib@</a></li>\n<li><a href=\"lib64/\">lib64@</a></li>\n<li><a href=\"media/\">media/</a></li>\n<li><a href=\"mnt/\">mnt/</a></li>\n<li><a href=\"opt/\">opt/</a></li>\n<li><a href=\"proc/\">proc/</a></li>\n<li><a href=\"root/\">root/</a></li>\n<li><a href=\"run/\">run/</a></li>\n<li><a href=\"sbin/\">sbin@</a></li>\n<li><a href=\"srv/\">srv/</a></li>\n<li><a href=\"sys/\">sys/</a></li>\n<li><a href=\"tmp/\">tmp/</a></li>\n<li><a href=\"usr/\">usr/</a></li>\n<li><a href=\"var/\">var/</a></li>\n</ul>\n<hr>\n</body>\n</html>\n\n",
+      "error": "",
+      "unix_s": 1790879039.686017
+    }
+  },
+  {
+    "lag_s": 90,
+    "start_unix_s": 1790879041.291949,
+    "target_unix_s": 1790879131.291949,
+    "patch_requested_unix_s": 1790879131.299215,
+    "endpoint_ready_unix_s": 1790879132.4807491,
+    "observed_lag_s": 91.18880009651184,
+    "late_s": 1.1888000965118408,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790879041.291095
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "<!DOCTYPE HTML>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Directory listing for /</title>\n</head>\n<body>\n<h1>Directory listing for /</h1>\n<hr>\n<ul>\n<li><a href=\"bin/\">bin@</a></li>\n<li><a href=\"boot/\">boot/</a></li>\n<li><a href=\"dev/\">dev/</a></li>\n<li><a href=\"etc/\">etc/</a></li>\n<li><a href=\"home/\">home/</a></li>\n<li><a href=\"lib/\">lib@</a></li>\n<li><a href=\"lib64/\">lib64@</a></li>\n<li><a href=\"media/\">media/</a></li>\n<li><a href=\"mnt/\">mnt/</a></li>\n<li><a href=\"opt/\">opt/</a></li>\n<li><a href=\"proc/\">proc/</a></li>\n<li><a href=\"root/\">root/</a></li>\n<li><a href=\"run/\">run/</a></li>\n<li><a href=\"sbin/\">sbin@</a></li>\n<li><a href=\"srv/\">srv/</a></li>\n<li><a href=\"sys/\">sys/</a></li>\n<li><a href=\"tmp/\">tmp/</a></li>\n<li><a href=\"usr/\">usr/</a></li>\n<li><a href=\"var/\">var/</a></li>\n</ul>\n<hr>\n</body>\n</html>\n\n",
+      "error": "",
+      "unix_s": 1790879133.029165
+    }
+  },
+  {
+    "lag_s": 120,
+    "start_unix_s": 1790879134.5538502,
+    "target_unix_s": 1790879254.5538502,
+    "patch_requested_unix_s": 1790879254.5625842,
+    "endpoint_ready_unix_s": 1790879255.685583,
+    "observed_lag_s": 121.13173294067383,
+    "late_s": 1.1317329406738281,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790879134.5528052
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "<!DOCTYPE HTML>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Directory listing for /</title>\n</head>\n<body>\n<h1>Directory listing for /</h1>\n<hr>\n<ul>\n<li><a href=\"bin/\">bin@</a></li>\n<li><a href=\"boot/\">boot/</a></li>\n<li><a href=\"dev/\">dev/</a></li>\n<li><a href=\"etc/\">etc/</a></li>\n<li><a href=\"home/\">home/</a></li>\n<li><a href=\"lib/\">lib@</a></li>\n<li><a href=\"lib64/\">lib64@</a></li>\n<li><a href=\"media/\">media/</a></li>\n<li><a href=\"mnt/\">mnt/</a></li>\n<li><a href=\"opt/\">opt/</a></li>\n<li><a href=\"proc/\">proc/</a></li>\n<li><a href=\"root/\">root/</a></li>\n<li><a href=\"run/\">run/</a></li>\n<li><a href=\"sbin/\">sbin@</a></li>\n<li><a href=\"srv/\">srv/</a></li>\n<li><a href=\"sys/\">sys/</a></li>\n<li><a href=\"tmp/\">tmp/</a></li>\n<li><a href=\"usr/\">usr/</a></li>\n<li><a href=\"var/\">var/</a></li>\n</ul>\n<hr>\n</body>\n</html>\n\n",
+      "error": "",
+      "unix_s": 1790879256.227357
+    }
+  }
+]

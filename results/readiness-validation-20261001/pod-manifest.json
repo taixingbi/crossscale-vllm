@@ -1,0 +1,50 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "crossscale-gate-validation-20261001",
+    "labels": {
+      "crossscale-controlled-capacity": "validation-20261001",
+      "app": "crossscale-gate-validation-20261001"
+    }
+  },
+  "spec": {
+    "restartPolicy": "Never",
+    "nodeSelector": {
+      "kubernetes.io/arch": "amd64"
+    },
+    "containers": [
+      {
+        "name": "http",
+        "image": "python@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534",
+        "command": [
+          "python3",
+          "-m",
+          "http.server",
+          "8080"
+        ],
+        "resources": {
+          "requests": {
+            "cpu": "10m",
+            "memory": "32Mi"
+          },
+          "limits": {
+            "memory": "128Mi"
+          }
+        },
+        "readinessProbe": {
+          "httpGet": {
+            "path": "/",
+            "port": 8080
+          },
+          "periodSeconds": 1
+        }
+      }
+    ],
+    "readinessGates": [
+      {
+        "conditionType": "crossscale.dev/CapacityReleased"
+      }
+    ]
+  }
+}

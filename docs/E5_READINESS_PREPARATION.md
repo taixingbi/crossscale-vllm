@@ -39,3 +39,19 @@ artifacts are preserved under results/readiness-validation-20261001; automatic
 cleanup checks resource UID and ownership label before deletion, then archives
 to the matching private S3 prefix. This validates Kubernetes routing only, not
 GPU readiness, runner status-patch RBAC, or the complete E5 experiment design.
+
+## CPU validation completed
+
+All six conditions passed real HTTP exclusion/release checks. Observed
+EndpointSlice readiness was 1.047/1.104/1.051/1.100/1.189/1.132 seconds after
+scheduled release for delays 0/15/30/60/90/120 respectively, within the declared
+5-second tolerance. These are observed control-plane delays, not exact zero
+latency. Complete and UID-checked cleanup records are present; the process
+exited successfully and private S3 upload succeeded. Raw evidence is committed
+under results/readiness-validation-20261001. No GPU measurement occurred.
+
+Remaining before E5: runner pods/status permission, four-model prewarming,
+actual inference exclusion/release, usable-capacity observation and ETA input
+integration, restoration validation, and frozen measurement protocol. A fixed
+controlled release schedule must be labeled as such; it cannot be represented
+as a natural KEDA decision or natural EC2 provisioning. No E5–E8 result exists.

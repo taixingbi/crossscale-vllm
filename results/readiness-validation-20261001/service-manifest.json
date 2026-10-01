@@ -1,0 +1,21 @@
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "crossscale-gate-validation-20261001",
+    "labels": {
+      "crossscale-controlled-capacity": "validation-20261001"
+    }
+  },
+  "spec": {
+    "selector": {
+      "app": "crossscale-gate-validation-20261001"
+    },
+    "ports": [
+      {
+        "port": 8080,
+        "targetPort": 8080
+      }
+    ]
+  }
+}
