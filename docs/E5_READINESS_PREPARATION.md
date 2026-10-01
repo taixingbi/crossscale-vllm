@@ -29,3 +29,13 @@ Current validation: three local tests check no early release at all six delays,
 replacement UID rejection, ownership/gate checks, condition preservation and
 resource-version preconditions. No Kubernetes resource was changed by these
 tests; live validation and the experiment controller remain outstanding.
+
+Live CPU routing validation launched October 1 at about 18:21 UTC using
+scripts/validate-readiness-gate.py. It creates only the uniquely named
+crossscale-gate-validation-20261001 Pod and Service, checks HTTP exclusion
+while gated, then release and EndpointSlice readiness for all six delays.
+Timing tolerance was fixed at 5 seconds before its outcomes. Source and raw
+artifacts are preserved under results/readiness-validation-20261001; automatic
+cleanup checks resource UID and ownership label before deletion, then archives
+to the matching private S3 prefix. This validates Kubernetes routing only, not
+GPU readiness, runner status-patch RBAC, or the complete E5 experiment design.
