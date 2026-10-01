@@ -1,0 +1,21 @@
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "crossscale-gate-gpu-validation-20261001",
+    "labels": {
+      "crossscale-controlled-capacity": "gpu-validation-20261001"
+    }
+  },
+  "spec": {
+    "selector": {
+      "app": "crossscale-gate-gpu-validation-20261001"
+    },
+    "ports": [
+      {
+        "port": 8080,
+        "targetPort": 8000
+      }
+    ]
+  }
+}

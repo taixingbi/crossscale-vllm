@@ -75,3 +75,20 @@ ownership-aware empty-claim cleanup. Startup deadline is 2400 seconds; all six
 delays retain the CPU validation's predeclared 5-second release tolerance.
 Each released probe requests a real four-token completion; gated probes must
 fail to connect. This is capability validation, not a paired E5 result.
+
+## GPU validation completed
+
+All six GPU conditions passed, with real nonempty completion responses after
+release and failed connectivity while gated. EndpointSlice release occurred
+0.938/1.052/1.010/1.099/1.025/0.998 seconds after the scheduled time for delays
+0/15/30/60/90/120. All were within the predeclared five-second tolerance.
+The actual runner's status patch helper and pod-scoped permission worked.
+Controller exited successfully; proof Pod/Service and owned empty GPU cleanup
+completed, suite.lock released, and temporary Role/RoleBinding were removed
+only after checking their rules/subjects against saved manifests. Evidence is
+local and private S3 under readiness-gpu-validation-20261001.
+
+This establishes single-pod inference routing control, not a four-replica E5
+measurement. Next implement/freeze the controlled-capacity workload controller,
+verify two baseline plus two withheld replicas, and integrate ETA observation
+without changing the model/SLO condition. E5–E8 remain unrun.

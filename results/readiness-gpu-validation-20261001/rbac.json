@@ -1,0 +1,50 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "items": [
+    {
+      "apiVersion": "rbac.authorization.k8s.io/v1",
+      "kind": "Role",
+      "metadata": {
+        "name": "crossscale-gate-gpu-validation-20261001",
+        "namespace": "crossscale"
+      },
+      "rules": [
+        {
+          "apiGroups": [
+            ""
+          ],
+          "resources": [
+            "pods/status"
+          ],
+          "resourceNames": [
+            "crossscale-gate-gpu-validation-20261001"
+          ],
+          "verbs": [
+            "patch"
+          ]
+        }
+      ]
+    },
+    {
+      "apiVersion": "rbac.authorization.k8s.io/v1",
+      "kind": "RoleBinding",
+      "metadata": {
+        "name": "crossscale-gate-gpu-validation-20261001",
+        "namespace": "crossscale"
+      },
+      "roleRef": {
+        "apiGroup": "rbac.authorization.k8s.io",
+        "kind": "Role",
+        "name": "crossscale-gate-gpu-validation-20261001"
+      },
+      "subjects": [
+        {
+          "kind": "ServiceAccount",
+          "name": "crossscale-experiment-runner",
+          "namespace": "crossscale"
+        }
+      ]
+    }
+  ]
+}

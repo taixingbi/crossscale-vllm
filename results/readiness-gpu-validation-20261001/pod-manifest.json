@@ -1,0 +1,204 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "crossscale-gate-gpu-validation-20261001",
+    "labels": {
+      "crossscale-controlled-capacity": "gpu-validation-20261001",
+      "app": "crossscale-gate-gpu-validation-20261001"
+    }
+  },
+  "spec": {
+    "containers": [
+      {
+        "args": [
+          "/models/llama",
+          "--served-model-name",
+          "meta-llama/Llama-3.1-8B-Instruct",
+          "--max-model-len",
+          "32768",
+          "--max-num-seqs",
+          "4",
+          "--max-num-batched-tokens",
+          "4096",
+          "--enable-chunked-prefill",
+          "--no-enable-prefix-caching",
+          "--gpu-memory-utilization",
+          "0.90",
+          "--enforce-eager"
+        ],
+        "env": [
+          {
+            "name": "HF_HUB_OFFLINE",
+            "value": "1"
+          },
+          {
+            "name": "TRANSFORMERS_OFFLINE",
+            "value": "1"
+          }
+        ],
+        "image": "vllm/vllm-openai:v0.28.0-cu129-ubuntu2404@sha256:56b291b6179fe5e6e6ad5c509d362e745280ccdbe81ecbc0f5155b1cab0ebfc5",
+        "imagePullPolicy": "IfNotPresent",
+        "name": "vllm",
+        "ports": [
+          {
+            "containerPort": 8000,
+            "name": "http",
+            "protocol": "TCP"
+          }
+        ],
+        "readinessProbe": {
+          "failureThreshold": 3,
+          "httpGet": {
+            "path": "/health",
+            "port": "http",
+            "scheme": "HTTP"
+          },
+          "periodSeconds": 1,
+          "successThreshold": 1,
+          "timeoutSeconds": 1
+        },
+        "resources": {
+          "limits": {
+            "ephemeral-storage": "40Gi",
+            "memory": "12Gi",
+            "nvidia.com/gpu": "1"
+          },
+          "requests": {
+            "cpu": "2",
+            "ephemeral-storage": "20Gi",
+            "memory": "10Gi",
+            "nvidia.com/gpu": "1"
+          }
+        },
+        "startupProbe": {
+          "failureThreshold": 180,
+          "httpGet": {
+            "path": "/health",
+            "port": "http",
+            "scheme": "HTTP"
+          },
+          "periodSeconds": 5,
+          "successThreshold": 1,
+          "timeoutSeconds": 1
+        },
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "volumeMounts": [
+          {
+            "mountPath": "/dev/shm",
+            "name": "shm"
+          },
+          {
+            "mountPath": "/models",
+            "name": "model",
+            "readOnly": true
+          }
+        ]
+      }
+    ],
+    "dnsPolicy": "ClusterFirst",
+    "enableServiceLinks": false,
+    "initContainers": [
+      {
+        "command": [
+          "/bin/sh",
+          "/model-bootstrap/download-model.sh"
+        ],
+        "env": [
+          {
+            "name": "MODEL_BUCKET",
+            "value": "huggingface-model-registry-646821141010-us-east-1"
+          },
+          {
+            "name": "MODEL_PREFIX",
+            "value": "inference/meta-llama/Llama-3.1-8B-Instruct"
+          },
+          {
+            "name": "AWS_DEFAULT_REGION",
+            "value": "us-east-1"
+          },
+          {
+            "name": "AWS_EC2_METADATA_DISABLED",
+            "value": "true"
+          },
+          {
+            "name": "MODEL_CACHE_ENABLED",
+            "value": "1"
+          }
+        ],
+        "image": "public.ecr.aws/aws-cli/aws-cli:2.36.17",
+        "imagePullPolicy": "IfNotPresent",
+        "name": "download-model",
+        "resources": {
+          "limits": {
+            "ephemeral-storage": "40Gi",
+            "memory": "1Gi"
+          },
+          "requests": {
+            "cpu": "1",
+            "ephemeral-storage": "20Gi",
+            "memory": "512Mi"
+          }
+        },
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "volumeMounts": [
+          {
+            "mountPath": "/models",
+            "name": "model"
+          },
+          {
+            "mountPath": "/model-bootstrap",
+            "name": "model-bootstrap",
+            "readOnly": true
+          }
+        ]
+      }
+    ],
+    "nodeSelector": {
+      "node.kubernetes.io/instance-type": "g5.xlarge"
+    },
+    "restartPolicy": "Never",
+    "schedulerName": "default-scheduler",
+    "securityContext": {},
+    "serviceAccount": "vllm-model-reader",
+    "serviceAccountName": "vllm-model-reader",
+    "terminationGracePeriodSeconds": 30,
+    "tolerations": [
+      {
+        "effect": "NoSchedule",
+        "key": "nvidia.com/gpu",
+        "operator": "Exists"
+      }
+    ],
+    "volumes": [
+      {
+        "hostPath": {
+          "path": "/var/lib/crossscale-model-cache",
+          "type": "DirectoryOrCreate"
+        },
+        "name": "model"
+      },
+      {
+        "configMap": {
+          "defaultMode": 420,
+          "name": "vllm-model-bootstrap-k59ktkfthh"
+        },
+        "name": "model-bootstrap"
+      },
+      {
+        "emptyDir": {
+          "medium": "Memory",
+          "sizeLimit": "4Gi"
+        },
+        "name": "shm"
+      }
+    ],
+    "readinessGates": [
+      {
+        "conditionType": "crossscale.dev/CapacityReleased"
+      }
+    ]
+  }
+}

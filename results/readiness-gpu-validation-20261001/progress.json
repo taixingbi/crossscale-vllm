@@ -1,0 +1,128 @@
+[
+  {
+    "lag_s": 0,
+    "start_unix_s": 1790882332.3338292,
+    "target_unix_s": 1790882332.3338292,
+    "patch_requested_unix_s": 1790882332.3338351,
+    "endpoint_ready_unix_s": 1790882333.2719932,
+    "observed_lag_s": 0.9381639957427979,
+    "late_s": 0.9381639957427979,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790882332.333024
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "{\"id\":\"cmpl-98eff08ec09e517c\",\"object\":\"text_completion\",\"created\":1790882333,\"model\":\"meta-llama/Llama-3.1-8B-Instruct\",\"choices\":[{\"index\":0,\"text\":\", i am a\",\"logprobs\":null,\"finish_reason\":\"length\",\"stop_reason\":null,\"token_ids\":null,\"prompt_logprobs\":null,\"prompt_token_ids\":null,\"routed_experts\":null}],\"service_tier\":null,\"system_fingerprint\":\"vllm-0.28.0-e2fb4fcf\",\"usage\":{\"prompt_tokens\":3,\"total_tokens\":7,\"completion_tokens\":4,\"prompt_tokens_details\":null,\"completion_tokens_details\":null},\"kv_transfer_params\":null,\"ec_transfer_params\":null,\"metrics\":null}\n",
+      "error": "",
+      "unix_s": 1790882333.953313
+    }
+  },
+  {
+    "lag_s": 15,
+    "start_unix_s": 1790882335.438506,
+    "target_unix_s": 1790882350.438506,
+    "patch_requested_unix_s": 1790882350.447045,
+    "endpoint_ready_unix_s": 1790882351.4909031,
+    "observed_lag_s": 16.05239725112915,
+    "late_s": 1.0523972511291504,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790882335.437678
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "{\"id\":\"cmpl-b13d804208e59ac4\",\"object\":\"text_completion\",\"created\":1790882352,\"model\":\"meta-llama/Llama-3.1-8B-Instruct\",\"choices\":[{\"index\":0,\"text\":\", i am a\",\"logprobs\":null,\"finish_reason\":\"length\",\"stop_reason\":null,\"token_ids\":null,\"prompt_logprobs\":null,\"prompt_token_ids\":null,\"routed_experts\":null}],\"service_tier\":null,\"system_fingerprint\":\"vllm-0.28.0-e2fb4fcf\",\"usage\":{\"prompt_tokens\":3,\"total_tokens\":7,\"completion_tokens\":4,\"prompt_tokens_details\":null,\"completion_tokens_details\":null},\"kv_transfer_params\":null,\"ec_transfer_params\":null,\"metrics\":null}\n",
+      "error": "",
+      "unix_s": 1790882352.262162
+    }
+  },
+  {
+    "lag_s": 30,
+    "start_unix_s": 1790882353.778937,
+    "target_unix_s": 1790882383.778937,
+    "patch_requested_unix_s": 1790882383.779535,
+    "endpoint_ready_unix_s": 1790882384.789261,
+    "observed_lag_s": 31.010324001312256,
+    "late_s": 1.0103240013122559,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790882353.7781508
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "{\"id\":\"cmpl-bb47c4926f173ec4\",\"object\":\"text_completion\",\"created\":1790882385,\"model\":\"meta-llama/Llama-3.1-8B-Instruct\",\"choices\":[{\"index\":0,\"text\":\", i am a\",\"logprobs\":null,\"finish_reason\":\"length\",\"stop_reason\":null,\"token_ids\":null,\"prompt_logprobs\":null,\"prompt_token_ids\":null,\"routed_experts\":null}],\"service_tier\":null,\"system_fingerprint\":\"vllm-0.28.0-e2fb4fcf\",\"usage\":{\"prompt_tokens\":3,\"total_tokens\":7,\"completion_tokens\":4,\"prompt_tokens_details\":null,\"completion_tokens_details\":null},\"kv_transfer_params\":null,\"ec_transfer_params\":null,\"metrics\":null}\n",
+      "error": "",
+      "unix_s": 1790882385.543917
+    }
+  },
+  {
+    "lag_s": 60,
+    "start_unix_s": 1790882387.033078,
+    "target_unix_s": 1790882447.033078,
+    "patch_requested_unix_s": 1790882447.043127,
+    "endpoint_ready_unix_s": 1790882448.1324959,
+    "observed_lag_s": 61.09941792488098,
+    "late_s": 1.0994179248809814,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790882387.03222
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "{\"id\":\"cmpl-a365fd79d1586169\",\"object\":\"text_completion\",\"created\":1790882448,\"model\":\"meta-llama/Llama-3.1-8B-Instruct\",\"choices\":[{\"index\":0,\"text\":\", i am a\",\"logprobs\":null,\"finish_reason\":\"length\",\"stop_reason\":null,\"token_ids\":null,\"prompt_logprobs\":null,\"prompt_token_ids\":null,\"routed_experts\":null}],\"service_tier\":null,\"system_fingerprint\":\"vllm-0.28.0-e2fb4fcf\",\"usage\":{\"prompt_tokens\":3,\"total_tokens\":7,\"completion_tokens\":4,\"prompt_tokens_details\":null,\"completion_tokens_details\":null},\"kv_transfer_params\":null,\"ec_transfer_params\":null,\"metrics\":null}\n",
+      "error": "",
+      "unix_s": 1790882448.8271842
+    }
+  },
+  {
+    "lag_s": 90,
+    "start_unix_s": 1790882450.343531,
+    "target_unix_s": 1790882540.343531,
+    "patch_requested_unix_s": 1790882540.3499808,
+    "endpoint_ready_unix_s": 1790882541.368563,
+    "observed_lag_s": 91.02503204345703,
+    "late_s": 1.0250320434570312,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790882450.3427541
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "{\"id\":\"cmpl-978fdca732bd011a\",\"object\":\"text_completion\",\"created\":1790882541,\"model\":\"meta-llama/Llama-3.1-8B-Instruct\",\"choices\":[{\"index\":0,\"text\":\", i am a\",\"logprobs\":null,\"finish_reason\":\"length\",\"stop_reason\":null,\"token_ids\":null,\"prompt_logprobs\":null,\"prompt_token_ids\":null,\"routed_experts\":null}],\"service_tier\":null,\"system_fingerprint\":\"vllm-0.28.0-e2fb4fcf\",\"usage\":{\"prompt_tokens\":3,\"total_tokens\":7,\"completion_tokens\":4,\"prompt_tokens_details\":null,\"completion_tokens_details\":null},\"kv_transfer_params\":null,\"ec_transfer_params\":null,\"metrics\":null}\n",
+      "error": "",
+      "unix_s": 1790882542.117436
+    }
+  },
+  {
+    "lag_s": 120,
+    "start_unix_s": 1790882543.7455528,
+    "target_unix_s": 1790882663.7455528,
+    "patch_requested_unix_s": 1790882663.753845,
+    "endpoint_ready_unix_s": 1790882664.743478,
+    "observed_lag_s": 120.99792528152466,
+    "late_s": 0.9979252815246582,
+    "blocked_probe": {
+      "ok": false,
+      "output": "",
+      "error": "est.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 519, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 536, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1377, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 1351, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n",
+      "unix_s": 1790882543.744801
+    },
+    "released_probe": {
+      "ok": true,
+      "output": "{\"id\":\"cmpl-94ea1f119de2af7d\",\"object\":\"text_completion\",\"created\":1790882665,\"model\":\"meta-llama/Llama-3.1-8B-Instruct\",\"choices\":[{\"index\":0,\"text\":\", i am a\",\"logprobs\":null,\"finish_reason\":\"length\",\"stop_reason\":null,\"token_ids\":null,\"prompt_logprobs\":null,\"prompt_token_ids\":null,\"routed_experts\":null}],\"service_tier\":null,\"system_fingerprint\":\"vllm-0.28.0-e2fb4fcf\",\"usage\":{\"prompt_tokens\":3,\"total_tokens\":7,\"completion_tokens\":4,\"prompt_tokens_details\":null,\"completion_tokens_details\":null},\"kv_transfer_params\":null,\"ec_transfer_params\":null,\"metrics\":null}\n",
+      "error": "",
+      "unix_s": 1790882665.4008372
+    }
+  }
+]
