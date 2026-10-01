@@ -1,0 +1,12 @@
+{
+  "scaledobject": null,
+  "hpa": {
+    "kind": "HorizontalPodAutoscalerList",
+    "apiVersion": "autoscaling/v2",
+    "metadata": {
+      "resourceVersion": "7710029"
+    },
+    "items": []
+  },
+  "deployment_uid": "0eef65ed-3086-4246-b207-a131de6858ac"
+}

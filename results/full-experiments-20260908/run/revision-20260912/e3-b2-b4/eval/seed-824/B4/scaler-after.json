@@ -1,0 +1,11 @@
+{
+  "scaledobject": null,
+  "hpa": {
+    "kind": "HorizontalPodAutoscalerList",
+    "apiVersion": "autoscaling/v2",
+    "metadata": {
+      "resourceVersion": "7727709"
+    },
+    "items": []
+  }
+}

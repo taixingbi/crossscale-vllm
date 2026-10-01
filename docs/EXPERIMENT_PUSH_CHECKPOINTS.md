@@ -228,3 +228,15 @@ effect 0.05, Ready-slot admission, slots=1). Waiter polls E2 complete+restore
 and will not start from a failed-only E2 error. B2/B4 stay for a later
 checkpoint. Find commit with
 `git log --grep="Freeze E3 B3/B5/B6 and wait for E2"`.
+
+## E3 B2/B4 complete — October 1, 2026
+
+All ten extension runs completed and are dispatch-valid; total E3 coverage is
+25 runs across B2/B3/B4/B5/B6. Complete/restored records verified, PID 168098
+exited, and suite.lock released. Original GPU replica is Ready; added instance
+i-079a94ab0d0001c80 terminated normally. Private S3 mirrored locally and all
+247 phase files (62,973,217 bytes) match the runner's SHA256 hashes, including
+forced refresh of mutable state files. Raw evidence is committed with this
+entry. Priority negative comparison remains unchanged; combined analysis and
+secondary outcomes remain pending. E4 plan/controller were frozen at 62c7983;
+E4 is the next phase, not yet a completed experiment.

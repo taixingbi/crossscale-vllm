@@ -1,0 +1,37 @@
+{
+  "episodes": [],
+  "pod_stages": [
+    {
+      "pod": "vllm-6f9588fbdf-6vnpq",
+      "uid": "d1be6878-e629-4640-9167-d47366d53655",
+      "pod_created_unix_s": 1790834545.0,
+      "vllm_ready_unix_s": 1790834696.0,
+      "pod_scheduled_unix_s": 1790834545.0,
+      "container_started_unix_s": 1790834548.0,
+      "node": "ip-10-42-9-196.ec2.internal",
+      "node_ready_unix_s": 1788895749.0,
+      "nodeclaim_created_unix_s": 1788895712.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-gzvmv",
+      "uid": "84410818-a860-405c-a39b-a5f6bba52e75",
+      "pod_created_unix_s": 1790834698.0,
+      "vllm_ready_unix_s": 1790835790.0,
+      "pod_scheduled_unix_s": 1790834754.0,
+      "container_started_unix_s": 1790835581.0,
+      "node": "ip-10-42-21-87.ec2.internal",
+      "node_ready_unix_s": 1790834738.0,
+      "nodeclaim_created_unix_s": 1790834699.0
+    }
+  ],
+  "gap_statistics": {
+    "completed": 0,
+    "censored": 0,
+    "p50_s": null,
+    "p90_s": null,
+    "p99_s": null,
+    "min_s": null,
+    "max_s": null
+  },
+  "timing": "poll-observed transitions, not exact HPA decision timestamps; raw Kubernetes conditions retained"
+}
