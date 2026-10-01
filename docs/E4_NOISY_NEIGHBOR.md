@@ -37,3 +37,12 @@ Validation: 11 E3/E4 unit tests pass, covering paired workload invariance,
 C-only rate change, admission revision, active lock exclusion, and incomplete
 or invalid predecessor rejection. Live validation and deployment remain pending
 E3 completion. Minimum measured wall time is 8.25 hours plus setup and cleanup.
+
+Launched October 1 after E3 extension checkpoint `24594ab` was pushed and
+verified remotely. All 25 E3 runs are dispatch-valid; prior worker exited and
+restored the original replica. E4 controller PID 169391 holds suite.lock,
+log `/tmp/experiments/revision-e4.log`, output `revision-20260912/e4-noisy-neighbor`.
+Deployed shared-controller/module/plan hashes match the local committed files;
+plan SHA256 is d0cade969661299c026db2bf07df3ad49bbee862eef30040b83c3c7fa79ad7f5.
+Startup begins by applying the trial serving configuration. E4 measurement
+completion and restoration are pending; no later phase starts automatically.
