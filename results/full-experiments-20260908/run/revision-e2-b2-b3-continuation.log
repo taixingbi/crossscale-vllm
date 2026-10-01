@@ -1,0 +1,110 @@
+{"unix_s": 1790811822.8921938, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 1}
+{"unix_s": 1790811853.434522, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790811883.8056242, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790811914.1819098, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790811944.5356429, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790811974.8636954, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812005.2308753, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812035.57281, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812065.9286892, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812096.3014827, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812126.6538432, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812157.018503, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812187.3445609, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812217.8477345, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812248.1896062, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812278.615201, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812308.973337, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812339.3590887, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812369.6944, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812400.0720057, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812430.3684814, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812460.7586162, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812491.1019359, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812521.4788938, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812551.8123195, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812582.0932045, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812612.4007387, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812642.7163851, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812673.0129375, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812703.386946, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812733.7049155, "event": "waiting-ready", "target": 2, "ready": 1, "pods": 2}
+{"unix_s": 1790812745.7040477, "event": "e2-training-start", "seed": 802, "threshold": 0.8}
+{"unix_s": 1790813244.0547845, "event": "e2-training-start", "seed": 803, "threshold": 0.8}
+{"unix_s": 1790813244.3104765, "event": "waiting-ready", "target": 2, "ready": 2, "pods": 3}
+{"unix_s": 1790813274.6648195, "event": "waiting-ready", "target": 2, "ready": 2, "pods": 3}
+{"unix_s": 1790813277.9869125, "event": "terminate-empty-claim", "claim": "crossscale-gpu-z97ql", "instance": "i-099d649be4da8175a"}
+{"unix_s": 1790813278.0894167, "event": "waiting-termination", "instance": "i-099d649be4da8175a", "states": ["running"]}
+{"unix_s": 1790813308.6033013, "event": "waiting-termination", "instance": "i-099d649be4da8175a", "states": ["shutting-down"]}
+{"unix_s": 1790813339.125552, "event": "waiting-termination", "instance": "i-099d649be4da8175a", "states": ["shutting-down"]}
+{"unix_s": 1790813369.5660112, "event": "waiting-termination", "instance": "i-099d649be4da8175a", "states": ["shutting-down"]}
+{"unix_s": 1790813399.9978187, "event": "waiting-termination", "instance": "i-099d649be4da8175a", "states": ["shutting-down"]}
+{"unix_s": 1790813430.4484172, "event": "waiting-termination", "instance": "i-099d649be4da8175a", "states": ["shutting-down"]}
+{"unix_s": 1790813460.8943145, "event": "waiting-termination", "instance": "i-099d649be4da8175a", "states": ["shutting-down"]}
+{"unix_s": 1790813491.3733006, "event": "waiting-termination", "instance": "i-099d649be4da8175a", "states": ["shutting-down"]}
+{"unix_s": 1790813521.8047497, "event": "waiting-termination", "instance": "i-099d649be4da8175a", "states": ["shutting-down"]}
+{"unix_s": 1790813542.1808445, "event": "instance-terminated", "claim": "crossscale-gpu-z97ql", "instance": "i-099d649be4da8175a"}
+{"unix_s": 1790814038.2482517, "event": "e2-training-start", "seed": 802, "threshold": 1.0}
+{"unix_s": 1790814038.4766622, "event": "waiting-ready", "target": 2, "ready": 2, "pods": 3}
+{"unix_s": 1790814068.816725, "event": "waiting-ready", "target": 2, "ready": 2, "pods": 3}
+{"unix_s": 1790814072.154971, "event": "terminate-empty-claim", "claim": "crossscale-gpu-rlbrm", "instance": "i-0096369736215d398"}
+{"unix_s": 1790814072.2448165, "event": "waiting-termination", "instance": "i-0096369736215d398", "states": ["running"]}
+{"unix_s": 1790814102.6790466, "event": "waiting-termination", "instance": "i-0096369736215d398", "states": ["shutting-down"]}
+{"unix_s": 1790814133.0969238, "event": "waiting-termination", "instance": "i-0096369736215d398", "states": ["shutting-down"]}
+{"unix_s": 1790814163.6877518, "event": "waiting-termination", "instance": "i-0096369736215d398", "states": ["shutting-down"]}
+{"unix_s": 1790814194.122645, "event": "waiting-termination", "instance": "i-0096369736215d398", "states": ["shutting-down"]}
+{"unix_s": 1790814224.5497975, "event": "waiting-termination", "instance": "i-0096369736215d398", "states": ["shutting-down"]}
+{"unix_s": 1790814254.9910276, "event": "waiting-termination", "instance": "i-0096369736215d398", "states": ["shutting-down"]}
+{"unix_s": 1790814285.5625358, "event": "waiting-termination", "instance": "i-0096369736215d398", "states": ["shutting-down"]}
+{"unix_s": 1790814316.0279047, "event": "waiting-termination", "instance": "i-0096369736215d398", "states": ["shutting-down"]}
+{"unix_s": 1790814346.5113478, "event": "waiting-termination", "instance": "i-0096369736215d398", "states": ["shutting-down"]}
+{"unix_s": 1790814356.759184, "event": "instance-terminated", "claim": "crossscale-gpu-rlbrm", "instance": "i-0096369736215d398"}
+{"unix_s": 1790814852.4792683, "event": "e2-training-start", "seed": 803, "threshold": 1.0}
+{"unix_s": 1790815349.0972216, "event": "e2-training-start", "seed": 802, "threshold": 1.2}
+{"unix_s": 1790815349.6321602, "event": "waiting-ready", "target": 2, "ready": 2, "pods": 4}
+{"unix_s": 1790815379.9835773, "event": "waiting-ready", "target": 2, "ready": 2, "pods": 3}
+{"unix_s": 1790815383.269841, "event": "terminate-empty-claim", "claim": "crossscale-gpu-jqm5r", "instance": "i-09fda1f02be1515b5"}
+{"unix_s": 1790815383.362101, "event": "waiting-termination", "instance": "i-09fda1f02be1515b5", "states": ["running"]}
+{"unix_s": 1790815413.9295235, "event": "waiting-termination", "instance": "i-09fda1f02be1515b5", "states": ["shutting-down"]}
+{"unix_s": 1790815444.396201, "event": "waiting-termination", "instance": "i-09fda1f02be1515b5", "states": ["shutting-down"]}
+{"unix_s": 1790815474.8545287, "event": "waiting-termination", "instance": "i-09fda1f02be1515b5", "states": ["shutting-down"]}
+{"unix_s": 1790815505.2885478, "event": "waiting-termination", "instance": "i-09fda1f02be1515b5", "states": ["shutting-down"]}
+{"unix_s": 1790815535.7418563, "event": "waiting-termination", "instance": "i-09fda1f02be1515b5", "states": ["shutting-down"]}
+{"unix_s": 1790815566.247685, "event": "waiting-termination", "instance": "i-09fda1f02be1515b5", "states": ["shutting-down"]}
+{"unix_s": 1790815596.712729, "event": "waiting-termination", "instance": "i-09fda1f02be1515b5", "states": ["shutting-down"]}
+{"unix_s": 1790815627.234927, "event": "waiting-termination", "instance": "i-09fda1f02be1515b5", "states": ["shutting-down"]}
+{"unix_s": 1790815652.7301803, "event": "instance-terminated", "claim": "crossscale-gpu-jqm5r", "instance": "i-09fda1f02be1515b5"}
+{"unix_s": 1790815652.843411, "event": "terminate-empty-claim", "claim": "crossscale-gpu-pq6vv", "instance": "i-04194cb057dc5278d"}
+{"unix_s": 1790815652.9420617, "event": "waiting-termination", "instance": "i-04194cb057dc5278d", "states": ["running"]}
+{"unix_s": 1790815683.519415, "event": "waiting-termination", "instance": "i-04194cb057dc5278d", "states": ["shutting-down"]}
+{"unix_s": 1790815714.0437784, "event": "waiting-termination", "instance": "i-04194cb057dc5278d", "states": ["shutting-down"]}
+{"unix_s": 1790815744.4941308, "event": "waiting-termination", "instance": "i-04194cb057dc5278d", "states": ["shutting-down"]}
+{"unix_s": 1790815775.027126, "event": "waiting-termination", "instance": "i-04194cb057dc5278d", "states": ["shutting-down"]}
+{"unix_s": 1790815805.451123, "event": "waiting-termination", "instance": "i-04194cb057dc5278d", "states": ["shutting-down"]}
+{"unix_s": 1790815835.9168575, "event": "waiting-termination", "instance": "i-04194cb057dc5278d", "states": ["shutting-down"]}
+{"unix_s": 1790815866.399255, "event": "waiting-termination", "instance": "i-04194cb057dc5278d", "states": ["shutting-down"]}
+{"unix_s": 1790815896.810085, "event": "waiting-termination", "instance": "i-04194cb057dc5278d", "states": ["shutting-down"]}
+{"unix_s": 1790815922.2580013, "event": "instance-terminated", "claim": "crossscale-gpu-pq6vv", "instance": "i-04194cb057dc5278d"}
+{"unix_s": 1790816418.299902, "event": "e2-training-start", "seed": 803, "threshold": 1.2}
+{"unix_s": 1790816918.4513795, "event": "e2-eval-start", "seed": 811, "baseline": "B3"}
+{"unix_s": 1790817418.641388, "event": "e2-eval-start", "seed": 818, "baseline": "B2"}
+{"unix_s": 1790817918.8346555, "event": "e2-eval-start", "seed": 811, "baseline": "B2"}
+{"unix_s": 1790818418.7580698, "event": "e2-eval-start", "seed": 818, "baseline": "B3"}
+{"unix_s": 1790818918.7161257, "event": "e2-eval-start", "seed": 813, "baseline": "B2"}
+{"unix_s": 1790819418.5007348, "event": "e2-eval-start", "seed": 812, "baseline": "B2"}
+{"unix_s": 1790819918.2786784, "event": "e2-eval-start", "seed": 813, "baseline": "B3"}
+{"unix_s": 1790820418.1862304, "event": "e2-eval-start", "seed": 812, "baseline": "B3"}
+{"unix_s": 1790820918.0155976, "event": "e2-eval-start", "seed": 816, "baseline": "B2"}
+{"unix_s": 1790821413.8437853, "event": "e2-eval-start", "seed": 816, "baseline": "B3"}
+{"unix_s": 1790821914.0644183, "event": "waiting-ready", "target": 1, "ready": 2, "pods": 2}
+{"unix_s": 1790821917.256032, "event": "terminate-empty-claim", "claim": "crossscale-gpu-j8d44", "instance": "i-0da54ce2e51e1c55e"}
+{"unix_s": 1790821917.3599546, "event": "waiting-termination", "instance": "i-0da54ce2e51e1c55e", "states": ["running"]}
+{"unix_s": 1790821947.8349023, "event": "waiting-termination", "instance": "i-0da54ce2e51e1c55e", "states": ["shutting-down"]}
+{"unix_s": 1790821978.2751968, "event": "waiting-termination", "instance": "i-0da54ce2e51e1c55e", "states": ["shutting-down"]}
+{"unix_s": 1790822008.7225776, "event": "waiting-termination", "instance": "i-0da54ce2e51e1c55e", "states": ["shutting-down"]}
+{"unix_s": 1790822039.1879823, "event": "waiting-termination", "instance": "i-0da54ce2e51e1c55e", "states": ["shutting-down"]}
+{"unix_s": 1790822069.631996, "event": "waiting-termination", "instance": "i-0da54ce2e51e1c55e", "states": ["shutting-down"]}
+{"unix_s": 1790822100.0622444, "event": "waiting-termination", "instance": "i-0da54ce2e51e1c55e", "states": ["shutting-down"]}
+{"unix_s": 1790822130.5086231, "event": "waiting-termination", "instance": "i-0da54ce2e51e1c55e", "states": ["shutting-down"]}
+{"unix_s": 1790822160.9656632, "event": "waiting-termination", "instance": "i-0da54ce2e51e1c55e", "states": ["shutting-down"]}
+{"unix_s": 1790822191.5394225, "event": "instance-terminated", "claim": "crossscale-gpu-j8d44", "instance": "i-0da54ce2e51e1c55e"}

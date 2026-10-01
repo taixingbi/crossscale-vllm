@@ -316,3 +316,14 @@ It refuses any attempted measurement evidence and checks capture_scaler support
 before cluster work. The E3 controller imports this new E2 destination, so its
 next waiter must follow the continuation rather than the preserved failure.
 E2's nine and E3's eight targeted tests pass. Existing failed attempts stay intact.
+
+## E2 continuation completed, October 1
+
+The continuation finished six training and ten evaluation runs; all ten
+evaluations are dispatch-valid. Training selected SLO threshold 0.8. Completion
+and restoration markers are present, PID 164223 exited, suite.lock is free,
+and the original replica is Ready in the 1024 serving condition. Raw evidence
+is retained under e2-b2-b3-continuation-20260930 and mirrored from private S3.
+This records execution completion; actual scale-out, censoring and comparative
+SLO results still require analysis, and must not be inferred from run markers.
+The frozen E3 trio can now execute against this continuation's tuning record.

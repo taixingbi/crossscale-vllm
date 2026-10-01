@@ -1,0 +1,64 @@
+{
+  "episodes": [
+    {
+      "scale_observed_unix_s": 1790815015.4824429,
+      "target": 4,
+      "from_replicas": 2,
+      "capacity_ready_unix_s": null,
+      "gap_s": null,
+      "censor_reason": "observation_ended"
+    }
+  ],
+  "pod_stages": [
+    {
+      "pod": "vllm-6f9588fbdf-cxlfc",
+      "uid": "594074a2-c33e-4836-be0b-1a2d259582cf",
+      "pod_created_unix_s": 1790811822.0,
+      "vllm_ready_unix_s": 1790812734.0,
+      "pod_scheduled_unix_s": 1790811879.0,
+      "container_started_unix_s": 1790812532.0,
+      "node": "ip-10-42-8-37.ec2.internal",
+      "node_ready_unix_s": 1790811861.0,
+      "nodeclaim_created_unix_s": 1790811823.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-jzdkq",
+      "uid": "5dc3d296-286d-4ea8-a83a-dbd1447f219f",
+      "pod_created_unix_s": 1790811671.0,
+      "vllm_ready_unix_s": 1790811822.0,
+      "pod_scheduled_unix_s": 1790811671.0,
+      "container_started_unix_s": 1790811674.0,
+      "node": "ip-10-42-9-196.ec2.internal",
+      "node_ready_unix_s": 1788895749.0,
+      "nodeclaim_created_unix_s": 1788895712.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-659lf",
+      "uid": "e8ff8c71-5679-45e4-82e0-120871160f95",
+      "pod_created_unix_s": 1790815014.0,
+      "pod_scheduled_unix_s": 1790815069.0,
+      "node": "ip-10-42-16-24.ec2.internal",
+      "node_ready_unix_s": 1790815054.0,
+      "nodeclaim_created_unix_s": 1790815015.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-h4rmf",
+      "uid": "e0cac1ba-10b3-4097-afd4-c5d93c03a4a7",
+      "pod_created_unix_s": 1790815014.0,
+      "pod_scheduled_unix_s": 1790815072.0,
+      "node": "ip-10-42-18-170.ec2.internal",
+      "node_ready_unix_s": 1790815057.0,
+      "nodeclaim_created_unix_s": 1790815015.0
+    }
+  ],
+  "gap_statistics": {
+    "completed": 0,
+    "censored": 1,
+    "p50_s": null,
+    "p90_s": null,
+    "p99_s": null,
+    "min_s": null,
+    "max_s": null
+  },
+  "timing": "poll-observed transitions, not exact HPA decision timestamps; raw Kubernetes conditions retained"
+}

@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 3,
+      "completed": 3,
+      "good": 2,
+      "goodput": 0.6666666666666666,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 3,
+      "p95_ttft_s": 2.1638409913750363,
+      "p99_ttft_s": 2.338331875563599,
+      "p95_tpot_s": 0.04041454784766516,
+      "p99_tpot_s": 0.040485303888796634,
+      "p95_admission_delay_s": 0.00013546014670282603,
+      "p99_admission_delay_s": 0.00013581686187535524,
+      "p95_dispatch_lag_s": 0.0008653140859678388,
+      "p99_dispatch_lag_s": 0.0008756808796897531
+    },
+    "B": {
+      "offered": 4,
+      "completed": 4,
+      "good": 4,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 4,
+      "p95_ttft_s": 2.6027557483641424,
+      "p99_ttft_s": 2.8204531544214113,
+      "p95_tpot_s": 0.0398933291909788,
+      "p99_tpot_s": 0.04034270797209316,
+      "p95_admission_delay_s": 0.0001527119893580675,
+      "p99_admission_delay_s": 0.00015432634390890598,
+      "p95_dispatch_lag_s": 0.0010147995315492153,
+      "p99_dispatch_lag_s": 0.0010511006601154804
+    },
+    "C": {
+      "offered": 3,
+      "completed": 3,
+      "good": 3,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 3,
+      "p95_ttft_s": 4.81174062595237,
+      "p99_ttft_s": 4.94870030103717,
+      "p95_tpot_s": 0.040819454665281606,
+      "p99_tpot_s": 0.04086811178860454,
+      "p95_admission_delay_s": 0.0001519644632935524,
+      "p99_admission_delay_s": 0.00015366815030574797,
+      "p95_dispatch_lag_s": 0.0009539900813251734,
+      "p99_dispatch_lag_s": 0.0009561169985681773
+    }
+  },
+  "weighted_slo_goodput": 0.8333333333333334,
+  "jain_goodput": 0.9696969696969696,
+  "completed_tokens_s": 34.06666666666667,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}

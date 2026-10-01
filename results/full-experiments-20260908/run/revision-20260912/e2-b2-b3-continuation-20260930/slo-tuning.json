@@ -1,0 +1,29 @@
+{
+  "selected_threshold": 0.8,
+  "candidates": [
+    {
+      "threshold": 0.8,
+      "mean_wg": 1.0,
+      "training_seeds": [
+        802,
+        803
+      ]
+    },
+    {
+      "threshold": 1.0,
+      "mean_wg": 0.95,
+      "training_seeds": [
+        802,
+        803
+      ]
+    },
+    {
+      "threshold": 1.2,
+      "mean_wg": 1.0,
+      "training_seeds": [
+        802,
+        803
+      ]
+    }
+  ]
+}
