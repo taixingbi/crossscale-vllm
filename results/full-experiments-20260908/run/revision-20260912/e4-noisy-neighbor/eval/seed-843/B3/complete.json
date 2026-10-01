@@ -1,0 +1,79 @@
+{
+  "baseline": "B3",
+  "seed": 843,
+  "slo_threshold": 0.8,
+  "dispatch_valid": true,
+  "summary": {
+    "tenants": {
+      "A": {
+        "offered": 29,
+        "completed": 29,
+        "good": 29,
+        "goodput": 1.0,
+        "rejected": 0,
+        "timeout": 0,
+        "errors": 0,
+        "deferred": 29,
+        "p95_ttft_s": 0.16072651636786758,
+        "p99_ttft_s": 0.17448237332515415,
+        "p95_tpot_s": 0.034105650517499204,
+        "p99_tpot_s": 0.034695282433898404,
+        "p95_admission_delay_s": 0.00015466357581317425,
+        "p99_admission_delay_s": 0.00016651538200676438,
+        "p95_dispatch_lag_s": 0.0014258066192269316,
+        "p99_dispatch_lag_s": 0.0019291868992149825
+      },
+      "B": {
+        "offered": 6,
+        "completed": 6,
+        "good": 6,
+        "goodput": 1.0,
+        "rejected": 0,
+        "timeout": 0,
+        "errors": 0,
+        "deferred": 6,
+        "p95_ttft_s": 0.9520471985451877,
+        "p99_ttft_s": 0.9651815325953066,
+        "p95_tpot_s": 0.04144306083135898,
+        "p99_tpot_s": 0.04209957949882225,
+        "p95_admission_delay_s": 0.00014125346206128597,
+        "p99_admission_delay_s": 0.00014135702513158322,
+        "p95_dispatch_lag_s": 0.00141322665149346,
+        "p99_dispatch_lag_s": 0.001549539633560926
+      },
+      "C": {
+        "offered": 14,
+        "completed": 14,
+        "good": 14,
+        "goodput": 1.0,
+        "rejected": 0,
+        "timeout": 0,
+        "errors": 0,
+        "deferred": 14,
+        "p95_ttft_s": 4.338895885134116,
+        "p99_ttft_s": 4.36981435005553,
+        "p95_tpot_s": 0.04356158162789962,
+        "p99_tpot_s": 0.0446676996934164,
+        "p95_admission_delay_s": 0.0001998523250222206,
+        "p99_admission_delay_s": 0.0002038152515888214,
+        "p95_dispatch_lag_s": 0.000961392919998616,
+        "p99_dispatch_lag_s": 0.0009629243589006364
+      }
+    },
+    "weighted_slo_goodput": 1.0,
+    "jain_goodput": 1.0,
+    "completed_tokens_s": 11.351111111111111,
+    "tokens_rate_denominator": "offered duration; includes drain completions",
+    "latency_population": "completed requests only; failures remain in goodput denominator",
+    "start_unix_s": 1790862793.7674131,
+    "elapsed_s": 1846.9773624748923,
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "tpot_definition": "(last nonempty text arrival - first)/(usage completion_tokens - 1); SSE chunks may coalesce tokens"
+  },
+  "offered_by_tenant": {
+    "A": 29,
+    "B": 6,
+    "C": 14
+  },
+  "completed_unix_s": 1790864780.1732938
+}

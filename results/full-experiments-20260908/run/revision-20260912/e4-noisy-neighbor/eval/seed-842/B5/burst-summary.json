@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 5,
+      "completed": 4,
+      "good": 4,
+      "goodput": 0.8,
+      "rejected": 1,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 5,
+      "p95_ttft_s": 0.1249476398807019,
+      "p99_ttft_s": 0.125121903559193,
+      "p95_tpot_s": 0.03346363805082887,
+      "p99_tpot_s": 0.03346371040928293,
+      "p95_admission_delay_s": 0.0001708072843030095,
+      "p99_admission_delay_s": 0.00017419754061847925,
+      "p95_dispatch_lag_s": 0.0009933747933246193,
+      "p99_dispatch_lag_s": 0.00107168034883216
+    },
+    "B": {
+      "offered": 8,
+      "completed": 7,
+      "good": 7,
+      "goodput": 0.875,
+      "rejected": 1,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 8,
+      "p95_ttft_s": 1.2679138100473208,
+      "p99_ttft_s": 1.311885914406739,
+      "p95_tpot_s": 0.0383854057617384,
+      "p99_tpot_s": 0.03883178178377448,
+      "p95_admission_delay_s": 0.00015637131873518227,
+      "p99_admission_delay_s": 0.0001615575375035405,
+      "p95_dispatch_lag_s": 0.0007986339973285794,
+      "p99_dispatch_lag_s": 0.0008055259892717003
+    },
+    "C": {
+      "offered": 7,
+      "completed": 6,
+      "good": 6,
+      "goodput": 0.8571428571428571,
+      "rejected": 1,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 7,
+      "p95_ttft_s": 3.2861034192028455,
+      "p99_ttft_s": 3.384745136497077,
+      "p95_tpot_s": 0.03761502024954178,
+      "p99_tpot_s": 0.03778476105675787,
+      "p95_admission_delay_s": 0.00016043748473748565,
+      "p99_admission_delay_s": 0.00016328030033037068,
+      "p95_dispatch_lag_s": 0.00151395722059533,
+      "p99_dispatch_lag_s": 0.0016692005447112024
+    }
+  },
+  "weighted_slo_goodput": 0.8345238095238096,
+  "jain_goodput": 0.9985657614277229,
+  "completed_tokens_s": 14.84,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}

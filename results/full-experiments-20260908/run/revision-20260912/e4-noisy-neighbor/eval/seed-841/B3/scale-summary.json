@@ -1,0 +1,67 @@
+{
+  "episodes": [
+    {
+      "scale_observed_unix_s": 1790843801.5934312,
+      "target": 4,
+      "from_replicas": 2,
+      "capacity_ready_unix_s": 1790844766.9677548,
+      "gap_s": 965.3743236064911
+    }
+  ],
+  "pod_stages": [
+    {
+      "pod": "vllm-6f9588fbdf-5svdb",
+      "uid": "4fae358b-5d5b-473e-ae19-762889d1a7fa",
+      "pod_created_unix_s": 1790841589.0,
+      "vllm_ready_unix_s": 1790841739.0,
+      "pod_scheduled_unix_s": 1790841589.0,
+      "container_started_unix_s": 1790841591.0,
+      "node": "ip-10-42-9-196.ec2.internal",
+      "node_ready_unix_s": 1788895749.0,
+      "nodeclaim_created_unix_s": 1788895712.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-pbkm4",
+      "uid": "5d5f8866-5a87-46ca-8851-89ddb7548db6",
+      "pod_created_unix_s": 1790841741.0,
+      "vllm_ready_unix_s": 1790842814.0,
+      "pod_scheduled_unix_s": 1790841798.0,
+      "container_started_unix_s": 1790842609.0,
+      "node": "ip-10-42-30-152.ec2.internal",
+      "node_ready_unix_s": 1790841782.0,
+      "nodeclaim_created_unix_s": 1790841742.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-p8l64",
+      "uid": "a990eed4-6276-425e-bf0d-4753402ab098",
+      "pod_created_unix_s": 1790843801.0,
+      "pod_scheduled_unix_s": 1790843855.0,
+      "node": "ip-10-42-28-104.ec2.internal",
+      "node_ready_unix_s": 1790843842.0,
+      "nodeclaim_created_unix_s": 1790843802.0,
+      "container_started_unix_s": 1790844545.0,
+      "vllm_ready_unix_s": 1790844751.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-kt7hf",
+      "uid": "c28974b2-3b70-40b2-a010-8c4cf7bdca4f",
+      "pod_created_unix_s": 1790843801.0,
+      "pod_scheduled_unix_s": 1790843856.0,
+      "node": "ip-10-42-19-154.ec2.internal",
+      "node_ready_unix_s": 1790843840.0,
+      "nodeclaim_created_unix_s": 1790843802.0,
+      "container_started_unix_s": 1790844561.0,
+      "vllm_ready_unix_s": 1790844766.0
+    }
+  ],
+  "gap_statistics": {
+    "completed": 1,
+    "censored": 0,
+    "p50_s": 965.3743236064911,
+    "p90_s": 965.3743236064911,
+    "p99_s": 965.3743236064911,
+    "min_s": 965.3743236064911,
+    "max_s": 965.3743236064911
+  },
+  "timing": "poll-observed transitions, not exact HPA decision timestamps; raw Kubernetes conditions retained"
+}

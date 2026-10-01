@@ -240,3 +240,16 @@ forced refresh of mutable state files. Raw evidence is committed with this
 entry. Priority negative comparison remains unchanged; combined analysis and
 secondary outcomes remain pending. E4 plan/controller were frozen at 62c7983;
 E4 is the next phase, not yet a completed experiment.
+
+## E4 complete — October 1, 2026
+
+All 15 frozen B3/B5/B6 noisy-neighbor runs completed and are dispatch-valid.
+Complete/restored records are present; PID 169391 exited and suite.lock is free.
+One original-condition replica is Ready on the original GPU. Owned added GPU
+instances terminated normally. All 367 phase files (424,518,290 bytes) were
+mirrored from private S3 and match runner SHA256 hashes; mutable state files
+were explicitly refreshed. Raw observations, requests, telemetry, plans, and
+restoration are checkpointed with this entry. Outcome analysis remains pending.
+E5–E8 remain unrun. E5 requires implementation and live validation of controlled
+usable-capacity delay; natural provisioning observations cannot substitute for
+its 0/15/30/60/90/120-second controlled conditions.

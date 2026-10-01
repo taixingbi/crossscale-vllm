@@ -1,0 +1,164 @@
+{
+  "phase": "e4-noisy-neighbor",
+  "revision": "revision-20260930",
+  "slo_revision": "revision-20260930-b-ttft-3s",
+  "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off",
+  "capacity_rps": 0.025,
+  "duration_s": 1800,
+  "drain_s": 180,
+  "burst_s": [
+    600,
+    1200
+  ],
+  "eval_seeds": [
+    841,
+    842,
+    843,
+    844,
+    845
+  ],
+  "baselines": [
+    "B3",
+    "B5",
+    "B6"
+  ],
+  "eval_order": [
+    [
+      841,
+      "B3"
+    ],
+    [
+      844,
+      "B3"
+    ],
+    [
+      843,
+      "B5"
+    ],
+    [
+      842,
+      "B5"
+    ],
+    [
+      845,
+      "B3"
+    ],
+    [
+      842,
+      "B3"
+    ],
+    [
+      844,
+      "B6"
+    ],
+    [
+      841,
+      "B5"
+    ],
+    [
+      845,
+      "B5"
+    ],
+    [
+      843,
+      "B3"
+    ],
+    [
+      842,
+      "B6"
+    ],
+    [
+      843,
+      "B6"
+    ],
+    [
+      845,
+      "B6"
+    ],
+    [
+      844,
+      "B5"
+    ],
+    [
+      841,
+      "B6"
+    ]
+  ],
+  "order_seed": 20261002,
+  "traces": [
+    {
+      "seed": 841,
+      "offered_by_tenant": {
+        "A": 14,
+        "B": 11,
+        "C": 12
+      },
+      "sha256": "3821263952328274ae2ec964f76cf1f2e7286ef39bbea68c01b309e0f4f10d95"
+    },
+    {
+      "seed": 842,
+      "offered_by_tenant": {
+        "A": 12,
+        "B": 15,
+        "C": 7
+      },
+      "sha256": "490041b3fbd50ed859e2e231e36a7c7de0b947943b09bdd91e3a5f8eafe9b838"
+    },
+    {
+      "seed": 843,
+      "offered_by_tenant": {
+        "A": 29,
+        "B": 6,
+        "C": 14
+      },
+      "sha256": "a02c35c72c493d551676b7fca3eebf58e1aa72f0951e893b01fed1cb774f2881"
+    },
+    {
+      "seed": 844,
+      "offered_by_tenant": {
+        "A": 18,
+        "B": 9,
+        "C": 11
+      },
+      "sha256": "5e624ce43eef2d9965bdf77331ec847398c40d04f1477a88ea4e750519f16932"
+    },
+    {
+      "seed": 845,
+      "offered_by_tenant": {
+        "A": 22,
+        "B": 6,
+        "C": 5
+      },
+      "sha256": "991d58dd9a38bcd5e4b053b22d4d36251fffc8e83b86d0220c0f19c8f7cf3de8"
+    }
+  ],
+  "base_load_factor": 0.65,
+  "c_burst_factor": 4,
+  "slo_threshold": "E2 frozen threshold; no new tuning",
+  "analysis": {
+    "primary": "A SLO goodput over all offered A requests",
+    "secondary": [
+      "C goodput",
+      "C rejection and defer fractions",
+      "P99 TTFT",
+      "weighted SLO goodput",
+      "GPU utilization",
+      "tokens/s"
+    ],
+    "cohorts": [
+      "whole run",
+      "600 <= offered_s < 1200"
+    ],
+    "contrasts": [
+      "B6-B5",
+      "B5-B3",
+      "B6-B3"
+    ],
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20261002,
+    "practical_effect": 0.05,
+    "unit": "paired seed; equal weight per run"
+  },
+  "limitation": "Five fixed seeds, no outcome selection. Low request counts limit precision; a C arrival-rate increase is not a guarantee of queueing or scale-out. Within-trace before/burst comparison is descriptive, not a randomized causal control.",
+  "matched_scale": "Natural KEDA/HPA decisions only; no forced provisioning gap"
+}

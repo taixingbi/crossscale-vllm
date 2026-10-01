@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 4,
+      "completed": 4,
+      "good": 4,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 4,
+      "p95_ttft_s": 0.1153898420394398,
+      "p99_ttft_s": 0.12041766465874387,
+      "p95_tpot_s": 0.03345147254415347,
+      "p99_tpot_s": 0.03345199866720726,
+      "p95_admission_delay_s": 0.00016405204078182576,
+      "p99_admission_delay_s": 0.00016792948124930263,
+      "p95_dispatch_lag_s": 0.0009688983671367168,
+      "p99_dispatch_lag_s": 0.0009962615929543972
+    },
+    "B": {
+      "offered": 5,
+      "completed": 5,
+      "good": 5,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 5,
+      "p95_ttft_s": 1.278230938129127,
+      "p99_ttft_s": 1.2957941049709916,
+      "p95_tpot_s": 0.04272056368521653,
+      "p99_tpot_s": 0.04428646414981644,
+      "p95_admission_delay_s": 0.00016551651060581207,
+      "p99_admission_delay_s": 0.0001714000478386879,
+      "p95_dispatch_lag_s": 0.0017363055143505334,
+      "p99_dispatch_lag_s": 0.0018038104940205813
+    },
+    "C": {
+      "offered": 10,
+      "completed": 10,
+      "good": 7,
+      "goodput": 0.7,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 10,
+      "p95_ttft_s": 7.491089614131485,
+      "p99_ttft_s": 8.477939869095572,
+      "p95_tpot_s": 0.049703134704926676,
+      "p99_tpot_s": 0.05024467231993454,
+      "p95_admission_delay_s": 0.0001448815455660224,
+      "p99_admission_delay_s": 0.00014545067679136992,
+      "p95_dispatch_lag_s": 0.0015050252550281571,
+      "p99_dispatch_lag_s": 0.0019154849578626456
+    }
+  },
+  "weighted_slo_goodput": 0.9500000000000001,
+  "jain_goodput": 0.9759036144578316,
+  "completed_tokens_s": 21.633333333333333,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}
