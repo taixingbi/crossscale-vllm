@@ -92,3 +92,24 @@ This establishes single-pod inference routing control, not a four-replica E5
 measurement. Next implement/freeze the controlled-capacity workload controller,
 verify two baseline plus two withheld replicas, and integrate ETA observation
 without changing the model/SLO condition. E5–E8 remain unrun.
+
+## Controlled phase plan frozen
+
+configs/revision-20261001-e5-plan.json fixes 90 paired runs: five nonempty-tenant
+seeds, six nominal delays, and three admission variants. Arrivals last 600s,
+drain 180s, burst from 60–360s using .65/.1.65 times the amended measured mixed
+capacity. Two of four prewarmed replicas become eligible at t=60+delay. Four
+GPUs remain allocated during each run, including when only two can serve.
+The randomized order, examined seeds, trace hashes, metrics and paired analysis
+are recorded before E5 outcomes. Minimum measurement duration is 19.5 hours.
+
+This is a matched controlled-supply experiment. There is no HPA decision during
+measurement: B3 bypasses admission, B5 uses Ready slots, B6 additionally uses
+nominal scheduled ETA. Do not describe this as a comparison of slow autoscalers
+or natural provisioning. Actual readiness and propagation latency are measured;
+a planned or elapsed ETA never increases admission slots. Unexpected pod UIDs,
+early release, or lost baseline capacity abort with evidence preserved.
+
+Six local gate/state/plan tests pass. The live suite executor, four-model setup,
+EndpointSlice verification and restoration integration are still to be built;
+no E5 measurement is running. The healthy original GPU remains the only replica.
