@@ -1,0 +1,618 @@
+{
+  "phase": "e5-controlled-prewarmed-capacity",
+  "capacity_rps": 0.025,
+  "slo_revision": "revision-20260930-b-ttft-3s",
+  "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off",
+  "eval_seeds": [
+    871,
+    872,
+    873,
+    874,
+    875
+  ],
+  "examined": [
+    {
+      "seed": 871,
+      "counts": {
+        "A": 13,
+        "B": 5,
+        "C": 3
+      },
+      "selected": true
+    },
+    {
+      "seed": 872,
+      "counts": {
+        "A": 11,
+        "B": 3,
+        "C": 2
+      },
+      "selected": true
+    },
+    {
+      "seed": 873,
+      "counts": {
+        "A": 14,
+        "B": 7,
+        "C": 2
+      },
+      "selected": true
+    },
+    {
+      "seed": 874,
+      "counts": {
+        "A": 5,
+        "B": 3,
+        "C": 5
+      },
+      "selected": true
+    },
+    {
+      "seed": 875,
+      "counts": {
+        "A": 7,
+        "B": 4,
+        "C": 1
+      },
+      "selected": true
+    }
+  ],
+  "traces": [
+    {
+      "seed": 871,
+      "sha256": "a83891f62c4f4b6bcfcac3132052c877b76de9630fe671f36933df42808f522a",
+      "counts": {
+        "A": 13,
+        "B": 5,
+        "C": 3
+      }
+    },
+    {
+      "seed": 872,
+      "sha256": "7b16ccba9e7e8784e4556f096b9976fe6c2965d091611412443b94cc457a4fcb",
+      "counts": {
+        "A": 11,
+        "B": 3,
+        "C": 2
+      }
+    },
+    {
+      "seed": 873,
+      "sha256": "6bfb8b8e2a48d4441bd25bb8a534b971530df59a10f4e5606949c158054ee9b5",
+      "counts": {
+        "A": 14,
+        "B": 7,
+        "C": 2
+      }
+    },
+    {
+      "seed": 874,
+      "sha256": "81cdde8eb6ce1809aff83a17ed21c036f14b519c2fe342a930228077036839c0",
+      "counts": {
+        "A": 5,
+        "B": 3,
+        "C": 5
+      }
+    },
+    {
+      "seed": 875,
+      "sha256": "314fddbd25e39cb22c672eda4afdf88e63648cc0d9a66daf0ad3def57529ee1e",
+      "counts": {
+        "A": 7,
+        "B": 4,
+        "C": 1
+      }
+    }
+  ],
+  "eval_order": [
+    [
+      874,
+      15,
+      "B3"
+    ],
+    [
+      874,
+      0,
+      "B5"
+    ],
+    [
+      872,
+      15,
+      "B5"
+    ],
+    [
+      871,
+      60,
+      "B5"
+    ],
+    [
+      871,
+      15,
+      "B5"
+    ],
+    [
+      871,
+      90,
+      "B6"
+    ],
+    [
+      873,
+      90,
+      "B6"
+    ],
+    [
+      875,
+      15,
+      "B5"
+    ],
+    [
+      874,
+      30,
+      "B5"
+    ],
+    [
+      875,
+      0,
+      "B3"
+    ],
+    [
+      872,
+      30,
+      "B3"
+    ],
+    [
+      874,
+      15,
+      "B5"
+    ],
+    [
+      873,
+      15,
+      "B3"
+    ],
+    [
+      872,
+      90,
+      "B5"
+    ],
+    [
+      873,
+      120,
+      "B3"
+    ],
+    [
+      872,
+      90,
+      "B3"
+    ],
+    [
+      873,
+      60,
+      "B5"
+    ],
+    [
+      872,
+      120,
+      "B6"
+    ],
+    [
+      875,
+      120,
+      "B3"
+    ],
+    [
+      873,
+      15,
+      "B5"
+    ],
+    [
+      875,
+      60,
+      "B5"
+    ],
+    [
+      872,
+      60,
+      "B3"
+    ],
+    [
+      875,
+      30,
+      "B6"
+    ],
+    [
+      875,
+      60,
+      "B6"
+    ],
+    [
+      871,
+      0,
+      "B5"
+    ],
+    [
+      871,
+      120,
+      "B6"
+    ],
+    [
+      872,
+      30,
+      "B6"
+    ],
+    [
+      874,
+      15,
+      "B6"
+    ],
+    [
+      875,
+      120,
+      "B6"
+    ],
+    [
+      874,
+      0,
+      "B3"
+    ],
+    [
+      874,
+      120,
+      "B3"
+    ],
+    [
+      872,
+      120,
+      "B5"
+    ],
+    [
+      875,
+      0,
+      "B5"
+    ],
+    [
+      874,
+      60,
+      "B5"
+    ],
+    [
+      873,
+      30,
+      "B3"
+    ],
+    [
+      871,
+      60,
+      "B3"
+    ],
+    [
+      872,
+      30,
+      "B5"
+    ],
+    [
+      873,
+      60,
+      "B3"
+    ],
+    [
+      872,
+      120,
+      "B3"
+    ],
+    [
+      871,
+      30,
+      "B6"
+    ],
+    [
+      875,
+      60,
+      "B3"
+    ],
+    [
+      874,
+      120,
+      "B5"
+    ],
+    [
+      872,
+      0,
+      "B5"
+    ],
+    [
+      875,
+      120,
+      "B5"
+    ],
+    [
+      873,
+      0,
+      "B5"
+    ],
+    [
+      873,
+      120,
+      "B5"
+    ],
+    [
+      875,
+      90,
+      "B3"
+    ],
+    [
+      871,
+      15,
+      "B6"
+    ],
+    [
+      871,
+      90,
+      "B3"
+    ],
+    [
+      873,
+      120,
+      "B6"
+    ],
+    [
+      872,
+      15,
+      "B6"
+    ],
+    [
+      874,
+      90,
+      "B6"
+    ],
+    [
+      872,
+      0,
+      "B6"
+    ],
+    [
+      875,
+      0,
+      "B6"
+    ],
+    [
+      873,
+      60,
+      "B6"
+    ],
+    [
+      873,
+      30,
+      "B6"
+    ],
+    [
+      874,
+      0,
+      "B6"
+    ],
+    [
+      872,
+      90,
+      "B6"
+    ],
+    [
+      871,
+      60,
+      "B6"
+    ],
+    [
+      874,
+      120,
+      "B6"
+    ],
+    [
+      875,
+      15,
+      "B3"
+    ],
+    [
+      872,
+      15,
+      "B3"
+    ],
+    [
+      873,
+      15,
+      "B6"
+    ],
+    [
+      875,
+      90,
+      "B6"
+    ],
+    [
+      875,
+      15,
+      "B6"
+    ],
+    [
+      872,
+      60,
+      "B6"
+    ],
+    [
+      875,
+      90,
+      "B5"
+    ],
+    [
+      874,
+      30,
+      "B6"
+    ],
+    [
+      872,
+      60,
+      "B5"
+    ],
+    [
+      871,
+      30,
+      "B5"
+    ],
+    [
+      874,
+      60,
+      "B6"
+    ],
+    [
+      871,
+      120,
+      "B5"
+    ],
+    [
+      871,
+      120,
+      "B3"
+    ],
+    [
+      873,
+      90,
+      "B3"
+    ],
+    [
+      874,
+      30,
+      "B3"
+    ],
+    [
+      871,
+      0,
+      "B6"
+    ],
+    [
+      871,
+      30,
+      "B3"
+    ],
+    [
+      873,
+      0,
+      "B6"
+    ],
+    [
+      874,
+      90,
+      "B3"
+    ],
+    [
+      873,
+      90,
+      "B5"
+    ],
+    [
+      875,
+      30,
+      "B5"
+    ],
+    [
+      871,
+      90,
+      "B5"
+    ],
+    [
+      874,
+      90,
+      "B5"
+    ],
+    [
+      873,
+      0,
+      "B3"
+    ],
+    [
+      874,
+      60,
+      "B3"
+    ],
+    [
+      872,
+      0,
+      "B3"
+    ],
+    [
+      873,
+      30,
+      "B5"
+    ],
+    [
+      871,
+      0,
+      "B3"
+    ],
+    [
+      875,
+      30,
+      "B3"
+    ],
+    [
+      871,
+      15,
+      "B3"
+    ]
+  ],
+  "order_seed": 20261003,
+  "lags_s": [
+    0,
+    15,
+    30,
+    60,
+    90,
+    120
+  ],
+  "baselines": [
+    "B3",
+    "B5",
+    "B6"
+  ],
+  "duration_s": 600,
+  "drain_s": 180,
+  "burst_s": [
+    60,
+    360
+  ],
+  "initial_usable": 2,
+  "prewarmed_replicas": 4,
+  "release_trigger_s": 60,
+  "release_tolerance_s": 5,
+  "observer_interval_s": 0.5,
+  "supply": "Fixed matched two-to-four usable-capacity schedule; no HPA during measurement",
+  "eta": "B6 knows nominal scheduled release; observed EndpointSlice/Ready lag is retained",
+  "baseline_scope": "B3 admission bypass, B5 Ready-only, B6 scheduled-ETA admission; these controlled variants do not compare slow scaling decisions",
+  "analysis": {
+    "primary": "weighted SLO goodput over all offered requests",
+    "secondary": [
+      "A goodput",
+      "P99 TTFT",
+      "reject/defer fractions",
+      "GPU utilization",
+      "tokens/s"
+    ],
+    "cohorts": [
+      "whole run",
+      "burst",
+      "observed controlled-capacity gap"
+    ],
+    "contrasts": [
+      "B6-B5",
+      "B5-B3",
+      "B6-B3"
+    ],
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20261003,
+    "practical_effect": 0.05,
+    "resampling_unit": "paired seed within each lag"
+  },
+  "limitations": [
+    "Prewarmed controlled capacity is not natural EC2 provisioning.",
+    "All four GPUs consume resources while two are withheld.",
+    "Nonempty-tenant seed selection and sparse counts limit inference.",
+    "Nominal scheduled ETA is not an oracle for actual readiness.",
+    "Zero nominal lag retains measured Kubernetes propagation latency."
+  ]
+}

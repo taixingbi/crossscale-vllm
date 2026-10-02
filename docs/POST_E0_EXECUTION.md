@@ -1,11 +1,11 @@
 # Post-E0 execution order — user revision, 2026-09-12
 
-**Current status (2026-10-01):** E0–E4 are complete and restored. E5 controlled
-prewarmed-capacity (PID 174125) holds `suite.lock` (90 paired cells; dest
-`revision-20260912/e5-controlled-prewarmed-capacity`). E6 ETA-error is frozen
-and waits for E5 `complete.json` plus `restored.json`; it will not start from a
-failed-only `error.json`. Do not launch a second controller or historical
-`study.py`. See [E5_READINESS_PREPARATION.md](E5_READINESS_PREPARATION.md).
+**Current status (2026-10-02):** E0–E5 measurements are complete and restored.
+E5 finished all 90 cells, all dispatch-valid; PID 174125 exited. E6 ETA-error
+(PID 175289) now holds `suite.lock` and is preparing four replicas for its
+35 frozen runs. E5 outcome analysis remains pending. E7–E8 remain unrun.
+Do not launch a second controller or historical `study.py`.
+See [E5_READINESS_PREPARATION.md](E5_READINESS_PREPARATION.md).
 
 This revision supersedes the old E1–E7 numbering and automatic continuation
 gate in FULL_EXPERIMENT_PROTOCOL.md. Preserve all historical results and labels;

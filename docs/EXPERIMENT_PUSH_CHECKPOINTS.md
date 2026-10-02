@@ -260,3 +260,16 @@ E5 is the live controller. E6 is frozen on E5 traces, lag 60s, seven variants
 (no-ETA, ±50/±25/0, scheduled oracle), 35 runs. Waiter polls E5
 complete+restore and will not start from a failed-only E5 error. Find commit
 with `git log --grep="Freeze E6 ETA-error and wait for E5"`.
+
+## E5 controlled-capacity raw checkpoint — 2026-10-02
+
+All 90 frozen B3/B5/B6 cells completed and passed dispatch validity. Complete
+and restoration records are present; PID 174125 exited and released the lock.
+The three added GPU instances terminated through normal owned-claim cleanup.
+E6 PID 175289 acquired the lock after restoration and is preparing its replicas.
+All 1,626 E5 files (1,476,728,516 bytes) were mirrored from private S3 and matched
+runner SHA256 hashes after explicitly refreshing mutable state files. This
+checkpoint retains requests, raw observations, telemetry, frozen plan, prewarm
+proof and restoration. No experiment error records were found. Outcome analysis
+remains pending; dispatch validity alone does not establish an SLO benefit.
+Find this checkpoint with `git log --grep="Checkpoint all 90 E5 controlled-capacity runs"`.
