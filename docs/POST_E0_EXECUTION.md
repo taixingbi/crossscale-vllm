@@ -4,7 +4,8 @@
 E6 finished all 35 cells, all dispatch-valid; PID 175289 exited and `suite.lock`
 is free. One original-condition replica is Ready on the original GPU.
 E5/E6 outcome analysis remains pending. E7 controlled fast-policy ablation is
-implemented and frozen; see [E7_PREPARATION.md](E7_PREPARATION.md). Its 25 cells
+running under PID 188464 with suite.lock held (October 3); see
+[E7_PREPARATION.md](E7_PREPARATION.md). Its 25 cells
 do not complete the separate natural slow-loop audit. E8 remains unrun. Do not restart completed suites.
 See [E5_READINESS_PREPARATION.md](E5_READINESS_PREPARATION.md).
 

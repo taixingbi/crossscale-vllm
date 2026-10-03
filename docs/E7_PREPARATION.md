@@ -43,3 +43,13 @@ suite.lock, and a new destination `revision-20260912/e7-controlled-ablations`.
 It retains failures, restores the original serving template and single GPU, and
 cleans only owned empty claims. It does not start the natural-scaling subphase
 or E8 automatically. Never restart it over an existing destination.
+
+Launch verified October 3 around 02:23 UTC: PID 188464 is sleeping/running with
+suite.lock held, destination and frozen plan created, four replicas requested.
+Three added NodeClaims are provisioning and the original GPU is preserved.
+Source/frozen plan commit `bac110eddd4339c3cc656586a570397f1293b33b` was
+verified on origin/main before launch. All 25 relevant policy, gateway, gate,
+E5/E6/E7 tests passed with the HTTP dependency available. The first measurement
+starts only after all four models are Ready, routed, and long-prompt tested.
+Log: `/tmp/experiments/revision-e7-controlled.log`; PID file: `e7-controller.pid`.
+Allow roughly 5.5 hours for cells plus initial model startup and restoration.
