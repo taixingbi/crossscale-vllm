@@ -1,15 +1,13 @@
 # Post-E0 execution order — user revision, 2026-09-12
 
-**Current status (2026-10-03):** E0–E6 measurements are complete and restored.
-E6 finished all 35 cells, all dispatch-valid; PID 175289 exited and released
-`suite.lock` before E7 started. The original GPU remains preserved.
-E5/E6 outcome analysis remains pending. Controlled E7 is complete and restored:
-24 dispatch-valid measurements plus one preserved Oracle startup failure (not
-rerun). Continuation evidence is pushed at 2689121. Natural E7 now runs under
-PID 192040 with suite.lock held: 20 paired cells, real SLO-KEDA/HPA. See
-[E7_PREPARATION.md](E7_PREPARATION.md). E8 remains unrun.
-Do not restart completed or failed attempts.
-See [E5_READINESS_PREPARATION.md](E5_READINESS_PREPARATION.md).
+**Current status (2026-10-03):** E0–E7 measured suites are complete and restored.
+Controlled E7 has 24 valid measurements plus one preserved Oracle startup failure;
+natural E7 has all 20 cells dispatch-valid. PID 192040 exited and suite.lock is
+free. One original-condition replica is Ready on the original GPU. Natural E7
+raw checkpoint: 4fb8976. E2–E7 full outcome/audit analysis remains pending beyond
+the completed E3 priority headline report. E8 remains unrun and requires its
+long-trace, scale-down, lifecycle/cost controller and frozen plan before launch.
+Do not rerun completed or failed attempts. See [E7_PREPARATION.md](E7_PREPARATION.md).
 
 This revision supersedes the old E1–E7 numbering and automatic continuation
 gate in FULL_EXPERIMENT_PROTOCOL.md. Preserve all historical results and labels;

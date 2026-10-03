@@ -139,3 +139,13 @@ Natural E7 PID 192040 holds suite.lock; new destination created, rollout ongoing
 Log `revision-e7-natural.log`, PID file `e7-natural.pid`. Twenty cells remain,
 with 600-second arrivals and 180-second drain each plus startup/reset overhead.
 Do not change runtime or start another suite while it runs.
+
+## Natural E7 complete and restored
+
+October 3 14:13 UTC check: all 20 cells dispatch-valid, no errors, PID 192040 Z,
+suite.lock free, restored.json present, and original-condition pod
+`vllm-5b64c7b7d9-l88g6` Ready. All 507 files (223,121,315 bytes) SHA256-matched
+runner/local after S3 sync and state refresh. Raw commit
+`4fb8976932a58d49096a25817aad9669f3ad11d3`. No E8 controller has been launched.
+Full policy/scaler/outcome analysis still required; dispatch validity is not
+proof of beneficial scaling or SLO improvement.
