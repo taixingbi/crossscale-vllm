@@ -53,3 +53,29 @@ E5/E6/E7 tests passed with the HTTP dependency available. The first measurement
 starts only after all four models are Ready, routed, and long-prompt tested.
 Log: `/tmp/experiments/revision-e7-controlled.log`; PID file: `e7-controller.pid`.
 Allow roughly 5.5 hours for cells plus initial model startup and restoration.
+
+## Natural slow-loop subphase prepared while controlled E7 runs
+
+`crossscale/revision_e7_natural.py` and
+`configs/revision-20261003-e7-natural-plan.json` are prepared locally, not deployed
+into the active runtime. Plan SHA256:
+`caecb17f7dacb471b78724d8d10ae02e013b2eaf2c9819014095ea3d2bbebb5e`.
+Twenty cells pair B3/B5/no-tenant/B6 on the same five frozen E5 traces, randomized
+with seed 20261006. Each has 600 arrival seconds plus 180 drain seconds.
+Actual SLO-KEDA/HPA controls 2–4 replicas, with scale-down disabled per run.
+The independently measured batch4096 cold-start training P90 is mandatory.
+No natural oracle is claimed; Oracle is only the controlled subphase above.
+
+This executor requires all 25 unique dispatch-valid controlled E7 cells and
+restoration, plus the exclusive lock, E2 threshold, admission calibration and
+qualified mixed capacity. It audits live policy decisions and preserves raw
+scaler identities/status/events. No scale-out observed and readiness censored
+remain valid scientific classifications; never force a scale-out to obtain a gap.
+
+Thirty-two targeted tests passed including frozen trace validation, prerequisite
+uniqueness/restoration, held-lock refusal, live gateway auditing, policy branches,
+scaler evidence and gap classification. Once controlled E7 ends, archive/push its
+raw evidence, confirm restoration/process exit/lock release, then deploy the new
+module, frozen plan and updated `revision_e3.py` with a guarded runtime transfer.
+Launch once with `python3 -m crossscale.revision_e7_natural --execute` from
+`/tmp/experiments`. This prepared code is not evidence of a started/completed run.

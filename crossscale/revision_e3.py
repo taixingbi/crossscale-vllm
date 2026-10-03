@@ -102,7 +102,7 @@ def b5_b6_differ_only_by_eta(config):
         raise ValueError('B5 and B6 must match when no ETA is pending')
 
 
-def _run_suite(root, dest, frozen, slo_threshold, config_factory=e3_config):
+def _run_suite(root, dest, frozen, slo_threshold, config_factory=e3_config, traces=None):
     import asyncio
     import os
     import subprocess
@@ -153,6 +153,9 @@ def _run_suite(root, dest, frozen, slo_threshold, config_factory=e3_config):
 
     def measure(folder, baseline, config):
         folder = Path(folder)
+        config = copy.deepcopy(config)
+        if frozen.get('policy_audit'):
+            config['policy_audit_path'] = str(folder / 'policy-decisions.jsonl')
         study.remove_scaler()
         study.control.baseline()
         study.control.cleanup_empty()
@@ -199,7 +202,8 @@ def _run_suite(root, dest, frozen, slo_threshold, config_factory=e3_config):
                     'hpa': study.k.get('hpa'),
                     'deployment_uid': study.k.get('deployment', 'vllm')['metadata']['uid']})
                 summary = asyncio.run(run(config, baseline, folder / 'run', 'http://127.0.0.1:8080',
-                                          MODEL, root / 'tokens.json'))
+                                          MODEL, root / 'tokens.json',
+                                          trace=None if traces is None else traces[config['seed']]))
                 until = summary['start_unix_s'] + config['duration_s'] + config['drain_s']
                 while time.time() < until:
                     time.sleep(min(5, until - time.time()))
