@@ -1,0 +1,79 @@
+[
+  {
+    "seed": 872,
+    "variant": "B3",
+    "baseline": "B3",
+    "eta_error": null,
+    "lag_s": 60,
+    "dispatch_valid": true,
+    "summary": {
+      "tenants": {
+        "A": {
+          "offered": 11,
+          "completed": 11,
+          "good": 11,
+          "goodput": 1.0,
+          "rejected": 0,
+          "timeout": 0,
+          "errors": 0,
+          "deferred": 11,
+          "p95_ttft_s": 0.1403247476555407,
+          "p99_ttft_s": 0.14119374239817262,
+          "p95_tpot_s": 0.03349993070455692,
+          "p99_tpot_s": 0.03350665126678124,
+          "p95_admission_delay_s": 0.00035512656904757023,
+          "p99_admission_delay_s": 0.000410020025447011,
+          "p95_dispatch_lag_s": 0.0010727462358772755,
+          "p99_dispatch_lag_s": 0.0011308872140944005
+        },
+        "B": {
+          "offered": 3,
+          "completed": 3,
+          "good": 3,
+          "goodput": 1.0,
+          "rejected": 0,
+          "timeout": 0,
+          "errors": 0,
+          "deferred": 3,
+          "p95_ttft_s": 1.0352512259501965,
+          "p99_ttft_s": 1.055722833359614,
+          "p95_tpot_s": 0.03757753139869918,
+          "p99_tpot_s": 0.037831560839330355,
+          "p95_admission_delay_s": 0.00027764146216213703,
+          "p99_admission_delay_s": 0.0002812481019645929,
+          "p95_dispatch_lag_s": 0.001129858661442995,
+          "p99_dispatch_lag_s": 0.0011379004456102848
+        },
+        "C": {
+          "offered": 2,
+          "completed": 2,
+          "good": 2,
+          "goodput": 1.0,
+          "rejected": 0,
+          "timeout": 0,
+          "errors": 0,
+          "deferred": 2,
+          "p95_ttft_s": 2.290707751759328,
+          "p99_ttft_s": 2.3126646693097426,
+          "p95_tpot_s": 0.03657206592443074,
+          "p99_tpot_s": 0.03659355486223601,
+          "p95_admission_delay_s": 0.0002997535979375243,
+          "p99_admission_delay_s": 0.00030142515432089566,
+          "p95_dispatch_lag_s": 0.0005527581553906203,
+          "p99_dispatch_lag_s": 0.0005549254920333624
+        }
+      },
+      "weighted_slo_goodput": 1.0,
+      "jain_goodput": 1.0,
+      "completed_tokens_s": 9.095,
+      "tokens_rate_denominator": "offered duration; includes drain completions",
+      "latency_population": "completed requests only; failures remain in goodput denominator",
+      "start_unix_s": 1790995056.7654788,
+      "elapsed_s": 584.4380127750337,
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "tpot_definition": "(last nonempty text arrival - first)/(usage completion_tokens - 1); SSE chunks may coalesce tokens"
+    },
+    "nominal_release_unix_s": 1790995176.7654788,
+    "observed_release_unix_s": 1790995177.9433782
+  }
+]

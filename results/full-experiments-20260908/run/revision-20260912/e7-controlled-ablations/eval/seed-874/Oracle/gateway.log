@@ -1,0 +1,4 @@
+usage: cli.py [-h]
+              {trace,simulate,matrix,live,gateway,calibrate,profile,telemetry,compare,observe,e0-summary}
+              ...
+cli.py: error: oracle ETA is simulation-only; use prerecorded controlled readiness for a real oracle
