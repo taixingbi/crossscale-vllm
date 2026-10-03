@@ -79,3 +79,35 @@ raw evidence, confirm restoration/process exit/lock release, then deploy the new
 module, frozen plan and updated `revision_e3.py` with a guarded runtime transfer.
 Launch once with `python3 -m crossscale.revision_e7_natural --execute` from
 `/tmp/experiments`. This prepared code is not evidence of a started/completed run.
+
+## Preserved startup failure and prospective continuation
+
+At 02:50:55 UTC October 3, the second cell (seed 874, Oracle) failed at gateway
+startup. The CLI deliberately rejects `oracle-eta` for live use. This guard was
+missed by the original controller validation; policy-level tests alone did not
+exercise the CLI boundary. No load was dispatched for that cell. Seed 872/B3
+completed dispatch-valid. PID 188464 is still restoring and terminating owned
+added instances; do not change its runtime or launch another controller yet.
+
+The correction uses live-supported B6 with externally supplied scheduled-release
+ETA, as E6 already did. Oracle remains the recorded variant, and its ETA remains
+identical to CrossScale's nominal release. The general CLI guard is preserved.
+`revision_e7_continuation.py` freezes only the remaining 23 unattempted cells in
+`configs/revision-20261003-e7-continuation-plan.json`; it skips both attempted
+cells and refuses any different predecessor failure or unexpected measurement.
+Neither the completed nor failed cell is rerun. The original destination is
+immutable evidence; the continuation writes a distinct destination.
+
+After continuation, report 24 measured cells plus one startup failure, not 25
+successful cells. Oracle comparisons have at most four complete pairs; this
+attrition amendment is prospective to all remaining cells and must be disclosed.
+Natural E7 still plans five complete pairs for its four non-Oracle baselines.
+Its prerequisite now accepts the verified 24-cell combined evidence with this
+one explicit failure, never silently treating the missing Oracle as passing.
+
+The continuation source is prepared locally only. Wait for original controller
+exit and restoration/lock release, archive and push its raw failure evidence,
+then deploy changed `revision_e7.py`, new `revision_e7_continuation.py`, and its
+frozen plan under a guarded lock. Launch once with
+`python3 -m crossscale.revision_e7_continuation --execute`. Preserve existing
+`revision-e7-controlled.log`; use a new continuation log and PID file.

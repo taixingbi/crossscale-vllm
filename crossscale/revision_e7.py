@@ -139,7 +139,7 @@ def require_completed_e6(root):
         raise RuntimeError('E6 incomplete, duplicate, or invalid cells')
 
 
-def execute(root, frozen):
+def execute(root, frozen, *, continuation=None):
     import asyncio
     import fcntl
     import os
@@ -157,14 +157,20 @@ def execute(root, frozen):
     from .telemetry import collect
 
     root = Path(root)
+    plan_builder = plan if continuation is None else continuation.plan
+    destination = DEST if continuation is None else continuation.DEST
+    owner = OWNER if continuation is None else continuation.OWNER
+    names = variant_map() if continuation is None else continuation.variant_map()
     with (root / 'suite.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         base = json.loads((root / 'configs/revision-20260930.json').read_text())
         e5_plan = json.loads((root / E5_PLAN).read_text()) if (root / E5_PLAN).exists() else json.loads(E5_PLAN.read_text())
-        if frozen != plan(base, e5_plan):
+        if frozen != plan_builder(base, e5_plan):
             raise ValueError('Frozen E7 plan mismatch')
         require_completed_e5(root)
         require_completed_e6(root)
+        if continuation is not None:
+            continuation.require_predecessor(root)
         traces = {}
         for entry in frozen['traces']:
             seed = entry['seed']
@@ -172,7 +178,7 @@ def execute(root, frozen):
             traces[seed] = verify_frozen_trace(rows, run_config(base, seed, 0.025, 0.8)[1], entry['sha256'])
         threshold = require_completed_e2(root)
         require_admission_calibration(root)
-        dest = root / DEST
+        dest = root / destination
         dest.mkdir(exist_ok=False)
         save(dest / 'frozen-plan.json', frozen)
         (root / 'study.pid').write_text(str(os.getpid()))
@@ -190,10 +196,9 @@ def execute(root, frozen):
         if args[args.index('--max-num-batched-tokens') + 1] != '1024':
             raise RuntimeError('Expected restored serving condition')
         args[args.index('--max-num-batched-tokens') + 1] = '4096'
-        trial['metadata']['labels'][OWNER_LABEL] = OWNER
+        trial['metadata']['labels'][OWNER_LABEL] = owner
         trial['spec']['readinessGates'] = [dict(conditionType=CONDITION)]
         changed = False
-        names = variant_map()
 
         def live_pods():
             return [p for p in k.get('pods', selector='app=vllm')['items']
@@ -201,7 +206,7 @@ def execute(root, frozen):
 
         def set_gates(withheld):
             for p in live_pods():
-                patch_gate(k, p, OWNER, p['metadata']['uid'] not in withheld, time.time())
+                patch_gate(k, p, owner, p['metadata']['uid'] not in withheld, time.time())
 
         def wait_routes(uids, timeout=30):
             until = time.monotonic() + timeout
@@ -223,9 +228,9 @@ def execute(root, frozen):
             while time.monotonic() < until:
                 pods = live_pods()
                 study.control.remember_claims()
-                candidates = [p for p in pods if p['metadata'].get('labels', {}).get(OWNER_LABEL) == OWNER]
+                candidates = [p for p in pods if p['metadata'].get('labels', {}).get(OWNER_LABEL) == owner]
                 for p in candidates:
-                    patch_gate(k, p, OWNER, True, time.time())
+                    patch_gate(k, p, owner, True, time.time())
                 if len(pods) == 4 and len(candidates) == 4 and all(ready(p) for p in candidates):
                     break
                 time.sleep(3)
@@ -257,7 +262,7 @@ def execute(root, frozen):
                               e7_variant=variant)
                 folder = dest / 'eval' / f'seed-{seed}' / variant
                 config['policy_audit_path'] = str(folder / 'policy-decisions.jsonl')
-                driver = EtaVariantDriver(k, OWNER, baseline, withheld, LAG_S, error)
+                driver = EtaVariantDriver(k, owner, baseline, withheld, LAG_S, error)
                 gateway = None
                 with Observer(k, folder, interval_s=.5, capture_scaler=True, state_builder=driver) as observer:
                     save(folder / 'config.json', config)
@@ -323,8 +328,8 @@ def execute(root, frozen):
         finally:
             if changed:
                 for p in live_pods():
-                    if p['metadata'].get('labels', {}).get(OWNER_LABEL) == OWNER:
-                        patch_gate(k, p, OWNER, True, time.time())
+                    if p['metadata'].get('labels', {}).get(OWNER_LABEL) == owner:
+                        patch_gate(k, p, owner, True, time.time())
                 study.fixed(1)
                 study.control.cleanup_empty()
                 restore = copy.deepcopy(original)

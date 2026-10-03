@@ -45,10 +45,20 @@ def plan(base, source):
 
 def require_controlled(root, seeds):
     dest = Path(root)/CONTROLLED_DEST
-    if not all((dest/n).exists() for n in ('complete.json','restored.json')):
-        raise RuntimeError('Controlled E7 must complete and restore')
-    rows = json.loads((dest/'complete.json').read_text())['results']
     expected = {(s,v[0]) for s in seeds for v in VARIANTS}
+    if (dest/'complete.json').exists():
+        if not (dest/'restored.json').exists():
+            raise RuntimeError('Controlled E7 must complete and restore')
+        rows = json.loads((dest/'complete.json').read_text())['results']
+    else:
+        from .revision_e7_continuation import DEST as resumed, require_predecessor
+        require_predecessor(root)
+        cont = Path(root)/resumed
+        if not all((cont/n).exists() for n in ('complete.json','restored.json')):
+            raise RuntimeError('Controlled E7 continuation must complete and restore')
+        rows = json.loads((cont/'complete.json').read_text())['results']
+        rows += [json.loads((dest/'eval/seed-872/B3/complete.json').read_text())]
+        expected.remove((874,'Oracle'))  # Preserved startup failure, never a passing sample.
     if len(rows)!=len(expected) or {(r['seed'],r['variant']) for r in rows}!=expected or not all(r['dispatch_valid'] for r in rows):
         raise RuntimeError('Controlled E7 incomplete, duplicate, or invalid')
 

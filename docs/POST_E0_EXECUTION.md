@@ -4,7 +4,9 @@
 E6 finished all 35 cells, all dispatch-valid; PID 175289 exited and released
 `suite.lock` before E7 started. The original GPU remains preserved.
 E5/E6 outcome analysis remains pending. E7 controlled fast-policy ablation is
-running under PID 188464 with suite.lock held (October 3); see
+failed on its second cell at the Oracle CLI guard; PID 188464 is restoring
+with suite.lock held. One cell completed; a guarded continuation for the 23
+unattempted cells is prepared, not launched. See
 [E7_PREPARATION.md](E7_PREPARATION.md). Its 25 cells
 do not complete the separate natural slow-loop audit. E8 remains unrun. Do not restart completed suites.
 See [E5_READINESS_PREPARATION.md](E5_READINESS_PREPARATION.md).
