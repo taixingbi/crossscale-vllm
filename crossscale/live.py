@@ -59,7 +59,7 @@ async def run(c, baseline, out, url, model, tokens_path, *, trace=None, on_start
             offset = r["id"] % (len(token_ids)-r["input_tokens"]+1)
             body = dict(model=model, prompt=token_ids[offset:offset+r["input_tokens"]], max_tokens=r["output_tokens"], stream=True, stream_options={"include_usage": True}, temperature=0, ignore_eos=True)
             try:
-                async with session.post(url.rstrip("/")+"/v1/completions", json=body, headers={"X-Tenant": r["tenant"]}) as response:
+                async with session.post(url.rstrip("/")+"/v1/completions", json=body, headers={"X-Tenant": r["tenant"], "X-Request-ID": str(r["id"])}) as response:
                     r["http_status"] = response.status
                     r["admission_delay_s"] = float(response.headers.get("X-Admission-Delay", 0))
                     if response.status != 200:
@@ -144,6 +144,14 @@ async def gateway(c, baseline, state_path, upstream, host, port):
                 raise web.HTTPServiceUnavailable(text="capacity observation unavailable or stale")
             etas = [now+max(0, x-time.time()) for x in s.get("pending_eta_unix_s", [])]
             action = decision(c, baseline, r, now, s["ready"], s["desired"], active, etas)
+            if c.get("policy_audit_path"):
+                # Synchronous append preserves the atomic decision/reservation section.
+                with Path(c["policy_audit_path"]).open("a") as audit:
+                    audit.write(json.dumps(dict(unix_s=time.time(), baseline=baseline,
+                        request=r, request_id=request.headers.get("X-Request-ID"),
+                        now_monotonic_s=now, ready=s["ready"], desired=s["desired"],
+                        active=dict(active), pending_etas_monotonic_s=etas,
+                        eta_source=s.get("eta_source"), action=action)) + "\n")
             if action == "reject":
                 raise web.HTTPTooManyRequests(headers={"X-Admission-Delay": str(now-begin)})
             if action == "admit":

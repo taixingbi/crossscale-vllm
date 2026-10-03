@@ -94,6 +94,7 @@ class Streaming(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result['tenants']['A']['completed'], 1)
 
     async def test_gateway_does_not_forward_pending_capacity(self):
+        self.c['policy_audit_path'] = str(self.root/'audit.jsonl')
         calls = []
         async def handler(_):
             calls.append(1)
@@ -119,6 +120,12 @@ class Streaming(unittest.IsolatedAsyncioTestCase):
                     async with session.post(f'http://127.0.0.1:{port}/v1/completions', json={'prompt':[100]*10,'stream':True}, headers={'X-Tenant':'A'}) as response:
                         self.assertEqual(response.status, 429)
                 self.assertEqual(calls, [])
+                audit = json.loads((self.root/'audit.jsonl').read_text())
+                self.assertEqual(audit['action'], 'reject')
+                self.assertEqual(audit['ready'], 0)
+                self.assertEqual(audit['desired'], 4)
+                self.assertEqual(audit['active'], {'A': 0, 'B': 0, 'C': 0})
+                self.assertGreater(audit['pending_etas_monotonic_s'][0], audit['now_monotonic_s'])
             finally:
                 task.cancel()
                 await asyncio.gather(task, return_exceptions=True)

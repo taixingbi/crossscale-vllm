@@ -3,8 +3,9 @@
 **Current status (2026-10-03):** E0–E6 measurements are complete and restored.
 E6 finished all 35 cells, all dispatch-valid; PID 175289 exited and `suite.lock`
 is free. One original-condition replica is Ready on the original GPU.
-E5/E6 outcome analysis remains pending. E7–E8 remain unrun and require validated
-controllers and frozen plans before measurement. Do not restart completed suites.
+E5/E6 outcome analysis remains pending. E7 controlled fast-policy ablation is
+implemented and frozen; see [E7_PREPARATION.md](E7_PREPARATION.md). Its 25 cells
+do not complete the separate natural slow-loop audit. E8 remains unrun. Do not restart completed suites.
 See [E5_READINESS_PREPARATION.md](E5_READINESS_PREPARATION.md).
 
 This revision supersedes the old E1–E7 numbering and automatic continuation
