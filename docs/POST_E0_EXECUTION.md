@@ -3,12 +3,12 @@
 **Current status (2026-10-03):** E0–E6 measurements are complete and restored.
 E6 finished all 35 cells, all dispatch-valid; PID 175289 exited and released
 `suite.lock` before E7 started. The original GPU remains preserved.
-E5/E6 outcome analysis remains pending. E7 controlled fast-policy ablation is
-failed on its second cell at the Oracle CLI guard; PID 188464 is restoring
-with suite.lock held. One cell completed; a guarded continuation for the 23
-unattempted cells is prepared, not launched. See
-[E7_PREPARATION.md](E7_PREPARATION.md). Its 25 cells
-do not complete the separate natural slow-loop audit. E8 remains unrun. Do not restart completed suites.
+E5/E6 outcome analysis remains pending. Original E7 failed at the Oracle CLI
+guard after one valid cell; failure/restoration evidence is pushed at 155e199.
+The guarded 23-cell continuation is now running under PID 188897 with suite.lock
+held (October 3). It skips both attempted cells. See
+[E7_PREPARATION.md](E7_PREPARATION.md). Natural E7 is prepared but not deployed;
+E8 remains unrun. Do not restart completed or failed attempts.
 See [E5_READINESS_PREPARATION.md](E5_READINESS_PREPARATION.md).
 
 This revision supersedes the old E1–E7 numbering and automatic continuation

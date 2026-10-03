@@ -285,3 +285,11 @@ explicit refresh of mutable state files. No experiment error records were found.
 Outcome analysis remains pending. The oracle denotes scheduled controlled
 release knowledge, not perfect natural-readiness prediction. E7–E8 remain unrun.
 Find this checkpoint with `git log --grep="Checkpoint all 35 E6 ETA-error runs"`.
+
+### 2026-10-03 — preserved E7 startup failure
+
+Original E7 completed seed 872/B3, then seed 874/Oracle failed before load at the
+CLI guard. Restoration and original GPU health verified. All 29 files totaling
+24,273,601 bytes SHA256-matched runner/local; private S3 includes the explicitly
+uploaded failed-leaf observer stream. Commits d065bf2 and 155e199 verified on
+origin/main. No attempted cell rerun; 23-cell separate continuation PID 188897.

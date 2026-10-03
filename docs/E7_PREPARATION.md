@@ -111,3 +111,15 @@ then deploy changed `revision_e7.py`, new `revision_e7_continuation.py`, and its
 frozen plan under a guarded lock. Launch once with
 `python3 -m crossscale.revision_e7_continuation --execute`. Preserve existing
 `revision-e7-controlled.log`; use a new continuation log and PID file.
+
+Continuation launch verified October 3 after restoration, original PID 188464 Z,
+lock release and one original-condition Ready replica. Original failure evidence:
+29 files, 24,273,601 bytes, all SHA256-matched against the runner; private S3 and
+Git checkpoint `155e199bcf903bd4ff769cce48453c606dbc21e4` verified remotely.
+The failed leaf observer gzip required explicit upload because the archiver
+skips streams without a leaf completion/error marker; it is now preserved too.
+Continuation plan SHA256 is
+`4ccf9f2f81d3170ffd9e59ffa88ab85b51a5a65270f01b35afef7697affbe08b`.
+PID 188897 holds suite.lock; log `revision-e7-continuation.log`, PID file
+`e7-continuation.pid`. Four replicas are provisioning/prewarming; no cells yet.
+Only the continuation runtime files were deployed. Natural E7 remains local.
