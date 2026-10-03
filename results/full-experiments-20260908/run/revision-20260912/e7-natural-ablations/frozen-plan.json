@@ -1,0 +1,191 @@
+{
+  "phase": "e7-natural-ablations",
+  "capacity_rps": 0.025,
+  "slo_revision": "revision-20260930-b-ttft-3s",
+  "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off",
+  "eval_seeds": [
+    871,
+    872,
+    873,
+    874,
+    875
+  ],
+  "eval_order": [
+    [
+      875,
+      "no-tenant"
+    ],
+    [
+      872,
+      "B3"
+    ],
+    [
+      874,
+      "no-tenant"
+    ],
+    [
+      872,
+      "B5"
+    ],
+    [
+      871,
+      "B5"
+    ],
+    [
+      875,
+      "B6"
+    ],
+    [
+      872,
+      "B6"
+    ],
+    [
+      871,
+      "B3"
+    ],
+    [
+      875,
+      "B3"
+    ],
+    [
+      873,
+      "B6"
+    ],
+    [
+      873,
+      "no-tenant"
+    ],
+    [
+      874,
+      "B5"
+    ],
+    [
+      871,
+      "B6"
+    ],
+    [
+      873,
+      "B3"
+    ],
+    [
+      874,
+      "B3"
+    ],
+    [
+      872,
+      "no-tenant"
+    ],
+    [
+      875,
+      "B5"
+    ],
+    [
+      873,
+      "B5"
+    ],
+    [
+      871,
+      "no-tenant"
+    ],
+    [
+      874,
+      "B6"
+    ]
+  ],
+  "order_seed": 20261006,
+  "baselines": [
+    "B3",
+    "B5",
+    "no-tenant",
+    "B6"
+  ],
+  "traces": [
+    {
+      "seed": 871,
+      "sha256": "a83891f62c4f4b6bcfcac3132052c877b76de9630fe671f36933df42808f522a",
+      "counts": {
+        "A": 13,
+        "B": 5,
+        "C": 3
+      }
+    },
+    {
+      "seed": 872,
+      "sha256": "7b16ccba9e7e8784e4556f096b9976fe6c2965d091611412443b94cc457a4fcb",
+      "counts": {
+        "A": 11,
+        "B": 3,
+        "C": 2
+      }
+    },
+    {
+      "seed": 873,
+      "sha256": "6bfb8b8e2a48d4441bd25bb8a534b971530df59a10f4e5606949c158054ee9b5",
+      "counts": {
+        "A": 14,
+        "B": 7,
+        "C": 2
+      }
+    },
+    {
+      "seed": 874,
+      "sha256": "81cdde8eb6ce1809aff83a17ed21c036f14b519c2fe342a930228077036839c0",
+      "counts": {
+        "A": 5,
+        "B": 3,
+        "C": 5
+      }
+    },
+    {
+      "seed": 875,
+      "sha256": "314fddbd25e39cb22c672eda4afdf88e63648cc0d9a66daf0ad3def57529ee1e",
+      "counts": {
+        "A": 7,
+        "B": 4,
+        "C": 1
+      }
+    }
+  ],
+  "duration_s": 600,
+  "drain_s": 180,
+  "burst_s": [
+    60,
+    360
+  ],
+  "policy_audit": true,
+  "scaling": "Actual SLO-KEDA/HPA, min 2 max 4, scale-down disabled during each run; no manual scale-up",
+  "eta": "Independent batch4096 cold-new-node E0 training P90; required, no 60s fallback",
+  "threshold": "Frozen E2 threshold, no retuning",
+  "analysis": {
+    "primary": "weighted SLO goodput over all offered requests",
+    "contrasts": [
+      "B6-B5",
+      "B6-no-tenant",
+      "B5-B3"
+    ],
+    "cohorts": [
+      "whole run",
+      "burst",
+      "observed natural provisioning gap"
+    ],
+    "secondary": [
+      "A goodput",
+      "P99 TTFT",
+      "actual delay/reject actions",
+      "GPU utilization",
+      "tokens/s"
+    ],
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20261006,
+    "practical_effect": 0.05,
+    "resampling_unit": "paired seed",
+    "audit": "Replay policy decisions; pin ScaledObject/Deployment/HPA identities and observed desired/Ready transitions"
+  },
+  "limitations": [
+    "Oracle exists only in the separately labeled controlled E7 subphase; no future natural readiness is known.",
+    "Admission feedback may alter slow scaling, so this is not a causal isolation of tenant/ETA components.",
+    "No scale-up observed and readiness censored are explicit outcomes, never manual scale-up replacements.",
+    "E5 traces reused; sparse counts and nonempty-tenant seed selection limit inference.",
+    "Some natural cold starts exceed the observation horizon."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 7,
+      "completed": 7,
+      "good": 7,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 7,
+      "p95_ttft_s": 0.1766167187131941,
+      "p99_ttft_s": 0.18913417378440497,
+      "p95_tpot_s": 0.03793005895202516,
+      "p99_tpot_s": 0.039449263032905114,
+      "p95_admission_delay_s": 0.0002556175459176302,
+      "p99_admission_delay_s": 0.0002645409200340509,
+      "p95_dispatch_lag_s": 0.00136378644965589,
+      "p99_dispatch_lag_s": 0.0015127209108322854
+    },
+    "B": {
+      "offered": 5,
+      "completed": 5,
+      "good": 5,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 5,
+      "p95_ttft_s": 0.825009689014405,
+      "p99_ttft_s": 0.8551119126938284,
+      "p95_tpot_s": 0.03733890231032625,
+      "p99_tpot_s": 0.03781761948673745,
+      "p95_admission_delay_s": 0.0004178976640105247,
+      "p99_admission_delay_s": 0.0004392378404736519,
+      "p95_dispatch_lag_s": 0.001425550878047943,
+      "p99_dispatch_lag_s": 0.001493416279554367
+    },
+    "C": {
+      "offered": 1,
+      "completed": 1,
+      "good": 1,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 1,
+      "p95_ttft_s": 1.2715335926041007,
+      "p99_ttft_s": 1.2715335926041007,
+      "p95_tpot_s": 0.035051750047893834,
+      "p99_tpot_s": 0.035051750047893834,
+      "p95_admission_delay_s": 0.00027419906109571457,
+      "p99_admission_delay_s": 0.00027419906109571457,
+      "p95_dispatch_lag_s": 0.0007083434611558914,
+      "p99_dispatch_lag_s": 0.0007083434611558914
+    }
+  },
+  "weighted_slo_goodput": 1.0,
+  "jain_goodput": 1.0,
+  "completed_tokens_s": 11.366666666666667,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}

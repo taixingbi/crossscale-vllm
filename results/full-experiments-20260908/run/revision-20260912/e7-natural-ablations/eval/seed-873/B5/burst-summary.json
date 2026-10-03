@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 7,
+      "completed": 7,
+      "good": 7,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 7,
+      "p95_ttft_s": 0.17458571540191767,
+      "p99_ttft_s": 0.18685566494241354,
+      "p95_tpot_s": 0.034690213905276567,
+      "p99_tpot_s": 0.03510092059790549,
+      "p95_admission_delay_s": 0.00044850939884781836,
+      "p99_admission_delay_s": 0.00044982122257351874,
+      "p95_dispatch_lag_s": 0.0011191440280526874,
+      "p99_dispatch_lag_s": 0.0011610183399170637
+    },
+    "B": {
+      "offered": 5,
+      "completed": 4,
+      "good": 4,
+      "goodput": 0.8,
+      "rejected": 1,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 5,
+      "p95_ttft_s": 0.66071263612248,
+      "p99_ttft_s": 0.6711723821330815,
+      "p95_tpot_s": 0.03520605691584891,
+      "p99_tpot_s": 0.03531761980925709,
+      "p95_admission_delay_s": 0.00023993514478206634,
+      "p99_admission_delay_s": 0.00024027086794376374,
+      "p95_dispatch_lag_s": 0.0014321609633043404,
+      "p99_dispatch_lag_s": 0.001535896793939173
+    },
+    "C": {
+      "offered": 1,
+      "completed": 1,
+      "good": 1,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 1,
+      "p95_ttft_s": 1.2706422875635326,
+      "p99_ttft_s": 1.2706422875635326,
+      "p95_tpot_s": 0.03505358155465351,
+      "p99_tpot_s": 0.03505358155465351,
+      "p95_admission_delay_s": 0.00025275489315390587,
+      "p99_admission_delay_s": 0.00025275489315390587,
+      "p95_dispatch_lag_s": 0.00037690671160817146,
+      "p99_dispatch_lag_s": 0.00037690671160817146
+    }
+  },
+  "weighted_slo_goodput": 0.9333333333333332,
+  "jain_goodput": 0.9898989898989897,
+  "completed_tokens_s": 10.336666666666666,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}
