@@ -123,3 +123,19 @@ Continuation plan SHA256 is
 PID 188897 holds suite.lock; log `revision-e7-continuation.log`, PID file
 `e7-continuation.pid`. Four replicas are provisioning/prewarming; no cells yet.
 Only the continuation runtime files were deployed. Natural E7 remains local.
+
+## Natural E7 launched after controlled checkpoint
+
+October 3 around 09:03 UTC: continuation PID 188897 exited (Z), lock was free,
+restored.json present, and one original-condition replica Ready. All 23
+continuation cells are dispatch-valid. The 443 files (390,844,534 bytes) were
+SHA256-matched runner/local after S3 sync and forced mutable-state copies.
+Raw checkpoint `268912175ebc79d14a2d2d651a857e059b1b694c` verified on origin/main.
+Combined controlled evidence is 24 valid cells and the retained startup failure.
+
+Deployed natural module, frozen plan and updated E3 engine only under free lock.
+Prerequisite/plan checks passed remotely, 21 targeted tests passed locally.
+Natural E7 PID 192040 holds suite.lock; new destination created, rollout ongoing.
+Log `revision-e7-natural.log`, PID file `e7-natural.pid`. Twenty cells remain,
+with 600-second arrivals and 180-second drain each plus startup/reset overhead.
+Do not change runtime or start another suite while it runs.

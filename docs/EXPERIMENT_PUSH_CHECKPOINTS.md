@@ -293,3 +293,12 @@ CLI guard. Restoration and original GPU health verified. All 29 files totaling
 24,273,601 bytes SHA256-matched runner/local; private S3 includes the explicitly
 uploaded failed-leaf observer stream. Commits d065bf2 and 155e199 verified on
 origin/main. No attempted cell rerun; 23-cell separate continuation PID 188897.
+
+### 2026-10-03 — controlled E7 continuation complete
+
+All 23 continuation cells valid; original completed cell plus these give 24
+measurements, with one original Oracle startup failure preserved separately.
+Restoration, PID exit, lock release and original GPU health verified. All 443
+continuation files (390,844,534 bytes) SHA256-matched against runner after S3
+sync/state refresh. Commit 268912175ebc79d14a2d2d651a857e059b1b694c verified remotely.
+Natural E7 launched under PID 192040 only after this checkpoint.
