@@ -1,10 +1,10 @@
 # Post-E0 execution order — user revision, 2026-09-12
 
-**Current status (2026-10-02):** E0–E5 measurements are complete and restored.
-E5 finished all 90 cells, all dispatch-valid; PID 174125 exited. E6 ETA-error
-(PID 175289) now holds `suite.lock` and is preparing four replicas for its
-35 frozen runs. E5 outcome analysis remains pending. E7–E8 remain unrun.
-Do not launch a second controller or historical `study.py`.
+**Current status (2026-10-03):** E0–E6 measurements are complete and restored.
+E6 finished all 35 cells, all dispatch-valid; PID 175289 exited and `suite.lock`
+is free. One original-condition replica is Ready on the original GPU.
+E5/E6 outcome analysis remains pending. E7–E8 remain unrun and require validated
+controllers and frozen plans before measurement. Do not restart completed suites.
 See [E5_READINESS_PREPARATION.md](E5_READINESS_PREPARATION.md).
 
 This revision supersedes the old E1–E7 numbering and automatic continuation

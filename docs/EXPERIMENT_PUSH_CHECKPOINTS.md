@@ -273,3 +273,15 @@ checkpoint retains requests, raw observations, telemetry, frozen plan, prewarm
 proof and restoration. No experiment error records were found. Outcome analysis
 remains pending; dispatch validity alone does not establish an SLO benefit.
 Find this checkpoint with `git log --grep="Checkpoint all 90 E5 controlled-capacity runs"`.
+
+## E6 ETA-error raw checkpoint — 2026-10-03
+
+All 35 frozen ETA-error cells completed and passed dispatch validity. Complete
+and restored records are present; PID 175289 exited and suite.lock is free.
+One original-condition replica is Ready on the original GPU; added instances
+terminated through normal owned-claim cleanup. All 636 phase files (573,297,456
+bytes) were mirrored from private S3 and matched runner SHA256 hashes after
+explicit refresh of mutable state files. No experiment error records were found.
+Outcome analysis remains pending. The oracle denotes scheduled controlled
+release knowledge, not perfect natural-readiness prediction. E7–E8 remain unrun.
+Find this checkpoint with `git log --grep="Checkpoint all 35 E6 ETA-error runs"`.

@@ -1,0 +1,18 @@
+{
+  "observed_unix_s": 1790967409.6203287,
+  "ready": 4,
+  "desired": 4,
+  "pending_eta_unix_s": [],
+  "capacity_source": "actual Kubernetes Ready; controlled prewarmed release",
+  "actual_deployment_desired": 4,
+  "release_target_unix_s": 1790966749.6773577,
+  "routable_uids": [
+    "c02edacd-d915-4020-9da6-420700116240",
+    "c19aac3d-791b-45b4-937d-5b4ff1d6abfa",
+    "e6d627fe-87c8-4c44-a0b8-951e1e5e9341",
+    "f6d3a50f-6040-426b-9e65-e8a6ff35d945"
+  ],
+  "observed_release_unix_s": 1790966750.9757369,
+  "perceived_eta_unix_s": null,
+  "eta_source": "scheduled-release"
+}
