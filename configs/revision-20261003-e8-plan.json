@@ -1,0 +1,228 @@
+{
+  "phase": "e8-long-trace",
+  "capacity_rps": 0.025,
+  "eval_seeds": [
+    901,
+    902,
+    903,
+    904,
+    905
+  ],
+  "baselines": [
+    "B2",
+    "B3",
+    "B5",
+    "B6"
+  ],
+  "eval_order": [
+    [
+      904,
+      "B5"
+    ],
+    [
+      904,
+      "B6"
+    ],
+    [
+      904,
+      "B2"
+    ],
+    [
+      902,
+      "B5"
+    ],
+    [
+      903,
+      "B5"
+    ],
+    [
+      902,
+      "B3"
+    ],
+    [
+      901,
+      "B2"
+    ],
+    [
+      905,
+      "B6"
+    ],
+    [
+      905,
+      "B2"
+    ],
+    [
+      901,
+      "B3"
+    ],
+    [
+      905,
+      "B5"
+    ],
+    [
+      903,
+      "B2"
+    ],
+    [
+      905,
+      "B3"
+    ],
+    [
+      904,
+      "B3"
+    ],
+    [
+      902,
+      "B2"
+    ],
+    [
+      901,
+      "B6"
+    ],
+    [
+      903,
+      "B3"
+    ],
+    [
+      901,
+      "B5"
+    ],
+    [
+      903,
+      "B6"
+    ],
+    [
+      902,
+      "B6"
+    ]
+  ],
+  "order_seed": 20261007,
+  "traces": [
+    {
+      "seed": 901,
+      "counts": {
+        "A": 56,
+        "B": 31,
+        "C": 13
+      },
+      "sha256": "9be9bfb0f3c3883f9f818791046e6b60c10bf54c5502c37cf759fce32d55e75d"
+    },
+    {
+      "seed": 902,
+      "counts": {
+        "A": 44,
+        "B": 20,
+        "C": 16
+      },
+      "sha256": "feaf6d871613221cba59e2235d16809ec252270c0384bcb3e5394a31c236172a"
+    },
+    {
+      "seed": 903,
+      "counts": {
+        "A": 71,
+        "B": 31,
+        "C": 20
+      },
+      "sha256": "81956b1b0447b809e21397f6205a4fa49da51ab9d67a07eadc9e7bce8f443504"
+    },
+    {
+      "seed": 904,
+      "counts": {
+        "A": 42,
+        "B": 32,
+        "C": 13
+      },
+      "sha256": "c3403c1d2f88a5ed07ead4831aa45802e02e40befc718afa4136da93da70c686"
+    },
+    {
+      "seed": 905,
+      "counts": {
+        "A": 36,
+        "B": 26,
+        "C": 17
+      },
+      "sha256": "4b4bb21d21583ba9efb6f1ef6316014756aefa78142641759b65db7206df032b"
+    }
+  ],
+  "duration_s": 3600,
+  "drain_s": 180,
+  "burst_s": [
+    600,
+    1200
+  ],
+  "all_bursts_s": [
+    [
+      600,
+      1200
+    ],
+    [
+      2400,
+      3000
+    ]
+  ],
+  "policy_audit": true,
+  "phases": [
+    "low",
+    "burst",
+    "recover",
+    "RAG-heavy (C fourfold)",
+    "burst",
+    "low"
+  ],
+  "phase_seconds": 600,
+  "slo_revision": "revision-20260930-b-ttft-3s",
+  "serving_condition": "full-context-32768-seqs4-batch4096-eager-prefix-cache-off",
+  "scaler": {
+    "min": 2,
+    "max": 4,
+    "threshold": "Frozen E2 threshold; B2 queue target 5",
+    "scale_down": {
+      "stabilizationWindowSeconds": 60,
+      "selectPolicy": "Max",
+      "policies": [
+        {
+          "type": "Pods",
+          "value": 1,
+          "periodSeconds": 60
+        }
+      ]
+    }
+  },
+  "ec2_observation_interval_s": 15,
+  "analysis": {
+    "primary": "all-offered weighted SLO goodput and EC2 allocated GPU-hours",
+    "secondary": [
+      "cost per SLO-success",
+      "scale-outs",
+      "scale-downs and direction reversals",
+      "A goodput",
+      "P99 TTFT",
+      "actual delay/reject actions",
+      "tokens/s"
+    ],
+    "contrasts": [
+      "B6-B5",
+      "B5-B3",
+      "B6-B3",
+      "B3-B2"
+    ],
+    "cohorts": [
+      "whole run",
+      "each six phase intervals"
+    ],
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20261007,
+    "practical_effect": 0.05,
+    "resampling_unit": "paired seed",
+    "frontier": "Observed nondominated run-level cost/goodput points with paired uncertainty; no interpolated optimum"
+  },
+  "cost_scope": "Integrate actual EC2 state/lifecycle during arrival+drain; report startup/reset separately from measurement. Price-based compute estimate, not invoice attribution.",
+  "limitations": [
+    "NodePool automatic disruption remains disabled; HPA pod scale-down does not terminate idle EC2 nodes during a run. Count these allocated GPUs and do not claim node cost savings.",
+    "Public Linux on-demand pricing and lifecycle bounds must be verified before cost reporting; discounts, EBS, network and EKS charges are separate.",
+    "Observe scale-down rather than force it; missing metrics may prevent it.",
+    "RAG-heavy raises C arrival frequency while preserving original length distributions.",
+    "First burst summary from shared engine is not the full two-burst E8 analysis.",
+    "SLO amendment, sparse per-phase counts, and admission/scaling feedback limit interpretation."
+  ]
+}

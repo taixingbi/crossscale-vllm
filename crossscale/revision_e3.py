@@ -102,7 +102,7 @@ def b5_b6_differ_only_by_eta(config):
         raise ValueError('B5 and B6 must match when no ETA is pending')
 
 
-def _run_suite(root, dest, frozen, slo_threshold, config_factory=e3_config, traces=None):
+def _run_suite(root, dest, frozen, slo_threshold, config_factory=e3_config, traces=None, study_factory=None, state_factory=None):
     import asyncio
     import os
     import subprocess
@@ -119,7 +119,7 @@ def _run_suite(root, dest, frozen, slo_threshold, config_factory=e3_config, trac
 
     root, dest = Path(root), Path(dest)
     (root / 'study.pid').write_text(str(os.getpid()))
-    study = Study(root)
+    study = (study_factory or Study)(root)
     cfg = root / 'configs/revision-20260930.json'
     base = json.loads((cfg if cfg.exists() else Path('configs/revision-20260930.json')).read_text())
     eta_path = root / 'e0-prefill4096/cold-new-node/summary.json'
@@ -161,7 +161,8 @@ def _run_suite(root, dest, frozen, slo_threshold, config_factory=e3_config, trac
         study.control.cleanup_empty()
         study.warmup()
         gateway = None
-        with Observer(study.k, folder, eta=eta, interval_s=1, capture_scaler=True) as observer:
+        with Observer(study.k, folder, eta=eta, interval_s=1, capture_scaler=True,
+                      state_builder=None if state_factory is None else state_factory(study, eta)) as observer:
             save(folder / 'config.json', config)
             save(folder / 'before.json', study.k.snapshot())
             log = (folder / 'gateway.log').open('w')
