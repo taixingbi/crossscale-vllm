@@ -5,8 +5,9 @@ Controlled E7 has 24 valid measurements plus one preserved Oracle startup failur
 natural E7 has all 20 cells dispatch-valid. PID 192040 exited and suite.lock is
 free. One original-condition replica is Ready on the original GPU. Natural E7
 raw checkpoint: 4fb8976. E2–E7 full outcome/audit analysis remains pending beyond
-the completed E3 priority headline report. E8 remains unrun and requires its
-long-trace, scale-down, lifecycle/cost controller and frozen plan before launch.
+the completed E3 priority headline report. E8 is now running under PID 195173
+with suite.lock held: twenty one-hour cells plus drain, actual HPA scale-down
+and EC2 lifecycle observations. See [E8_PREPARATION.md](E8_PREPARATION.md).
 Do not rerun completed or failed attempts. See [E7_PREPARATION.md](E7_PREPARATION.md).
 
 This revision supersedes the old E1–E7 numbering and automatic continuation

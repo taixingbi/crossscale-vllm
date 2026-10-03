@@ -49,3 +49,10 @@ Ready slot separation, owned scale-down patch, lock guard and existing gateway/
 observer behavior. Launch only after source/plan push and remote validation.
 Expected minimum measured duration 21 hours plus rollout, per-run warmups and
 ownership-aware cleanup. All errors/censoring remain evidence; no failed reruns.
+
+Launch verified October 3 after original E7 worker exit and lock release.
+Source/plan commit `1d45619dd31bbfacc9666ae868e512f503f19a52` was verified on
+origin/main. Remote prerequisite and all frozen traces validated. PID 195173
+holds suite.lock; destination and deployment-before evidence exist, rollout is
+underway. Log `/tmp/experiments/revision-e8.log`, PID file `e8.pid`. No outcomes
+yet; no later controller starts automatically. Preserve all frozen runtime.
