@@ -109,6 +109,9 @@ E8 allocation integrates EC2 LaunchTime through the 3600-second arrival plus
 time brackets are also retained, conditional on no unobserved stop/restart
 between reads. The maximum observed API-read gap is 16.08 seconds. Mean
 allocated GPU-hours per cell are B2 2.100, B3 3.033, B5 2.594, and B6 2.404.
+Paired compute-estimate B6−B5 is −$0.191 per cell (95% interval −$0.796
+to +$0.399); B6−B3 is −$0.633 (−$0.934 to −$0.301), alongside its lower
+goodput. These are observed tradeoffs, not an ETA-benefit or billing claim.
 The captured AWS Pricing API product quotes Linux shared-tenancy g5.xlarge at
 $1.006 per hour in us-east-1, effective September 1, 2026. Multiplication by
 this price is a compute estimate, not invoice attribution or billed runtime.
@@ -139,3 +142,7 @@ commits are recorded in Git history. The October 4 post-E8 inference returned
 HTTP 200 and the expected answer from one Running/Ready replica on the original
 GPU node. Original data, failed attempts, and the unrelated experiment-plan
 edit remain preserved.
+
+Final validation: 16 comparison, gap, scaler, and policy-audit unit tests passed.
+Post-cleanup AWS reads confirm the temporary access entry and runner Pod Identity
+association are absent, while model-reader and Karpenter associations remain.

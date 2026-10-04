@@ -768,5 +768,583 @@
     "Public on-demand Linux shared-tenancy price; discounts, EBS, network, CPU, and EKS charges excluded.",
     "Automatic node disruption disabled; pod scale-down does not imply EC2 savings.",
     "Nondominance compares only equal-seed workloads; no interpolated optimum."
+  ],
+  "paired_cost_comparisons": [
+    {
+      "metric": "allocated_gpu_hours",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B6",
+      "right": "B5",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": 0.7574197802941005
+        },
+        {
+          "seed": 902,
+          "difference": -0.8153632899125416
+        },
+        {
+          "seed": 903,
+          "difference": -1.1256367360221016
+        },
+        {
+          "seed": 904,
+          "difference": 0.2349291316668194
+        },
+        {
+          "seed": 905,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.18973022279474466,
+      "paired_bootstrap_95": [
+        -0.7914688732624053,
+        0.396939564784368
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "allocated_gpu_hours",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B5",
+      "right": "B3",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": -1.5061931524011825
+        },
+        {
+          "seed": 902,
+          "difference": -0.0005323674281441093
+        },
+        {
+          "seed": 903,
+          "difference": 0.0034075077374775553
+        },
+        {
+          "seed": 904,
+          "difference": -0.6949794704384273
+        },
+        {
+          "seed": 905,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.4396594965060553,
+      "paired_bootstrap_95": [
+        -1.0420302839808993,
+        0.0012565296093622002
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "allocated_gpu_hours",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B6",
+      "right": "B3",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": -0.748773372107082
+        },
+        {
+          "seed": 902,
+          "difference": -0.8158956573406857
+        },
+        {
+          "seed": 903,
+          "difference": -1.122229228284624
+        },
+        {
+          "seed": 904,
+          "difference": -0.46005033877160795
+        },
+        {
+          "seed": 905,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.6293897193007999,
+      "paired_bootstrap_95": [
+        -0.928526736193233,
+        -0.29950934884283276
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "allocated_gpu_hours",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B3",
+      "right": "B2",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": 1.5061931524011825
+        },
+        {
+          "seed": 902,
+          "difference": 0.8158956573406857
+        },
+        {
+          "seed": 903,
+          "difference": 1.122229228284624
+        },
+        {
+          "seed": 904,
+          "difference": 1.2225295466846888
+        },
+        {
+          "seed": 905,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": 0.9333695169422362,
+      "paired_bootstrap_95": [
+        0.46441776194837364,
+        1.3159349252912733
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "estimated_compute_usd",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B6",
+      "right": "B5",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": 0.7619642989758653
+        },
+        {
+          "seed": 902,
+          "difference": -0.8202554696520168
+        },
+        {
+          "seed": 903,
+          "difference": -1.1323905564382342
+        },
+        {
+          "seed": 904,
+          "difference": 0.2363387064568201
+        },
+        {
+          "seed": 905,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.19086860413151313,
+      "paired_bootstrap_95": [
+        -0.7962176865019799,
+        0.39932120217307415
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "estimated_compute_usd",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B5",
+      "right": "B3",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": -1.5152303113155896
+        },
+        {
+          "seed": 902,
+          "difference": -0.0005355616327129553
+        },
+        {
+          "seed": 903,
+          "difference": 0.0034279527839022883
+        },
+        {
+          "seed": 904,
+          "difference": -0.6991493472610579
+        },
+        {
+          "seed": 905,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.44229745348509164,
+      "paired_bootstrap_95": [
+        -1.048282465684785,
+        0.0012640687870183243
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "estimated_compute_usd",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B6",
+      "right": "B3",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": -0.7532660123397243
+        },
+        {
+          "seed": 902,
+          "difference": -0.8207910312847297
+        },
+        {
+          "seed": 903,
+          "difference": -1.1289626036543319
+        },
+        {
+          "seed": 904,
+          "difference": -0.46281064080423784
+        },
+        {
+          "seed": 905,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.6331660576166047,
+      "paired_bootstrap_95": [
+        -0.9340978966103926,
+        -0.3013064049358897
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "estimated_compute_usd",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B3",
+      "right": "B2",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": 1.5152303113155896
+        },
+        {
+          "seed": 902,
+          "difference": 0.8207910312847297
+        },
+        {
+          "seed": 903,
+          "difference": 1.1289626036543319
+        },
+        {
+          "seed": 904,
+          "difference": 1.229864723964797
+        },
+        {
+          "seed": 905,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": 0.9389697340438896,
+      "paired_bootstrap_95": [
+        0.46720426852006386,
+        1.323830534843021
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "estimated_usd_per_slo_success",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B6",
+      "right": "B5",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": 0.009142407646471569
+        },
+        {
+          "seed": 902,
+          "difference": -0.011392437078500232
+        },
+        {
+          "seed": 903,
+          "difference": -0.012008619370675586
+        },
+        {
+          "seed": 904,
+          "difference": 0.0034589537790964825
+        },
+        {
+          "seed": 905,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.0021599390047215535,
+      "paired_bootstrap_95": [
+        -0.009360422579670328,
+        0.005040544570227221
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "estimated_usd_per_slo_success",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B5",
+      "right": "B3",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": -0.012735918025387788
+        },
+        {
+          "seed": 902,
+          "difference": 0.003602571703588041
+        },
+        {
+          "seed": 903,
+          "difference": 0.004888597491227418
+        },
+        {
+          "seed": 904,
+          "difference": -0.005863426086880293
+        },
+        {
+          "seed": 905,
+          "difference": 0.003875619152449092
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.001246511153000706,
+      "paired_bootstrap_95": [
+        -0.008039112202118913,
+        0.004226200998188212
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "estimated_usd_per_slo_success",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B6",
+      "right": "B3",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": -0.003593510378916219
+        },
+        {
+          "seed": 902,
+          "difference": -0.0077898653749121916
+        },
+        {
+          "seed": 903,
+          "difference": -0.007120021879448168
+        },
+        {
+          "seed": 904,
+          "difference": -0.00240447230778381
+        },
+        {
+          "seed": 905,
+          "difference": 0.003875619152449092
+        }
+      ],
+      "excluded": [],
+      "mean_difference": -0.0034064501577222594,
+      "paired_bootstrap_95": [
+        -0.0066826569775273875,
+        0.0002865039549302548
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    },
+    {
+      "metric": "estimated_usd_per_slo_success",
+      "interpretation": "Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold",
+      "left": "B3",
+      "right": "B2",
+      "declared_seeds": [
+        901,
+        902,
+        903,
+        904,
+        905
+      ],
+      "pairs": [
+        {
+          "seed": 901,
+          "difference": 0.015679282706683503
+        },
+        {
+          "seed": 902,
+          "difference": 0.010389759889680127
+        },
+        {
+          "seed": 903,
+          "difference": 0.009780517747216763
+        },
+        {
+          "seed": 904,
+          "difference": 0.014468996752527025
+        },
+        {
+          "seed": 905,
+          "difference": 0.0
+        }
+      ],
+      "excluded": [],
+      "mean_difference": 0.010063711419221483,
+      "paired_bootstrap_95": [
+        0.00497175132844143,
+        0.01425747252395886
+      ],
+      "practical_effect": null,
+      "practical_benefit_supported": null,
+      "status": "complete",
+      "bootstrap_seed": 20261007,
+      "resamples": 10000,
+      "mode": "live",
+      "warning": "Run-level bootstrap; incomplete-pair estimates are descriptive only. Ordering alone does not establish causal attribution."
+    }
   ]
 }

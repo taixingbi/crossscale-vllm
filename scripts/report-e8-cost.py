@@ -1,7 +1,11 @@
 """E8 launch-based allocation estimate and sampled running-time bounds, not billing."""
 import datetime
+import sys
 import json
 from pathlib import Path
+
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from crossscale.revision_compare import paired_comparison
 
 root=Path('results/full-experiments-20260908/run/revision-20260912')
 source=json.loads((root/'e8-lifecycle-extract.json').read_text())
@@ -63,6 +67,16 @@ output=dict(public_usd_per_instance_hour=price,price_sku=product['product']['sku
         'Public on-demand Linux shared-tenancy price; discounts, EBS, network, CPU, and EKS charges excluded.',
         'Automatic node disruption disabled; pod scale-down does not imply EC2 savings.',
         'Nondominance compares only equal-seed workloads; no interpolated optimum.'])
+plan=json.loads((root/'e8-long-trace/frozen-plan.json').read_text())
+comparisons=[]
+for metric in ['allocated_gpu_hours','estimated_compute_usd','estimated_usd_per_slo_success']:
+ records=[dict(seed=r['seed'],baseline=r['baseline'],condition_sha256=outcomes['plan_sha256'],trace_sha256=next(t['sha256'] for t in plan['traces'] if t['seed']==r['seed']),mode='live',dispatch_valid=True,censored=False,value=r[metric]) for r in results]
+ for left,right in [('B6','B5'),('B5','B3'),('B6','B3'),('B3','B2')]:
+  comparison=paired_comparison(records,left,right,plan['eval_seeds'],0,bootstrap_seed=20261007)
+  comparison['practical_benefit_supported']=None
+  comparison['practical_effect']=None
+  comparisons.append(dict(metric=metric,interpretation='Negative difference means lower estimated allocation/cost; no prespecified practical cost threshold',**comparison))
+output['paired_cost_comparisons']=comparisons
 (root/'e8-cost-scaling.json').write_text(json.dumps(output,indent=2,allow_nan=False)+'\n')
 for b in ['B2','B3','B5','B6']:
     rr=[r for r in results if r['baseline']==b]
