@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-04T17:26:56.037473+00:00",
+  "actions": [
+    "Removed only crossscale-gateway scrape job using resourceVersion and data precondition tests; preserved crossscale-vllm scrape",
+    "Deleted crossscale-gateway Service",
+    "Deleted crossscale-controlled-capacity Role and RoleBinding"
+  ],
+  "runner_lock": "free",
+  "archive_error": null,
+  "remaining": "runner/control/observer RBAC, Pod Identity, IAM role, final access entry"
+}
