@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-04T17:44:42.531495+00:00",
+  "removed": [
+    "crossscale-experiment-runner Pod and ServiceAccount",
+    "crossscale-experiment-control Role/RoleBinding",
+    "crossscale-experiment-observer ClusterRole/ClusterRoleBinding",
+    "EKS Pod Identity a-v1ju3aeqnjs5xpivl",
+    "crossscale-experiment-observer IAM role and its two inline policies",
+    "Temporary taixingbi EKS access entry (last Kubernetes access change)"
+  ],
+  "final_kubernetes_check": "Only original Ready GPU claim and one Running/Ready vLLM pod; vllm Service/model-reader preserved",
+  "inference_evidence": "inference-before-runner-cleanup.json",
+  "archive": "S3 analysis sync succeeded; all measured phases previously SHA256-verified locally and checkpointed",
+  "unrelated_resources": "not deleted"
+}

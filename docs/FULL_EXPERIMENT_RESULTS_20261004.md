@@ -13,8 +13,11 @@ Git where feasible and in the private S3 archive; earlier large streams have
 location/hash manifests. E7 controlled has 24 successful measurements and one
 preserved pre-load Oracle startup failure, not 25 successful measurements.
 No failed or completed measurement was rerun to improve its result.
-Final infrastructure cleanup is still pending;
-this document is the results synthesis checkpoint, not a claim of task closure.
+Scoped infrastructure cleanup completed October 4: one healthy original GPU
+replica is retained, inference passed, and temporary runner, monitoring,
+RBAC, image, IAM, and EKS access resources were removed. The report retains
+its scientific and accounting limitations; completion does not imply a
+positive experimental outcome.
 
 ## Conditions and interpretation
 

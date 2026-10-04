@@ -1,0 +1,121 @@
+{
+    "apiVersion": "karpenter.sh/v1",
+    "kind": "NodePool",
+    "metadata": {
+        "annotations": {
+            "karpenter.sh/nodepool-hash": "4113750089938003361",
+            "karpenter.sh/nodepool-hash-version": "v3",
+            "meta.helm.sh/release-name": "crossscale-gpu",
+            "meta.helm.sh/release-namespace": "crossscale"
+        },
+        "creationTimestamp": "2026-09-08T19:25:01Z",
+        "generation": 7,
+        "labels": {
+            "app.kubernetes.io/managed-by": "Helm"
+        },
+        "name": "crossscale-gpu",
+        "resourceVersion": "8957897",
+        "uid": "f6fa4b07-1382-4b11-8797-dc3ef25a0b6c"
+    },
+    "spec": {
+        "disruption": {
+            "budgets": [
+                {
+                    "nodes": "0"
+                }
+            ],
+            "consolidateAfter": "10m",
+            "consolidationPolicy": "WhenEmpty"
+        },
+        "limits": {
+            "nvidia.com/gpu": "1"
+        },
+        "template": {
+            "spec": {
+                "expireAfter": "Never",
+                "nodeClassRef": {
+                    "group": "karpenter.k8s.aws",
+                    "kind": "EC2NodeClass",
+                    "name": "crossscale-gpu"
+                },
+                "requirements": [
+                    {
+                        "key": "node.kubernetes.io/instance-type",
+                        "operator": "In",
+                        "values": [
+                            "g5.xlarge"
+                        ]
+                    },
+                    {
+                        "key": "kubernetes.io/arch",
+                        "operator": "In",
+                        "values": [
+                            "amd64"
+                        ]
+                    },
+                    {
+                        "key": "karpenter.sh/capacity-type",
+                        "operator": "In",
+                        "values": [
+                            "on-demand"
+                        ]
+                    }
+                ],
+                "taints": [
+                    {
+                        "effect": "NoSchedule",
+                        "key": "nvidia.com/gpu"
+                    }
+                ]
+            }
+        }
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2026-09-08T19:25:01Z",
+                "message": "",
+                "observedGeneration": 7,
+                "reason": "ValidationSucceeded",
+                "status": "True",
+                "type": "ValidationSucceeded"
+            },
+            {
+                "lastTransitionTime": "2026-09-08T19:25:16Z",
+                "message": "",
+                "observedGeneration": 7,
+                "reason": "NodeClassReady",
+                "status": "True",
+                "type": "NodeClassReady"
+            },
+            {
+                "lastTransitionTime": "2026-10-04T17:09:32Z",
+                "message": "object is awaiting reconciliation",
+                "observedGeneration": 7,
+                "reason": "AwaitingReconciliation",
+                "status": "Unknown",
+                "type": "NodeRegistrationHealthy"
+            },
+            {
+                "lastTransitionTime": "2026-10-04T17:09:32Z",
+                "message": "",
+                "observedGeneration": 7,
+                "reason": "Ready",
+                "status": "True",
+                "type": "Ready"
+            }
+        ],
+        "nodeClassObservedGeneration": 1,
+        "resources": {
+            "cpu": "4",
+            "ephemeral-storage": "104779756Ki",
+            "hugepages-1Gi": "0",
+            "hugepages-2Mi": "0",
+            "memory": "16164756Ki",
+            "nodes": "1",
+            "nvidia.com/gpu": "1",
+            "pods": "58",
+            "vpc.amazonaws.com/pod-eni": "0"
+        }
+    }
+}
