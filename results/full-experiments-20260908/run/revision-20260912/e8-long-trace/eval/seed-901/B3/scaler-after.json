@@ -1,0 +1,421 @@
+{
+  "scaledobject": {
+    "apiVersion": "keda.sh/v1alpha1",
+    "kind": "ScaledObject",
+    "metadata": {
+      "creationTimestamp": "2026-10-04T01:01:53Z",
+      "finalizers": [
+        "finalizer.keda.sh"
+      ],
+      "generation": 3,
+      "labels": {
+        "crossscale-experiment": "full-20260908",
+        "scaledobject.keda.sh/name": "vllm"
+      },
+      "managedFields": [
+        {
+          "apiVersion": "keda.sh/v1alpha1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:labels": {
+                ".": {},
+                "f:crossscale-experiment": {}
+              }
+            },
+            "f:spec": {
+              ".": {},
+              "f:advanced": {
+                ".": {},
+                "f:horizontalPodAutoscalerConfig": {
+                  ".": {},
+                  "f:behavior": {
+                    ".": {},
+                    "f:scaleDown": {
+                      ".": {},
+                      "f:policies": {},
+                      "f:selectPolicy": {},
+                      "f:stabilizationWindowSeconds": {}
+                    },
+                    "f:scaleUp": {
+                      ".": {},
+                      "f:stabilizationWindowSeconds": {}
+                    }
+                  }
+                }
+              },
+              "f:maxReplicaCount": {},
+              "f:minReplicaCount": {},
+              "f:pollingInterval": {},
+              "f:scaleTargetRef": {
+                ".": {},
+                "f:name": {}
+              },
+              "f:triggers": {}
+            }
+          },
+          "manager": "Python-urllib",
+          "operation": "Update",
+          "time": "2026-10-04T01:01:54Z"
+        },
+        {
+          "apiVersion": "keda.sh/v1alpha1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:metadata": {
+              "f:finalizers": {
+                ".": {},
+                "v:\"finalizer.keda.sh\"": {}
+              },
+              "f:labels": {
+                "f:scaledobject.keda.sh/name": {}
+              }
+            },
+            "f:spec": {
+              "f:advanced": {
+                "f:scalingModifiers": {}
+              }
+            }
+          },
+          "manager": "keda",
+          "operation": "Update",
+          "time": "2026-10-04T01:01:54Z"
+        },
+        {
+          "apiVersion": "keda.sh/v1alpha1",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              ".": {},
+              "f:authenticationsTypes": {},
+              "f:conditions": {},
+              "f:externalMetricNames": {},
+              "f:hpaName": {},
+              "f:lastActiveTime": {},
+              "f:originalReplicaCount": {},
+              "f:scaleTargetGVKR": {
+                ".": {},
+                "f:group": {},
+                "f:kind": {},
+                "f:resource": {},
+                "f:version": {}
+              },
+              "f:scaleTargetKind": {},
+              "f:triggersTypes": {}
+            }
+          },
+          "manager": "keda",
+          "operation": "Update",
+          "subresource": "status",
+          "time": "2026-10-04T02:02:14Z"
+        }
+      ],
+      "name": "vllm",
+      "namespace": "crossscale",
+      "resourceVersion": "8733677",
+      "uid": "c957d89b-10a1-48b0-be41-e646f87d3546"
+    },
+    "spec": {
+      "advanced": {
+        "horizontalPodAutoscalerConfig": {
+          "behavior": {
+            "scaleDown": {
+              "policies": [
+                {
+                  "periodSeconds": 60,
+                  "type": "Pods",
+                  "value": 1
+                }
+              ],
+              "selectPolicy": "Max",
+              "stabilizationWindowSeconds": 60
+            },
+            "scaleUp": {
+              "stabilizationWindowSeconds": 0
+            }
+          }
+        },
+        "scalingModifiers": {}
+      },
+      "maxReplicaCount": 4,
+      "minReplicaCount": 2,
+      "pollingInterval": 5,
+      "scaleTargetRef": {
+        "name": "vllm"
+      },
+      "triggers": [
+        {
+          "metadata": {
+            "ignoreNullValues": "false",
+            "query": "max(crossscale_slo_saturation{job=\"crossscale-gateway\"})",
+            "serverAddress": "http://prometheus-operated.monitoring.svc:9090",
+            "threshold": "0.8"
+          },
+          "metricType": "Value",
+          "type": "prometheus"
+        }
+      ]
+    },
+    "status": {
+      "authenticationsTypes": "",
+      "conditions": [
+        {
+          "message": "Triggers defined in ScaledObject are not working correctly",
+          "reason": "TriggerError",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "message": "Scaling is not performed because triggers are not active",
+          "reason": "ScalerNotActive",
+          "status": "False",
+          "type": "Active"
+        },
+        {
+          "message": "No fallbacks are active on this scaled object",
+          "reason": "NoFallbackFound",
+          "status": "False",
+          "type": "Fallback"
+        },
+        {
+          "status": "Unknown",
+          "type": "Paused"
+        }
+      ],
+      "externalMetricNames": [
+        "s0-prometheus"
+      ],
+      "hpaName": "keda-hpa-vllm",
+      "lastActiveTime": "2026-10-04T02:02:09Z",
+      "originalReplicaCount": 2,
+      "scaleTargetGVKR": {
+        "group": "apps",
+        "kind": "Deployment",
+        "resource": "deployments",
+        "version": "v1"
+      },
+      "scaleTargetKind": "apps/v1.Deployment",
+      "triggersTypes": "prometheus"
+    }
+  },
+  "hpa": {
+    "kind": "HorizontalPodAutoscalerList",
+    "apiVersion": "autoscaling/v2",
+    "metadata": {
+      "resourceVersion": "8734348"
+    },
+    "items": [
+      {
+        "metadata": {
+          "name": "keda-hpa-vllm",
+          "namespace": "crossscale",
+          "uid": "32e6b196-d6d1-409b-aa91-4956a21be2f8",
+          "resourceVersion": "8733685",
+          "creationTimestamp": "2026-10-04T01:01:54Z",
+          "labels": {
+            "app.kubernetes.io/managed-by": "keda-operator",
+            "app.kubernetes.io/name": "keda-hpa-vllm",
+            "app.kubernetes.io/part-of": "vllm",
+            "app.kubernetes.io/version": "2.17.2",
+            "crossscale-experiment": "full-20260908",
+            "scaledobject.keda.sh/name": "vllm"
+          },
+          "ownerReferences": [
+            {
+              "apiVersion": "keda.sh/v1alpha1",
+              "kind": "ScaledObject",
+              "name": "vllm",
+              "uid": "c957d89b-10a1-48b0-be41-e646f87d3546",
+              "controller": true,
+              "blockOwnerDeletion": true
+            }
+          ],
+          "managedFields": [
+            {
+              "manager": "keda",
+              "operation": "Update",
+              "apiVersion": "autoscaling/v2",
+              "time": "2026-10-04T01:01:54Z",
+              "fieldsType": "FieldsV1",
+              "fieldsV1": {
+                "f:metadata": {
+                  "f:labels": {
+                    ".": {},
+                    "f:app.kubernetes.io/managed-by": {},
+                    "f:app.kubernetes.io/name": {},
+                    "f:app.kubernetes.io/part-of": {},
+                    "f:app.kubernetes.io/version": {},
+                    "f:crossscale-experiment": {},
+                    "f:scaledobject.keda.sh/name": {}
+                  },
+                  "f:ownerReferences": {
+                    ".": {},
+                    "k:{\"uid\":\"c957d89b-10a1-48b0-be41-e646f87d3546\"}": {}
+                  }
+                },
+                "f:spec": {
+                  "f:behavior": {
+                    ".": {},
+                    "f:scaleDown": {
+                      ".": {},
+                      "f:policies": {},
+                      "f:selectPolicy": {},
+                      "f:stabilizationWindowSeconds": {}
+                    },
+                    "f:scaleUp": {
+                      ".": {},
+                      "f:policies": {},
+                      "f:selectPolicy": {},
+                      "f:stabilizationWindowSeconds": {}
+                    }
+                  },
+                  "f:maxReplicas": {},
+                  "f:metrics": {},
+                  "f:minReplicas": {},
+                  "f:scaleTargetRef": {
+                    "f:apiVersion": {},
+                    "f:kind": {},
+                    "f:name": {}
+                  }
+                }
+              }
+            },
+            {
+              "manager": "kube-controller-manager",
+              "operation": "Update",
+              "apiVersion": "autoscaling/v2",
+              "time": "2026-10-04T02:02:16Z",
+              "fieldsType": "FieldsV1",
+              "fieldsV1": {
+                "f:status": {
+                  "f:conditions": {
+                    ".": {},
+                    "k:{\"type\":\"AbleToScale\"}": {
+                      ".": {},
+                      "f:lastTransitionTime": {},
+                      "f:message": {},
+                      "f:reason": {},
+                      "f:status": {},
+                      "f:type": {}
+                    },
+                    "k:{\"type\":\"ScalingActive\"}": {
+                      ".": {},
+                      "f:lastTransitionTime": {},
+                      "f:message": {},
+                      "f:reason": {},
+                      "f:status": {},
+                      "f:type": {}
+                    },
+                    "k:{\"type\":\"ScalingLimited\"}": {
+                      ".": {},
+                      "f:lastTransitionTime": {},
+                      "f:message": {},
+                      "f:reason": {},
+                      "f:status": {},
+                      "f:type": {}
+                    }
+                  },
+                  "f:currentMetrics": {},
+                  "f:currentReplicas": {},
+                  "f:desiredReplicas": {},
+                  "f:lastScaleTime": {}
+                }
+              },
+              "subresource": "status"
+            }
+          ]
+        },
+        "spec": {
+          "scaleTargetRef": {
+            "kind": "Deployment",
+            "name": "vllm",
+            "apiVersion": "apps/v1"
+          },
+          "minReplicas": 2,
+          "maxReplicas": 4,
+          "metrics": [
+            {
+              "type": "External",
+              "external": {
+                "metric": {
+                  "name": "s0-prometheus",
+                  "selector": {
+                    "matchLabels": {
+                      "scaledobject.keda.sh/name": "vllm"
+                    }
+                  }
+                },
+                "target": {
+                  "type": "Value",
+                  "value": "800m"
+                }
+              }
+            }
+          ],
+          "behavior": {
+            "scaleUp": {
+              "stabilizationWindowSeconds": 0,
+              "selectPolicy": "Max",
+              "policies": [
+                {
+                  "type": "Pods",
+                  "value": 4,
+                  "periodSeconds": 15
+                },
+                {
+                  "type": "Percent",
+                  "value": 100,
+                  "periodSeconds": 15
+                }
+              ]
+            },
+            "scaleDown": {
+              "stabilizationWindowSeconds": 60,
+              "selectPolicy": "Max",
+              "policies": [
+                {
+                  "type": "Pods",
+                  "value": 1,
+                  "periodSeconds": 60
+                }
+              ]
+            }
+          }
+        },
+        "status": {
+          "lastScaleTime": "2026-10-04T01:38:13Z",
+          "currentReplicas": 2,
+          "desiredReplicas": 2,
+          "currentMetrics": [
+            {
+              "type": ""
+            }
+          ],
+          "conditions": [
+            {
+              "type": "AbleToScale",
+              "status": "True",
+              "lastTransitionTime": "2026-10-04T01:02:09Z",
+              "reason": "SucceededGetScale",
+              "message": "the HPA controller was able to get the target's current scale"
+            },
+            {
+              "type": "ScalingActive",
+              "status": "False",
+              "lastTransitionTime": "2026-10-04T02:02:16Z",
+              "reason": "FailedGetExternalMetric",
+              "message": "the HPA was unable to compute the replica count: unable to get external metric crossscale/s0-prometheus/&LabelSelector{MatchLabels:map[string]string{scaledobject.keda.sh/name: vllm,},MatchExpressions:[]LabelSelectorRequirement{},}: unable to fetch metrics from external metrics API: rpc error: code = Unknown desc = error when getting metric values metric:s0-prometheus encountered error"
+            },
+            {
+              "type": "ScalingLimited",
+              "status": "False",
+              "lastTransitionTime": "2026-10-04T01:59:45Z",
+              "reason": "DesiredWithinRange",
+              "message": "the desired count is within the acceptable range"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

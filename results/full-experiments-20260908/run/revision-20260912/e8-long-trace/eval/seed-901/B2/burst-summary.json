@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 11,
+      "completed": 11,
+      "good": 10,
+      "goodput": 0.9090909090909091,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 11,
+      "p95_ttft_s": 0.19144831108860672,
+      "p99_ttft_s": 0.19610139965079726,
+      "p95_tpot_s": 0.04528889249998663,
+      "p99_tpot_s": 0.04988555649819055,
+      "p95_admission_delay_s": 0.0003543933853507042,
+      "p99_admission_delay_s": 0.0003987217321991921,
+      "p95_dispatch_lag_s": 0.0017676050774753094,
+      "p99_dispatch_lag_s": 0.001932994928210974
+    },
+    "B": {
+      "offered": 8,
+      "completed": 8,
+      "good": 8,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 8,
+      "p95_ttft_s": 1.2735661764396353,
+      "p99_ttft_s": 1.3067358127376065,
+      "p95_tpot_s": 0.03855954835198561,
+      "p99_tpot_s": 0.03908814598397859,
+      "p95_admission_delay_s": 0.00030020845588296646,
+      "p99_admission_delay_s": 0.00032203427981585263,
+      "p95_dispatch_lag_s": 0.0010599680244922638,
+      "p99_dispatch_lag_s": 0.0010626357048749923
+    },
+    "C": {
+      "offered": 4,
+      "completed": 4,
+      "good": 4,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 4,
+      "p95_ttft_s": 3.0599672003882,
+      "p99_ttft_s": 3.196967138187028,
+      "p95_tpot_s": 0.037775131672346175,
+      "p99_tpot_s": 0.03800384378212952,
+      "p95_admission_delay_s": 0.00026842900551855565,
+      "p99_admission_delay_s": 0.00027262632735073564,
+      "p95_dispatch_lag_s": 0.000950915366411209,
+      "p99_dispatch_lag_s": 0.0010187546908855438
+    }
+  },
+  "weighted_slo_goodput": 0.9545454545454545,
+  "jain_goodput": 0.9980506822612086,
+  "completed_tokens_s": 12.806666666666667,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}

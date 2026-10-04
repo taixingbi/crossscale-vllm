@@ -309,3 +309,13 @@ Natural E7 launched under PID 192040 only after this checkpoint.
 serving pod Ready. All 507 files, 223,121,315 bytes, SHA256-matched runner/local
 following S3 sync and mutable-state refresh. Raw commit
 4fb8976932a58d49096a25817aad9669f3ad11d3. E8 and final analysis remain.
+
+### 2026-10-04 — E8 long traces complete
+
+All 20 frozen one-hour cells completed and passed dispatch validity, with no
+experiment error records. Restoration completed at 13:24:26 UTC; PID 195173
+exited and suite.lock is free. One original-condition vLLM replica is Running
+and Ready on original node ip-10-42-9-196.ec2.internal. All 507 phase files
+(979,021,125 bytes) were mirrored from private S3 and SHA256-matched against
+the runner. Final outcome analysis, figures and scoped cleanup remain pending.
+Find this checkpoint with `git log --grep="Checkpoint all 20 E8 long-trace runs"`.

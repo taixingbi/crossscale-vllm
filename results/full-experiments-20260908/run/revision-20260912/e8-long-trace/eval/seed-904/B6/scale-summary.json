@@ -1,0 +1,81 @@
+{
+  "episodes": [
+    {
+      "scale_observed_unix_s": 1791045243.0605378,
+      "target": 3,
+      "from_replicas": 2,
+      "capacity_ready_unix_s": null,
+      "gap_s": null,
+      "censor_reason": "scale_down_before_ready"
+    },
+    {
+      "scale_observed_unix_s": 1791046295.1363113,
+      "target": 4,
+      "from_replicas": 2,
+      "capacity_ready_unix_s": null,
+      "gap_s": null,
+      "censor_reason": "scale_down_before_ready"
+    }
+  ],
+  "pod_stages": [
+    {
+      "pod": "vllm-6f9588fbdf-5vcc7",
+      "uid": "be62e747-4cb2-452c-baaf-4bf8323e3b4a",
+      "pod_created_unix_s": 1791038316.0,
+      "vllm_ready_unix_s": 1791039216.0,
+      "pod_scheduled_unix_s": 1791038371.0,
+      "container_started_unix_s": 1791039013.0,
+      "node": "ip-10-42-24-27.ec2.internal",
+      "node_ready_unix_s": 1791038355.0,
+      "nodeclaim_created_unix_s": 1791038317.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-mmmdx",
+      "uid": "cf9fe877-f21f-4b4f-8b30-1bf27493641c",
+      "pod_created_unix_s": 1791038158.0,
+      "vllm_ready_unix_s": 1791038313.0,
+      "pod_scheduled_unix_s": 1791038158.0,
+      "container_started_unix_s": 1791038160.0,
+      "node": "ip-10-42-9-196.ec2.internal",
+      "node_ready_unix_s": 1788895749.0,
+      "nodeclaim_created_unix_s": 1788895712.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-x6wkw",
+      "uid": "d8256f41-f1cd-4c06-9005-279fdafe72dd",
+      "pod_created_unix_s": 1791045242.0,
+      "pod_scheduled_unix_s": 1791045299.0,
+      "node": "ip-10-42-15-247.ec2.internal",
+      "node_ready_unix_s": 1791045284.0,
+      "nodeclaim_created_unix_s": 1791045243.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-268xf",
+      "uid": "dbbffec2-0ff3-4cf8-a772-91a0f7466181",
+      "pod_created_unix_s": 1791046294.0,
+      "pod_scheduled_unix_s": 1791046294.0,
+      "node": "ip-10-42-15-247.ec2.internal",
+      "node_ready_unix_s": 1791045284.0,
+      "nodeclaim_created_unix_s": 1791045243.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-dsv8r",
+      "uid": "4840e01b-ae1a-4c0a-b523-c6f6979d9d9f",
+      "pod_created_unix_s": 1791046294.0,
+      "pod_scheduled_unix_s": 1791046350.0,
+      "node": "ip-10-42-24-201.ec2.internal",
+      "node_ready_unix_s": 1791046334.0,
+      "nodeclaim_created_unix_s": 1791046295.0
+    }
+  ],
+  "gap_statistics": {
+    "completed": 0,
+    "censored": 2,
+    "p50_s": null,
+    "p90_s": null,
+    "p99_s": null,
+    "min_s": null,
+    "max_s": null
+  },
+  "timing": "poll-observed transitions, not exact HPA decision timestamps; raw Kubernetes conditions retained"
+}

@@ -1,0 +1,72 @@
+{
+  "episodes": [
+    {
+      "scale_observed_unix_s": 1791041124.1158886,
+      "target": 3,
+      "from_replicas": 2,
+      "capacity_ready_unix_s": null,
+      "gap_s": null,
+      "censor_reason": "scale_down_before_ready"
+    },
+    {
+      "scale_observed_unix_s": 1791042190.9689534,
+      "target": 3,
+      "from_replicas": 2,
+      "capacity_ready_unix_s": null,
+      "gap_s": null,
+      "censor_reason": "scale_down_before_ready"
+    }
+  ],
+  "pod_stages": [
+    {
+      "pod": "vllm-6f9588fbdf-5vcc7",
+      "uid": "be62e747-4cb2-452c-baaf-4bf8323e3b4a",
+      "pod_created_unix_s": 1791038316.0,
+      "vllm_ready_unix_s": 1791039216.0,
+      "pod_scheduled_unix_s": 1791038371.0,
+      "container_started_unix_s": 1791039013.0,
+      "node": "ip-10-42-24-27.ec2.internal",
+      "node_ready_unix_s": 1791038355.0,
+      "nodeclaim_created_unix_s": 1791038317.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-mmmdx",
+      "uid": "cf9fe877-f21f-4b4f-8b30-1bf27493641c",
+      "pod_created_unix_s": 1791038158.0,
+      "vllm_ready_unix_s": 1791038313.0,
+      "pod_scheduled_unix_s": 1791038158.0,
+      "container_started_unix_s": 1791038160.0,
+      "node": "ip-10-42-9-196.ec2.internal",
+      "node_ready_unix_s": 1788895749.0,
+      "nodeclaim_created_unix_s": 1788895712.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-wp64d",
+      "uid": "6d67935c-89af-44e4-977e-5b96c17069d0",
+      "pod_created_unix_s": 1791041123.0,
+      "pod_scheduled_unix_s": 1791041177.0,
+      "node": "ip-10-42-23-49.ec2.internal",
+      "node_ready_unix_s": 1791041161.0,
+      "nodeclaim_created_unix_s": 1791041124.0
+    },
+    {
+      "pod": "vllm-6f9588fbdf-f2bnn",
+      "uid": "ff75abe1-e30c-4361-8b5b-283ae02fd6a6",
+      "pod_created_unix_s": 1791042190.0,
+      "pod_scheduled_unix_s": 1791042190.0,
+      "node": "ip-10-42-23-49.ec2.internal",
+      "node_ready_unix_s": 1791041161.0,
+      "nodeclaim_created_unix_s": 1791041124.0
+    }
+  ],
+  "gap_statistics": {
+    "completed": 0,
+    "censored": 2,
+    "p50_s": null,
+    "p90_s": null,
+    "p99_s": null,
+    "min_s": null,
+    "max_s": null
+  },
+  "timing": "poll-observed transitions, not exact HPA decision timestamps; raw Kubernetes conditions retained"
+}

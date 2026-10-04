@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 15,
+      "completed": 15,
+      "good": 14,
+      "goodput": 0.9333333333333333,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 15,
+      "p95_ttft_s": 0.1778529710136354,
+      "p99_ttft_s": 0.18345579607412218,
+      "p95_tpot_s": 0.04454536085547376,
+      "p99_tpot_s": 0.05960207009177195,
+      "p95_admission_delay_s": 0.0002841827925294637,
+      "p99_admission_delay_s": 0.00029521415941417215,
+      "p95_dispatch_lag_s": 0.0018522166181355712,
+      "p99_dispatch_lag_s": 0.0020269309077411888
+    },
+    "B": {
+      "offered": 6,
+      "completed": 6,
+      "good": 6,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 6,
+      "p95_ttft_s": 1.3676634291186929,
+      "p99_ttft_s": 1.4385071331635118,
+      "p95_tpot_s": 0.035017846154300945,
+      "p99_tpot_s": 0.03508159057445807,
+      "p95_admission_delay_s": 0.00024430546909570694,
+      "p99_admission_delay_s": 0.00024527069181203844,
+      "p95_dispatch_lag_s": 0.0017943134298548102,
+      "p99_dispatch_lag_s": 0.0018169565824791788
+    },
+    "C": {
+      "offered": 3,
+      "completed": 3,
+      "good": 3,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 3,
+      "p95_ttft_s": 3.0206671060994266,
+      "p99_ttft_s": 3.1378363643214104,
+      "p95_tpot_s": 0.036618833480412116,
+      "p99_tpot_s": 0.036725122617686345,
+      "p95_admission_delay_s": 0.000267777219414711,
+      "p99_admission_delay_s": 0.00027105912566185,
+      "p95_dispatch_lag_s": 0.001109278341755271,
+      "p99_dispatch_lag_s": 0.0011104443203657866
+    }
+  },
+  "weighted_slo_goodput": 0.9666666666666667,
+  "jain_goodput": 0.9989680082559342,
+  "completed_tokens_s": 10.17,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}

@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 18,
+      "completed": 18,
+      "good": 17,
+      "goodput": 0.9444444444444444,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 18,
+      "p95_ttft_s": 0.17924492757301777,
+      "p99_ttft_s": 0.18438635346945373,
+      "p95_tpot_s": 0.03998792456467092,
+      "p99_tpot_s": 0.048307491990257995,
+      "p95_admission_delay_s": 0.0002952174050733447,
+      "p99_admission_delay_s": 0.00030952268745750185,
+      "p95_dispatch_lag_s": 0.0018405575305223464,
+      "p99_dispatch_lag_s": 0.0019529390335083004
+    },
+    "B": {
+      "offered": 9,
+      "completed": 9,
+      "good": 9,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 9,
+      "p95_ttft_s": 0.9598156659863889,
+      "p99_ttft_s": 0.9645533900521696,
+      "p95_tpot_s": 0.03777814416150817,
+      "p99_tpot_s": 0.03801176936238651,
+      "p95_admission_delay_s": 0.0002222299575805664,
+      "p99_admission_delay_s": 0.00022230252623558043,
+      "p95_dispatch_lag_s": 0.0018576540984213351,
+      "p99_dispatch_lag_s": 0.002045899424701929
+    },
+    "C": {
+      "offered": 2,
+      "completed": 2,
+      "good": 2,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 2,
+      "p95_ttft_s": 2.855099391308613,
+      "p99_ttft_s": 2.9115453459555285,
+      "p95_tpot_s": 0.036898805561355864,
+      "p99_tpot_s": 0.0369686689773517,
+      "p95_admission_delay_s": 0.00022383774630725385,
+      "p99_admission_delay_s": 0.00022421403788030147,
+      "p95_dispatch_lag_s": 0.0019214724889025092,
+      "p99_dispatch_lag_s": 0.0019949259934946896
+    }
+  },
+  "weighted_slo_goodput": 0.9722222222222222,
+  "jain_goodput": 0.9992885094272501,
+  "completed_tokens_s": 10.625,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}

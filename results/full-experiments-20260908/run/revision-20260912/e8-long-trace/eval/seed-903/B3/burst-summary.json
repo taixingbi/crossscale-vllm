@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 18,
+      "completed": 18,
+      "good": 17,
+      "goodput": 0.9444444444444444,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 18,
+      "p95_ttft_s": 0.18229432397056372,
+      "p99_ttft_s": 0.18323616644833238,
+      "p95_tpot_s": 0.038874126797902184,
+      "p99_tpot_s": 0.047868866376775,
+      "p95_admission_delay_s": 0.00022945241071283817,
+      "p99_admission_delay_s": 0.0002318152505904436,
+      "p95_dispatch_lag_s": 0.0011669497005641456,
+      "p99_dispatch_lag_s": 0.0013848857395350926
+    },
+    "B": {
+      "offered": 9,
+      "completed": 9,
+      "good": 9,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 9,
+      "p95_ttft_s": 0.9279784124344587,
+      "p99_ttft_s": 0.9423894243687392,
+      "p95_tpot_s": 0.03717080041400593,
+      "p99_tpot_s": 0.037580667824862544,
+      "p95_admission_delay_s": 0.00023325933143496512,
+      "p99_admission_delay_s": 0.00023336155340075493,
+      "p95_dispatch_lag_s": 0.001709573622792959,
+      "p99_dispatch_lag_s": 0.00198880260810256
+    },
+    "C": {
+      "offered": 2,
+      "completed": 2,
+      "good": 2,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 2,
+      "p95_ttft_s": 2.8561810276703907,
+      "p99_ttft_s": 2.9126694549480456,
+      "p95_tpot_s": 0.03676483031750614,
+      "p99_tpot_s": 0.036829547955590736,
+      "p95_admission_delay_s": 0.00023041153326630592,
+      "p99_admission_delay_s": 0.00023058662191033363,
+      "p95_dispatch_lag_s": 0.0010411715600639581,
+      "p99_dispatch_lag_s": 0.001073704557493329
+    }
+  },
+  "weighted_slo_goodput": 0.9722222222222222,
+  "jain_goodput": 0.9992885094272501,
+  "completed_tokens_s": 10.625,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}

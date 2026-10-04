@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 11,
+      "completed": 8,
+      "good": 8,
+      "goodput": 0.7272727272727273,
+      "rejected": 3,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 11,
+      "p95_ttft_s": 0.17321038930676874,
+      "p99_ttft_s": 0.19319468426518138,
+      "p95_tpot_s": 0.0367774197685462,
+      "p99_tpot_s": 0.03820109957679822,
+      "p95_admission_delay_s": 0.00034519024193286897,
+      "p99_admission_delay_s": 0.0003497427701950073,
+      "p95_dispatch_lag_s": 0.0017000335734337567,
+      "p99_dispatch_lag_s": 0.001790398573502898
+    },
+    "B": {
+      "offered": 8,
+      "completed": 5,
+      "good": 5,
+      "goodput": 0.625,
+      "rejected": 3,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 8,
+      "p95_ttft_s": 1.1505879109725357,
+      "p99_ttft_s": 1.1515094444528222,
+      "p95_tpot_s": 0.034864490142604704,
+      "p99_tpot_s": 0.03487569308411552,
+      "p95_admission_delay_s": 0.00031872354447841643,
+      "p99_admission_delay_s": 0.0003316877037286758,
+      "p95_dispatch_lag_s": 0.0021174502559006213,
+      "p99_dispatch_lag_s": 0.0021279277093708515
+    },
+    "C": {
+      "offered": 4,
+      "completed": 4,
+      "good": 4,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 4,
+      "p95_ttft_s": 3.062785212905146,
+      "p99_ttft_s": 3.199055091855116,
+      "p95_tpot_s": 0.036871540748995756,
+      "p99_tpot_s": 0.03701128382861007,
+      "p95_admission_delay_s": 0.0002539517590776086,
+      "p99_admission_delay_s": 0.00025422361213713887,
+      "p95_dispatch_lag_s": 0.0009366156766191125,
+      "p99_dispatch_lag_s": 0.0009413721831515431
+    }
+  },
+  "weighted_slo_goodput": 0.7386363636363636,
+  "jain_goodput": 0.9608476286579215,
+  "completed_tokens_s": 10.925,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}

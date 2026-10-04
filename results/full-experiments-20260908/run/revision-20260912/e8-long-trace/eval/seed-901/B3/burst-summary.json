@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 11,
+      "completed": 11,
+      "good": 10,
+      "goodput": 0.9090909090909091,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 11,
+      "p95_ttft_s": 0.4792950314003974,
+      "p99_ttft_s": 0.7086689981166275,
+      "p95_tpot_s": 0.03882810779003804,
+      "p99_tpot_s": 0.038982915248611125,
+      "p95_admission_delay_s": 0.00039714202284812927,
+      "p99_admission_delay_s": 0.00045190379023551946,
+      "p95_dispatch_lag_s": 0.0017855660989880562,
+      "p99_dispatch_lag_s": 0.0018083194270730018
+    },
+    "B": {
+      "offered": 8,
+      "completed": 8,
+      "good": 8,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 8,
+      "p95_ttft_s": 1.2903775768820196,
+      "p99_ttft_s": 1.3501691727060825,
+      "p95_tpot_s": 0.04347373577603584,
+      "p99_tpot_s": 0.04612226054300643,
+      "p95_admission_delay_s": 0.00023987097665667534,
+      "p99_admission_delay_s": 0.0002410079352557659,
+      "p95_dispatch_lag_s": 0.0017992738168686627,
+      "p99_dispatch_lag_s": 0.0019261117186397314
+    },
+    "C": {
+      "offered": 4,
+      "completed": 4,
+      "good": 4,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 4,
+      "p95_ttft_s": 3.0650380412349474,
+      "p99_ttft_s": 3.2014151157857844,
+      "p95_tpot_s": 0.03705952606793287,
+      "p99_tpot_s": 0.03722646179959974,
+      "p95_admission_delay_s": 0.00031100434716790915,
+      "p99_admission_delay_s": 0.00032111376058310267,
+      "p95_dispatch_lag_s": 0.002113005076535046,
+      "p99_dispatch_lag_s": 0.002156874896027148
+    }
+  },
+  "weighted_slo_goodput": 0.9545454545454545,
+  "jain_goodput": 0.9980506822612086,
+  "completed_tokens_s": 12.806666666666667,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}

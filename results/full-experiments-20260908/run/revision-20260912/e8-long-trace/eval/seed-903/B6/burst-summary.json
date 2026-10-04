@@ -1,0 +1,63 @@
+{
+  "tenants": {
+    "A": {
+      "offered": 18,
+      "completed": 14,
+      "good": 14,
+      "goodput": 0.7777777777777778,
+      "rejected": 4,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 18,
+      "p95_ttft_s": 0.14354275646619497,
+      "p99_ttft_s": 0.16823959036730227,
+      "p95_tpot_s": 0.03429412403090599,
+      "p99_tpot_s": 0.03549609745286701,
+      "p95_admission_delay_s": 0.0002612768672406673,
+      "p99_admission_delay_s": 0.00028829237446188923,
+      "p95_dispatch_lag_s": 0.0012243566336110233,
+      "p99_dispatch_lag_s": 0.0013712340826168654
+    },
+    "B": {
+      "offered": 9,
+      "completed": 7,
+      "good": 7,
+      "goodput": 0.7777777777777778,
+      "rejected": 2,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 9,
+      "p95_ttft_s": 0.9047925288788974,
+      "p99_ttft_s": 0.9363749150745571,
+      "p95_tpot_s": 0.03484359759680647,
+      "p99_tpot_s": 0.03492734073796705,
+      "p95_admission_delay_s": 0.00029661711305379863,
+      "p99_admission_delay_s": 0.00031463284045457835,
+      "p95_dispatch_lag_s": 0.001572615839540958,
+      "p99_dispatch_lag_s": 0.0016830215975642202
+    },
+    "C": {
+      "offered": 2,
+      "completed": 2,
+      "good": 2,
+      "goodput": 1.0,
+      "rejected": 0,
+      "timeout": 0,
+      "errors": 0,
+      "deferred": 2,
+      "p95_ttft_s": 2.81942478667479,
+      "p99_ttft_s": 2.8743400836503135,
+      "p95_tpot_s": 0.03643719701735669,
+      "p99_tpot_s": 0.036487894446709086,
+      "p95_admission_delay_s": 0.00025243754498660564,
+      "p99_admission_delay_s": 0.00025273053906857965,
+      "p95_dispatch_lag_s": 0.0017670647706836463,
+      "p99_dispatch_lag_s": 0.0017939413618296386
+    }
+  },
+  "weighted_slo_goodput": 0.8148148148148149,
+  "jain_goodput": 0.9851024208566106,
+  "completed_tokens_s": 8.863333333333333,
+  "tokens_rate_denominator": "offered duration; includes drain completions",
+  "latency_population": "completed requests only; failures remain in goodput denominator"
+}
