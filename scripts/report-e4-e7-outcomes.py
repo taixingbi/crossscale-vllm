@@ -33,9 +33,13 @@ for name,continuations,contrasts in suites:
             trace=sorted(({k:r[k] for k in ('id','tenant','offered_s','input_tokens','output_tokens')} for r in rows),key=lambda r:r['id'])
             trace_hash=hashlib.sha256(json.dumps(trace,sort_keys=True).encode()).hexdigest()
             cohorts={}
-            for cohort in ['whole','burst']:
-                lo,hi=plan['burst_s']; selected=rows if cohort=='whole' else [r for r in rows if lo<=r['offered_s']<hi]
-                summary=summarize(selected,config|{'duration_s':config['duration_s'] if cohort=='whole' else hi-lo})
+            for cohort in (['whole','burst','controlled-gap'] if 'observed_release_unix_s' in complete else ['whole','burst']):
+                lo,hi=plan['burst_s']
+                if cohort=='controlled-gap':
+                    lo=plan['release_trigger_s']; hi=complete['observed_release_unix_s']-complete['summary']['start_unix_s']
+                    assert hi>=lo
+                selected=rows if cohort=='whole' else [r for r in rows if lo<=r['offered_s']<hi]
+                summary=summarize(selected,config|{'duration_s':config['duration_s'] if cohort=='whole' else max(hi-lo,1e-9)})
                 for tenant in summary['tenants'].values():tenant.pop('deferred',None)
                 if cohort=='whole':assert abs(summary['weighted_slo_goodput']-complete['summary']['weighted_slo_goodput'])<1e-12
                 cohorts[cohort]=summary
@@ -57,7 +61,7 @@ for name,continuations,contrasts in suites:
             comparison=paired_comparison(rr,left,right,plan['eval_seeds'],plan['analysis']['practical_effect'],bootstrap_seed=plan['analysis']['bootstrap_seed'])
             comparisons.append(dict(lag=lag,cohort=cohort,metric=metric,**comparison))
     output.append(dict(suite=name,runs=runs,comparisons=comparisons,limitations=[
-        'Whole/burst request outcomes only; observed gap, utilization and scaler identity audits remain separate.',
+        'Whole/burst and recorded controlled-release gap request outcomes; utilization and natural scaler audits remain separate.',
         'No positive admission overhead is interpreted as policy deferral. Missing policy audit remains unknown.',
         'Controlled E7 preserves seed 874 Oracle startup failure; four-pair Oracle contrast is descriptive without bootstrap.',
         'Same documented 3-second B TTFT amendment; controlled scheduled oracle is not perfect natural readiness.']))
