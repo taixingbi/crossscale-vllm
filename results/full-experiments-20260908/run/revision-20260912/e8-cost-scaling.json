@@ -1,0 +1,772 @@
+{
+  "public_usd_per_instance_hour": 1.006,
+  "price_sku": "79BRGEEZC6TARVWJ",
+  "runs": [
+    {
+      "seed": 901,
+      "baseline": "B2",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.048329237765736,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.048329237765736,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.096658475531472,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 99,
+      "estimated_usd_per_slo_success": 0.02133939393939394,
+      "weighted_slo_goodput": 0.9910714285714285,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 15.921178579330444,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": true
+    },
+    {
+      "seed": 901,
+      "baseline": "B3",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.05,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.05,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-07763b80c7fc51bd2",
+          "launch_unix_s": 1791076784.0,
+          "allocated_gpu_hours": 0.7530965762005912,
+          "running_gpu_hours_lower": 0.7498251111639871,
+          "running_gpu_hours_upper": 0.7530965762005912
+        },
+        {
+          "instance_id": "i-018930084ce0d5efd",
+          "launch_unix_s": 1791076784.0,
+          "allocated_gpu_hours": 0.7530965762005912,
+          "running_gpu_hours_lower": 0.7498251111639871,
+          "running_gpu_hours_upper": 0.7530965762005912
+        }
+      ],
+      "allocated_gpu_hours": 3.6061931524011825,
+      "estimated_compute_usd": 3.6278303113155896,
+      "running_gpu_hours_lower": 3.5996502223279743,
+      "running_gpu_hours_upper": 3.6061931524011825,
+      "good_requests": 98,
+      "estimated_usd_per_slo_success": 0.03701867664607744,
+      "weighted_slo_goodput": 0.9821428571428571,
+      "observed_scale_outs": 2,
+      "observed_scale_downs": 3,
+      "direction_reversals": 3,
+      "max_ec2_read_gap_s": 16.033954620361328,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 901,
+      "baseline": "B5",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0463258707523346,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0463258707523346,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.0926517415046693,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 87,
+      "estimated_usd_per_slo_success": 0.024282758620689654,
+      "weighted_slo_goodput": 0.867267812832329,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 15.953407049179077,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 901,
+      "baseline": "B6",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0475978618197972,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0475978618197972,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-0595682ceb258ce99",
+          "launch_unix_s": 1791100873.0,
+          "allocated_gpu_hours": 0.7574197802941004,
+          "running_gpu_hours_lower": 0.7528941856490241,
+          "running_gpu_hours_upper": 0.7574197802941004
+        }
+      ],
+      "allocated_gpu_hours": 2.8574197802941006,
+      "estimated_compute_usd": 2.8745642989758653,
+      "running_gpu_hours_lower": 2.8480899092886185,
+      "running_gpu_hours_upper": 2.8574197802941006,
+      "good_requests": 86,
+      "estimated_usd_per_slo_success": 0.03342516626716122,
+      "weighted_slo_goodput": 0.8583392414037575,
+      "observed_scale_outs": 1,
+      "observed_scale_downs": 1,
+      "direction_reversals": 1,
+      "max_ec2_read_gap_s": 15.982529401779175,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 902,
+      "baseline": "B2",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0479353422588773,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0479353422588773,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.0958706845177546,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 79,
+      "estimated_usd_per_slo_success": 0.026741772151898734,
+      "weighted_slo_goodput": 0.9886363636363636,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 15.998193264007568,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": true
+    },
+    {
+      "seed": 902,
+      "baseline": "B3",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.05,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.05,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-091c336d083458ddb",
+          "launch_unix_s": 1791061018.0,
+          "allocated_gpu_hours": 0.8158956573406855,
+          "running_gpu_hours_lower": 0.8107108656565348,
+          "running_gpu_hours_upper": 0.8151340074009366
+        }
+      ],
+      "allocated_gpu_hours": 2.915895657340686,
+      "estimated_compute_usd": 2.9333910312847298,
+      "running_gpu_hours_lower": 2.910710865656535,
+      "running_gpu_hours_upper": 2.915134007400937,
+      "good_requests": 79,
+      "estimated_usd_per_slo_success": 0.03713153204157886,
+      "weighted_slo_goodput": 0.9886363636363636,
+      "observed_scale_outs": 1,
+      "observed_scale_downs": 1,
+      "direction_reversals": 1,
+      "max_ec2_read_gap_s": 15.993814945220947,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 902,
+      "baseline": "B5",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0474303143554264,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0474303143554264,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-0f097de72842bae44",
+          "launch_unix_s": 1791052464.0,
+          "allocated_gpu_hours": 0.8153632899125417,
+          "running_gpu_hours_lower": 0.8084641128116183,
+          "running_gpu_hours_upper": 0.8153632899125417
+        }
+      ],
+      "allocated_gpu_hours": 2.9153632899125417,
+      "estimated_compute_usd": 2.932855469652017,
+      "running_gpu_hours_lower": 2.9033247415224714,
+      "running_gpu_hours_upper": 2.9153632899125417,
+      "good_requests": 72,
+      "estimated_usd_per_slo_success": 0.0407341037451669,
+      "weighted_slo_goodput": 0.9109848484848485,
+      "observed_scale_outs": 1,
+      "observed_scale_downs": 1,
+      "direction_reversals": 1,
+      "max_ec2_read_gap_s": 16.041240215301514,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 902,
+      "baseline": "B6",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0488890767759746,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0488890767759746,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.0977781535519493,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 72,
+      "estimated_usd_per_slo_success": 0.02934166666666667,
+      "weighted_slo_goodput": 0.9109848484848485,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 15.925456762313843,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 903,
+      "baseline": "B2",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0489906501107746,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0489906501107746,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.0979813002215493,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 121,
+      "estimated_usd_per_slo_success": 0.017459504132231404,
+      "weighted_slo_goodput": 0.9929577464788734,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 16.080002069473267,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": true
+    },
+    {
+      "seed": 903,
+      "baseline": "B3",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0479602407746844,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0479602407746844,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-0c249983515b203b1",
+          "launch_unix_s": 1791104823.0,
+          "allocated_gpu_hours": 0.8031979474756453,
+          "running_gpu_hours_lower": 0.7957603356573317,
+          "running_gpu_hours_upper": 0.802224481370714
+        },
+        {
+          "instance_id": "i-0d402f50421ae017b",
+          "launch_unix_s": 1791106566.0,
+          "allocated_gpu_hours": 0.31903128080897863,
+          "running_gpu_hours_lower": 0.31275739683045284,
+          "running_gpu_hours_upper": 0.31903128080897863
+        }
+      ],
+      "allocated_gpu_hours": 3.222229228284624,
+      "estimated_compute_usd": 3.241562603654332,
+      "running_gpu_hours_lower": 3.2044382140371535,
+      "running_gpu_hours_upper": 3.221255762179693,
+      "good_requests": 119,
+      "estimated_usd_per_slo_success": 0.027240021879448167,
+      "weighted_slo_goodput": 0.9788732394366196,
+      "observed_scale_outs": 3,
+      "observed_scale_downs": 5,
+      "direction_reversals": 5,
+      "max_ec2_read_gap_s": 15.992102146148682,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 903,
+      "baseline": "B5",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0464645593696171,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0464645593696171,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-021885f93a5eb3da9",
+          "launch_unix_s": 1791056628.0,
+          "allocated_gpu_hours": 0.8029572568999397,
+          "running_gpu_hours_lower": 0.7972638809680939,
+          "running_gpu_hours_upper": 0.8029572568999397
+        },
+        {
+          "instance_id": "i-0208ce9f049b91c26",
+          "launch_unix_s": 1791058357.0,
+          "allocated_gpu_hours": 0.3226794791221619,
+          "running_gpu_hours_lower": 0.3158661334382163,
+          "running_gpu_hours_upper": 0.3226794791221619
+        }
+      ],
+      "allocated_gpu_hours": 3.2256367360221017,
+      "estimated_compute_usd": 3.244990556438234,
+      "running_gpu_hours_lower": 3.2060591331455446,
+      "running_gpu_hours_upper": 3.2256367360221017,
+      "good_requests": 101,
+      "estimated_usd_per_slo_success": 0.032128619370675585,
+      "weighted_slo_goodput": 0.8321066182038468,
+      "observed_scale_outs": 3,
+      "observed_scale_downs": 5,
+      "direction_reversals": 5,
+      "max_ec2_read_gap_s": 16.038910627365112,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 903,
+      "baseline": "B6",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0493846633699204,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0493846633699204,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.098769326739841,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 105,
+      "estimated_usd_per_slo_success": 0.02012,
+      "weighted_slo_goodput": 0.8602756322883538,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 15.90283751487732,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 904,
+      "baseline": "B2",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0491755205392836,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0491755205392836,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.0983510410785673,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 85,
+      "estimated_usd_per_slo_success": 0.024854117647058825,
+      "weighted_slo_goodput": 0.9761904761904762,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 16.015210151672363,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": true
+    },
+    {
+      "seed": 904,
+      "baseline": "B3",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0483412811491224,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0483412811491224,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-0c1d641179447620a",
+          "launch_unix_s": 1791092628.0,
+          "allocated_gpu_hours": 0.7573758844534556,
+          "running_gpu_hours_lower": 0.7491574023167292,
+          "running_gpu_hours_upper": 0.7552682757377625
+        },
+        {
+          "instance_id": "i-0847f0b905af729d6",
+          "launch_unix_s": 1791093680.0,
+          "allocated_gpu_hours": 0.4651536622312334,
+          "running_gpu_hours_lower": 0.4606567477517658,
+          "running_gpu_hours_upper": 0.4651536622312334
+        }
+      ],
+      "allocated_gpu_hours": 3.322529546684689,
+      "estimated_compute_usd": 3.342464723964797,
+      "running_gpu_hours_lower": 3.30649671236674,
+      "running_gpu_hours_upper": 3.320421937968996,
+      "good_requests": 85,
+      "estimated_usd_per_slo_success": 0.03932311439958585,
+      "weighted_slo_goodput": 0.9776785714285715,
+      "observed_scale_outs": 4,
+      "observed_scale_downs": 5,
+      "direction_reversals": 7,
+      "max_ec2_read_gap_s": 15.949448108673096,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": true
+    },
+    {
+      "seed": 904,
+      "baseline": "B5",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0493088665935728,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0493088665935728,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-01f2ae82d15fc6adb",
+          "launch_unix_s": 1791041126.0,
+          "allocated_gpu_hours": 0.5275500762462616,
+          "running_gpu_hours_lower": 0.5229565903875563,
+          "running_gpu_hours_upper": 0.5275500762462616
+        }
+      ],
+      "allocated_gpu_hours": 2.6275500762462616,
+      "estimated_compute_usd": 2.643315376703739,
+      "running_gpu_hours_lower": 2.621574323574702,
+      "running_gpu_hours_upper": 2.6275500762462616,
+      "good_requests": 79,
+      "estimated_usd_per_slo_success": 0.03345968831270556,
+      "weighted_slo_goodput": 0.9059065934065934,
+      "observed_scale_outs": 2,
+      "observed_scale_downs": 2,
+      "direction_reversals": 3,
+      "max_ec2_read_gap_s": 15.897206783294678,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 904,
+      "baseline": "B6",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0472003045347003,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0472003045347003,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-07166980a7564cd58",
+          "launch_unix_s": 1791045245.0,
+          "allocated_gpu_hours": 0.5274896039565404,
+          "running_gpu_hours_lower": 0.5204875075154834,
+          "running_gpu_hours_upper": 0.5274896039565404
+        },
+        {
+          "instance_id": "i-0958b27ff885d5d6d",
+          "launch_unix_s": 1791046298.0,
+          "allocated_gpu_hours": 0.23498960395654042,
+          "running_gpu_hours_lower": 0.22788270824485354,
+          "running_gpu_hours_upper": 0.23498960395654042
+        }
+      ],
+      "allocated_gpu_hours": 2.862479207913081,
+      "estimated_compute_usd": 2.8796540831605593,
+      "running_gpu_hours_lower": 2.8427708248297376,
+      "running_gpu_hours_upper": 2.862479207913081,
+      "good_requests": 78,
+      "estimated_usd_per_slo_success": 0.03691864209180204,
+      "weighted_slo_goodput": 0.8940018315018315,
+      "observed_scale_outs": 2,
+      "observed_scale_downs": 3,
+      "direction_reversals": 3,
+      "max_ec2_read_gap_s": 15.995343685150146,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 905,
+      "baseline": "B2",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.048121075100369,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.048121075100369,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.096242150200738,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 79,
+      "estimated_usd_per_slo_success": 0.026741772151898734,
+      "weighted_slo_goodput": 1.0,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 15.990283489227295,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": true
+    },
+    {
+      "seed": 905,
+      "baseline": "B3",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0470674068397945,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0470674068397945,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.094134813679589,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 79,
+      "estimated_usd_per_slo_success": 0.026741772151898734,
+      "weighted_slo_goodput": 1.0,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 16.015681982040405,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": true
+    },
+    {
+      "seed": 905,
+      "baseline": "B5",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0497724211215973,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0497724211215973,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.0995448422431946,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 69,
+      "estimated_usd_per_slo_success": 0.030617391304347825,
+      "weighted_slo_goodput": 0.8776395173453997,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 16.019009590148926,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    },
+    {
+      "seed": 905,
+      "baseline": "B6",
+      "instances": [
+        {
+          "instance_id": "i-063f58e1698afc010",
+          "launch_unix_s": 1788895713.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0463302940130235,
+          "running_gpu_hours_upper": 1.05
+        },
+        {
+          "instance_id": "i-062dd1545d9b8e6e7",
+          "launch_unix_s": 1791038319.0,
+          "allocated_gpu_hours": 1.05,
+          "running_gpu_hours_lower": 1.0463302940130235,
+          "running_gpu_hours_upper": 1.05
+        }
+      ],
+      "allocated_gpu_hours": 2.1,
+      "estimated_compute_usd": 2.1126,
+      "running_gpu_hours_lower": 2.092660588026047,
+      "running_gpu_hours_upper": 2.1,
+      "good_requests": 69,
+      "estimated_usd_per_slo_success": 0.030617391304347825,
+      "weighted_slo_goodput": 0.8776395173453997,
+      "observed_scale_outs": 0,
+      "observed_scale_downs": 0,
+      "direction_reversals": 0,
+      "max_ec2_read_gap_s": 15.988689184188843,
+      "sampling_assumption": "No unobserved stop/restart between EC2 reads.",
+      "nondominated_within_seed": false
+    }
+  ],
+  "scope": "3600 seconds arrivals plus full 180-second drain; launch-based allocation includes pending and idle instances.",
+  "limitations": [
+    "Estimate, not invoice or account billing attribution. Startup/reset and final cleanup outside the measurement window are excluded and require separate accounting.",
+    "Running-time bounds are sampling brackets conditional on no unobserved stop/restart; launch-based allocation is not billed runtime.",
+    "Public on-demand Linux shared-tenancy price; discounts, EBS, network, CPU, and EKS charges excluded.",
+    "Automatic node disruption disabled; pod scale-down does not imply EC2 savings.",
+    "Nondominance compares only equal-seed workloads; no interpolated optimum."
+  ]
+}
