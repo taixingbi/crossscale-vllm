@@ -1,0 +1,202 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "karpenter.sh/v1",
+            "kind": "NodeClaim",
+            "metadata": {
+                "annotations": {
+                    "compatibility.karpenter.k8s.aws/cluster-name-tagged": "true",
+                    "karpenter.k8s.aws/ec2nodeclass-hash": "4927229435887424221",
+                    "karpenter.k8s.aws/ec2nodeclass-hash-version": "v4",
+                    "karpenter.k8s.aws/tagged": "true",
+                    "karpenter.sh/nodeclaim-min-values-relaxed": "false",
+                    "karpenter.sh/nodepool-hash": "4113750089938003361",
+                    "karpenter.sh/nodepool-hash-version": "v3"
+                },
+                "creationTimestamp": "2026-09-08T19:28:32Z",
+                "finalizers": [
+                    "karpenter.sh/termination"
+                ],
+                "generateName": "crossscale-gpu-",
+                "generation": 1,
+                "labels": {
+                    "karpenter.k8s.aws/ec2nodeclass": "crossscale-gpu",
+                    "karpenter.k8s.aws/instance-category": "g",
+                    "karpenter.k8s.aws/instance-cpu": "4",
+                    "karpenter.k8s.aws/instance-cpu-manufacturer": "amd",
+                    "karpenter.k8s.aws/instance-cpu-sustained-clock-speed-mhz": "3300",
+                    "karpenter.k8s.aws/instance-ebs-bandwidth": "3500",
+                    "karpenter.k8s.aws/instance-encryption-in-transit-supported": "true",
+                    "karpenter.k8s.aws/instance-family": "g5",
+                    "karpenter.k8s.aws/instance-generation": "5",
+                    "karpenter.k8s.aws/instance-gpu-count": "1",
+                    "karpenter.k8s.aws/instance-gpu-manufacturer": "nvidia",
+                    "karpenter.k8s.aws/instance-gpu-memory": "22888",
+                    "karpenter.k8s.aws/instance-gpu-name": "a10g",
+                    "karpenter.k8s.aws/instance-hypervisor": "nitro",
+                    "karpenter.k8s.aws/instance-local-nvme": "250",
+                    "karpenter.k8s.aws/instance-memory": "16384",
+                    "karpenter.k8s.aws/instance-network-bandwidth": "2500",
+                    "karpenter.k8s.aws/instance-size": "xlarge",
+                    "karpenter.sh/capacity-type": "on-demand",
+                    "karpenter.sh/nodepool": "crossscale-gpu",
+                    "kubernetes.io/arch": "amd64",
+                    "kubernetes.io/os": "linux",
+                    "node.kubernetes.io/instance-type": "g5.xlarge",
+                    "topology.k8s.aws/zone-id": "use1-az1",
+                    "topology.kubernetes.io/region": "us-east-1",
+                    "topology.kubernetes.io/zone": "us-east-1a"
+                },
+                "name": "crossscale-gpu-2kh95",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "karpenter.sh/v1",
+                        "blockOwnerDeletion": true,
+                        "kind": "NodePool",
+                        "name": "crossscale-gpu",
+                        "uid": "f6fa4b07-1382-4b11-8797-dc3ef25a0b6c"
+                    }
+                ],
+                "resourceVersion": "8907563",
+                "uid": "65dee11a-718f-49ed-a85e-f31bf7bc6f25"
+            },
+            "spec": {
+                "expireAfter": "Never",
+                "nodeClassRef": {
+                    "group": "karpenter.k8s.aws",
+                    "kind": "EC2NodeClass",
+                    "name": "crossscale-gpu"
+                },
+                "requirements": [
+                    {
+                        "key": "karpenter.k8s.aws/ec2nodeclass",
+                        "operator": "In",
+                        "values": [
+                            "crossscale-gpu"
+                        ]
+                    },
+                    {
+                        "key": "karpenter.sh/nodepool",
+                        "operator": "In",
+                        "values": [
+                            "crossscale-gpu"
+                        ]
+                    },
+                    {
+                        "key": "node.kubernetes.io/instance-type",
+                        "operator": "In",
+                        "values": [
+                            "g5.xlarge"
+                        ]
+                    },
+                    {
+                        "key": "kubernetes.io/arch",
+                        "operator": "In",
+                        "values": [
+                            "amd64"
+                        ]
+                    },
+                    {
+                        "key": "karpenter.sh/capacity-type",
+                        "operator": "In",
+                        "values": [
+                            "on-demand"
+                        ]
+                    }
+                ],
+                "resources": {
+                    "requests": {
+                        "cpu": "2150m",
+                        "ephemeral-storage": "20Gi",
+                        "memory": "10Gi",
+                        "nvidia.com/gpu": "1",
+                        "pods": "5"
+                    }
+                },
+                "taints": [
+                    {
+                        "effect": "NoSchedule",
+                        "key": "nvidia.com/gpu"
+                    }
+                ]
+            },
+            "status": {
+                "allocatable": {
+                    "cpu": "3920m",
+                    "ephemeral-storage": "89Gi",
+                    "memory": "14162Mi",
+                    "nvidia.com/gpu": "1",
+                    "pods": "58",
+                    "vpc.amazonaws.com/pod-eni": "4"
+                },
+                "capacity": {
+                    "cpu": "4",
+                    "ephemeral-storage": "100Gi",
+                    "memory": "15155Mi",
+                    "nvidia.com/gpu": "1",
+                    "pods": "58",
+                    "vpc.amazonaws.com/pod-eni": "4"
+                },
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-09-08T19:28:34Z",
+                        "message": "",
+                        "observedGeneration": 1,
+                        "reason": "Launched",
+                        "status": "True",
+                        "type": "Launched"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-08T19:28:55Z",
+                        "message": "",
+                        "observedGeneration": 1,
+                        "reason": "Registered",
+                        "status": "True",
+                        "type": "Registered"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-08T19:38:34Z",
+                        "message": "",
+                        "observedGeneration": 1,
+                        "reason": "ConsistentStateFound",
+                        "status": "True",
+                        "type": "ConsistentStateFound"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-08T19:46:25Z",
+                        "message": "",
+                        "observedGeneration": 1,
+                        "reason": "Initialized",
+                        "status": "True",
+                        "type": "Initialized"
+                    },
+                    {
+                        "lastTransitionTime": "2026-10-04T13:31:42Z",
+                        "message": "",
+                        "observedGeneration": 1,
+                        "reason": "Consolidatable",
+                        "status": "True",
+                        "type": "Consolidatable"
+                    },
+                    {
+                        "lastTransitionTime": "2026-09-08T19:46:25Z",
+                        "message": "",
+                        "observedGeneration": 1,
+                        "reason": "Ready",
+                        "status": "True",
+                        "type": "Ready"
+                    }
+                ],
+                "imageID": "ami-0c126bbe79be20f0a",
+                "lastPodEventTime": "2026-10-04T13:21:42Z",
+                "nodeName": "ip-10-42-9-196.ec2.internal",
+                "providerID": "aws:///us-east-1a/i-063f58e1698afc010"
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

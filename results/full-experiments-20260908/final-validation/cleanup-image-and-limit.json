@@ -1,0 +1,13 @@
+{
+  "checked_utc": "2026-10-04T17:10:03.756878+00:00",
+  "actions": [
+    "Restored NodePool GPU limit from 4 to 1; original NodeClass already selected",
+    "Deleted unused crossscale-gpu-prebaked NodeClass",
+    "Deregistered owned ami-006c1eb16c0aa3517",
+    "Deleted owned snap-069b9afd24f88a76e"
+  ],
+  "preserved_original_claim": "crossscale-gpu-2kh95",
+  "active_prebaked_instances": 0,
+  "builder_status": "InvalidInstanceID.NotFound; original builder no longer exists",
+  "remaining": "runner/RBAC/gateway scrape/IAM/access-entry cleanup and final backup verification"
+}

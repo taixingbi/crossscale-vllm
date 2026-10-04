@@ -1,0 +1,56 @@
+{
+    "Images": [
+        {
+            "PlatformDetails": "Linux/UNIX",
+            "UsageOperation": "RunInstances",
+            "BlockDeviceMappings": [
+                {
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "Iops": 3000,
+                        "SnapshotId": "snap-069b9afd24f88a76e",
+                        "VolumeSize": 100,
+                        "VolumeType": "gp3",
+                        "Throughput": 125,
+                        "Encrypted": true
+                    },
+                    "DeviceName": "/dev/xvda"
+                }
+            ],
+            "Description": "Unjoined AL2023 EKS 1.34 NVIDIA image with pinned vLLM and AWS CLI container images; no model cache",
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "Name": "crossscale-prebaked-images-20260908",
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SriovNetSupport": "simple",
+            "Tags": [
+                {
+                    "Key": "Purpose",
+                    "Value": "prebaked-image-experiment"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "crossscale"
+                }
+            ],
+            "VirtualizationType": "hvm",
+            "BootMode": "uefi-preferred",
+            "ImdsSupport": "v2.0",
+            "SourceInstanceId": "i-0ac6a7cc78eff3d9e",
+            "DeregistrationProtection": "disabled",
+            "LastLaunchedTime": "2026-09-13T00:20:32Z",
+            "SourceImageId": "ami-0c126bbe79be20f0a",
+            "SourceImageRegion": "us-east-1",
+            "FreeTierEligible": true,
+            "ImageId": "ami-006c1eb16c0aa3517",
+            "ImageLocation": "646821141010/crossscale-prebaked-images-20260908",
+            "State": "available",
+            "OwnerId": "646821141010",
+            "CreationDate": "2026-09-08T23:09:41.000Z",
+            "Public": false,
+            "Architecture": "x86_64",
+            "ImageType": "machine"
+        }
+    ]
+}

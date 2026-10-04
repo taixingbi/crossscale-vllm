@@ -1,0 +1,156 @@
+{
+    "apiVersion": "karpenter.k8s.aws/v1",
+    "kind": "EC2NodeClass",
+    "metadata": {
+        "annotations": {
+            "karpenter.k8s.aws/ec2nodeclass-hash": "4927229435887424221",
+            "karpenter.k8s.aws/ec2nodeclass-hash-version": "v4",
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"karpenter.k8s.aws/v1\",\"kind\":\"EC2NodeClass\",\"metadata\":{\"annotations\":{},\"labels\":{\"crossscale-experiment\":\"full-20260908\"},\"name\":\"crossscale-gpu-prebaked\"},\"spec\":{\"amiFamily\":\"AL2023\",\"amiSelectorTerms\":[{\"id\":\"ami-006c1eb16c0aa3517\"}],\"blockDeviceMappings\":[{\"deviceName\":\"/dev/xvda\",\"ebs\":{\"deleteOnTermination\":true,\"encrypted\":true,\"volumeSize\":\"100Gi\",\"volumeType\":\"gp3\"}}],\"metadataOptions\":{\"httpEndpoint\":\"enabled\",\"httpProtocolIPv6\":\"disabled\",\"httpPutResponseHopLimit\":1,\"httpTokens\":\"required\"},\"role\":\"crossscale-gpu\",\"securityGroupSelectorTerms\":[{\"tags\":{\"karpenter.sh/discovery\":\"crossscale\"}}],\"subnetSelectorTerms\":[{\"tags\":{\"karpenter.sh/discovery\":\"crossscale\"}}]}}\n"
+        },
+        "creationTimestamp": "2026-09-08T23:26:24Z",
+        "finalizers": [
+            "karpenter.k8s.aws/termination"
+        ],
+        "generation": 1,
+        "labels": {
+            "crossscale-experiment": "full-20260908"
+        },
+        "name": "crossscale-gpu-prebaked",
+        "resourceVersion": "8793326",
+        "uid": "bddd294d-c67b-4c94-ad77-1c96fe2cb6c6"
+    },
+    "spec": {
+        "amiFamily": "AL2023",
+        "amiSelectorTerms": [
+            {
+                "id": "ami-006c1eb16c0aa3517"
+            }
+        ],
+        "blockDeviceMappings": [
+            {
+                "deviceName": "/dev/xvda",
+                "ebs": {
+                    "deleteOnTermination": true,
+                    "encrypted": true,
+                    "volumeSize": "100Gi",
+                    "volumeType": "gp3"
+                }
+            }
+        ],
+        "metadataOptions": {
+            "httpEndpoint": "enabled",
+            "httpProtocolIPv6": "disabled",
+            "httpPutResponseHopLimit": 1,
+            "httpTokens": "required"
+        },
+        "role": "crossscale-gpu",
+        "securityGroupSelectorTerms": [
+            {
+                "tags": {
+                    "karpenter.sh/discovery": "crossscale"
+                }
+            }
+        ],
+        "subnetSelectorTerms": [
+            {
+                "tags": {
+                    "karpenter.sh/discovery": "crossscale"
+                }
+            }
+        ]
+    },
+    "status": {
+        "amis": [
+            {
+                "id": "ami-006c1eb16c0aa3517",
+                "name": "crossscale-prebaked-images-20260908",
+                "requirements": [
+                    {
+                        "key": "kubernetes.io/arch",
+                        "operator": "In",
+                        "values": [
+                            "amd64"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "conditions": [
+            {
+                "lastTransitionTime": "2026-09-08T23:26:24Z",
+                "message": "",
+                "observedGeneration": 1,
+                "reason": "CapacityReservationsReady",
+                "status": "True",
+                "type": "CapacityReservationsReady"
+            },
+            {
+                "lastTransitionTime": "2026-09-08T23:26:24Z",
+                "message": "",
+                "observedGeneration": 1,
+                "reason": "SubnetsReady",
+                "status": "True",
+                "type": "SubnetsReady"
+            },
+            {
+                "lastTransitionTime": "2026-09-08T23:26:24Z",
+                "message": "",
+                "observedGeneration": 1,
+                "reason": "SecurityGroupsReady",
+                "status": "True",
+                "type": "SecurityGroupsReady"
+            },
+            {
+                "lastTransitionTime": "2026-09-08T23:26:24Z",
+                "message": "",
+                "observedGeneration": 1,
+                "reason": "InstanceProfileReady",
+                "status": "True",
+                "type": "InstanceProfileReady"
+            },
+            {
+                "lastTransitionTime": "2026-09-08T23:49:30Z",
+                "message": "",
+                "observedGeneration": 1,
+                "reason": "AMIsReady",
+                "status": "True",
+                "type": "AMIsReady"
+            },
+            {
+                "lastTransitionTime": "2026-09-08T23:49:31Z",
+                "message": "",
+                "observedGeneration": 1,
+                "reason": "ValidationSucceeded",
+                "status": "True",
+                "type": "ValidationSucceeded"
+            },
+            {
+                "lastTransitionTime": "2026-09-08T23:49:31Z",
+                "message": "",
+                "observedGeneration": 1,
+                "reason": "Ready",
+                "status": "True",
+                "type": "Ready"
+            }
+        ],
+        "instanceProfile": "crossscale_15828377279458209793",
+        "securityGroups": [
+            {
+                "id": "sg-013f007544002ef8a",
+                "name": "crossscale-node-a0144059f4fd250c7ef700d2da"
+            }
+        ],
+        "subnets": [
+            {
+                "id": "subnet-0224d57cacfecbbb1",
+                "zone": "us-east-1b",
+                "zoneID": "use1-az2"
+            },
+            {
+                "id": "subnet-0dfd48124c95efe1b",
+                "zone": "us-east-1a",
+                "zoneID": "use1-az1"
+            }
+        ]
+    }
+}
