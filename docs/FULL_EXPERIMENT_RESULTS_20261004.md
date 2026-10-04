@@ -13,7 +13,7 @@ Git where feasible and in the private S3 archive; earlier large streams have
 location/hash manifests. E7 controlled has 24 successful measurements and one
 preserved pre-load Oracle startup failure, not 25 successful measurements.
 No failed or completed measurement was rerun to improve its result.
-Final infrastructure cleanup and remaining accounting are still pending;
+Final infrastructure cleanup is still pending;
 this document is the results synthesis checkpoint, not a claim of task closure.
 
 ## Conditions and interpretation
@@ -113,8 +113,11 @@ this price is a compute estimate, not invoice attribution or billed runtime.
 Automatic node disruption was disabled. HPA pod scale-down therefore does not
 imply that idle EC2 instances stopped costing money. The observed per-seed
 cost–SLO points are exported without interpolation or an invented optimum.
-Startup/reset and final cleanup outside measurement windows still require
-separate accounting. Discounts, EBS, network, CPU nodes, and EKS charges are
+Observed startup/reset/inter-run cleanup/restoration allocation is separately
+bracketed at 5.127–5.208 GPU-hours for the E8 controller window, starting at
+its first log record and ending at restoration. Earlier unlogged setup and
+original-GPU idle time after restoration are excluded. This overhead is not
+attributed to individual baselines and includes shutting-down allocation. Discounts, EBS, network, CPU nodes, and EKS charges are
 excluded; no total AWS bill or savings claim is made.
 
 ## Reproduction and artifacts

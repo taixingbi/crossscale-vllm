@@ -1,0 +1,143 @@
+{
+  "observed_controller_start_unix_s": 1791038316.3504333,
+  "restored_unix_s": 1791120266.7376385,
+  "instances": [
+    {
+      "instance_id": "i-063f58e1698afc010",
+      "controller_window_allocated_gpuh_lower": 22.76399644586775,
+      "controller_window_allocated_gpuh_upper": 22.76399644586775,
+      "measurement_allocated_gpuh": 21.0,
+      "nonmeasurement_allocated_gpuh_lower": 1.7639964458677504,
+      "nonmeasurement_allocated_gpuh_upper": 1.7639964458677504
+    },
+    {
+      "instance_id": "i-062dd1545d9b8e6e7",
+      "controller_window_allocated_gpuh_lower": 22.70905717207326,
+      "controller_window_allocated_gpuh_upper": 22.71754777153333,
+      "measurement_allocated_gpuh": 21.0,
+      "nonmeasurement_allocated_gpuh_lower": 1.7090571720732584,
+      "nonmeasurement_allocated_gpuh_upper": 1.7175477715333294
+    },
+    {
+      "instance_id": "i-07763b80c7fc51bd2",
+      "controller_window_allocated_gpuh_lower": 0.93033246172799,
+      "controller_window_allocated_gpuh_upper": 0.934588214357694,
+      "measurement_allocated_gpuh": 0.7530965762005912,
+      "nonmeasurement_allocated_gpuh_lower": 0.17723588552739877,
+      "nonmeasurement_allocated_gpuh_upper": 0.18149163815710279
+    },
+    {
+      "instance_id": "i-018930084ce0d5efd",
+      "controller_window_allocated_gpuh_lower": 0.8414180586073133,
+      "controller_window_allocated_gpuh_upper": 0.8456745625866784,
+      "measurement_allocated_gpuh": 0.7530965762005912,
+      "nonmeasurement_allocated_gpuh_lower": 0.08832148240672211,
+      "nonmeasurement_allocated_gpuh_upper": 0.09257798638608716
+    },
+    {
+      "instance_id": "i-0595682ceb258ce99",
+      "controller_window_allocated_gpuh_lower": 0.8365490133894814,
+      "controller_window_allocated_gpuh_upper": 0.8450106615490384,
+      "measurement_allocated_gpuh": 0.7574197802941004,
+      "nonmeasurement_allocated_gpuh_lower": 0.079129233095381,
+      "nonmeasurement_allocated_gpuh_upper": 0.08759088125493797
+    },
+    {
+      "instance_id": "i-091c336d083458ddb",
+      "controller_window_allocated_gpuh_lower": 0.9040400258700053,
+      "controller_window_allocated_gpuh_upper": 0.9097053719229168,
+      "measurement_allocated_gpuh": 0.8158956573406855,
+      "nonmeasurement_allocated_gpuh_lower": 0.08814436852931984,
+      "nonmeasurement_allocated_gpuh_upper": 0.09380971458223131
+    },
+    {
+      "instance_id": "i-0f097de72842bae44",
+      "controller_window_allocated_gpuh_lower": 0.9030256630976995,
+      "controller_window_allocated_gpuh_upper": 0.9058745184209611,
+      "measurement_allocated_gpuh": 0.8153632899125417,
+      "nonmeasurement_allocated_gpuh_lower": 0.0876623731851578,
+      "nonmeasurement_allocated_gpuh_upper": 0.09051122850841942
+    },
+    {
+      "instance_id": "i-0c249983515b203b1",
+      "controller_window_allocated_gpuh_lower": 0.8914708570639293,
+      "controller_window_allocated_gpuh_upper": 0.8957245939970017,
+      "measurement_allocated_gpuh": 0.8031979474756453,
+      "nonmeasurement_allocated_gpuh_lower": 0.08827290958828393,
+      "nonmeasurement_allocated_gpuh_upper": 0.09252664652135634
+    },
+    {
+      "instance_id": "i-0d402f50421ae017b",
+      "controller_window_allocated_gpuh_lower": 0.4878735172086292,
+      "controller_window_allocated_gpuh_upper": 0.49633327484130857,
+      "measurement_allocated_gpuh": 0.31903128080897863,
+      "nonmeasurement_allocated_gpuh_lower": 0.16884223639965057,
+      "nonmeasurement_allocated_gpuh_upper": 0.17730199403232993
+    },
+    {
+      "instance_id": "i-021885f93a5eb3da9",
+      "controller_window_allocated_gpuh_lower": 0.8910392051272922,
+      "controller_window_allocated_gpuh_upper": 0.8967064502504137,
+      "measurement_allocated_gpuh": 0.8029572568999397,
+      "nonmeasurement_allocated_gpuh_lower": 0.08808194822735249,
+      "nonmeasurement_allocated_gpuh_upper": 0.09374919335047405
+    },
+    {
+      "instance_id": "i-0208ce9f049b91c26",
+      "controller_window_allocated_gpuh_lower": 0.49262576977411904,
+      "controller_window_allocated_gpuh_upper": 0.5011010533571243,
+      "measurement_allocated_gpuh": 0.3226794791221619,
+      "nonmeasurement_allocated_gpuh_lower": 0.16994629065195715,
+      "nonmeasurement_allocated_gpuh_upper": 0.1784215742349624
+    },
+    {
+      "instance_id": "i-0c1d641179447620a",
+      "controller_window_allocated_gpuh_lower": 0.8455326296223534,
+      "controller_window_allocated_gpuh_upper": 0.8497866615321901,
+      "measurement_allocated_gpuh": 0.7573758844534556,
+      "nonmeasurement_allocated_gpuh_lower": 0.08815674516889782,
+      "nonmeasurement_allocated_gpuh_upper": 0.09241077707873446
+    },
+    {
+      "instance_id": "i-0847f0b905af729d6",
+      "controller_window_allocated_gpuh_lower": 0.6423464286989636,
+      "controller_window_allocated_gpuh_upper": 0.6451982198821173,
+      "measurement_allocated_gpuh": 0.4651536622312334,
+      "nonmeasurement_allocated_gpuh_lower": 0.17719276646773024,
+      "nonmeasurement_allocated_gpuh_upper": 0.18004455765088395
+    },
+    {
+      "instance_id": "i-01f2ae82d15fc6adb",
+      "controller_window_allocated_gpuh_lower": 0.6156349029143652,
+      "controller_window_allocated_gpuh_upper": 0.6184818622801039,
+      "measurement_allocated_gpuh": 0.5275500762462616,
+      "nonmeasurement_allocated_gpuh_lower": 0.08808482666810358,
+      "nonmeasurement_allocated_gpuh_upper": 0.09093178603384233
+    },
+    {
+      "instance_id": "i-07166980a7564cd58",
+      "controller_window_allocated_gpuh_lower": 0.7044173661867777,
+      "controller_window_allocated_gpuh_upper": 0.7100831872224808,
+      "measurement_allocated_gpuh": 0.5274896039565404,
+      "nonmeasurement_allocated_gpuh_lower": 0.17692776223023732,
+      "nonmeasurement_allocated_gpuh_upper": 0.18259358326594033
+    },
+    {
+      "instance_id": "i-0958b27ff885d5d6d",
+      "controller_window_allocated_gpuh_lower": 0.3230022011862861,
+      "controller_window_allocated_gpuh_upper": 0.3272597269879447,
+      "measurement_allocated_gpuh": 0.23498960395654042,
+      "nonmeasurement_allocated_gpuh_lower": 0.08801259722974566,
+      "nonmeasurement_allocated_gpuh_upper": 0.09227012303140428
+    }
+  ],
+  "nonmeasurement_allocated_gpuh_lower": 5.127065043316947,
+  "nonmeasurement_allocated_gpuh_upper": 5.207775901489787,
+  "limitations": [
+    "Observed window starts at first controller log, not process launch; earlier unlogged setup excluded.",
+    "Allocation includes pending, idle and shutting-down intervals. Not billed runtime or invoice attribution.",
+    "Termination bracket uses last observed nonterminated state and first observed terminated state.",
+    "Original GPU remains allocated after restoration; later idle time is excluded.",
+    "Nonmeasurement combines startup, reset, inter-run cleanup and restoration; not attributed to a baseline."
+  ]
+}
