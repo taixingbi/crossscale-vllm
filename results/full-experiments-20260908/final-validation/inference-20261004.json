@@ -1,0 +1,56 @@
+{
+  "checked_unix_s": 1791122723.8250828,
+  "http_status": 200,
+  "request": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is 2 + 2? Answer with the number only."
+      }
+    ],
+    "max_tokens": 16,
+    "temperature": 0
+  },
+  "response": {
+    "id": "chatcmpl-8154e2f41dd6a2c6",
+    "object": "chat.completion",
+    "created": 1791122723,
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "4",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.28.0-a9ae904a",
+    "usage": {
+      "prompt_tokens": 49,
+      "total_tokens": 51,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "elapsed_s": 0.08347153663635254
+}
